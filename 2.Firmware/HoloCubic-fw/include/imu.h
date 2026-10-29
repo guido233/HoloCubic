@@ -1,11 +1,10 @@
 #ifndef IMU_H
 #define IMU_H
 
-
+#include <stdint.h>
 #include <I2Cdev.h>
 #include <MPU6050.h>
 #include "lv_port_indev.h"
-#include "rgb_led.h"
 
 #define IMU_I2C_SDA 32 
 #define IMU_I2C_SCL 33
@@ -18,24 +17,29 @@ class IMU
 {
 private:
 	MPU6050 imu;
-	int flag;
-	int16_t ax, ay, az;
-	int16_t gx, gy, gz;
+	bool ready = false;
+	bool flag = true;
+	int16_t ax = 0, ay = 0, az = 0;
+	int16_t gx = 0, gy = 0, gz = 0;
 
-	long  last_update_time;
+	uint32_t last_update_time = 0;
+	bool readMotion();
+	void clearMotion();
 
 public:
-	void init();
+	// A zero timeout makes one connection attempt. Failure leaves input released.
+	bool init(uint32_t timeout_ms = 1000);
+	bool isReady() const;
 
-	void update(int interval);
+	void update(uint32_t interval_ms);
 
-	int16_t getAccelX();
-	int16_t getAccelY();
-	int16_t getAccelZ();
+	int16_t getAccelX() const;
+	int16_t getAccelY() const;
+	int16_t getAccelZ() const;
 
-	int16_t getGyroX();
-	int16_t getGyroY();
-	int16_t getGyroZ();
+	int16_t getGyroX() const;
+	int16_t getGyroY() const;
+	int16_t getGyroZ() const;
 
 };
 

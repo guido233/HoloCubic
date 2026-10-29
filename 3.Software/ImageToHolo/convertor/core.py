@@ -1,8 +1,86 @@
 from typing import *
 import math
-from PIL import Image
+from PIL import Image, ImageOps
 import struct
 import os.path
+from pathlib import Path
+
+
+# LVGL v9.6.0: scripts/LVGLImage.py (LVGLImageHeader / ColorFormat) and
+# include/lvgl/draw/lv_image_dsc.h. These are image files, not ESP32 firmware.
+LVGL9_MAGIC = 0x19
+LVGL9_RGB565 = 0x12
+LVGL9_HEADER = struct.Struct("<BBHHHHH")
+
+
+def _rgb565_pixels(image: Image.Image, background=(0, 0, 0)) -> bytes:
+    """Flatten transparency, then emit row-major, little-endian RGB565 pixels.
+
+    RGB565 has no alpha channel. Transparent pixels use the selected background
+    (black by default); opaque pixels keep their original RGB values before
+    truncation to 5/6/5 bits. No dithering or implicit resize is performed.
+    """
+    if len(background) != 3 or any(
+            not isinstance(channel, int) or not 0 <= channel <= 255
+            for channel in background):
+        raise ValueError("Background must contain three RGB values from 0 to 255")
+    rgba = image.convert("RGBA")
+    canvas = Image.new("RGBA", rgba.size, (*background, 255))
+    rgb = Image.alpha_composite(canvas, rgba).convert("RGB").tobytes()
+    pixels = bytearray(len(rgb) // 3 * 2)
+    for source in range(0, len(rgb), 3):
+        red, green, blue = rgb[source:source + 3]
+        color = ((red >> 3) << 11) | ((green >> 2) << 5) | (blue >> 3)
+        struct.pack_into("<H", pixels, source // 3 * 2, color)
+    return bytes(pixels)
+
+
+def encode_lvgl9_rgb565(image: Image.Image, background=(0, 0, 0)) -> bytes:
+    """Encode an LVGL 9.6 uncompressed RGB565 .bin with a 12-byte header.
+
+    Stride is width * 2 bytes, including for odd widths. A reader must use the
+    header's stride rather than assume 4-byte alignment. The two flags bytes
+    and final two reserved bytes are zero.
+    """
+    width, height = image.size
+    stride = width * 2
+    if not (0 < width <= 0xFFFF and 0 < height <= 0xFFFF and stride <= 0xFFFF):
+        raise ValueError("Image dimensions or RGB565 stride exceed the LVGL 9 header limits")
+    header = LVGL9_HEADER.pack(LVGL9_MAGIC, LVGL9_RGB565, 0,
+                              width, height, stride, 0)
+    return header + _rgb565_pixels(image, background)
+
+
+def encode_legacy_v7_rgb565(image: Image.Image, background=(0, 0, 0)) -> bytes:
+    """Explicit LVGL 7 output: 4-byte header and 16-bit true-color pixels.
+
+    For a 16-bit LVGL 7 build, LV_IMG_CF_TRUE_COLOR is 4. This output is not
+    compatible with the default LVGL 9 decoder and must stay in a separate set.
+    """
+    width, height = image.size
+    if not (0 < width <= 0x7FF and 0 < height <= 0x7FF):
+        raise ValueError("Legacy LVGL 7 images must be between 1 and 2047 pixels per side")
+    header = struct.pack("<I", 4 | (width << 10) | (height << 21))
+    return header + _rgb565_pixels(image, background)
+
+
+def convert_raster(path, *, legacy_v7=False, background=(0, 0, 0)) -> bytes:
+    """Read a source raster; never reinterpret existing LVGL .bin resources.
+
+    JPEG/PNG/BMP/WebP sources are supported. Animated inputs must first be
+    exported as individual frames, so a batch does not silently lose frames.
+    """
+    path = Path(path)
+    if path.suffix.lower() == ".bin":
+        raise ValueError("Existing .bin files cannot be reused or converted; supply the original PNG/JPEG/BMP/WebP")
+    with Image.open(path) as source:
+        if source.format not in {"PNG", "JPEG", "BMP", "WEBP"}:
+            raise ValueError("Supported source formats are PNG, JPEG, BMP and WebP")
+        if getattr(source, "n_frames", 1) != 1:
+            raise ValueError("Animated images must be exported as separate source frames")
+        image = ImageOps.exif_transpose(source)
+        encoder = encode_legacy_v7_rgb565 if legacy_v7 else encode_lvgl9_rgb565
+        return encoder(image, background)
 
 
 def getColorFromPalette(palette, index):

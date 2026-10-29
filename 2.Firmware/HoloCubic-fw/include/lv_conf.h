@@ -1,0 +1,26 @@
+#ifndef LV_CONF_H
+#define LV_CONF_H
+
+// LVGL 9.6 configuration for ESP32-PICO-D4 (no external PSRAM).
+#define LV_USE_OS LV_OS_NONE
+#define LV_COLOR_FORMAT_DEFAULT LV_COLOR_FORMAT_RGB565
+#define LV_USE_STDLIB_MALLOC LV_STDLIB_BUILTIN
+#define LV_USE_STDLIB_STRING LV_STDLIB_BUILTIN
+#define LV_USE_STDLIB_SPRINTF LV_STDLIB_BUILTIN
+#define LV_MEM_SIZE (32U * 1024U)
+#define LV_USE_DRAW_SW 1
+#define LV_DRAW_SW_DRAW_UNIT_CNT 1
+#define LV_CACHE_DEF_SIZE 0
+// Decode indexed images by scanline rather than allocating a full ARGB frame.
+#define LV_BIN_DECODER_RAM_LOAD 0
+#define LV_USE_LOG 1
+#define LV_LOG_LEVEL LV_LOG_LEVEL_WARN
+#define LV_FONT_MONTSERRAT_14 1
+#define LV_FONT_DEFAULT LV_FONT_DEFAULT_MONTSERRAT_14
+#define LV_USE_IMAGE 1
+#define LV_USE_LABEL 1
+#define LV_USE_SLIDER 1
+#define LV_USE_FS_STDIO 0
+#define LV_USE_FS_FATFS 0
+
+#endif

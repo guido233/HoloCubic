@@ -1,8 +1,7 @@
 #include <Arduino.h>
 #include "display.h"
 #include "imu.h"
-#include "ambient.h"
-#include "network.h"
+#include "holo_network.h"
 #include "sd_card.h"
 #include "rgb_led.h"
 #include "lv_port_indev.h"
@@ -10,69 +9,73 @@
 #include "lv_cubic_gui.h"
 #include "gui_guider.h"
 
-/*** Component objects ***/
 Display screen;
 IMU mpu;
 Pixel rgb;
 SdCard tf;
-Network wifi;
-
+HoloNetwork wifi;
 lv_ui guider_ui;
+
+static void connectFromSd()
+{
+    String ssid;
+    String password;
+    if (!tf.isMounted() || !tf.readFileLine("/wifi.txt", 1, ssid) ||
+        !tf.readFileLine("/wifi.txt", 2, password) || ssid.isEmpty()) {
+        Serial.println("No WiFi configuration; continuing offline.");
+        return;
+    }
+
+    if (!wifi.init(ssid, password)) {
+        Serial.printf("WiFi connection failed (%u); continuing offline.\n",
+                      static_cast<unsigned>(wifi.lastError()));
+        return;
+    }
+
+    // Optional third line: a Bilibili UID. No request is made without it.
+    String uid;
+    if (tf.readFileLine("/wifi.txt", 3, uid)) {
+        uid.trim();
+        if (!uid.isEmpty()) {
+            uint32_t fans = 0;
+            if (wifi.getBilibiliFans(uid, fans)) {
+                Serial.printf("Bilibili followers: %lu\n", static_cast<unsigned long>(fans));
+            } else {
+                Serial.printf("Follower request failed (%u).\n",
+                              static_cast<unsigned>(wifi.lastError()));
+            }
+        }
+    }
+}
 
 void setup()
 {
     Serial.begin(115200);
-
-    /*** Init screen ***/
     screen.init();
-    screen.setBackLight(0.2);
-
-    /*** Init IMU as input device ***/
+    screen.setBackLight(0.2f);
     lv_port_indev_init();
-    mpu.init();
-
-    /*** Init on-board RGB ***/
-    rgb.init();
-    rgb.setBrightness(0.1).setRGB(0, 0, 122, 204).setRGB(1, 0, 122, 204);
-
-    /*** Init micro SD-Card ***/
-    tf.init();
-    lv_fs_if_init();
-
-    String ssid = tf.readFileLine("/wifi.txt", 1);        // line-1 for WiFi ssid
-    String password = tf.readFileLine("/wifi.txt", 2);    // line-2 for WiFi password
-
-    /*** Inflate GUI objects ***/
     lv_holo_cubic_gui();
-//    setup_ui(&guider_ui);
+    lv_refr_now(nullptr);
 
-    /*** Read WiFi info from SD-Card, then scan & connect WiFi ***/
-#if 0
-    wifi.init(ssid, password);
+    if (!mpu.init()) {
+        Serial.println("IMU unavailable; display will run without gesture input.");
+    }
+    rgb.init();
+    rgb.setBrightness(0.1f);
+    for (int i = 0; i < RGB_LED_NUM; ++i) {
+        rgb.setRGB(i, 0, 122, 204);
+    }
 
-    // Change to your BiliBili UID
-    Serial.println(wifi.getBilibiliFans("20259914"));
-#endif
+    if (!tf.init()) {
+        Serial.println("SD unavailable; using built-in resources.");
+    }
+    lv_fs_if_init();
+    connectFromSd();
 }
-
-int frame_id = 0;
-char buf[100];
 
 void loop()
 {
-    // run this as often as possible
-    screen.routine();
-
-    // 200 means update IMU data every 200ms
     mpu.update(200);
-
-    Serial.println("hello");
-//    int len = sprintf(buf, "S:/Scenes/Holo3D/frame%03d.bin", frame_id++);
-//    buf[len] = 0;
-//    lv_img_set_src(guider_ui.scenes_canvas, buf);
-//    Serial.println(buf);
-//
-//    if (frame_id == 138) frame_id = 0;
-
-    //delay(10);
+    screen.routine();
+    delay(5);
 }

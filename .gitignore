@@ -23,3 +23,13 @@ _private
 3.Software/LvglSimulator/vs2019_proj/x64/Release
 3.Software/ImageToHolo/.idea
 3.Software/ImageToHolo/convertor/__pycache__
+
+# Local builds, Python environments, and editor state
+**/.pio/
+**/.venv/
+**/__pycache__/
+*.pyc
+.DS_Store
+2.Firmware/HoloCubic-fw/.vscode/
+2.Firmware/HoloCubic-fw/CMakeListsPrivate.txt
+**/wifi.txt

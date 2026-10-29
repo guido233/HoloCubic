@@ -1,68 +1,82 @@
 #include "display.h"
+#include <Arduino.h>
 #include <TFT_eSPI.h>
 
-/*
-TFT pins should be set in path/to/Arduino/libraries/TFT_eSPI/User_Setups/Setup24_ST7789.h
-*/
-TFT_eSPI tft = TFT_eSPI();
-
-static lv_disp_buf_t disp_buf;
-static lv_color_t buf[LV_HOR_RES_MAX * 10];
-
-
-void my_print(lv_log_level_t level, const char* file, uint32_t line, const char* fun, const char* dsc)
+namespace
 {
-	Serial.printf("%s@%d %s->%s\r\n", file, line, fun, dsc);
-	Serial.flush();
+constexpr uint32_t screen_width = 240;
+constexpr uint32_t screen_height = 240;
+constexpr uint32_t buffer_rows = screen_height / 10;
+static_assert(LV_COLOR_FORMAT_DEFAULT == LV_COLOR_FORMAT_RGB565, "HoloCubic requires RGB565 rendering");
+
+TFT_eSPI tft;
+alignas(LV_DRAW_BUF_ALIGN) uint8_t draw_buffer[screen_width * buffer_rows * sizeof(uint16_t)];
+
+uint32_t tickMillis()
+{
+    return static_cast<uint32_t>(millis());
 }
 
-
-void my_disp_flush(lv_disp_drv_t* disp, const lv_area_t* area, lv_color_t* color_p)
+#if LV_USE_LOG
+void printLog(lv_log_level_t level, const char* message)
 {
-	uint32_t w = (area->x2 - area->x1 + 1);
-	uint32_t h = (area->y2 - area->y1 + 1);
-
-	tft.startWrite();
-	tft.setAddrWindow(area->x1, area->y1, w, h);
-	tft.pushColors(&color_p->full, w * h, true);
-	tft.endWrite();
-
-	lv_disp_flush_ready(disp);
+    (void)level;
+    Serial.print(message);
 }
+#endif
 
+void flushDisplay(lv_display_t* display, const lv_area_t* area, uint8_t* pixels)
+{
+    const uint32_t width = static_cast<uint32_t>(lv_area_get_width(area));
+    const uint32_t height = static_cast<uint32_t>(lv_area_get_height(area));
+    tft.startWrite();
+    tft.setAddrWindow(area->x1, area->y1, width, height);
+    // LVGL renders native RGB565; the ST7789 SPI stream requires high byte first.
+    tft.pushColors(reinterpret_cast<uint16_t*>(pixels), width * height, true);
+    tft.endWrite();
+    lv_display_flush_ready(display);
+}
+}
 
 void Display::init()
 {
-	ledcSetup(LCD_BL_PWM_CHANNEL, 5000, 8);
-	ledcAttachPin(LCD_BL_PIN, LCD_BL_PWM_CHANNEL);
+    if (display) return;
+    backlight_ready = ledcAttach(LCD_BL_PIN, 5000, 8);
+    if (backlight_ready) ledcWrite(LCD_BL_PIN, 255); // Active-low backlight: start off.
+    else Serial.println("Backlight PWM initialization failed");
 
-	lv_init();
+    if (!lv_is_initialized()) lv_init();
+    lv_tick_set_cb(tickMillis);
+#if LV_USE_LOG
+    lv_log_register_print_cb(printLog);
+#endif
 
-	lv_log_register_print_cb(my_print); /* register print function for debugging */
+    tft.begin(); // Pins and the ST7789 driver are configured in tft_setup.h.
+    // TFT_eSPI 2.5.43 folds rotation 4 back to 0. Reapply the original
+    // vendor driver's case-4 MADCTL setting explicitly for the beam-splitter mirror.
+    tft.setRotation(0);
+    tft.writecommand(TFT_MADCTL);
+    tft.writedata(TFT_MAD_MX | TFT_MAD_COLOR_ORDER);
 
-	tft.begin(); /* TFT init */
-	tft.setRotation(4); /* mirror */
-
-	lv_disp_buf_init(&disp_buf, buf, NULL, LV_HOR_RES_MAX * 10);
-
-	/*Initialize the display*/
-	lv_disp_drv_t disp_drv;
-	lv_disp_drv_init(&disp_drv);
-	disp_drv.hor_res = 240;
-	disp_drv.ver_res = 240;
-	disp_drv.flush_cb = my_disp_flush;
-	disp_drv.buffer = &disp_buf;
-	lv_disp_drv_register(&disp_drv);
+    display = lv_display_create(screen_width, screen_height);
+    if (!display)
+    {
+        Serial.println("LVGL display allocation failed");
+        return;
+    }
+    lv_display_set_color_format(display, LV_COLOR_FORMAT_RGB565);
+    lv_display_set_buffers(display, draw_buffer, nullptr, sizeof(draw_buffer), LV_DISPLAY_RENDER_MODE_PARTIAL);
+    lv_display_set_flush_cb(display, flushDisplay);
 }
 
 void Display::routine()
 {
-	lv_task_handler();
+    if (display) lv_timer_handler();
 }
 
 void Display::setBackLight(float duty)
 {
-	duty = constrain(duty, 0, 1);
-	duty = 1 - duty;
-	ledcWrite(LCD_BL_PWM_CHANNEL, (int)(duty * 255));
+    if (!(duty > 0.0f)) duty = 0.0f;
+    else if (duty > 1.0f) duty = 1.0f;
+    if (backlight_ready) ledcWrite(LCD_BL_PIN, static_cast<uint32_t>((1.0f - duty) * 255.0f));
 }

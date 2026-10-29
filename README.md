@@ -1,3 +1,7 @@
+> 本 Fork 的固件已迁移到 Arduino-ESP32 3.3.12 和 LVGL 9.6，保留原版硬件接口。
+> 编译、烧录、板型选择和资源迁移请阅读 [固件维护说明](2.Firmware/HoloCubic-fw/README.md)。
+> 下文硬件设计与价格描述保留原作者历史记录；MPU6050 已停产，ESP32-PICO-D4 已标记为 NRND。
+
 ![](/5.Docs/Images/Holo1.jpg)
 
 # HoloCubic--多功能透明显示屏桌面站
@@ -45,64 +49,31 @@
 
 ## 2. 固件编译说明
 
-固件框架主要基于Arduino开发完成，玩过Arduino的基本没有上手难度了，把Firmware/Libraries里面的库安装到Arduino库目录（如果你用的是Arduino IDE的话）即可。
+维护版使用 PlatformIO，固定依赖版本，支持 `naive` 和 `ironman` 两种环境。Naive 为一颗 RGB 灯，Ironman 为两颗；以实际 PCB 为准。
 
-> 我使用的是Visual Studio上面的Visual Micro插件进行Arduino开发，因为对VS比较熟悉，大家选择自己喜欢的IDE就好了。
-
-**然后这里需要修改一个官方库文件才能正常使用：**
-
-首先肯定得安装ESP32的Arduino支持包（百度有海量教程），然后在安装的支持包的`esp32\hardware\esp32\1.0.4\libraries\SPI\src\SPI.cpp`文件中，**修改以下代码中的MISO为26**：
-
-    if(sck == -1 && miso == -1 && mosi == -1 && ss == -1) {
-        _sck = (_spi_num == VSPI) ? SCK : 14;
-        _miso = (_spi_num == VSPI) ? MISO : 12; // 需要改为26
-        _mosi = (_spi_num == VSPI) ? MOSI : 13;
-        _ss = (_spi_num == VSPI) ? SS : 15;
-这是因为，硬件上连接屏幕和SD卡分别是用两个硬件SPI，其中HSPI的默认MISO引脚是12，而12在ESP32中是用于上电时设置flash电平的，上电之前上拉会导致芯片无法启动，因此我们将默认的引脚替换为26。
-
-> 也可以通过设置芯片熔丝的方式解决这个问题，不过那样的操作是一次性不可逆的，不建议这么玩。
-
-**另外：**
-
-由于我赶视频制作，代码都是临时写的非常杂乱有很多dirty code，因此仓库中的是所有驱动调通之后的模板代码，可以自己基于这个框架自由开发。
-
-**APP应用代码我在整理中慢慢也会更新出来。**
-
-## 3. Visual Studio模拟器 & 图片转换脚本
-
-在`Software`文件夹中包含了一个Visual Studio的工程，用VS打开（需要安装C++开发组件）后可以在电脑上模拟LVGL的界面效果，改好之后代码粘贴到Arduino固件那边就可以完成界面移植。
-
-> 这样省的每次修改都要重新交叉编译Arduino的固件，提升开发效率。
-
-![](/5.Docs/Images/Holo4.jpg)
-
-`ImageToHolo`文件夹下包含一个Python脚本，用于将图片转换成HoloCubic固件中用到的图像资源。
-
-> 因为图像资源一般都比较占空间，如果全部存在ESP32的Flash中的话存不了几张，因此我在框架中移植了LVGL的FAT文件系统支持，可以将图片资源存储在SD卡内进行读取。
->
-> 官方的图转换工具是在线的：[https://lvgl.io/tools/imageconverter](https://lvgl.io/tools/imageconverter) ，需要选择 `Indexed 4 colors` 格式。
->
-> **但是官方工具每次只能转换一张还要上传下载很麻烦**，因此我自己写了个脚本用于批量转换。
-
-HoloCubic用到的图片资源名为`xxx.bin`文件，大家用我提供的脚本转好后放入SD卡，然后可以像这样读取：
-
-```
-lv_obj_t* imgbtn = lv_imgbtn_create(lv_scr_act(), NULL);
-lv_imgbtn_set_src(imgbtn, LV_BTN_STATE_PRESSED, "S:/dir/icon_pressed.bin");
-lv_imgbtn_set_src(imgbtn, LV_BTN_STATE_RELEASED, "S:/dir/icon_released.bin");
+```sh
+python3 -m venv .venv
+. .venv/bin/activate
+python -m pip install platformio==6.1.18
+pio run -d 2.Firmware/HoloCubic-fw -e naive
 ```
 
-其中`S:`指代SD卡根目录（注意**S是大写的**），后面就是跟Linux中的路径完全表示一致了。
+使用 Python 3.11 或更新版本。Ironman 将最后的环境名替换为 `ironman`。本版不需要复制 `Libraries`，不需要修改 ESP32 SDK 或 TFT_eSPI；屏幕和 SD 引脚由项目配置。新固件使用 4MB Flash 上的 3MiB 应用分区，首次升级应使用完整 PlatformIO 烧录流程。
 
-> 该脚本参考了[W-Mai/lvgl_image_converter](https://github.com/W-Mai/lvgl_image_converter) 的实现。
+完整命令、WiFi 配置、依赖版本、迁移事项和验证范围见 [固件维护说明](2.Firmware/HoloCubic-fw/README.md)。默认显示内置 Logo，提供传感器输入、SD 图片与联网查询基础功能，原视频中的所有应用仍需单独实现或移植。
 
+## 3. 模拟器与图片转换
 
+原 `3.Software/LvglSimulator` 的 Visual Studio 工程和 `HoloTool.exe` 保留作历史参考，使用旧版 LVGL，与当前固件的图片和接口格式不同。维护版通过主机 GUI 回归测试检查 LVGL 9 渲染与输入行为。
 
-**另外由于转换脚本的使用需要再Python环境下，如果大家不想安装环境的话，也可以用我预编译好的exe文件来转，使用方法很简单，把`jpg/png/bmp`图片拖到`holo转换器.exe`的图标上就行了（可以同时拖动多个上去），会在当前目录生成对应的`.bin`文件。**
+新版图片转换器支持 Windows、macOS 和 Linux，要求 Python 3.11 或更新版本：
 
-> 转换器软件的下载地址：
->
-> 链接：https://pan.baidu.com/s/11cPOVYnKkxmd88o-Ouwb5g  提取码：xlju 
+```sh
+python -m pip install -r 3.Software/ImageToHolo/requirements.txt
+python 3.Software/ImageToHolo/get_holo.py picture.png
+```
+
+默认输出原图旁的 `picture.lv9.bin`，是 LVGL 9 RGB565 格式；复制到 SD 后用 `S:/picture.lv9.bin` 访问。原版图片需要从原图重新生成，供旧固件使用时可加 `--legacy-v7` 输出 `picture.lv7.bin`。更多选项见 `--help`。
 
 ## 4. 关于分光棱镜
 

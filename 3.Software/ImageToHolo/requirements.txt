@@ -1,0 +1,2 @@
+# Python >= 3.11. Pillow fixes are published on the current release line.
+Pillow==13.0.0

@@ -10,7 +10,9 @@ extern "C" {
 	typedef struct
 	{
 		lv_obj_t* home;
-		lv_obj_t* home_cpicker0;
+		lv_obj_t* home_hue;
+		lv_obj_t* home_preview;
+		lv_obj_t* home_label;
 		lv_obj_t* scenes;
 		lv_obj_t* scenes_canvas;
 	}lv_ui;

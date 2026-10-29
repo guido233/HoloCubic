@@ -1,0 +1,40 @@
+﻿MPN,Value,Quantity,Manufacturer,Board:Reference,Supply status,Acceptance notes,Source
+104031-0811,104031-0811,1,Molex,MainBoard:J1,Active（原厂）,RevB2焊盘；检测9/10均GND未用；需插卡及保卡实测,https://www.molex.com/en-us/products/part-detail/1040310811
+AL5802-7,AL5802,1,Diodes Incorporated,ExtendBoard:U1,未单独核验生命周期,SOT26恒流驱动；27ohm设约24mA典型值，须测实物背光电流,https://www.diodes.com/assets/Datasheets/AL5802.pdf
+AO3400A,AO3400A,1,Alpha & Omega Semiconductor,ExtendBoard:Q1,未单独核验生命周期,G1/S2/D3逻辑NMOS；不可用NPN替代，以免加载GPIO5启动strap,https://www.aosmd.com/sites/default/files/res/datasheets/AO3400A.pdf
+BH1750FVI-TR,BH1750FVI-TR,1,ROHM,MainBoard:U5,NRND（渠道，待原厂确认）,WSOF6I；向原厂/授权渠道确认供货与追溯，不以模块代替裸IC,https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/6165/bh1750fvi-e.pdf
+CA-C03,CA-C03,1,CrossAir / 广州寒武纪,MainBoard:A1,厂家资料已核,工程焊盘偏离厂家推荐尺寸；pin2固定端NC；需焊接、VNA及整壳RF验收,https://www.gzhwjdz.com/DownLoad/45858.html
+CP2102-GMR,CP2102,1,Silicon Labs,MainBoard:U1,预计完整生产至少至2029-03,经典CP2102 QFN28；核优选修订与可追溯批次，不以CP2102N替代,https://www.silabs.com/interface/usb-bridges/classic/device.cp2102
+ESP32-PICO-D4,ESP32_SIP,1,Espressif,MainBoard:U4,NRND（原厂）,PICO系列v1.5均NRND；保持D4，替代需重新设计；EP/paste/via按RevB受控封装,https://documentation.espressif.com/esp32-pico_series_datasheet_en.html
+FH12-8S-0.5SH(55),FH12-8S-0.5SH(55),2,Hirose,"MainBoard:CON1, ExtendBoard:CON1",厂家图纸已核,8P / 0.5mm / 0.3mm厚FFC，bottom contact；排线接触面及长度另行锁定,https://www.hirose.com/product/p/CL0586-0744-5-55
+GRM1555C1H101JA01D,100pF,1,Murata,MainBoard:C16,原理图已选完整MPN,100pF/50V/C0G±5%0402；TI Eq3估算约0.425ms@5V，非最大值保证；CP_VDD到2.7V≤1ms、热插拔与入口电流须实测,https://ds.murata.com/simserve/characteristics?ReqType=TechPDF&partnumber=GRM1555C1H101JA01&techpdfname=technical_pdf_Capacitor01&lang=en
+GRM1555C1H222JA01D,2.2nF,1,Murata,MainBoard:C9,原理图已选完整MPN,MLCC标称值不代表工作偏压下有效值,https://ds.murata.com/simserve/characteristics?ReqType=TechPDF&partnumber=GRM1555C1H222JA01&techpdfname=technical_pdf_Capacitor01&lang=en
+GRM155R61A475MEAAD,4.7uF,1,Murata,MainBoard:C20,原理图已选完整MPN,4.7uF/10V/X5R0402；5V典型约1.88uF、5.5V约1.7uF；非保证下限，量产须采样,https://ds.murata.com/simserve/characteristics?ReqType=TechPDF&partnumber=GRM155R61A475MEAA&techpdfname=technical_pdf_Capacitor01&lang=en
+GRM155R61C105KA12D,1uF,2,Murata,"MainBoard:C7, MainBoard:C15",原理图已选完整MPN,1uF/16V0402；3V3典型有效约0.55uF，EN实际复位时序须测; 入口1uF/16V0402；5V典型有效约0.35uF；热插拔时序须测,https://ds.murata.com/simserve/characteristics?ReqType=TechPDF&partnumber=GRM155R61C105KA12&techpdfname=technical_pdf_Capacitor01&lang=en
+GRM155R71C104KA88D,100nF / 0.1uF,12,Murata,"MainBoard:C1, MainBoard:C5, MainBoard:C8, MainBoard:C10, MainBoard:C11, MainBoard:C17, MainBoard:C18, MainBoard:C21, MainBoard:C22, MainBoard:C23, ExtendBoard:C1, ExtendBoard:C3",原理图已选完整MPN,MLCC标称值不代表工作偏压下有效值,https://ds.murata.com/simserve/characteristics?ReqType=TechPDF&partnumber=GRM155R71C104KA88&techpdfname=technical_pdf_Capacitor01&lang=en
+GRM155R71H103KA88D,10nF,1,Murata,MainBoard:C6,原理图已选完整MPN,MLCC标称值不代表工作偏压下有效值,https://ds.murata.com/simserve/characteristics?ReqType=TechPDF&partnumber=GRM155R71H103KA88&techpdfname=technical_pdf_Capacitor01&lang=en
+GRM188R61A475KE15D,4.7uF,1,Murata,ExtendBoard:C2,原理图已选完整MPN,MLCC标称值不代表工作偏压下有效值,https://ds.murata.com/simserve/characteristics?ReqType=TechPDF&partnumber=GRM188R61A475KE15&techpdfname=technical_pdf_Capacitor01&lang=en
+GRM188R71A105KA61D,1uF,1,Murata,ExtendBoard:C4,原理图已选完整MPN,MLCC标称值不代表工作偏压下有效值,https://ds.murata.com/simserve/characteristics?ReqType=TechPDF&partnumber=GRM188R71A105KA61&techpdfname=technical_pdf_Capacitor01&lang=en
+GRM188R71C105KA12D,1uF,1,Murata,MainBoard:C24,原理图已选完整MPN,MLCC标称值不代表工作偏压下有效值,https://ds.murata.com/simserve/characteristics?ReqType=TechPDF&partnumber=GRM188R71C105KA12&techpdfname=technical_pdf_Capacitor01&lang=en
+GRM21BR61E226ME44L,22uF,4,Murata,"MainBoard:C2, MainBoard:C3, MainBoard:C4, MainBoard:C13",原理图已选完整MPN,22uF/25V0805；3V3典型有效约13–15uF，非保证下限; 22uF/25V0805；5V典型有效约10–11uF，非保证下限,https://ds.murata.com/simserve/characteristics?ReqType=TechPDF&partnumber=GRM21BR61E226ME44&techpdfname=technical_pdf_Capacitor01&lang=en
+MMBT3904-7-F,MMBT3904-7-F,2,Diodes Incorporated,"MainBoard:VT1, MainBoard:VT2",厂家图纸已核,B1/E2/C3；按Diodes受控SOT23焊盘，不任意替换不同引脚8050,https://www.diodes.com/assets/Datasheets/MMBT3904.pdf
+MPU-6050,MPU6050,1,TDK InvenSense,MainBoard:U3,Obsolete（原厂）,仅可追溯旧库存复刻；需来料功能检验；非持续量产供货方案,https://product.tdk.com/en/search/sensor/mortion-inertial/imu/info?part_no=MPU-6050
+P133H002,P133H002,1,POLCD,ExtendBoard:LCD1,电气候选，机械待验收,裸屏12pin/0.7mm/ST7789V；尾排绕板、焊盘注册及整壳装配须样件确认,https://www.polcd-digital.com/products/1-3-inch-tft-lcd-display-240x240-pixels-p133h002
+RC0402FR-07100KL,100k,3,YAGEO,"MainBoard:R18, MainBoard:R19, ExtendBoard:R3",未单独核验生命周期,,https://www.yageogroup.com/component-documentation/download/specsheet/RC0402FR-07100KL
+RC0402FR-0710KL,10K / 10k,8,YAGEO,"MainBoard:R1, MainBoard:R6, MainBoard:R7, MainBoard:R8, MainBoard:R9, MainBoard:R10, MainBoard:R16, MainBoard:R17",未单独核验生命周期,,https://www.yageogroup.com/component-documentation/download/specsheet/RC0402FR-0710KL
+RC0402FR-0712KL,12K,2,YAGEO,"MainBoard:R4, MainBoard:R5",未单独核验生命周期,,https://www.yageogroup.com/component-documentation/download/specsheet/RC0402FR-0712KL
+RC0402FR-071KL,1k,2,YAGEO,"MainBoard:R11, ExtendBoard:R1",未单独核验生命周期,,https://www.yageogroup.com/component-documentation/download/specsheet/RC0402FR-071KL
+RC0402FR-07200RL,200R,1,YAGEO,MainBoard:R3,未单独核验生命周期,,https://www.yageogroup.com/component-documentation/download/specsheet/RC0402FR-07200RL
+RC0402FR-0733RL,33,1,YAGEO,MainBoard:R20,未单独核验生命周期,,https://www.yageogroup.com/component-documentation/download/specsheet/RC0402FR-0733RL
+RC0402FR-074K7L,4.7k,2,YAGEO,"MainBoard:R14, MainBoard:R15",未单独核验生命周期,,https://www.yageogroup.com/component-documentation/download/specsheet/RC0402FR-074K7L
+RC0402FR-075K1L,5.1k,2,YAGEO,"MainBoard:R12, MainBoard:R13",未单独核验生命周期,,https://www.yageogroup.com/component-documentation/download/specsheet/RC0402FR-075K1L
+RC0402JR-070RL,0,1,YAGEO,MainBoard:R2,未单独核验生命周期,0ohm0402，型号额定1A；3V3A支路按ESP≤500mA设计分配,https://www.yageogroup.com/component-documentation/download/specsheet/RC0402JR-070RL
+RC0603FR-0727RL,27,1,YAGEO,ExtendBoard:R2,未单独核验生命周期,,https://www.yageogroup.com/component-documentation/download/specsheet/RC0603FR-0727RL
+SN74AHCT1G125DCKR,SN74AHCT1G125DCKR,1,Texas Instruments,MainBoard:U8,Active（原厂）,保持完整封装后缀与引脚定义,https://www.ti.com/product/SN74AHCT1G125
+TPD1E10B06DPYR,TPD1E10B06DPYR,1,Texas Instruments,MainBoard:D2,Active（原厂）,保持完整封装后缀与引脚定义,https://www.ti.com/product/TPD1E10B06
+TPD4E05U06DQAR,TPD4E05U06DQAR,1,Texas Instruments,MainBoard:U7,Active（原厂）,保持完整封装后缀与引脚定义,https://www.ti.com/product/TPD4E05U06
+TPS22918DBVR,TPS22918DBVR,1,Texas Instruments,MainBoard:U6,Active（原厂）,保持完整封装后缀与引脚定义,https://www.ti.com/product/TPS22918
+TPS62162DSGR,TPS62162DSGR,1,Texas Instruments,MainBoard:U2,Active（原厂）,保持完整封装后缀与引脚定义,https://www.ti.com/product/TPS62162
+USB4105-GF-A,USB4105-GF-A,1,GCT,MainBoard:USB1,厂家图纸已核,按GF-A后缀和B4图采购；需USB数据、热插拔及壳口样件验收,https://gct.co/connector/usb4105
+VLS3012HBX-2R2M-N,2.2uH,1,TDK,MainBoard:L1,未单独核验生命周期,2.2uH；完整HBX/-N订货号，电感饱和及温升按供电实测验收,
+WS2812B-V5/W,WS2812B-V5/W,1,Worldsemi,MainBoard:D1,厂家资料已核,完整V5/W版本；1VDD/2DOUT/3GND/4DIN；5V供电及AHCT缓冲,https://datasheet.lcsc.com/lcsc/2206131216_Worldsemi-WS2812B-V5-W_C2874885.pdf

@@ -1,0 +1,56 @@
+{
+  "classification": "FinalC17F90pose check, nominalMainseat; not fullassembly approval.",
+  "source_pcb": "1.Hardware/RevB-KiCad/Naive/MainBoard/MainBoard.kicad_pcb",
+  "source_pcb_sha256": "9027e617313d7e87af202d14787fecd7b6d484bee7a0b72a699a266f329cab9c",
+  "pose_mm_deg": [
+    155.88,
+    111.02,
+    90
+  ],
+  "side": "F.Cu",
+  "package_max_mm": [
+    1.05,
+    0.55,
+    0.55
+  ],
+  "assumed_solder_standoff_mm": 0.08,
+  "global_max_envelope_mm": [
+    0.55,
+    1.05,
+    0.63
+  ],
+  "nominal_finished_thickness_mm": 1.0192,
+  "checks": {
+    "GCT_USB_nominal": {
+      "intersection_mm3": 0.0,
+      "minimum_distance_mm": 1.065357160251898
+    },
+    "Molex_B_side": {
+      "intersection_mm3": 0.0,
+      "minimum_distance_mm": 1.2048422420682303
+    },
+    "originalLower": {
+      "intersection_mm3": 0.0,
+      "minimum_distance_mm": 1.5164388548747263
+    },
+    "Upper": {
+      "intersection_mm3": 0.0,
+      "minimum_distance_mm": 3.2799589586671303
+    }
+  },
+  "limits": [
+    "Inputisfinalpromotednativeboard; mechanicalsamplevalidationisstillrequired.",
+    "C17isonF;nochange to22 Bcomponent/USBstakecasecutsisrequired.",
+    "0.08solderstand-off isanengineeringbudgetrequiringprocessconfirmation; USBmodelisnominalclosedSTEP.",
+    "InferrednominalMainseatstillrequiresphysicalvalidation."
+  ],
+  "reviewed_profile_constraint": {
+    "reference": "C17",
+    "at_mm": [
+      22.517300000000006,
+      -7.128100000000003
+    ],
+    "angle_deg": -90.0,
+    "side": "F.Cu"
+  }
+}

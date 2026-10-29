@@ -1,0 +1,99 @@
+{
+  "classification": "FinalR16 internalpose revision; nativeelectricalchecks separate. NominalMainBseat andmaxenvelopes, not physicalassembly/RF certification.",
+  "input_pcb": "1.Hardware/RevB-KiCad/Naive/MainBoard/MainBoard.kicad_pcb",
+  "input_pcb_sha256": "9027e617313d7e87af202d14787fecd7b6d484bee7a0b72a699a266f329cab9c",
+  "R16_pose": [
+    144.3,
+    112.4,
+    180,
+    "B.Cu"
+  ],
+  "same_MPN_and_nets": true,
+  "package_max_mm": [
+    1.05,
+    0.55,
+    0.4
+  ],
+  "assumed_solder_standoff_mm": 0.08,
+  "body_envelope_mm": [
+    1.05,
+    0.55,
+    0.48
+  ],
+  "case_checks": {
+    "Molex_closed": {
+      "intersection_mm3": 0.0,
+      "minimum_distance_mm": 0.8238000000000056
+    },
+    "card_inserted": {
+      "intersection_mm3": 0.0,
+      "minimum_distance_mm": 1.2188000000000017
+    },
+    "card_extraction_sweep": {
+      "intersection_mm3": 0.0,
+      "minimum_distance_mm": 1.2188000000000017
+    },
+    "USB_effective_board0.85_longstake": {
+      "intersection_mm3": 0.0,
+      "minimum_distance_mm": 11.768356090758806
+    },
+    "originalLower": {
+      "intersection_mm3": 0.003597756333698061,
+      "minimum_distance_mm": 0.0
+    },
+    "Upper": {
+      "intersection_mm3": 0.0,
+      "minimum_distance_mm": 4.92915895866713
+    },
+    "revisedLower": {
+      "intersection_mm3": 0.0,
+      "minimum_distance_mm": 0.14999999999987024
+    }
+  },
+  "RF_projection_checks": {
+    "R16_pads": {
+      "RF_projection_intersection_mm2": 0.0,
+      "RF_projection_distance_mm": 0.34810000000000235,
+      "antenna_max_body_projection_distance_mm": 1.5841000000000067,
+      "antenna_terminal_Cu_projection_distance_mm": 1.631250625217835,
+      "unchanged_RF7_Cu_projection_distance_mm": 2.724185433242454
+    },
+    "R16_max_body": {
+      "RF_projection_intersection_mm2": 0.0,
+      "RF_projection_distance_mm": 0.3930999999999898,
+      "antenna_max_body_projection_distance_mm": 1.6290999999999944,
+      "antenna_terminal_Cu_projection_distance_mm": 1.7263667339241529,
+      "unchanged_RF7_Cu_projection_distance_mm": 2.824182534762448
+    },
+    "new_SD_DAT1_Cu": {
+      "RF_projection_intersection_mm2": 0.0,
+      "RF_projection_distance_mm": 0.6160999999999889,
+      "antenna_max_body_projection_distance_mm": 1.8520999999999932,
+      "antenna_terminal_Cu_projection_distance_mm": 2.478889695473408,
+      "unchanged_RF7_Cu_projection_distance_mm": 3.5421007171956305
+    },
+    "new_3V3_Cu": {
+      "RF_projection_intersection_mm2": 0.0,
+      "RF_projection_distance_mm": 0.0910999999999973,
+      "antenna_max_body_projection_distance_mm": 1.3271000000000017,
+      "antenna_terminal_Cu_projection_distance_mm": 1.9114941099987932,
+      "unchanged_RF7_Cu_projection_distance_mm": 2.967539993280226
+    }
+  },
+  "RF_region_basis": "Union of originaltop/bottomantenna pourclearance projections plusoriginalRFfeedcorridor, made strictonallfourinnerlayers. TreatthisprojectionasforbiddenfornewR16Cu despiteouterpour-onlyrule.",
+  "RF7_count": 7,
+  "RF7_source_geometry_unchanged": true,
+  "cad_runtime": {
+    "package": "cadquery-ocp",
+    "version": "8.0.1.1.0"
+  },
+  "limits": [
+    "TheminimumsupplystubdistancetotheoriginalRFprojectionisreportedexplicitly; itisnotanRFgain/returnlosscriterion.",
+    "OnlynominalMolex/USBclosedmodelsandconservativemicroSDheightenvelopeswerechecked.",
+    "OriginalLowerseatisinferredfromasymmetricpocket; physicalseating/warp/retentionstillneedsamples.",
+    "Finalmatchedcase/VNAmustincludeactualantenna/components/metal/cable/display/case.",
+    "OldtopbankR16recessisremovedwhenrebuildingfromoriginalLower."
+  ],
+  "case_step_sha256": "2e4671494ad86096d7cf8cf2a0427132ff27e7977f10e508b7ac0c25015747ae",
+  "checked_STEP_geometry_DATA_sha256": "ee2f1c32482754adecb326bb9f0082b271810145b05fc2efcdafb46943f3aa04"
+}

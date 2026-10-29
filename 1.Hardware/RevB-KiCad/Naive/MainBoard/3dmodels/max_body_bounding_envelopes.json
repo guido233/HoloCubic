@@ -1,0 +1,208 @@
+{
+  "classification": "Maximum-package bounding envelopes; NOT exact manufacturer CAD",
+  "units": "millimetres",
+  "local_frame": "XY package centre at0,0; seating planeZ=0; Zpositive into package, maximum topheight as specified. Apply the existing KiCad footprint pose; do not double-apply its board rotation.",
+  "recommended_model_transform_in_this_project": {
+    "offset_mm": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "rotation_deg": [
+      0,
+      0,
+      0
+    ]
+  },
+  "symmetry": "All boxes are symmetric inX/Y; they do not identify pin1 or polarity. SOT23 long axis isX, matching this project's custom lands.",
+  "assembly_limit": "Dimensions exclude PCB solder stand-off, placement/process tolerances beyond the cited package limits, latch operation and mating/insertion clearances. These visual assets are not an assembly-fit or collision certificate.",
+  "omitted_details": [
+    "Pins, lead shapes and exposed-pad shape",
+    "Pin1 marks and text",
+    "Chamfers/rounding",
+    "Internal materials and electrical structure"
+  ],
+  "rebuild": "python -B generate_max_body_envelopes.py --output-dir OUTPUT [--evidence-dir PDF_SNAPSHOTS]. Requires OCP. STEP timestamp is fixed for same-version byte reproducibility.",
+  "generator_sha256": "f4338f4952de6e9bf231858fad5aaa927dae832c854253a97e2627954aa22ae3",
+  "OCP_version": "8.0.1.1",
+  "assets": [
+    {
+      "filename": "ESP32-PICO-D4_MaxBody_Bounding_Envelope.step",
+      "references": [
+        "U4"
+      ],
+      "manufacturer": "Espressif",
+      "part": "ESP32-PICO-D4",
+      "dimensions_mm": [
+        7.1,
+        7.1,
+        1.04
+      ],
+      "source_pdf": "esp32-pico-d4.pdf",
+      "source_url": "https://www.espressif.com/sites/default/files/documentation/esp32-pico_series_datasheet_en.pdf",
+      "drawing": "ESP32-PICO Series Datasheet v1.5, page55, Figure13",
+      "dimension_basis": "D/E maximum7.100mm; A maximum1.040mm. Nominal7.000x7.000x0.940mm.",
+      "axis_note": "Square package: X/Y exchange has no effect on this unmarked box. No pin1 mark or individual contacts are modelled.",
+      "sha256": "b4231eb5fd5ea37185c022eeda00eb80ac566891b78b30f220e4d1cf07e0392e",
+      "validation": {
+        "valid": true,
+        "solid_count": 1,
+        "readback_bbox_mm": [
+          -3.5500000999999997,
+          -3.5500000999999997,
+          -1e-07,
+          3.5500000999999997,
+          3.5500000999999997,
+          1.0400001
+        ],
+        "readback_volume_mm3": 52.4264,
+        "dimension_tolerance_mm": 2e-06
+      },
+      "source_pdf_sha256": "177eb1517274eea5056ce725951091ebe8e2bce1d8635f064081fdad1cec0918"
+    },
+    {
+      "filename": "TDK_VLS3012HBX_MaxBody_Bounding_Envelope.step",
+      "references": [
+        "L1"
+      ],
+      "manufacturer": "TDK",
+      "part": "VLS3012HBX-2R2M-N",
+      "dimensions_mm": [
+        3.1,
+        3.1,
+        1.2
+      ],
+      "source_pdf": "vls3012hbx-n.pdf",
+      "source_url": "https://product.tdk.com/system/files/dam/doc/product/inductor/inductor/smd/catalog/inductor_commercial_power_vls3012hbx-n_en.pdf",
+      "product_page": "https://product.tdk.com/en/search/inductor/inductor/smd/info?part_no=VLS3012HBX-2R2M-N",
+      "drawing": "VLS3012HBX-N type, Shape & Dimensions, page3 of4,20210921",
+      "dimension_basis": "L/W3.0+/-0.1mm; height1.2mm maximum. Tape cavity dimensions are not component dimensions.",
+      "axis_note": "Square package: X/Y exchange has no effect. Inductor is not polarised. This box does not reproduce the metal terminal shape.",
+      "sha256": "312f2e63ce08d6e764527128e04a8bec3e6abaf846627e07053956e74f43ca63",
+      "validation": {
+        "valid": true,
+        "solid_count": 1,
+        "readback_bbox_mm": [
+          -1.5500001,
+          -1.5500001,
+          -1e-07,
+          1.5500001,
+          1.5500001,
+          1.2000001
+        ],
+        "readback_volume_mm3": 11.532,
+        "dimension_tolerance_mm": 2e-06
+      },
+      "source_pdf_sha256": null,
+      "source_snapshot_status": "No local PDF snapshot supplied; source URL and dimension basis are recorded. A null hash is not evidence of a downloaded or verified local file."
+    },
+    {
+      "filename": "TI_DPY0002A_MaxBody_Bounding_Envelope.step",
+      "references": [
+        "D2"
+      ],
+      "manufacturer": "Texas Instruments",
+      "part": "TPD1E10B06DPYR / DPY0002A",
+      "dimensions_mm": [
+        1.1,
+        0.7,
+        0.45
+      ],
+      "source_pdf": "tpd1e10b06.pdf",
+      "source_url": "https://www.ti.com/lit/ds/symlink/tpd1e10b06.pdf",
+      "drawing": "DPY0002A X1SON2 outline, drawing4224561/C,07/2024",
+      "dimension_basis": "A maximum1.1mm; B maximum0.7mm; height0.45mm maximum.",
+      "axis_note": "Long axisX. In the custom footprint, contacts1/2 lie at localX=-/+0.35mm. No pin identity is encoded in this symmetric bounding box.",
+      "sha256": "4ebddc56da2722ec06260f8b8b5b73cbb4e71da6f5674fa25045f42d8eeaf47e",
+      "validation": {
+        "valid": true,
+        "solid_count": 1,
+        "readback_bbox_mm": [
+          -0.5500001,
+          -0.3500001,
+          -1e-07,
+          0.5500001,
+          0.3500001,
+          0.4500001
+        ],
+        "readback_volume_mm3": 0.34650000000000003,
+        "dimension_tolerance_mm": 2e-06
+      },
+      "source_pdf_sha256": "77fb9c454aee5b14a220d256b7ee9fa9751572840478f80437393aeed2582f8d"
+    },
+    {
+      "filename": "TI_DSG0008A_MaxBody_Bounding_Envelope.step",
+      "references": [
+        "U2"
+      ],
+      "manufacturer": "Texas Instruments",
+      "part": "TPS62162DSGR / DSG0008A",
+      "dimensions_mm": [
+        2.1,
+        2.1,
+        0.8
+      ],
+      "source_pdf": "tps62162.pdf",
+      "source_url": "https://www.ti.com/lit/ds/symlink/tps62160.pdf",
+      "drawing": "DSG0008A WSON8 outline, drawing4218900/E,08/2022",
+      "dimension_basis": "A/B maximum2.1mm; height0.8mm maximum. Includes package outline, not PCB lands.",
+      "axis_note": "Square package: X/Y exchange has no effect. No exposed-pad geometry, leads or pin1 mark are modelled.",
+      "sha256": "45ed7bdc0a22f68155436969a151da2e45df6a7b7839dbc27e3eba0b252a5cff",
+      "validation": {
+        "valid": true,
+        "solid_count": 1,
+        "readback_bbox_mm": [
+          -1.0500001,
+          -1.0500001,
+          -1e-07,
+          1.0500001,
+          1.0500001,
+          0.8000001
+        ],
+        "readback_volume_mm3": 3.5280000000000005,
+        "dimension_tolerance_mm": 2e-06
+      },
+      "source_pdf_sha256": "abc824ca04ee985ede3a513172ccdd2a42c8e1fdcfc3af5acdbe2c1af31aaa72"
+    },
+    {
+      "filename": "Diodes_SOT23_MaxBody_Bounding_Envelope.step",
+      "references": [
+        "VT1",
+        "VT2"
+      ],
+      "manufacturer": "Diodes Incorporated",
+      "part": "MMBT3904-7-F / SOT23",
+      "dimensions_mm": [
+        3.0,
+        2.5,
+        1.1
+      ],
+      "source_pdf": "mmbt3904.pdf",
+      "source_url": "https://www.diodes.com/assets/Datasheets/MMBT3904.pdf",
+      "drawing": "DS30036 Rev27-2,March2025,page6,Package Outline Dimensions",
+      "dimension_basis": "H maximum3.00mm; overall lead spanC maximum2.50mm; overall heightK1 maximum1.10mm. The plastic body widthB alone is1.40mm maximum.",
+      "axis_note": "Long package axisX; overall lead spanY. Matches custom footprint local contacts1(-0.95,+1),2(+0.95,+1),3(0,-1). The box is symmetric and has no pin1/2/3 marker. A pin-shaped generic SOT23 model would need a separate two-lead/one-lead side alignment check.",
+      "sha256": "733e612f64f4d6b43192259f5683390f845e0ce49a336c8797f4a449cce47319",
+      "validation": {
+        "valid": true,
+        "solid_count": 1,
+        "readback_bbox_mm": [
+          -1.5000001,
+          -1.2500001,
+          -1e-07,
+          1.5000001,
+          1.2500001,
+          1.1000001000000001
+        ],
+        "readback_volume_mm3": 8.25,
+        "dimension_tolerance_mm": 2e-06
+      },
+      "source_pdf_sha256": "483284b10e2a58c8ddafea3c1c3f77388edf9efd394ca30f9559e605f644f2dc"
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "units": "mm",
+  "frame": "KiCad footprint local XY before footprint rotation",
+  "part": "FH12-8S-0.5SH(55)",
+  "margin_mm": 0.25,
+  "polygon_local_xy_mm": [
+    [
+      -2.15,
+      -2.75
+    ],
+    [
+      2.15,
+      -2.75
+    ],
+    [
+      2.15,
+      -2.25
+    ],
+    [
+      4.3,
+      -2.25
+    ],
+    [
+      4.3,
+      0.05
+    ],
+    [
+      4.8,
+      0.05
+    ],
+    [
+      4.8,
+      2.75
+    ],
+    [
+      3.8,
+      2.75
+    ],
+    [
+      3.8,
+      3.65
+    ],
+    [
+      3.435,
+      3.65
+    ],
+    [
+      3.435,
+      4.65
+    ],
+    [
+      -3.435,
+      4.65
+    ],
+    [
+      -3.435,
+      3.65
+    ],
+    [
+      -3.8,
+      3.65
+    ],
+    [
+      -3.8,
+      2.75
+    ],
+    [
+      -4.8,
+      2.75
+    ],
+    [
+      -4.8,
+      0.05
+    ],
+    [
+      -4.3,
+      0.05
+    ],
+    [
+      -4.3,
+      -2.25
+    ],
+    [
+      -2.15,
+      -2.25
+    ]
+  ],
+  "method": "Union of individual closed STEP solid projected bounding rectangles and complete pad envelopes, each expanded 0.25 mm. Conservative local shape; no concave gap removes actual body or pad clearance.",
+  "step_solids_model_xyz_bbox_mm": [
+    [
+      -3.55,
+      -3.4,
+      0,
+      3.55,
+      1.2,
+      2
+    ],
+    [
+      -3.185,
+      -4.4,
+      0.15,
+      3.185,
+      -1.4,
+      2
+    ],
+    [
+      -4.05,
+      -2,
+      0,
+      4.05,
+      2,
+      1.8
+    ]
+  ],
+  "original_kicad_con1_pose": {
+    "at_mm": [
+      143.9545,
+      105.0163
+    ],
+    "angle_deg": 90
+  },
+  "recommended_pose_for_static_pad_body_clearance": {
+    "at_mm": [
+      143.9545,
+      104.7163
+    ],
+    "angle_deg": 90
+  },
+  "limitations": [
+    "Closed connector only; no open actuator sweep or finger/tool access certification.",
+    "0.25 mm margin is an explicit dense assembly design choice, not an official Hirose courtyard recommendation.",
+    "U4 uses source pads and provisional 7.1 mm body; remaining parts and PCB edge must be rerun through DRC."
+  ],
+  "minimum_courtyard_gap_to_original_U4_mm": 0.1032
+}

@@ -1,0 +1,540 @@
+{
+  "classification": "24 USB parameter scenarios, transferred from earlier direct CAD calculation by disjoint changed-material proof; three direct finalSTEP checks. Not a full GD&T or physical fit certification.",
+  "input_pcb": "1.Hardware/RevB-KiCad/Naive/MainBoard/MainBoard.kicad_pcb",
+  "input_pcb_sha256": "9027e617313d7e87af202d14787fecd7b6d484bee7a0b72a699a266f329cab9c",
+  "target_step_sha256": "2e4671494ad86096d7cf8cf2a0427132ff27e7977f10e508b7ac0c25015747ae",
+  "scenario_count": 24,
+  "shell_comparison_count": 48,
+  "molex_comparison_count": 24,
+  "source_models": {
+    "revised_lower": {
+      "path": "1.Hardware/RevB-KiCad/Naive/Mechanical/Lower-RevB.step",
+      "sha256": "2e4671494ad86096d7cf8cf2a0427132ff27e7977f10e508b7ac0c25015747ae"
+    },
+    "original_upper": {
+      "path": "4.3D Model/Naive Version/Upper.step",
+      "sha256": "0683b6ae669f78372b4ce7b52fc40f5f5f5db6c11480c1f19d6fef2889e2ee16"
+    },
+    "GCT_USB_KiCad_model": {
+      "path": "Connector_USB.3dshapes/USB_C_Receptacle_GCT_USB4105-xx-A_16P_TopMnt_Horizontal.step",
+      "sha256": "6338ce740fa231c2d3dcc6384e0576994a47240a312a21413cb85d76990a69a0",
+      "source_kind": "KiCad 10.0.7 standard 3D model library"
+    },
+    "Molex_original_frame_model": {
+      "path": "1.Hardware/RevB-KiCad/Naive/MainBoard/3dmodels/Molex_1040310811_KiCad_F_frame.step",
+      "sha256": "50769fb2d084b59b5dd7af5495cff69053cad609b9b8b7cadef340974a339c13"
+    }
+  },
+  "cad_runtime": {
+    "package": "cadquery-ocp",
+    "version": "8.0.1.1.0"
+  },
+  "earlier_direct_screening_step_sha256": "030a97e674c81bacbb27d7c6d3b91337c46749d7bf627494d3fbf56a6c89d55f",
+  "scenarios": [
+    {
+      "finished_board_mm": 0.9,
+      "solder_standoff_budget_mm": 0,
+      "whole_model_z_shift_mm": -0.15,
+      "checks": {
+        "lower": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 0.20856726051385177
+        },
+        "upper": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 0.8691589586671293
+        },
+        "molex": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 1.1050403462344789
+        }
+      }
+    },
+    {
+      "finished_board_mm": 0.9,
+      "solder_standoff_budget_mm": 0,
+      "whole_model_z_shift_mm": 0,
+      "checks": {
+        "lower": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 0.3585672605138517
+        },
+        "upper": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 0.7191589586671299
+        },
+        "molex": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 1.2217258967567222
+        }
+      }
+    },
+    {
+      "finished_board_mm": 0.9,
+      "solder_standoff_budget_mm": 0,
+      "whole_model_z_shift_mm": 0.15,
+      "checks": {
+        "lower": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 0.5049018513766548
+        },
+        "upper": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 0.5691589586671295
+        },
+        "molex": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 1.3450331471030805
+        }
+      }
+    },
+    {
+      "finished_board_mm": 0.9,
+      "solder_standoff_budget_mm": 0.08,
+      "whole_model_z_shift_mm": -0.15,
+      "checks": {
+        "lower": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 0.2885672605138514
+        },
+        "upper": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 0.7891589586671302
+        },
+        "molex": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 1.1663250690978124
+        }
+      }
+    },
+    {
+      "finished_board_mm": 0.9,
+      "solder_standoff_budget_mm": 0.08,
+      "whole_model_z_shift_mm": 0,
+      "checks": {
+        "lower": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 0.43856726051385175
+        },
+        "upper": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 0.6391589586671298
+        },
+        "molex": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 1.2867844290346448
+        }
+      }
+    },
+    {
+      "finished_board_mm": 0.9,
+      "solder_standoff_budget_mm": 0.08,
+      "whole_model_z_shift_mm": 0.15,
+      "checks": {
+        "lower": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 0.5049018513766548
+        },
+        "upper": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 0.48915895866713033
+        },
+        "molex": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 1.4129098226022838
+        }
+      }
+    },
+    {
+      "finished_board_mm": 1.0,
+      "solder_standoff_budget_mm": 0,
+      "whole_model_z_shift_mm": -0.15,
+      "checks": {
+        "lower": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 0.30856726051385186
+        },
+        "upper": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 0.7691589586671297
+        },
+        "molex": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 1.1819958404351587
+        }
+      }
+    },
+    {
+      "finished_board_mm": 1.0,
+      "solder_standoff_budget_mm": 0,
+      "whole_model_z_shift_mm": 0,
+      "checks": {
+        "lower": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 0.4585672605138513
+        },
+        "upper": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 0.6191589586671293
+        },
+        "molex": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 1.303308929918773
+        }
+      }
+    },
+    {
+      "finished_board_mm": 1.0,
+      "solder_standoff_budget_mm": 0,
+      "whole_model_z_shift_mm": 0.15,
+      "checks": {
+        "lower": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 0.5049018513766548
+        },
+        "upper": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 0.46915895866712987
+        },
+        "molex": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 1.4300748815380322
+        }
+      }
+    },
+    {
+      "finished_board_mm": 1.0,
+      "solder_standoff_budget_mm": 0.08,
+      "whole_model_z_shift_mm": -0.15,
+      "checks": {
+        "lower": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 0.38856726051385193
+        },
+        "upper": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 0.6891589586671296
+        },
+        "molex": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 1.2459190049140503
+        }
+      }
+    },
+    {
+      "finished_board_mm": 1.0,
+      "solder_standoff_budget_mm": 0.08,
+      "whole_model_z_shift_mm": 0,
+      "checks": {
+        "lower": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 0.5049018513766548
+        },
+        "upper": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 0.5391589586671293
+        },
+        "molex": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 1.3703335969047892
+        }
+      }
+    },
+    {
+      "finished_board_mm": 1.0,
+      "solder_standoff_budget_mm": 0.08,
+      "whole_model_z_shift_mm": 0.15,
+      "checks": {
+        "lower": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 0.5049018513766548
+        },
+        "upper": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 0.3891589586671298
+        },
+        "molex": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 1.4939630415524698
+        }
+      }
+    },
+    {
+      "finished_board_mm": 1.09112,
+      "solder_standoff_budget_mm": 0,
+      "whole_model_z_shift_mm": -0.15,
+      "checks": {
+        "lower": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 0.39968726051385195
+        },
+        "upper": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 0.6780389586671296
+        },
+        "molex": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 1.2549502863484343
+        }
+      }
+    },
+    {
+      "finished_board_mm": 1.09112,
+      "solder_standoff_budget_mm": 0,
+      "whole_model_z_shift_mm": 0,
+      "checks": {
+        "lower": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 0.5049018513766548
+        },
+        "upper": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 0.5280389586671292
+        },
+        "molex": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 1.3797594794767736
+        }
+      }
+    },
+    {
+      "finished_board_mm": 1.09112,
+      "solder_standoff_budget_mm": 0,
+      "whole_model_z_shift_mm": 0.15,
+      "checks": {
+        "lower": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 0.5049018513766548
+        },
+        "upper": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 0.3780389586671298
+        },
+        "molex": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 1.4993694042319103
+        }
+      }
+    },
+    {
+      "finished_board_mm": 1.09112,
+      "solder_standoff_budget_mm": 0.08,
+      "whole_model_z_shift_mm": -0.15,
+      "checks": {
+        "lower": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 0.479687260513852
+        },
+        "upper": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 0.5980389586671295
+        },
+        "molex": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 1.3208631349258022
+        }
+      }
+    },
+    {
+      "finished_board_mm": 1.09112,
+      "solder_standoff_budget_mm": 0.08,
+      "whole_model_z_shift_mm": 0,
+      "checks": {
+        "lower": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 0.5049018513766548
+        },
+        "upper": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 0.4480389586671292
+        },
+        "molex": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 1.4482801597778028
+        }
+      }
+    },
+    {
+      "finished_board_mm": 1.09112,
+      "solder_standoff_budget_mm": 0.08,
+      "whole_model_z_shift_mm": 0.15,
+      "checks": {
+        "lower": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 0.5049018513766548
+        },
+        "upper": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 0.2980389586671297
+        },
+        "molex": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 1.5382640997675137
+        }
+      }
+    },
+    {
+      "finished_board_mm": 1.1,
+      "solder_standoff_budget_mm": 0,
+      "whole_model_z_shift_mm": -0.15,
+      "checks": {
+        "lower": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 0.4085672605138524
+        },
+        "upper": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 0.66915895866713
+        },
+        "molex": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 1.2621862647034379
+        }
+      }
+    },
+    {
+      "finished_board_mm": 1.1,
+      "solder_standoff_budget_mm": 0,
+      "whole_model_z_shift_mm": 0,
+      "checks": {
+        "lower": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 0.5049018513766548
+        },
+        "upper": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 0.5191589586671297
+        },
+        "molex": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 1.3873046409516612
+        }
+      }
+    },
+    {
+      "finished_board_mm": 1.1,
+      "solder_standoff_budget_mm": 0,
+      "whole_model_z_shift_mm": 0.15,
+      "checks": {
+        "lower": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 0.5049018513766548
+        },
+        "upper": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 0.36915895866712933
+        },
+        "molex": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 1.5036867154363658
+        }
+      }
+    },
+    {
+      "finished_board_mm": 1.1,
+      "solder_standoff_budget_mm": 0.08,
+      "whole_model_z_shift_mm": -0.15,
+      "checks": {
+        "lower": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 0.48856726051385246
+        },
+        "upper": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 0.58915895866713
+        },
+        "molex": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 1.3282748837518603
+        }
+      }
+    },
+    {
+      "finished_board_mm": 1.1,
+      "solder_standoff_budget_mm": 0.08,
+      "whole_model_z_shift_mm": 0,
+      "checks": {
+        "lower": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 0.5049018513766548
+        },
+        "upper": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 0.4391589586671296
+        },
+        "molex": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 1.455958161076759
+        }
+      }
+    },
+    {
+      "finished_board_mm": 1.1,
+      "solder_standoff_budget_mm": 0.08,
+      "whole_model_z_shift_mm": 0.15,
+      "checks": {
+        "lower": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 0.5049018513766548
+        },
+        "upper": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 0.28915895866712926
+        },
+        "molex": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 1.5425814109719531
+        }
+      }
+    }
+  ],
+  "minimum_distances_mm": {
+    "lower": 0.20856726051385177,
+    "upper": 0.28915895866712926,
+    "molex": 1.1050403462344789
+  },
+  "transfer_proof": {
+    "common_originalLower_SHA": "23b730990a614816d785743643510fa44fa6864c99214521034c588333707fc2",
+    "all_21_nonR16_cut_boxes_equal": true,
+    "only_changed_cut": "R16",
+    "oldR16_cut_global_Y_max_mm": 97.77000000000001,
+    "USB_global_XY_bbox_mm": [
+      155.96116999999998,
+      100.5208998995145,
+      163.7411701,
+      109.46090010048549
+    ],
+    "minimum_XY_separation_from_material_restored_in_old_slot_mm": 2.7508998995144935,
+    "minimum_XY_separation_from_material_removed_in_new_slot_mm": 10.631169999999969,
+    "basis": "NewLower minus OldLower is a subset of the oldR16 cut box; OldLower minus NewLower is a subset of the newR16 cut box. The first is disjoint from every vertically shifted USB model by Y, the second by X. All other cuts and originalLower are identical. Both distances exceed every earlier closestLower distance, so collision and minimumdistance results transfer unchanged. Upper/Molex and their rigidposes are unchanged.",
+    "all_vertical_parameter_scenarios_have_identical_USB_XY_projection": true
+  },
+  "final_STEP_direct_checks": [
+    {
+      "finished_board_mm": 0.9,
+      "solder_standoff_budget_mm": 0,
+      "whole_model_z_shift_mm": -0.15,
+      "final_Lower_intersection_mm3": 0.0,
+      "final_Lower_minimum_distance_mm": 0.20856726051385177
+    },
+    {
+      "finished_board_mm": 1.0192,
+      "solder_standoff_budget_mm": 0,
+      "whole_model_z_shift_mm": 0,
+      "final_Lower_intersection_mm3": 0.0,
+      "final_Lower_minimum_distance_mm": 0.4777672605138519
+    },
+    {
+      "finished_board_mm": 1.1,
+      "solder_standoff_budget_mm": 0.08,
+      "whole_model_z_shift_mm": 0.15,
+      "final_Lower_intersection_mm3": 0.0,
+      "final_Lower_minimum_distance_mm": 0.5049018513766548
+    }
+  ],
+  "limits": [
+    "WholemodelZshift is conservative screening, not independent manufacturer tolerances.",
+    "Solderstandoff0.08mm andsolderfillet extension0.15mm are assemblybudgets requiringconfirmation.",
+    "Mainnominalseat, finalactualfinishedthickness, warp/printshrinkage andUSBplugovermould require samples."
+  ]
+}

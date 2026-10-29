@@ -41,6 +41,8 @@ pio device monitor --port /dev/cu.SLAB_USBtoUART --baud 115200
 
 屏幕配置在 `include/tft_setup.h`，LVGL 配置在 `include/lv_conf.h`。LVGL 使用 32KiB 内存池、RGB565 局部刷新缓冲，索引图片按行解码，以适配无外部 PSRAM 的原板。
 
+Naive 与 Ironman 共用的 ST7789 **写时钟为 10MHz**。Naive RevB 候选 P133H002 指定 ST7789V；现有 [Sitronix v1.3 数据手册](https://newhavendisplay.com/content/datasheets/ST7789V.pdf) 第 44 页 Table 6 给出写时钟周期至少 66ns、高低脉宽各至少 15ns。先前 40MHz 的周期为 25ns，不能由这份时序表保证。10MHz 将纯数据带宽降为先前的四分之一，240×240 RGB565 全帧传输理论上约 92ms，尚未计命令及绘图开销；局部刷新按实际区域传输。调高时钟前须取得实际屏幕 / 控制器修订的有效时序依据，在最终 PCB、FFC 与外壳中测接收端的时钟、数据建立保持时间及振铃，并通过温度、电源和并发读卡压力验证。旧版归档固件未修改。
+
 ## SD 卡与联网
 
 SD 使用显式 SPI 引脚：SCK 14、MISO 26、MOSI 13、CS 15。缺少 SD 或 IMU 时可继续显示内置 Logo；IMU 缺失时手势输入不可用。

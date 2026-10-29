@@ -1,0 +1,10 @@
+(sym_lib_table
+	(version 7)
+	(lib
+		(name "HoloCubicRevB")
+		(type "KiCad")
+		(uri "${KIPRJMOD}/HoloCubicRevB.kicad_sym")
+		(options "")
+		(descr "Local self-contained HoloCubic Naive RevB symbols")
+	)
+)

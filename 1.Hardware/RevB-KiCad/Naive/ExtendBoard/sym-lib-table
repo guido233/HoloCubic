@@ -1,0 +1,10 @@
+(sym_lib_table
+	(version 7)
+	(lib
+		(name "HoloCubicExt")
+		(type "KiCad")
+		(uri "${KIPRJMOD}/HoloCubicExt.kicad_sym")
+		(options "")
+		(descr "Local RevB display-board symbols")
+	)
+)

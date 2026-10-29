@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "description": "Replace the redundant Bottom3V3 U-loop with a short600um Bottom bridge to the outer In2plane, leaving SCL/RF region free. Must recheck after every subsequent signal merge.",
+  "source_sha256": "fd2c60baab5d23ca620c0337942c7af7c92e629c93be639b4896593d55565096",
+  "target_reference_sha256": "22fc8d1d86ceee55281e57317fb19dba517cceb5350af9cdec7bc257ff753ec3",
+  "source_id": "Power6 frozenfd2c",
+  "target_id": "Reviewed temporary Bbar replacement",
+  "validation": {
+    "native_geometry_errors": 0,
+    "native_schematic_parity": 0,
+    "power_unconnected": 0,
+    "remaining_signal_airwires": 51,
+    "via_paste_intersections": 0,
+    "known_source_warning": "Obsolete USB_CC1 via dangling; removed by USB delta",
+    "plane_geometry_screening": {
+      "method": "Shortest centerline in actual refilled plane eroded by200um; portions outside300um erosion identify where this selected400um-wide corridor has less than600um local width.20um raster quantization; excludes via/pad transition within300um. This is geometric screening, not thermal validation.",
+      "path_length_mm": 13.91,
+      "corridor400_to600mm_portions": [
+        {
+          "length_mm": 0.237,
+          "start": [
+            148.74,
+            108.96
+          ],
+          "end": [
+            148.96,
+            109.0
+          ],
+          "bbox": [
+            148.74,
+            108.96,
+            148.96,
+            109.0
+          ]
+        },
+        {
+          "length_mm": 0.7,
+          "start": [
+            152.7,
+            109.0
+          ],
+          "end": [
+            153.4,
+            109.0
+          ],
+          "bbox": [
+            152.7,
+            109.0,
+            153.4,
+            109.0
+          ]
+        },
+        {
+          "length_mm": 1.604,
+          "start": [
+            153.46,
+            109.0
+          ],
+          "end": [
+            154.36,
+            109.88
+          ],
+          "bbox": [
+            153.46,
+            109.0,
+            154.36,
+            109.88
+          ]
+        },
+        {
+          "length_mm": 1.137,
+          "start": [
+            156.0,
+            112.1
+          ],
+          "end": [
+            156.38,
+            113.08
+          ],
+          "bbox": [
+            156.0,
+            112.1,
+            156.38,
+            113.08
+          ]
+        }
+      ]
+    },
+    "plane_IR_estimate": "Treating the entire13.91mm corridor as400um wide,15.2um copper, rho0.0172ohm*mm2/m gives about39mOhm,500mA drop20mV and10mW. Excludes via/local pad transitions and is not a temperature qualification."
+  },
+  "changes": [
+    {
+      "uuid": "16aa4f2b-a418-493b-9664-3172eb8363c0",
+      "before": "(segment\n\t(start 155 114.9)\n\t(end 155.6 115.5)\n\t(width 0.6)\n\t(locked yes)\n\t(layer \"B.Cu\")\n\t(net \"3V3\")\n\t(uuid \"16aa4f2b-a418-493b-9664-3172eb8363c0\")\n)",
+      "after": null
+    },
+    {
+      "uuid": "24c057a4-9403-4ec1-a060-aef3619f2f46",
+      "before": "(segment\n\t(start 148 99.8)\n\t(end 148 114.9)\n\t(width 0.6)\n\t(locked yes)\n\t(layer \"B.Cu\")\n\t(net \"3V3\")\n\t(uuid \"24c057a4-9403-4ec1-a060-aef3619f2f46\")\n)",
+      "after": "(segment\n\t(start 148 99.8)\n\t(end 148 105.5062)\n\t(width 0.6)\n\t(locked yes)\n\t(layer \"B.Cu\")\n\t(net \"3V3\")\n\t(uuid \"24c057a4-9403-4ec1-a060-aef3619f2f46\")\n)"
+    },
+    {
+      "uuid": "cb8393d6-11e2-4221-ad16-011c794d9f2c",
+      "before": "(segment\n\t(start 148 114.9)\n\t(end 155 114.9)\n\t(width 0.6)\n\t(locked yes)\n\t(layer \"B.Cu\")\n\t(net \"3V3\")\n\t(uuid \"cb8393d6-11e2-4221-ad16-011c794d9f2c\")\n)",
+      "after": null
+    }
+  ],
+  "add": [
+    "(segment\n\t(start 148 105.5062)\n\t(end 148 108.85)\n\t(width 0.6)\n\t(locked yes)\n\t(layer \"B.Cu\")\n\t(net \"3V3\")\n\t(uuid \"1cadf15f-7aa0-46b2-aedf-e4b67975eb19\")\n)",
+    "(via\n\t(at 148 108.85)\n\t(size 0.6)\n\t(drill 0.3)\n\t(layers \"F.Cu\" \"B.Cu\")\n\t(locked yes)\n\t(tenting\n\t\t(front yes)\n\t\t(back yes)\n\t)\n\t(net \"3V3\")\n\t(uuid \"993788b6-6678-4918-85ec-9feb6a452297\")\n)"
+  ]
+}

@@ -18,7 +18,7 @@ python3 tools/hardware/export_probe_map.py --output /tmp/probe-map
 
 可选的 `build_bom_workbook.mjs` 把该 JSON 排成 Excel，使用 Codex 随附的 Node 和 `@oai/artifact-tool`；由 `ARTIFACT_NODE_MODULES` 指定包目录，三个位置参数依次为输入 JSON、输出目录、预览目录。CSV/JSON 和电气检查不依赖这个运行时。
 
-`display_interface_allowance.py` 核对当前 12 个长焊盘、无锡膏开口、引脚/间距及 144 个纵向搭接情景，写新目录的 JSON 和 1:1 SVG；它不验证未知折弯路径或横向注册。`export_probe_map.py` 从当前两板提取 13 个现有元件测量端子、源 SHA、CSV 和正反面示意；没有在板上新增测试点，也不测量电压。两者的确定性结果由 CI 与仓库记录比较，防止工程变更后继续引用旧源证据。
+`display_interface_allowance.py` 核对当前 12 个长焊盘、无锡膏开口、引脚/间距及 144 个纵向搭接情景，写新目录的 JSON 和 1:1 SVG；它不验证未知折弯路径或横向注册。`export_probe_map.py` 从当前两板提取 15 个现有元件测量端子、源 SHA、CSV 和正反面示意，其中 M10/M11 用于 BH1750 VCC/DVI 复位波形；没有在板上新增测试点，也不测量电压。两者的确定性结果由 CI 与仓库记录比较，防止工程变更后继续引用旧源证据。
 
 ## 下壳复现
 

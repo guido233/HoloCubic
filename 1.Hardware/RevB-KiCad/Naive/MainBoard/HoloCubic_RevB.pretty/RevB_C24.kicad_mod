@@ -28,7 +28,7 @@
 			)
 		)
 	)
-	(property "Datasheet" ""
+	(property "Datasheet" "https://ds.murata.com/simserve/characteristics?ReqType=TechPDF&partnumber=GRM188R71E105KA12&techpdfname=technical_pdf_Capacitor01&lang=en"
 		(at 0 0 0)
 		(layer "F.Fab")
 		(hide yes)
@@ -62,7 +62,7 @@
 			)
 		)
 	)
-	(property "MPN" "GRM188R71C105KA12D"
+	(property "MPN" "GRM188R71E105KA12D"
 		(at 0 0 0)
 		(layer "F.Fab")
 		(hide yes)
@@ -74,7 +74,7 @@
 			)
 		)
 	)
-	(property "DesignNote" "BH1750 DVI RC sequencing."
+	(property "DesignNote" "BH1750 DVI RC sequencing; 1uF +/-10%, 25V X7R, 0603. Shared MPN with ExtendBoard C4; manufacturer EC curves are typical."
 		(at 0 0 0)
 		(layer "F.SilkS")
 		(hide yes)

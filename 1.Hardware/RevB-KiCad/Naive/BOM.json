@@ -1,9 +1,9 @@
 {
   "revision": "Naive RevB",
-  "date": "2026-10-29",
+  "date": "2026-10-30",
   "unit_quantity": 1,
   "total_instances": 69,
-  "unique_mpn_count": 39,
+  "unique_mpn_count": 38,
   "board_counts": {
     "MainBoard": 58,
     "ExtendBoard": 11
@@ -13,21 +13,21 @@
   "source_schematics": [
     {
       "schematic": "1.Hardware/RevB-KiCad/Naive/MainBoard/MainBoard.kicad_sch",
-      "sha256": "ba9721f91173625fbde87724af5227dc38321b393ed119dc0b00860e52d91eca"
+      "sha256": "07fcad3e59d81c5683dbd6467261d4922e33b47e4417812c85a7bde86fed7cd7"
     },
     {
       "schematic": "1.Hardware/RevB-KiCad/Naive/ExtendBoard/ExtendBoard.kicad_sch",
-      "sha256": "d08f31f0f42eeb8d321cbc402209157a587137dce6c674d76f533ed3b4f189f7"
+      "sha256": "46c006975feda9a5cf08b7bd5408a0e6c8a48d2d0f90f37210f2771b28a2aab6"
     }
   ],
   "source_pcbs": [
     {
       "pcb": "1.Hardware/RevB-KiCad/Naive/MainBoard/MainBoard.kicad_pcb",
-      "sha256": "a05fb4db8785f69a0e96533620440d110ff2dc13d2e4b28887b48de03e031c39"
+      "sha256": "a8bbae787964286f9783e2d74fa752ae82efbc7d5350371debf734503f4a98a8"
     },
     {
       "pcb": "1.Hardware/RevB-KiCad/Naive/ExtendBoard/ExtendBoard.kicad_pcb",
-      "sha256": "7ba3a6e58040c57fe67f55df174be974967f560e97ab8b37d000d93db8e1c112"
+      "sha256": "d05a3b40bbc770fbf0523e38680e2212bac2e3d39f5fec9066f50eba5e90c40c"
     }
   ],
   "parts": [
@@ -372,7 +372,7 @@
       "reference": "C24",
       "quantity": 1,
       "value": "1uF",
-      "mpn": "GRM188R71C105KA12D",
+      "mpn": "GRM188R71E105KA12D",
       "manufacturer": "Murata",
       "footprint": "HoloCubic_RevB:RevB_C24",
       "side": "F.Cu",
@@ -380,8 +380,8 @@
       "y_mm": 99.18,
       "rotation_deg": 0,
       "supply_status": "原理图已选完整MPN",
-      "acceptance_note": "MLCC标称值不代表工作偏压下有效值",
-      "source_url": "https://ds.murata.com/simserve/characteristics?ReqType=TechPDF&partnumber=GRM188R71C105KA12&techpdfname=technical_pdf_Capacitor01&lang=en"
+      "acceptance_note": "25V/1uF/X7R±10%/0603；与ExtendBoard:C4同料C86020，各焊1颗；BH1750 DVI保留R11=1k，冷启动/快速重启时序须实测",
+      "source_url": "https://ds.murata.com/simserve/characteristics?ReqType=TechPDF&partnumber=GRM188R71E105KA12&techpdfname=technical_pdf_Capacitor01&lang=en"
     },
     {
       "board": "MainBoard",
@@ -500,16 +500,16 @@
       "reference": "R3",
       "quantity": 1,
       "value": "200R",
-      "mpn": "RC0402FR-07200RL",
-      "manufacturer": "YAGEO",
+      "mpn": "RTT022000FTH",
+      "manufacturer": "RALEC",
       "footprint": "HoloCubic_RevB:Original_R3",
       "side": "F.Cu",
       "x_mm": 148.9,
       "y_mm": 100.2,
       "rotation_deg": 90.0,
-      "supply_status": "未单独核验生命周期",
-      "acceptance_note": "",
-      "source_url": "https://www.yageogroup.com/component-documentation/download/specsheet/RC0402FR-07200RL"
+      "supply_status": "原厂规格已核",
+      "acceptance_note": "UART串联200ohm±1%/0402；原位兼容；现有密集land与原厂推荐图有差异，落锡/贴装工艺须验收",
+      "source_url": "https://www.ralec.com/upload/media/product/file/IE-SP-010%20.pdf"
     },
     {
       "board": "MainBoard",
@@ -867,8 +867,8 @@
       "board": "MainBoard",
       "reference": "U6",
       "quantity": 1,
-      "value": "TPS22918DBVR",
-      "mpn": "TPS22918DBVR",
+      "value": "TPS22918DBVT",
+      "mpn": "TPS22918DBVT",
       "manufacturer": "Texas Instruments",
       "footprint": "HoloCubic_RevB:RevB_U6",
       "side": "F.Cu",
@@ -876,7 +876,7 @@
       "y_mm": 112.9,
       "rotation_deg": 0,
       "supply_status": "Active（原厂）",
-      "acceptance_note": "保持完整封装后缀与引脚定义",
+      "acceptance_note": "同TPS22918芯片及DBV6脚；T为250pcs小盘，ON/CT网络不变；2026-10-30嘉立创需订货（渠道快照，库存/交期下单复核）",
       "source_url": "https://www.ti.com/product/TPS22918"
     },
     {
@@ -1012,7 +1012,7 @@
       "reference": "C4",
       "quantity": 1,
       "value": "1uF",
-      "mpn": "GRM188R71A105KA61D",
+      "mpn": "GRM188R71E105KA12D",
       "manufacturer": "Murata",
       "footprint": "HoloCubic_Ext:C_0603",
       "side": "F.Cu",
@@ -1020,8 +1020,8 @@
       "y_mm": 106.5,
       "rotation_deg": 0,
       "supply_status": "原理图已选完整MPN",
-      "acceptance_note": "MLCC标称值不代表工作偏压下有效值",
-      "source_url": "https://ds.murata.com/simserve/characteristics?ReqType=TechPDF&partnumber=GRM188R71A105KA61&techpdfname=technical_pdf_Capacitor01&lang=en"
+      "acceptance_note": "25V/1uF/X7R±10%/0603；5V本地旁路，与MainBoard:C24同料C86020，各焊1颗；供电与热插拔须实测",
+      "source_url": "https://ds.murata.com/simserve/characteristics?ReqType=TechPDF&partnumber=GRM188R71E105KA12&techpdfname=technical_pdf_Capacitor01&lang=en"
     },
     {
       "board": "ExtendBoard",

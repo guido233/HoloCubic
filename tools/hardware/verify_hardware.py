@@ -143,6 +143,7 @@ def main_electrical(c,d):
     c.same(d,'Load switch ON delay',N('U6',3),N('R18',2),N('C17',1));c.same(d,'Load switch timing capacitor',N('U6',4),N('C16',1))
     c.value(d,'R18','100k');c.value(d,'C17','100nF');c.value(d,'C16','100pF')
     c.add('Load switch CT exact C0G MPN',d.mpns.get('C16')=='GRM1555C1H101JA01D',d.mpns.get('C16'))
+    c.add('Load switch selected DBVT MPN',d.mpns.get('U6')=='TPS22918DBVT',d.mpns.get('U6'))
     for ref,pin,rail in [('C3',2,N('U6',6)),('C2',2,N('U2',6)),('C13',1,N('U2',6)),('C4',2,N('U4',1))]:
         c.same(d,ref+' bulk capacitor rail',N(ref,pin),rail);c.same(d,ref+' bulk capacitor return',N(ref,3-pin),N('U4',0));c.value(d,ref,'22uF')
     # AHCT is powered from 5V; it separates MCU 3.3V output and RGB 5V DIN.
@@ -177,12 +178,14 @@ def main_electrical(c,d):
     c.apart(d,'BH DVI isolated from VCC by R11',N('U5',5),N('U5',1))
     c.same(d,'BH DVI resistor from VCC',N('R11',2),N('U5',1))
     c.same(d,'BH1750 DVI RC delay',N('U5',5),N('R11',1),N('C24',1));c.same(d,'BH DVI capacitor grounded',N('C24',2),N('U4',0));c.value(d,'R11','1k');c.value(d,'C24','1uF')
+    c.add('BH1750 DVI selected 25V MPN',d.mpns.get('C24')=='GRM188R71E105KA12D',d.mpns.get('C24'))
     c.same(d,'EN capacitance on MCU enable',N('U4',9),N('R6',2),N('C7',1),N('VT1',3));c.value(d,'C7','1uF')
     c.same(d,'EN RC supply / ground',N('R6',1),N('U4',1));c.same(d,'EN capacitor return',N('C7',2),N('U4',0))
     c.apart(d,'EN / GPIO0 / MCU supply / GND distinct',N('U4',9),N('U4',23),N('U4',1),N('U4',0))
     c.same(d,'Auto download GPIO0 collector',N('VT2',3),N('U4',23));c.same(d,'DTR to transistor E2/base1 resistor',N('U1',28),N('VT2',2),N('R4',1));c.same(d,'RTS to transistor E1/base2 resistor',N('U1',24),N('VT1',2),N('R5',1))
     c.same(d,'UART CP TX through series resistor',N('U1',26),N('R3',2))
     c.same(d,'UART series resistor to MCU RX',N('R3',1),N('U4',40));c.value(d,'R3','200')
+    c.add('UART series resistor selected RALEC MPN',d.mpns.get('R3')=='RTT022000FTH',d.mpns.get('R3'))
     c.same(d,'UART MCU TX to CP RX',N('U4',41),N('U1',25))
     c.apart(d,'UART directions / ground separate',N('U4',40),N('U4',41),N('U4',0))
     for pin,mcupin in [('1',34),('2',24),('3',36),('4',35),('5',22)]:c.same(d,'TFT connector pin '+pin+' mapping',N('CON1',pin),N('U4',mcupin))
@@ -209,6 +212,7 @@ def extend_electrical(c,d,main=None):
     c.value(d,'R1','1k');c.value(d,'R3','100k');c.value(d,'Q1','AO3400A')
     for ref,rail,expected in [('C1',2,'100nF'),('C2',2,'4.7uF'),('C3',1,'100nF'),('C4',1,'1uF')]:
         c.same(d,'Display '+ref+' supply',N(ref,1),N('CON1',rail));c.same(d,'Display '+ref+' ground',N(ref,2),N('CON1',3));c.value(d,ref,expected)
+    c.add('Display 5V bypass selected 25V MPN',d.mpns.get('C4')=='GRM188R71E105KA12D',d.mpns.get('C4'))
     for lcdpin,ffc in [(7,4),(9,5),(10,6),(11,7)]:c.same(d,'Display SPI LCD pin '+str(lcdpin),N('LCD1',lcdpin),N('CON1',ffc))
     c.same(d,'Panel CS permanently selected',N('LCD1',8),N('CON1',3))
     if main is not None:

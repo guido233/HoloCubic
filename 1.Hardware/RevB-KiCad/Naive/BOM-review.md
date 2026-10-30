@@ -1,6 +1,6 @@
 # Naive RevB 采购与料号审查
 
-核对日期：2026-10-29。范围：本目录 MainBoard / ExtendBoard 原生 KiCad 工程、原 Altium 嵌入模型及厂家资料。本文记录采购闭环条件，不把候选料号自动视为已获准替代料。
+首次核对日期：2026-10-29；样机替代选型应用更新：2026-10-30。范围：本目录 MainBoard / ExtendBoard 原生 KiCad 工程、原 Altium 嵌入模型及厂家资料。下述明确列出的四处替代已应用，其余历史候选比较不代表获准替代。
 
 **当前结论：工程文件及关键接口选型已经形成，仍需制造方工艺确认、装配和实测验收，不能据此声称可直接投产。** USB1 已选 GCT USB4105-GF-A、J1 已选 Molex 104031-0811、A1 已选 CrossAir CA-C03，最终主板原理图和受控封装字段已经同步。MPU-6050 已停产；ESP32-PICO 系列为 NRND。厂家生命周期与经销商是否暂有库存是两个不同事实。
 
@@ -8,13 +8,28 @@
 
 `tools/hardware/revise_schematic.py` 的 `BASE_PARTS` 是从原设计提取的基准数据。实际 RevB 应审查 **BASE_PARTS + revb_main_manifest.json 的覆盖结果 + 原理图实例字段**，不能直接把基准 Comment 当成完整采购型号。
 
-初次审查 MainBoard.kicad_sch 的 58 个实件时，有 21 个实例没有 `MPN`。维护者审核接受的 18 个明确型号（15 个通用 R/C 与 U1/U3/U5）已写入 `revb_main_manifest.json.existing_mpn`；USB1、J1、A1 的最终型号也已实际同步。当前主板 **58 件**、屏板 **11 件**，合计 **69 个装配位号 / 39 个完整订货号**，均无缺失 MPN。
+初次审查 MainBoard.kicad_sch 的 58 个实件时，有 21 个实例没有 `MPN`。维护者审核接受的 18 个明确型号（15 个通用 R/C 与 U1/U3/U5）已写入 `revb_main_manifest.json.existing_mpn`；USB1、J1、A1 的最终型号也已实际同步。当前主板 **58 件**、屏板 **11 件**，合计 **69 个装配位号 / 38 个完整 MPN 采购行**，均有明确 MPN。
 
 [BOM.json](BOM.json) 从两板原生 KiCad 网表逐位号导出，保留原理图 SHA-256、数量、MPN、厂家、受控封装和采购验收条件。`tools/hardware/export_bom.py` 可在 KiCad 10 环境重生该数据。数量为每台一套两板的装配用量，不包含 PCB 制造、排线、USB 线、SD 卡、光学件、外壳或焊接工具，也未加损耗备料。
 
-最终六层主板冻结后，已从两板实际原理图及 PCB 重新导出：`BOM.csv` 为 69 个装配实例，`BOM-grouped.csv` 和 `BOM.xlsx` 的采购页均按完整 MPN 合并为 39 项，合计 69 件。`100nF / 0.1uF`、`10K / 10k` 等原文写法不再拆成不同采购项。C16 已同步为 100pF / GRM1555C1H101JA01D。
+`BOM.csv` 为 69 个装配实例，`BOM-grouped.csv` 和 `BOM.xlsx` 的采购页按完整 MPN 合并为 38 项，合计 69 件。2026-10-29 版本的 39 个型号在本次 C24 / 显示板 C4 共料后减少为 38 个；`100nF / 0.1uF`、`10K / 10k` 等原文写法也不拆成不同采购项。C16 仍为 100pF / GRM1555C1H101JA01D。
 
-本次导出的工程来源 SHA-256 如下，与 `BOM.json` 的 `source_schematics` / `source_pcbs` 一致：
+### 2026-10-30 已应用的首台样机替代
+
+| 位置 | 替代前订货号 | 当前订货号 | 保持的用途与边界 |
+|---|---|---|---|
+| Main C24 | GRM188R71C105KA12D | GRM188R71E105KA12D / C86020 | 1µF、X7R、0603；R11=1kΩ 的 BH1750 DVI 复位 RC。 |
+| Extend C4 | GRM188R71A105KA61D | GRM188R71E105KA12D / C86020 | 1µF、X7R、0603；切换后 5V 的本地旁路。 |
+| Main U6 | TPS22918DBVR | TPS22918DBVT / C2680345 | 同一 DBV6 芯片与引脚，仅载带包装不同，电气与固件不变。 |
+| Main R3 | RC0402FR-07200RL | RTT022000FTH / C102869 | 200Ω、1%、1/16W、0402，保持 CP2102 TXD→MCU RX 的 UART 串联值。 |
+
+C86020 每台共需 **2 颗**，两处共用一个采购包，不按位号各买一包。**主板 C4 仍为 22µF / 0805**，未改为 1µF；C7 / C15 的 0402 选型也未改变。此表记录已应用的样机选型，未实测、未作量产放行。U6 的 250 / 3000 颗是原厂载带数量差别，不是商城拆带起订量。2026-10-30 核对时，DBVT 对应商品为 0 现货、可订货；库存、报价及未确认的交期只属于当日快照，见 [采购说明](PURCHASING.md)，不能当作持续承诺。
+
+三类替代不要求改固件。默认应用尚未调用 BH1750 或启用自动调光；未使用的 `Ambient` helper 仍须修正转换计时和读取错误检查后才能集成。首板诊断 `i2c` 命令的 180ms 等待与读取结果，也不能替代 [DVI 上电复位验收](Closure/BRINGUP.md#bh1750-vccdvi-复位验收)。
+
+### 来源追溯
+
+当前应用版的准确来源 SHA-256 以 [BOM.json](BOM.json) 的 `source_schematics` / `source_pcbs` 和 [验证记录](validation-results.json) 为准。下表保留 **2026-10-29 替代前冻结版本**，仅供历史追溯；不能用它核对 2026-10-30 替代后的物料元数据：
 
 | 工程文件 | SHA-256 |
 |---|---|
@@ -25,7 +40,7 @@
 
 JSON / 逐实例 CSV 的安装面、坐标及角度读取最终 PCB：R16 为 B 面 `(144.3,112.4)/180°`，C17 为 F 面 `(155.88,111.02)/90°`，C16 为 B 面 `(159.3,115.1)/180°`。这些是原生 CAD 工程坐标，不能直接当作已获装配厂确认的贴片机程序。
 
-主板六层采用已公布的 JLC06101H-3313 候选叠层，名义总厚 1.06 mm；下单仍须由制造方确认材料、成品厚度与工艺。屏板最终安装原点如下，LCD1 的 B 面记录表示屏体基准，FPC 焊接区在 F 面：
+主板六层采用已公布的 JLC06101H-3313 模板：订单名义 1.0mm，公开铜与介质合计 1.04mm，加双面阻焊预算后 CAD 为 1.06mm；下单仍须由制造方确认材料、成品厚度口径及工艺。屏板最终安装原点如下，LCD1 的 B 面记录表示屏体基准，FPC 焊接区在 F 面：
 
 | 屏板位号 | 面 | 原点 X / Y（mm） | 角度 |
 |---|---|---|---|
@@ -56,12 +71,12 @@ ExtendBoard 的 11 个实例已有 `MPN`。LCD1 最终使用 12 条 **5.5 × 0.5
 | Main U1 | CP2102-GMR（卷带，经典 CP2102） | Silicon Labs 当前页面预计 CP2102 持续完整生产至少到 **2029 年 3 月**，日期适用于优选修订，不是无限期承诺。 | 保持经典 CP2102、QFN28 5×5 mm。CP2102N 不是只改 BOM 字符串的替换，必须核引脚、电源、复位和驱动。 |
 | Main U5 | BH1750FVI-TR | 原 ROHM 型号及 WSOF6I 可由厂家数据手册确认。此次未取得 ROHM 当前单品生命周期页面；授权分销商 Mouser / DigiKey 均显示 NRND，这是供应链警示，不能冒充原厂当前确认。 | 可按原型号核库存与追溯；新批量计划应向 ROHM / 授权渠道确认供货。更换 ALS 型号需核封装、I²C 命令、量程换算及上电时序。 |
 | Main U2 | TPS62162DSGR | TI 产品页为 Active，固定 3.3 V、DSG 8-pin WSON。 | 保持当前固定输出版本。相近名字或新一代 Buck 不能直接替换；须检查 FB / VOS 接法及电感、有效电容、布局。 |
-| Main U6 | TPS22918DBVR | TI 产品页为 Active，DBV / SOT23-6。 | 是可调上升时间负载开关；**不是限流 eFuse**。采购不得用“2 A”推断它具有 2 A 过流关断。 |
+| Main U6 | TPS22918DBVT | 2026-10-30 TI 订购页为 Active，DBV / SOT23-6；与原 DBVR 为同芯片不同载带。 | 是可调上升时间负载开关；**不是限流 eFuse**。采购不得用“2 A”推断它具有 2 A 过流关断。 |
 | Main U7 | TPD4E05U06DQAR | TI 产品页为 Active，DQA / USON10。 | 保持精确封装后缀；NC 焊盘不是内部直通连接。 |
 | Main U8 | SN74AHCT1G125DCKR | TI 产品页为 Active，DCK / SC70-5，4.5–5.5 V 供电、TTL 输入。 | 保留 AHCT，不以 AHC / LVC 等近名器件替代，以免失去 3.3 V 控制 5 V RGB 的电平保证。 |
 | Main D2 | TPD1E10B06DPYR | TI 产品页为 Active，DPY / X1SON 1.0×0.6 mm。 | 同系列 DYA / SOD 封装不能混用。ESD TVS 不能视为持续过压保护器。 |
 
-以上状态以核对日为准；“Active”也不表示已替项目预留库存。本文不引用随时变化的单价或现货数量作为设计放行依据。
+除 U6 行明确标注的更新外，上述生命周期状态沿用 2026-10-29 核对记录，未因本次替代重新声明为实时状态。“Active”也不表示已替项目预留库存。本文不引用随时变化的单价或现货数量作为设计放行依据。
 
 原厂依据：
 
@@ -70,6 +85,7 @@ ExtendBoard 的 11 个实例已有 `MPN`。LCD1 最终使用 12 条 **5.5 × 0.5
 - [Silicon Labs 经典 CP2102 产品页](https://www.silabs.com/interface/usb-bridges/classic/device.cp2102)、[CP2102/9 数据手册](https://www.silabs.com/documents/public/data-sheets/CP2102-9.pdf)。
 - [ROHM BH1750FVI 原厂数据手册镜像](https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/6165/bh1750fvi-e.pdf)；当前分销状态参见 [Mouser](https://www.mouser.ca/en/ProductDetail/ROHM-Semiconductor/BH1750FVI-TR?qs=phc6PQ%252BTPUNy88lRCs6mVA%3D%3D)、[DigiKey](https://www.digikey.ca/en/products/detail/rohm-semiconductor/BH1750FVI-TR/2041441)。后两项只用于描述渠道所标状态。
 - TI：[TPS62162](https://www.ti.com/product/TPS62162)、[TPS22918](https://www.ti.com/product/TPS22918)、[TPD4E05U06](https://www.ti.com/product/TPD4E05U06)、[SN74AHCT1G125](https://www.ti.com/product/SN74AHCT1G125)、[TPD1E10B06](https://www.ti.com/product/TPD1E10B06)。
+- [TPS22918DBVT 官方订购页](https://www.ti.com/product/TPS22918/part-details/TPS22918DBVT)与 [DBVR 订购页](https://www.ti.com/product/TPS22918/part-details/TPS22918DBVR)：相同器件、不同载带包装选项。
 
 ## 3. 已审核选用并回填的通用 R / C
 
@@ -79,14 +95,18 @@ ExtendBoard 的 11 个实例已有 `MPN`。LCD1 最终使用 12 条 **5.5 × 0.5
 |---|---:|---|---|---|
 | R1、R6、R7、R8、R9、R10 | 6 | 10 kΩ | YAGEO RC0402FR-0710KL | 0402 / 1005，1%，0.063 W；用于上拉，不是电源跳线。 |
 | R4、R5 | 2 | 12 kΩ | YAGEO RC0402FR-0712KL | 0402，1%，0.063 W，保持双 NPN 自动下载基极限流值。 |
-| R3 | 1 | 200 Ω | YAGEO RC0402FR-07200RL | 0402，1%，0.063 W，保持 UART 串联值。 |
+| R3 | 1 | 200 Ω | RALEC RTT022000FTH | 0402，1%，1/16W，±100ppm/°C；2026-10-30 替代原 YAGEO 料，保持 UART 串联值。 |
 | C5、C8、C10、C11 | 4 | 100 nF | Murata GRM155R71C104KA88D | 0402，16 V，X7R，±10%；与本版其它 100 nF 可共用采购项。C8 是 MPU REGOUT 电容，不能随意省略。 |
 | C6 | 1 | 10 nF | Murata GRM155R71H103KA88D | 0402，50 V，X7R，±10%。 |
 | C9 | 1 | 2.2 nF | Murata GRM1555C1H222JA01D | 0402，50 V，C0G，±5%；用于 MPU CPOUT，保持 2.2 nF。 |
 
-厂家规格链接：[YAGEO 10 kΩ](https://www.yageogroup.com/component-documentation/download/specsheet/RC0402FR-0710KL)、[12 kΩ](https://www.yageogroup.com/component-documentation/download/specsheet/RC0402FR-0712KL)、[200 Ω](https://www.yageogroup.com/component-documentation/download/specsheet/RC0402FR-07200RL)；Murata [100 nF 产品页](https://www.murata.com/en-global/products/productdetail?partno=GRM155R71C104KA88%23)、[10 nF SimSurfing](https://ds.murata.com/simsurfing/mlcc.html?oripartnumbers=%5B%22GRM155R71H103KA88D%22%5D&partnumbers=%5B%22GRM155R71H103KA88%22%5D)、[2.2 nF SimSurfing](https://ds.murata.com/simsurfing/mlcc.html?oripartnumbers=%5B%22GRM1555C1H222JA01D%22%5D&partnumbers=%5B%22GRM1555C1H222JA01%22%5D)。
+厂家规格链接：[YAGEO 10 kΩ](https://www.yageogroup.com/component-documentation/download/specsheet/RC0402FR-0710KL)、[12 kΩ](https://www.yageogroup.com/component-documentation/download/specsheet/RC0402FR-0712KL)、[替代前 R3 的 YAGEO 200 Ω 资料](https://www.yageogroup.com/component-documentation/download/specsheet/RC0402FR-07200RL)；当前 R3 见 [RALEC RTT 系列 IE-SP-010](https://www.ralec.com/upload/media/product/file/IE-SP-010%20.pdf)。Murata：[100 nF 产品页](https://www.murata.com/en-global/products/productdetail?partno=GRM155R71C104KA88%23)、[10 nF SimSurfing](https://ds.murata.com/simsurfing/mlcc.html?oripartnumbers=%5B%22GRM155R71H103KA88D%22%5D&partnumbers=%5B%22GRM155R71H103KA88%22%5D)、[2.2 nF SimSurfing](https://ds.murata.com/simsurfing/mlcc.html?oripartnumbers=%5B%22GRM1555C1H222JA01D%22%5D&partnumbers=%5B%22GRM1555C1H222JA01%22%5D)。
 
-已锁定的特殊被动件不能与上述表格混用：R2 是指定额定电流的 0 Ω 跳线；C2/C3/C4/C13 的 22 µF 0805 需按直流偏压后的有效电容核对；C16 定时电容已改为 **100pF / C0G / 50V / ±5%，Murata GRM1555C1H101JA01D**。厂家 2026 年 10 月 EC 资料确认 0402 / 1005，外形 1.00±0.05 × 0.50±0.05 × 0.50±0.05 mm，最大本体高度仍为 0.55 mm，保留现有受控封装及装配包络。采购代料不应只比较标称容量和封装。
+本次 C24 / 显示板 C4 共用的 GRM188R71E105KA12D 为 1µF、25V、X7R、±10%，0603 本体 1.6±0.1 × 0.8±0.1 × 0.8±0.1mm，与两处替代前的最大本体包络相同。原厂典型直流偏压曲线未显示这两处使用条件下的容量保持变差，但不是全温、老化和批次的保证下限。C24 仍须按 R11 / DVI 的复位用途验收，不能仅凭“耐压升到 25V”认定上电复位合格。来源：[Murata 25V 料原厂 EC](https://ds.murata.com/simserve/characteristics?ReqType=TechPDF&partnumber=GRM188R71E105KA12&techpdfname=technical_pdf_Capacitor01&lang=en)。
+
+RTT02 最大本体为 1.10 × 0.55 × 0.35mm，并非所有尺寸都与原 YAGEO 相同。最大 XY 包络在当前 R3 庭院内；现有 0.508mm 焊盘宽度与 RALEC 的 0.6mm 推荐 land 宽度不同，需装配方接受端子覆盖和落锡工艺。此次没有借替代移动器件或放宽几何规则。
+
+已锁定的特殊被动件不能与上述表格混用：主板 R2 是指定额定电流的 0 Ω 跳线；主板 C2/C3/C4/C13 的 22 µF 0805 需按直流偏压后的有效电容核对；C16 定时电容已改为 **100pF / C0G / 50V / ±5%，Murata GRM1555C1H101JA01D**。厂家 2026 年 10 月 EC 资料确认 0402 / 1005，外形 1.00±0.05 × 0.50±0.05 × 0.50±0.05 mm，最大本体高度仍为 0.55 mm，保留现有受控封装及装配包络。采购代料不应只比较标称容量和封装。
 
 改小 C16 的目的是兼顾 CP2102 上电时序：Silicon Labs CP2102/9 Rev1.8 Table5 要求 VDD 到 2.7V 的时间不超过 1ms；TI TPS22918 RevC 的 1nF / 5V 输出上升典型值约 2.54ms。按 TI Eq.3，100pF 的 SR≈85µs/V，5V 输出 10–90% 上升时间估算约 **0.425ms**，不是最大值保证，且不等于已经测得 CP_VDD 的实际波形。约 13µF 有效 5V 负载的纯充电电流估计约 0.12–0.15A，负载启动和容差另计。首板须测 CP_VDD 到 2.7V 的时间、USB 枚举及热插拔入口电流。来源：[Murata 100pF 原厂 EC](https://ds.murata.com/simserve/characteristics?ReqType=TechPDF&partnumber=GRM1555C1H101JA01&techpdfname=technical_pdf_Capacitor01&lang=en)、[TI TPS22918](https://www.ti.com/lit/ds/symlink/tps22918.pdf)、[Silicon Labs CP2102/9](https://www.silabs.com/documents/public/data-sheets/CP2102-9.pdf)。
 

@@ -3,11 +3,11 @@
   "sources": [
     {
       "path": "1.Hardware/RevB-KiCad/Naive/MainBoard/MainBoard.kicad_pcb",
-      "sha256": "a05fb4db8785f69a0e96533620440d110ff2dc13d2e4b28887b48de03e031c39"
+      "sha256": "a8bbae787964286f9783e2d74fa752ae82efbc7d5350371debf734503f4a98a8"
     },
     {
       "path": "1.Hardware/RevB-KiCad/Naive/ExtendBoard/ExtendBoard.kicad_pcb",
-      "sha256": "7ba3a6e58040c57fe67f55df174be974967f560e97ab8b37d000d93db8e1c112"
+      "sha256": "d05a3b40bbc770fbf0523e38680e2212bac2e3d39f5fec9066f50eba5e90c40c"
     }
   ],
   "terminals": [
@@ -111,6 +111,28 @@
       "kind": "existing component terminal; tip access must be checked"
     },
     {
+      "id": "M10",
+      "board": "MainBoard",
+      "reference": "C11",
+      "pad": "1",
+      "net": "3V3",
+      "side": "F",
+      "x_mm": 155.2,
+      "y_mm": 98.208,
+      "kind": "existing component terminal; tip access must be checked"
+    },
+    {
+      "id": "M11",
+      "board": "MainBoard",
+      "reference": "C24",
+      "pad": "1",
+      "net": "NetR11_1",
+      "side": "F",
+      "x_mm": 158.145,
+      "y_mm": 99.18,
+      "kind": "existing component terminal; tip access must be checked"
+    },
+    {
       "id": "E1",
       "board": "ExtendBoard",
       "reference": "C3",
@@ -159,6 +181,7 @@
     "Use a ground spring or short ground connection; check tip clearance before powering.",
     "Do not substitute the 100pF LOAD_CT node for a supply test point; probe capacitance changes timing.",
     "Measure backlight current from voltage across the actual 27ohm R2; PWM duty is not a current reading.",
+    "For BH1750 reset capture M10/VCC and M11/DVI together; confirm DVI <=0.4V for >=1us after VCC reaches 2.4V.",
     "B-side drawings mirror X. CSV and JSON always retain native CAD coordinates."
   ]
 }

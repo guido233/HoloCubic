@@ -8,6 +8,7 @@ import argparse
 import csv
 import hashlib
 import json
+import math
 import os
 import re
 import subprocess
@@ -19,7 +20,7 @@ import xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[2]
 BASE = ROOT / '1.Hardware/RevB-KiCad/Naive'
-from verify_hardware import DEFAULT_CLI, pcb_circuit
+from verify_hardware import DEFAULT_CLI, pcb_circuit, value as electrical_value
 from revise_schematic import get
 CLI = DEFAULT_CLI
 
@@ -38,9 +39,10 @@ EXACT = {
     'AL5802-7': ('Diodes Incorporated', '未单独核验生命周期', 'SOT26恒流驱动；27ohm设约24mA典型值，须测实物背光电流', 'https://www.diodes.com/assets/Datasheets/AL5802.pdf'),
     'MMBT3904-7-F': ('Diodes Incorporated', '厂家图纸已核', 'B1/E2/C3；按Diodes受控SOT23焊盘，不任意替换不同引脚8050', 'https://www.diodes.com/assets/Datasheets/MMBT3904.pdf'),
     'VLS3012HBX-2R2M-N': ('TDK', '未单独核验生命周期', '2.2uH；完整HBX/-N订货号，电感饱和及温升按供电实测验收', ''),
+    'RTT022000FTH': ('RALEC', '原厂规格已核', '200ohm±1% / 1/16W / 0402；保持完整FTH订货后缀', 'https://www.ralec.com/upload/media/product/file/IE-SP-010%20.pdf'),
 }
 
-TI = {'TPS62162DSGR':'TPS62162','TPS22918DBVR':'TPS22918',
+TI = {'TPS62162DSGR':'TPS62162','TPS22918DBVR':'TPS22918','TPS22918DBVT':'TPS22918',
       'TPD4E05U06DQAR':'TPD4E05U06','SN74AHCT1G125DCKR':'SN74AHCT1G125',
       'TPD1E10B06DPYR':'TPD1E10B06'}
 
@@ -54,9 +56,62 @@ def procurement(mpn):
                 'https://ds.murata.com/simserve/characteristics?ReqType=TechPDF&partnumber='+mpn[:-1]+'&techpdfname=technical_pdf_Capacitor01&lang=en')
     raise ValueError('No manufacturer identity for '+mpn)
 
-def natural(ref):return tuple(int(x)if x.isdigit()else x for x in re.split('(\d+)',ref))
+def natural(ref):return tuple(int(x)if x.isdigit()else x for x in re.split(r'(\d+)',ref))
 
-def export(cli, output):
+def acceptance_note(board, ref, mpn, default_note):
+    """Keep site-specific acceptance conditions distinct from MPN grouping."""
+    if mpn == 'GRM188R71E105KA12D':
+        if (board, ref) == ('MainBoard', 'C24'):
+            return '25V/1uF/X7R±10%/0603；与ExtendBoard:C4同料C86020，各焊1颗；BH1750 DVI保留R11=1k，冷启动/快速重启时序须实测'
+        if (board, ref) == ('ExtendBoard', 'C4'):
+            return '25V/1uF/X7R±10%/0603；5V本地旁路，与MainBoard:C24同料C86020，各焊1颗；供电与热插拔须实测'
+    if board == 'MainBoard':
+        if ref == 'U6' and mpn == 'TPS22918DBVT':
+            return '同TPS22918芯片及DBV6脚；T为250pcs小盘，ON/CT网络不变；2026-10-30嘉立创需订货（渠道快照，库存/交期下单复核）'
+        if ref == 'R3' and mpn == 'RTT022000FTH':
+            return 'UART串联200ohm±1%/0402；原位兼容；现有密集land与原厂推荐图有差异，落锡/贴装工艺须验收'
+        if ref == 'C20':return '4.7uF/10V/X5R0402；5V典型约1.88uF、5.5V约1.7uF；非保证下限，量产须采样'
+        if ref == 'C7':return '1uF/16V0402；3V3典型有效约0.55uF，EN实际复位时序须测'
+        if ref == 'C15':return '入口1uF/16V0402；5V典型有效约0.35uF；热插拔时序须测'
+        if ref == 'C16':return '100pF/50V/C0G±5%0402；TI Eq3估算约0.425ms@5V，非最大值保证；CP_VDD到2.7V≤1ms、热插拔与入口电流须实测'
+        if ref == 'C3':return '22uF/25V0805；5V典型有效约10–11uF，非保证下限'
+        if ref in ('C2','C4','C13'):return '22uF/25V0805；3V3典型有效约13–15uF，非保证下限'
+        if ref == 'R2':return '0ohm0402，型号额定1A；3V3A支路按ESP≤500mA设计分配'
+    return default_note
+
+
+def document_date(export_date=None):
+    """An explicit client date avoids changing a release at a host midnight."""
+    if isinstance(export_date, str):export_date=date.fromisoformat(export_date)
+    return (export_date or date.today()).isoformat()
+
+
+def grouped_rows(parts):
+    """Group actual instances, rejecting duplicate sites or incompatible values."""
+    groups=defaultdict(list);seen=set()
+    for part in parts:
+        site=(part['board'],part['reference'])
+        if site in seen:raise ValueError('Duplicate BOM instance: '+':'.join(site))
+        seen.add(site);groups[part['mpn']].append(part)
+    result=[]
+    for mpn,rows in sorted(groups.items()):
+        # The existing dataset legitimately mixes 100nF and 0.1uF spellings.
+        # A 22uF bulk site sharing a 1uF MPN, however, must never be merged.
+        first=electrical_value(rows[0]['value'])
+        for part in rows[1:]:
+            current=electrical_value(part['value'])
+            if isinstance(first, (int,float)) and isinstance(current, (int,float)):
+                same=math.isclose(first,current,rel_tol=1e-12,abs_tol=0)
+            else:same=first==current
+            if not same:raise ValueError('Conflicting electrical values for '+mpn)
+        val=' / '.join(dict.fromkeys(p['value'] for p in rows))
+        result.append([mpn,val,len(rows),rows[0]['manufacturer'],
+                       ', '.join(p['board']+':'+p['reference'] for p in rows),rows[0]['supply_status'],
+                       '; '.join(dict.fromkeys(p['acceptance_note'] for p in rows if p['acceptance_note'])),rows[0]['source_url']])
+    return result
+
+
+def export(cli, output, export_date=None):
     parts=[];sources=[];pcbs=[]
     with tempfile.TemporaryDirectory(prefix='holocubic-bom-') as temp:
         for board,wanted in [('MainBoard',58),('ExtendBoard',11)]:
@@ -75,14 +130,7 @@ def export(cli, output):
                 mpn=fields.get('MPN','').strip()
                 if not mpn:raise ValueError('Missing MPN: '+board+'.'+ref)
                 manufacturer,status,note,source=procurement(mpn)
-                if board=='MainBoard':
-                    if ref=='C20':note='4.7uF/10V/X5R0402；5V典型约1.88uF、5.5V约1.7uF；非保证下限，量产须采样'
-                    elif ref=='C7':note='1uF/16V0402；3V3典型有效约0.55uF，EN实际复位时序须测'
-                    elif ref=='C15':note='入口1uF/16V0402；5V典型有效约0.35uF；热插拔时序须测'
-                    elif ref=='C16':note='100pF/50V/C0G±5%0402；TI Eq3估算约0.425ms@5V，非最大值保证；CP_VDD到2.7V≤1ms、热插拔与入口电流须实测'
-                    elif ref=='C3':note='22uF/25V0805；5V典型有效约10–11uF，非保证下限'
-                    elif ref in ('C2','C4','C13'):note='22uF/25V0805；3V3典型有效约13–15uF，非保证下限'
-                    elif ref=='R2':note='0ohm0402，型号额定1A；3V3A支路按ESP≤500mA设计分配'
+                note=acceptance_note(board,ref,mpn,note)
                 fp=footprints[ref];at=get(fp,'at');side=get(fp,'layer')[1]
                 rows.append({'board':board,'reference':ref,'quantity':1,'value':c.findtext('value'),
                              'mpn':mpn,'manufacturer':manufacturer,'footprint':c.findtext('footprint'),
@@ -91,7 +139,8 @@ def export(cli, output):
                              'supply_status':status,'acceptance_note':note,'source_url':source})
             if len(rows)!=wanted:raise ValueError('%s: expected %d real parts, got %d'%(board,wanted,len(rows)))
             parts.extend(sorted(rows,key=lambda p:natural(p['reference'])))
-    result={'revision':'Naive RevB','date':date.today().isoformat(),'unit_quantity':1,'total_instances':len(parts),
+    grouped=grouped_rows(parts)
+    result={'revision':'Naive RevB','date':document_date(export_date),'unit_quantity':1,'total_instances':len(parts),
             'unique_mpn_count':len({p['mpn']for p in parts}),'board_counts':{'MainBoard':58,'ExtendBoard':11},
             'scope':'69 PCB-mounted instances only. PCB fabrication, FFC, USB cable, SD card, optics/enclosure and tools are separate.',
             'placement_scope':'Native CAD coordinates, not a machine-specific pick-and-place file. LCD1 body is on B; 5.5x0.5mm F-side tail lands have no F.Paste and require controlled manual FPC soldering after PCBA. Fold/contact-face/enclosure remain unqualified.',
@@ -101,16 +150,20 @@ def export(cli, output):
     # are engineering coordinates, not a machine-specific pick-and-place job.
     with output.with_suffix('.csv').open('w',encoding='utf-8-sig',newline='') as f:
         writer=csv.DictWriter(f,fieldnames=list(parts[0]));writer.writeheader();writer.writerows(parts)
-    groups=defaultdict(list)
-    for part in parts:groups[part['mpn']].append(part)
     with output.with_name(output.stem+'-grouped.csv').open('w',encoding='utf-8-sig',newline='') as f:
         writer=csv.writer(f);writer.writerow(['MPN','Value','Quantity','Manufacturer','Board:Reference','Supply status','Acceptance notes','Source'])
-        for mpn,rows in sorted(groups.items()):
-            val=' / '.join(dict.fromkeys(p['value'] for p in rows))
-            writer.writerow([mpn,val,len(rows),rows[0]['manufacturer'],
-                             ', '.join(p['board']+':'+p['reference'] for p in rows),rows[0]['supply_status'],
-                             '; '.join(dict.fromkeys(p['acceptance_note'] for p in rows if p['acceptance_note'])),rows[0]['source_url']])
+        writer.writerows(grouped)
     print('%d instances; %d exact MPNs; no missing fields -> %s'%(len(parts),result['unique_mpn_count'],output))
 
+def argument_parser():
+    p=argparse.ArgumentParser(description=__doc__)
+    p.add_argument('--cli',type=Path,default=CLI)
+    p.add_argument('--output',type=Path,default=BASE/'BOM.json')
+    p.add_argument('--date',dest='export_date',type=date.fromisoformat,help='Client release date (YYYY-MM-DD); defaults to the host date')
+    p.add_argument('--require-complete',action='store_true',help='All MPN fields are always required')
+    return p
+
+
 if __name__=='__main__':
-    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--cli',type=Path,default=CLI);p.add_argument('--output',type=Path,default=BASE/'BOM.json');p.add_argument('--require-complete',action='store_true',help='All MPN fields are always required');a=p.parse_args();export(a.cli,a.output)
+    a=argument_parser().parse_args()
+    export(a.cli,a.output,a.export_date)

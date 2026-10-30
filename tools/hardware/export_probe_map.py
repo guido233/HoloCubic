@@ -22,6 +22,7 @@ TARGETS = {
         ('M5', 'C4', '2', '3V3A'), ('M6', 'C7', '1', 'EN'),
         ('M7', 'C20', '2', 'GND'), ('M8', 'R12', '1', 'USB_CC1'),
         ('M9', 'R13', '1', 'USB_CC2'),
+        ('M10', 'C11', '1', '3V3'), ('M11', 'C24', '1', 'NetR11_1'),
     ],
     'ExtendBoard': [
         ('E1', 'C3', '1', 'VDD_5V'), ('E2', 'C1', '1', '3V3'),
@@ -58,6 +59,7 @@ def export(destination):
               'notes': ['Use a ground spring or short ground connection; check tip clearance before powering.',
                         'Do not substitute the 100pF LOAD_CT node for a supply test point; probe capacitance changes timing.',
                         'Measure backlight current from voltage across the actual 27ohm R2; PWM duty is not a current reading.',
+                        'For BH1750 reset capture M10/VCC and M11/DVI together; confirm DVI <=0.4V for >=1us after VCC reaches 2.4V.',
                         'B-side drawings mirror X. CSV and JSON always retain native CAD coordinates.']}
     (destination / 'probe-map.json').write_text(json.dumps(result, indent=2) + '\n')
     with (destination / 'probe-map.csv').open('w', newline='') as handle:
@@ -99,9 +101,10 @@ def draw(boards, rows, output):
                 x, y = xy([target['x_mm'], target['y_mm']])
                 svg.append(f'<circle cx="{x:.4f}" cy="{y:.4f}" r="1.1" fill="#c13d29"/>')
                 svg.append(f'<text x="{x+1.4:.4f}" y="{y-1.2:.4f}" font-size="2.6">{target["id"]}</text>')
+    per_column = (len(rows) + 1) // 2
     for index, target in enumerate(rows):
         text = f'{target["id"]}: {target["reference"]}.{target["pad"]} {target["net"]} ({target["side"]})'
-        x, y = 12 + (index // 7) * 98, 219 + (index % 7) * 6
+        x, y = 12 + (index // per_column) * 98, 219 + (index % per_column) * 6
         svg.append(f'<text x="{x}" y="{y}" font-size="3.4">{html.escape(text)}</text>')
     svg += ['<text x="12" y="270" font-size="3">Check pad reference and polarity before attaching a probe.</text>',
             '<text x="12" y="277" font-size="3">No waveform, power-up, thermal or RF result is implied by this drawing.</text>', '</svg>']

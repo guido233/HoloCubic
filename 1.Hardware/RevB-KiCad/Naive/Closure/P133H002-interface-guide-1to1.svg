@@ -52,6 +52,6 @@
 <text x="8" y="73" class="small">UNRESOLVED: FPC permitted bend radius/segment, contact face, lateral registration,</text>
 <text x="8" y="77" class="small">solder/adhesive thickness, enclosure datum and full cable path. No physical test performed.</text>
 <text x="8" y="84" class="tiny">Datum: KiCadXY; nominal screen/PCB center(148.5011,105.0036). Dimensions are construction references.</text>
-<text x="8" y="89" class="tiny">PCB SHA256: 7ba3a6e58040c57fe67f55df174be974967f560e97ab8b37d000d93db8e1c112</text>
+<text x="8" y="89" class="tiny">PCB SHA256: d05a3b40bbc770fbf0523e38680e2212bac2e3d39f5fec9066f50eba5e90c40c</text>
 <text x="8" y="94" class="tiny">Source: POLCD P133H002 RevA mechanical drawing page9, issued2021.10.7; full source hash in JSON.</text>
 </svg>

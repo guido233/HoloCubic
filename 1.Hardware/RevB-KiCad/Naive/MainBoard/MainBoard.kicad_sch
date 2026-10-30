@@ -8782,7 +8782,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.ralec.com/upload/media/product/file/IE-SP-010%20.pdf"
 			(at 59.69 299.72 0)
 			(hide yes)
 			(effects
@@ -8791,7 +8791,7 @@
 				)
 			)
 		)
-		(property "MPN" "RC0402FR-07200RL"
+		(property "MPN" "RTT022000FTH"
 			(at 59.69 299.72 0)
 			(hide yes)
 			(effects
@@ -12356,7 +12356,7 @@
 				)
 			)
 		)
-		(property "Value" "TPS22918DBVR"
+		(property "Value" "TPS22918DBVT"
 			(at 251.46 45.72 0)
 			(effects
 				(font
@@ -12373,7 +12373,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/tps22918.pdf"
 			(at 251.46 53.34 0)
 			(hide yes)
 			(effects
@@ -12382,7 +12382,7 @@
 				)
 			)
 		)
-		(property "MPN" "TPS22918DBVR"
+		(property "MPN" "TPS22918DBVT"
 			(at 251.46 53.34 0)
 			(hide yes)
 			(effects
@@ -12391,7 +12391,7 @@
 				)
 			)
 		)
-		(property "DesignNote" "QOD unused; ON RC100k/100nF. Quoted slew characterizedVIN stable beforeON; validatehotplug."
+		(property "DesignNote" "TPS22918 DBV6, 250-piece T&R packaging. QOD unused; ON RC100k/100nF. Quoted slew characterized with VIN stable before ON; validate hot-plug."
 			(at 251.46 53.34 0)
 			(hide yes)
 			(effects
@@ -15636,7 +15636,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://ds.murata.com/simserve/characteristics?ReqType=TechPDF&partnumber=GRM188R71E105KA12&techpdfname=technical_pdf_Capacitor01&lang=en"
 			(at 538.48 238.76 0)
 			(hide yes)
 			(effects
@@ -15645,7 +15645,7 @@
 				)
 			)
 		)
-		(property "MPN" "GRM188R71C105KA12D"
+		(property "MPN" "GRM188R71E105KA12D"
 			(at 538.48 238.76 0)
 			(hide yes)
 			(effects
@@ -15654,7 +15654,7 @@
 				)
 			)
 		)
-		(property "DesignNote" "BH1750 DVI RC sequencing."
+		(property "DesignNote" "BH1750 DVI RC sequencing; 1uF +/-10%, 25V X7R, 0603. Shared MPN with ExtendBoard C4; manufacturer EC curves are typical."
 			(at 538.48 238.76 0)
 			(hide yes)
 			(effects

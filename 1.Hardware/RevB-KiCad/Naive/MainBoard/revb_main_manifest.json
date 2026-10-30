@@ -46,8 +46,8 @@
     },
     {
       "ref": "U6",
-      "value": "TPS22918DBVR",
-      "mpn": "TPS22918DBVR",
+      "value": "TPS22918DBVT",
+      "mpn": "TPS22918DBVT",
       "footprint": "HoloCubic_RevB:RevB_U6",
       "pins": {
         "1": "USB_VBUS",
@@ -57,14 +57,16 @@
         "5": null,
         "6": "VDD_5V"
       },
-      "note": "QOD unused; ON RC100k/100nF. Quoted slew characterizedVIN stable beforeON; validatehotplug.",
+      "note": "TPS22918 DBV6, 250-piece T&R packaging. QOD unused; ON RC100k/100nF. Quoted slew characterized with VIN stable before ON; validate hot-plug.",
       "placement_mm": [
         158.45,
         112.9,
         0.0
       ],
       "source_footprint": "Package_TO_SOT_SMD:SOT-23-6",
-      "placement_layer": "F.Cu"
+      "placement_layer": "F.Cu",
+      "datasheet": "https://www.ti.com/lit/ds/symlink/tps22918.pdf",
+      "manufacturer": "Texas Instruments"
     },
     {
       "ref": "U7",
@@ -320,7 +322,7 @@
         "1": "GND",
         "2": "3V3"
       },
-      "note": "25V X5R; DCbias typical13\u201315uF at3.3V,not22uF effective.",
+      "note": "25V X5R; DCbias typical13–15uF at3.3V,not22uF effective.",
       "placement_mm": [
         146.4,
         98.92,
@@ -338,7 +340,7 @@
         "1": "GND",
         "2": "VDD_5V"
       },
-      "note": "25V X5R inputbulk; at5V officialtypicaleffectiveabout10\u201311uF beforeotherderating.",
+      "note": "25V X5R inputbulk; at5V officialtypicaleffectiveabout10–11uF beforeotherderating.",
       "placement_mm": [
         142.5,
         94.6,
@@ -356,7 +358,7 @@
         "1": "GND",
         "2": "3V3A"
       },
-      "note": "25V X5R; DCbias typical13\u201315uF at3.3V,not22uF effective.",
+      "note": "25V X5R; DCbias typical13–15uF at3.3V,not22uF effective.",
       "placement_mm": [
         157.5,
         115.65,
@@ -584,20 +586,22 @@
     {
       "ref": "C24",
       "value": "1uF",
-      "mpn": "GRM188R71C105KA12D",
+      "mpn": "GRM188R71E105KA12D",
       "footprint": "HoloCubic_RevB:RevB_C24",
       "pins": {
         "1": "NetR11_1",
         "2": "GND"
       },
-      "note": "BH1750 DVI RC sequencing.",
+      "note": "BH1750 DVI RC sequencing; 1uF +/-10%, 25V X7R, 0603. Shared MPN with ExtendBoard C4; manufacturer EC curves are typical.",
       "placement_mm": [
         158.92,
         99.18,
         0.0
       ],
       "source_footprint": "Capacitor_SMD:C_0603_1608Metric",
-      "placement_layer": "F.Cu"
+      "placement_layer": "F.Cu",
+      "datasheet": "https://ds.murata.com/simserve/characteristics?ReqType=TechPDF&partnumber=GRM188R71E105KA12&techpdfname=technical_pdf_Capacitor01&lang=en",
+      "manufacturer": "Murata"
     },
     {
       "ref": "VT1",
@@ -819,7 +823,7 @@
     "R10": "RC0402FR-0710KL",
     "R4": "RC0402FR-0712KL",
     "R5": "RC0402FR-0712KL",
-    "R3": "RC0402FR-07200RL",
+    "R3": "RTT022000FTH",
     "C5": "GRM155R71C104KA88D",
     "C8": "GRM155R71C104KA88D",
     "C10": "GRM155R71C104KA88D",
@@ -866,5 +870,12 @@
     "tent_front_back": true,
     "stencil_um": 80
   },
-  "maintenance_scope": "Part metadata and placement record; native PCB/schematic are authoritative. Native DRC/connectivity/parity passed; physical prototype validation remains required."
+  "maintenance_scope": "Part metadata and placement record; native PCB/schematic are authoritative. Native DRC/connectivity/parity passed; physical prototype validation remains required.",
+  "existing_part_metadata": {
+    "R3": {
+      "manufacturer": "RALEC",
+      "datasheet": "https://www.ralec.com/upload/media/product/file/IE-SP-010%20.pdf",
+      "note": "200ohm +/-1%, 1/16W at70C, +/-100ppm/C. UART TXD-to-U0RXD series resistor; retain controlled dense 0402 land."
+    }
+  }
 }

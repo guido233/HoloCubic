@@ -154,5 +154,13 @@
     "regenerated_Lower_STEP_DATA_identical": true,
     "STEP_geometry_DATA_sha256": "bfb0165039421efb79f29bf36ed59518ac9d148fe3552150f588751fe176d304"
   },
-  "transfer_basis": "All R16 checks use B-relative unchanged components/card or fixed Upper/Lower. USB_effective_board0.85 is an explicit unchanged conservative parameter, not current CAD nominal. RF checks are XY projections; all copper/FP/zone/outline ASTs unchanged. NewLower STEP DATA is identical after rebuild fromoriginal. Hence distances/intersections transfer exactly; no newphysical/RFclaim."
+  "transfer_basis": "All R16 checks use B-relative unchanged components/card or fixed Upper/Lower. USB_effective_board0.85 is an explicit unchanged conservative parameter, not current CAD nominal. RF checks are XY projections; all copper/FP/zone/outline ASTs unchanged. NewLower STEP DATA is identical after rebuild fromoriginal. Hence distances/intersections transfer exactly; no newphysical/RFclaim.",
+  "component_substitution_transfer": {
+    "date": "2026-10-30",
+    "original_review_input_sha256": "a05fb4db8785f69a0e96533620440d110ff2dc13d2e4b28887b48de03e031c39",
+    "current_pcb_sha256": "a8bbae787964286f9783e2d74fa752ae82efbc7d5350371debf734503f4a98a8",
+    "proof": "1.Hardware/RevB-KiCad/Naive/component-substitutions.json",
+    "all_nonmaterial_native_geometry_and_models_unchanged": true,
+    "scope": "Retains the original numerical geometry review and its original source hashes. Applies unchanged geometry conclusions to the current material-field update; no new STEP Boolean or physical fit test was performed. Candidate body/land compatibility was separately reviewed; R3 is not among the lower-case relief cuts."
+  }
 }

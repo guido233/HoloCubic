@@ -60,7 +60,7 @@ summary.getRange(`C${start}:C${end}`).setNumberFormat('#,##0');
 
 detail.getRange('A2').values=[['Naive RevB 装配明细']];
 detail.getRange('A2').format.font={name:'Arial',size:14,bold:true,color:'#182330'};
-detail.getRange('A3').values=[['2026-10-29  每行对应一个实际位号，数量单位：件/台']];
+detail.getRange('A3').values=[[`${data.date}  每行对应一个实际位号，数量单位：件/台`]];
 detail.getRange('A4').values=[['来源：两板原生KiCad原理图MPN字段与受控manifest；特殊状态的原厂证据见J列。']];
 detail.getRange('A6:J6').values=[['板卡','位号','数量','元件值','完整订货号 MPN','厂家','本地受控封装','供货状态','特殊采购与验收条件','资料来源']];
 detail.getRange(`A${start}:J${last}`).values=data.parts.map(p=>[p.board,p.reference,p.quantity,p.value,p.mpn,p.manufacturer,p.footprint,p.supply_status,p.acceptance_note,p.source_url]);
@@ -90,4 +90,4 @@ for(const [sheetName,range,file]of [['采购清单','A2:G15','purchasing.png'],[
 }
 const xlsx=await SpreadsheetFile.exportXlsx(wb);
 await xlsx.save(out+'/HoloCubic-Naive-RevB-BOM.xlsx');
-console.log('Exported 69 instances / 39 MPNs:',out+'/HoloCubic-Naive-RevB-BOM.xlsx');
+console.log(`Exported ${data.total_instances} instances / ${data.unique_mpn_count} MPNs:`,out+'/HoloCubic-Naive-RevB-BOM.xlsx');

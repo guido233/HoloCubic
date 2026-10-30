@@ -28,7 +28,7 @@
 			)
 		)
 	)
-	(property "Datasheet" ""
+	(property "Datasheet" "https://ds.murata.com/simserve/characteristics?ReqType=TechPDF&partnumber=GRM188R71E105KA12&techpdfname=technical_pdf_Capacitor01&lang=en"
 		(at 0 0 0)
 		(layer "F.Fab")
 		(hide yes)
@@ -62,7 +62,7 @@
 			)
 		)
 	)
-	(property "MPN" "GRM188R71A105KA61D"
+	(property "MPN" "GRM188R71E105KA12D"
 		(at 0 0 0)
 		(layer "F.SilkS")
 		(hide yes)
@@ -74,7 +74,7 @@
 			)
 		)
 	)
-	(property "DesignNote" "Local 5V bypass, 10V X7R"
+	(property "DesignNote" "Local 5V bypass; 1uF +/-10%, 25V X7R, 0603. Shared MPN with MainBoard C24."
 		(at 0 0 0)
 		(layer "F.SilkS")
 		(hide yes)

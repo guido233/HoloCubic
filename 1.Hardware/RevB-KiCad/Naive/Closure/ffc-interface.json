@@ -1,11 +1,11 @@
 {
   "revision": "NaiveRevB FFC interface definition R1",
-  "date": "2026-10-29",
+  "date": "2026-10-30",
   "classification": "Controlled endpoint and electrical mapping specification; cable length and physical assembly not released.",
   "source_pcbs": [
     {
       "pcb": "1.Hardware/RevB-KiCad/Naive/MainBoard/MainBoard.kicad_pcb",
-      "sha256": "a05fb4db8785f69a0e96533620440d110ff2dc13d2e4b28887b48de03e031c39",
+      "sha256": "a8bbae787964286f9783e2d74fa752ae82efbc7d5350371debf734503f4a98a8",
       "connector_reference": "CON1",
       "connector_pose": [
         "143.9545",
@@ -16,7 +16,7 @@
     },
     {
       "pcb": "1.Hardware/RevB-KiCad/Naive/ExtendBoard/ExtendBoard.kicad_pcb",
-      "sha256": "7ba3a6e58040c57fe67f55df174be974967f560e97ab8b37d000d93db8e1c112",
+      "sha256": "d05a3b40bbc770fbf0523e38680e2212bac2e3d39f5fec9066f50eba5e90c40c",
       "connector_reference": "CON1",
       "connector_pose": [
         "146.9346",
@@ -360,5 +360,34 @@
     "physical insertion/access, continuity and system timing qualification"
   ],
   "endpoint_visual_review": "ffc-endpoint-visual-review.json",
-  "stiffener_thickness_min_mm": 0.188
+  "stiffener_thickness_min_mm": 0.188,
+  "component_substitution_source_refresh": {
+    "date": "2026-10-30",
+    "previous_source_pcbs": [
+      {
+        "pcb": "1.Hardware/RevB-KiCad/Naive/MainBoard/MainBoard.kicad_pcb",
+        "sha256": "a8bbae787964286f9783e2d74fa752ae82efbc7d5350371debf734503f4a98a8",
+        "connector_reference": "CON1",
+        "connector_pose": [
+          "143.9545",
+          "104.7163",
+          "90"
+        ],
+        "connector_layer": "F.Cu"
+      },
+      {
+        "pcb": "1.Hardware/RevB-KiCad/Naive/ExtendBoard/ExtendBoard.kicad_pcb",
+        "sha256": "d05a3b40bbc770fbf0523e38680e2212bac2e3d39f5fec9066f50eba5e90c40c",
+        "connector_reference": "CON1",
+        "connector_pose": [
+          "146.9346",
+          "105.0417",
+          "90"
+        ],
+        "connector_layer": "F.Cu"
+      }
+    ],
+    "proof": "1.Hardware/RevB-KiCad/Naive/component-substitutions.json",
+    "scope": "Connector poses, complete native geometry, contact assignments and electrical nodes unchanged. No physical cable test."
+  }
 }

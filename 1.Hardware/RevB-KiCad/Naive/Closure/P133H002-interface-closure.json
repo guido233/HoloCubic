@@ -1,8 +1,8 @@
 {
   "classification": "Axial solder landing allowance mathematically verified; overall FPC fit NOT qualified",
   "source_pcb": "1.Hardware/RevB-KiCad/Naive/ExtendBoard/ExtendBoard.kicad_pcb",
-  "pcb_sha256": "7ba3a6e58040c57fe67f55df174be974967f560e97ab8b37d000d93db8e1c112",
-  "schematic_sha256": "d08f31f0f42eeb8d321cbc402209157a587137dce6c674d76f533ed3b4f189f7",
+  "pcb_sha256": "d05a3b40bbc770fbf0523e38680e2212bac2e3d39f5fec9066f50eba5e90c40c",
+  "schematic_sha256": "46c006975feda9a5cf08b7bd5408a0e6c8a48d2d0f90f37210f2771b28a2aab6",
   "datum": "Same nominal screen/PCB XY center(148.5011,105.0036); KiCad globalXY, unitsmm",
   "manufacturer_source": "https://cdn.shopify.com/s/files/1/0657/1150/5511/files/P133H002.pdf?v=1779866387",
   "manufacturer_pdf_sha256": "0656c42747e58621afb6cdcd8e28aba7539b7b49afb95bb5bc1533a01c7f5a3f",

@@ -1,15 +1,15 @@
 {
-  "date": "2026-10-29",
+  "date": "2026-10-30",
   "tool": "KiCad 10.0.7",
   "scope": "Native schematic and PCB constraints, not physical prototype qualification.",
   "sources": [
     {
       "path": "1.Hardware/RevB-KiCad/Naive/MainBoard/MainBoard.kicad_pcb",
-      "sha256": "a05fb4db8785f69a0e96533620440d110ff2dc13d2e4b28887b48de03e031c39"
+      "sha256": "a8bbae787964286f9783e2d74fa752ae82efbc7d5350371debf734503f4a98a8"
     },
     {
       "path": "1.Hardware/RevB-KiCad/Naive/MainBoard/MainBoard.kicad_sch",
-      "sha256": "ba9721f91173625fbde87724af5227dc38321b393ed119dc0b00860e52d91eca"
+      "sha256": "07fcad3e59d81c5683dbd6467261d4922e33b47e4417812c85a7bde86fed7cd7"
     },
     {
       "path": "1.Hardware/RevB-KiCad/Naive/MainBoard/MainBoard.kicad_pro",
@@ -17,18 +17,18 @@
     },
     {
       "path": "1.Hardware/RevB-KiCad/Naive/ExtendBoard/ExtendBoard.kicad_pcb",
-      "sha256": "7ba3a6e58040c57fe67f55df174be974967f560e97ab8b37d000d93db8e1c112"
+      "sha256": "d05a3b40bbc770fbf0523e38680e2212bac2e3d39f5fec9066f50eba5e90c40c"
     },
     {
       "path": "1.Hardware/RevB-KiCad/Naive/ExtendBoard/ExtendBoard.kicad_sch",
-      "sha256": "d08f31f0f42eeb8d321cbc402209157a587137dce6c674d76f533ed3b4f189f7"
+      "sha256": "46c006975feda9a5cf08b7bd5408a0e6c8a48d2d0f90f37210f2771b28a2aab6"
     },
     {
       "path": "1.Hardware/RevB-KiCad/Naive/ExtendBoard/ExtendBoard.kicad_pro",
       "sha256": "bfda48ae139da75240f715e23c8f2f7226d1b6b6ad8c5976865c066a95e35ed1"
     }
   ],
-  "check_count": 202,
+  "check_count": 206,
   "failed_check_count": 0,
   "checks": [
     {
@@ -213,6 +213,10 @@
     },
     {
       "check": "Load switch CT exact C0G MPN",
+      "passed": true
+    },
+    {
+      "check": "Load switch selected DBVT MPN",
       "passed": true
     },
     {
@@ -460,6 +464,10 @@
       "passed": true
     },
     {
+      "check": "BH1750 DVI selected 25V MPN",
+      "passed": true
+    },
+    {
       "check": "EN capacitance on MCU enable",
       "passed": true
     },
@@ -501,6 +509,10 @@
     },
     {
       "check": "R3 value",
+      "passed": true
+    },
+    {
+      "check": "UART series resistor selected RALEC MPN",
       "passed": true
     },
     {
@@ -788,6 +800,10 @@
       "passed": true
     },
     {
+      "check": "Display 5V bypass selected 25V MPN",
+      "passed": true
+    },
+    {
       "check": "Display SPI LCD pin 7",
       "passed": true
     },
@@ -924,30 +940,32 @@
   ],
   "via_drill_vs_smd_paste_overlap_count": 0,
   "visual_review": [
-    "Native schematic editor opens and renders final main schematic without errors.",
-    "Native top and bottom 3D renders; six copper SVG plots inspected.",
-    "Added models explicitly represent maximum body bounding envelopes, not exact manufacturer models.",
-    "New ExtendBoard F.Cu/F.Mask/F.Paste plots inspected; no LCD stencil apertures.",
-    "Measurement diagram front/back coordinates cross-checked; LCD1 pad1/pad12 independently read with native pcbnew PAD.GetPosition."
+    "2026-10-29: Native schematic editor opens and renders final main schematic without errors.",
+    "2026-10-29: Native top and bottom 3D renders; six copper SVG plots inspected.",
+    "2026-10-29: Added models explicitly represent maximum body bounding envelopes, not exact manufacturer models.",
+    "2026-10-29: New ExtendBoard F.Cu/F.Mask/F.Paste plots inspected; no LCD stencil apertures.",
+    "2026-10-29: Measurement diagram front/back coordinates cross-checked; LCD1 pad1/pad12 independently read with native pcbnew PAD.GetPosition.",
+    "2026-10-30: Updated BOM workbook rendered and inspected. Current source changes are material metadata only; no new native3D render is claimed."
   ],
   "physical_qualification_pending": [
     "Manufacturer order acceptance, actual finished-stack accounting/tolerances and hole treatment",
     "P133H002 permitted bend segment/radius, contact-face and lateral registration",
     "Unique screen/ExtendBoard-to-Upper assembly registration and final cable route/length",
     "Power/CP_VDD startup, USB enumeration/hotplug/load and thermal measurements",
-    "RF matching and wireless performance in final enclosure"
+    "RF matching and wireless performance in final enclosure",
+    "BH1750 VCC/DVI cold-start, slow-ramp, brownout and rapid-replug reset waveforms"
   ],
   "bom": {
     "total_instances": 69,
-    "unique_mpn_count": 39,
-    "grouped_procurement_rows": 39,
-    "workbook_formulas": 40,
+    "unique_mpn_count": 38,
+    "grouped_procurement_rows": 38,
+    "workbook_formulas": 39,
     "workbook_formula_errors": 0,
     "files": {
-      "BOM.json": "eb76de98403a7dfe93275152c85d4eb0b7e18c662c45c1fca3a74f78df2c0eea",
-      "BOM.csv": "f5b15561461406903f8239dc177c82d0e11aa40315850ac8bdb8225c0d2981d3",
-      "BOM-grouped.csv": "320e66748972417bd42d2e37e5371a0023a04a8c2116389a11162085edd1f52d",
-      "BOM.xlsx": "c5e706ad6a9f5da1c8c0ae78496202aa4d2d3ca2c52660059cf038834171385c"
+      "BOM.json": "7ce04575fe5c1e8aa56406495954efa32a6d3ceeb11fb45b09b18ed04e3396bb",
+      "BOM.csv": "31d8bd8954221c7ca51d747b997f092e5e251e5ce9ccb1d45ec88af35c0379b3",
+      "BOM-grouped.csv": "1a36f148d2b501f056beb630e35eadb5ec3d8c68d9ca4d8efe469d75fb9c8792",
+      "BOM.xlsx": "280001eafbc00a17af6d08f8de75c8266185906a7cc266533f327657cf814f36"
     }
   },
   "mechanical": {
@@ -959,15 +977,16 @@
     "original_altium_and_step_files_unchanged": 40,
     "nominal_main_CAD_including_mask_budget_mm": 1.06,
     "selected_published_stack": "JLC06101H-3313, nominal order1.0mm, copper+dielectric1.04mm; order confirmation pending",
-    "final_case_step_sha256": "cfbf73b8e6aacda83d20e6e41b012c7b738c71492427c744900032768476ff11"
+    "final_case_step_sha256": "cfbf73b8e6aacda83d20e6e41b012c7b738c71492427c744900032768476ff11",
+    "component_substitution_proof": "component-substitutions.json"
   },
   "regression_tests": {
-    "count": 35,
+    "count": 51,
     "failures": 0,
     "errors": 0,
     "skipped": 0,
     "command": "python3 -m unittest discover -s tools/hardware -p 'test_*.py' -v",
-    "duration_seconds": 63.661
+    "duration_seconds": 64.138
   },
   "display_axial_allowance": {
     "report": "Closure/P133H002-interface-closure.json",
@@ -983,14 +1002,38 @@
     "RAM_bytes": 50100,
     "flash_bytes": 1229107,
     "image_sha256": "6057bf8593855b7bf7078d32cb3bacd6c9f2361a5ce07e2ff9e27843e89da32d",
-    "image_header_and_validation_hash_verified": true
+    "image_header_and_validation_hash_verified": true,
+    "last_compilation_record_date": "2026-10-29",
+    "recompiled_for_component_substitution": false
   },
   "formal_naive_firmware": {
     "compiled": true,
     "RAM_bytes": 98060,
     "flash_bytes": 2247967,
     "image_sha256": "b2303e96d0b8b2c3103e8afad82af752f38de5679fb38f5b538c8f158142585b",
-    "executed_on_new_PCB": false
+    "executed_on_new_PCB": false,
+    "last_compilation_record_date": "2026-10-29",
+    "recompiled_for_component_substitution": false
   },
-  "closure_status_document": "Closure/README.md"
+  "closure_status_document": "Closure/README.md",
+  "component_substitutions": {
+    "record": "component-substitutions.json",
+    "positions_applied": 4,
+    "firmware_change_required": false,
+    "physical_qualification_completed": false
+  },
+  "probe_map": {
+    "terminals": 15,
+    "record": "Closure/probe-map.json",
+    "BH1750_VCC": "M10/C11.1",
+    "BH1750_DVI": "M11/C24.1"
+  },
+  "measurement_record": {
+    "rows": 15,
+    "all_results": "NOT_TESTED",
+    "record": "Closure/measurement-record.csv"
+  },
+  "firmware_functional_limits": [
+    "Default application does not enable BH1750 ambient automatic brightness. The unused Ambient helper requires a separate correction/integration before enabling it."
+  ]
 }

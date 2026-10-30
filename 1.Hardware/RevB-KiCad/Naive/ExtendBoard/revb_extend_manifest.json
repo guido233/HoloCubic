@@ -208,20 +208,22 @@
     {
       "ref": "C4",
       "value": "1uF",
-      "mpn": "GRM188R71A105KA61D",
+      "mpn": "GRM188R71E105KA12D",
       "footprint": "HoloCubic_Ext:C_0603",
       "pins": {
         "1": "VDD_5V",
         "2": "GND"
       },
-      "note": "Local 5V bypass, 10V X7R",
+      "note": "Local 5V bypass; 1uF +/-10%, 25V X7R, 0603. Shared MPN with MainBoard C24.",
       "uuid": "f5072543-3224-5a25-8409-4d64f2b32ead",
       "placement_mm": [
         138.2,
         106.5,
         0.0
       ],
-      "placement_layer": "F.Cu"
+      "placement_layer": "F.Cu",
+      "datasheet": "https://ds.murata.com/simserve/characteristics?ReqType=TechPDF&partnumber=GRM188R71E105KA12&techpdfname=technical_pdf_Capacitor01&lang=en",
+      "manufacturer": "Murata"
     }
   ],
   "maintenance_scope": "Current native schematic/PCB are authoritative; placement metadata reflects the closure revision, not an instruction to rerun migration scripts."

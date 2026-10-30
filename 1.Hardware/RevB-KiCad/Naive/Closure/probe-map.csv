@@ -8,6 +8,8 @@ M6,MainBoard,C7,1,EN,F,141.52,110.0,existing component terminal; tip access must
 M7,MainBoard,C20,2,GND,F,154.6,100.92,existing component terminal; tip access must be checked
 M8,MainBoard,R12,1,USB_CC1,B,145.19,94.8,existing component terminal; tip access must be checked
 M9,MainBoard,R13,1,USB_CC2,B,143.19,97.2,existing component terminal; tip access must be checked
+M10,MainBoard,C11,1,3V3,F,155.2,98.208,existing component terminal; tip access must be checked
+M11,MainBoard,C24,1,NetR11_1,F,158.145,99.18,existing component terminal; tip access must be checked
 E1,ExtendBoard,C3,1,VDD_5V,F,138.02,108.5,existing component terminal; tip access must be checked
 E2,ExtendBoard,C1,1,3V3,F,142.32,107.2,existing component terminal; tip access must be checked
 E3,ExtendBoard,R2,1,BL_SENSE,F,144.5,115.925,existing component terminal; tip access must be checked

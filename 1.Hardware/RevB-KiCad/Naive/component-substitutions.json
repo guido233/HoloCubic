@@ -1,0 +1,141 @@
+{
+  "date": "2026-10-30",
+  "scope": "Applied controlled prototype material substitutions. No PCB geometry, electrical-node, routing, layer or placement changes. No physical qualification or manufacturing release.",
+  "substitutions": [
+    {
+      "board": "MainBoard",
+      "reference": "C24",
+      "from": "GRM188R71C105KA12D",
+      "to": "GRM188R71E105KA12D",
+      "manufacturer": "Murata",
+      "lcsc_code": "C86020",
+      "value": "1uF",
+      "note": "BH1750 DVI RC; R11 remains1k; 25V X7R0603; prototype reset-waveform acceptance remains required"
+    },
+    {
+      "board": "ExtendBoard",
+      "reference": "C4",
+      "from": "GRM188R71A105KA61D",
+      "to": "GRM188R71E105KA12D",
+      "manufacturer": "Murata",
+      "lcsc_code": "C86020",
+      "value": "1uF",
+      "note": "5V local bypass; same purchase group as MainC24; total2 per device"
+    },
+    {
+      "board": "MainBoard",
+      "reference": "U6",
+      "from": "TPS22918DBVR",
+      "to": "TPS22918DBVT",
+      "manufacturer": "Texas Instruments",
+      "lcsc_code": "C2680345",
+      "value": "TPS22918DBVT",
+      "note": "Same DBV6 IC and pinout; factory reel quantity only; ON/CT/QOD unchanged"
+    },
+    {
+      "board": "MainBoard",
+      "reference": "R3",
+      "from": "RC0402FR-07200RL",
+      "to": "RTT022000FTH",
+      "manufacturer": "RALEC",
+      "lcsc_code": "C102869",
+      "value": "200R",
+      "note": "200ohm1%1/16W100ppm UART series; candidate max1.10x0.55x0.35mm fits existing courtyard; dense-land solder process acceptance retained"
+    }
+  ],
+  "source_changes": [
+    {
+      "file": "1.Hardware/RevB-KiCad/Naive/ExtendBoard/ExtendBoard.kicad_pcb",
+      "before_sha256": "7ba3a6e58040c57fe67f55df174be974967f560e97ab8b37d000d93db8e1c112",
+      "after_sha256": "d05a3b40bbc770fbf0523e38680e2212bac2e3d39f5fec9066f50eba5e90c40c",
+      "only_existing_material_property_values_changed": true,
+      "all_existing_UUIDs_unchanged": true
+    },
+    {
+      "file": "1.Hardware/RevB-KiCad/Naive/ExtendBoard/ExtendBoard.kicad_sch",
+      "before_sha256": "d08f31f0f42eeb8d321cbc402209157a587137dce6c674d76f533ed3b4f189f7",
+      "after_sha256": "46c006975feda9a5cf08b7bd5408a0e6c8a48d2d0f90f37210f2771b28a2aab6",
+      "only_existing_material_property_values_changed": true,
+      "all_existing_UUIDs_unchanged": true
+    },
+    {
+      "file": "1.Hardware/RevB-KiCad/Naive/ExtendBoard/HoloCubic_Ext.pretty/C_0603.kicad_mod",
+      "before_sha256": "8e89d881c96e9c01106559a80b17bc915fd7d8cc5c26c29969e56e6fa8d6927d",
+      "after_sha256": "dcfa75824eba3f953b326902d43ca0ac498730dad812f174550c8fe93450f1ed",
+      "only_existing_material_property_values_changed": true,
+      "all_existing_UUIDs_unchanged": true
+    },
+    {
+      "file": "1.Hardware/RevB-KiCad/Naive/ExtendBoard/revb_extend_manifest.json",
+      "before_sha256": "47a0505748b49365e6ba38ba88dfea606d3b971876da2febef392968b7e59a9c",
+      "after_sha256": "11b620cc35f22c98115dc09f0f9e733221296983439ee53893cff28f7b62a5a7"
+    },
+    {
+      "file": "1.Hardware/RevB-KiCad/Naive/MainBoard/HoloCubic_RevB.pretty/Original_R3.kicad_mod",
+      "before_sha256": "fb96437b192e6363114e0454474c3c859ea6f15eb28165aa9a687626d30f85f3",
+      "after_sha256": "e8e60d342bb25366ebfc92208be41028c73df4569322a4d6b0c053d6e9561348",
+      "only_existing_material_property_values_changed": true,
+      "all_existing_UUIDs_unchanged": true
+    },
+    {
+      "file": "1.Hardware/RevB-KiCad/Naive/MainBoard/HoloCubic_RevB.pretty/RevB_C24.kicad_mod",
+      "before_sha256": "1d87d5fd14e566bfa8d22781e6421582b48115a763fd598fa6d0e8bd460549a5",
+      "after_sha256": "35de353fad4c23c05fb9dcc484ea224ea0f7ac2ad2c2d918373c9f84d8fb40c7",
+      "only_existing_material_property_values_changed": true,
+      "all_existing_UUIDs_unchanged": true
+    },
+    {
+      "file": "1.Hardware/RevB-KiCad/Naive/MainBoard/HoloCubic_RevB.pretty/RevB_U6.kicad_mod",
+      "before_sha256": "ea5168cbd98224f8ddec592a2461edbd8c990ae008de9166e9be0d0903455ed8",
+      "after_sha256": "1cfe0384215df31741a18bc8086ce599e7228b6b57a6288c6922a5374d020c23",
+      "only_existing_material_property_values_changed": true,
+      "all_existing_UUIDs_unchanged": true
+    },
+    {
+      "file": "1.Hardware/RevB-KiCad/Naive/MainBoard/MainBoard.kicad_pcb",
+      "before_sha256": "a05fb4db8785f69a0e96533620440d110ff2dc13d2e4b28887b48de03e031c39",
+      "after_sha256": "a8bbae787964286f9783e2d74fa752ae82efbc7d5350371debf734503f4a98a8",
+      "only_existing_material_property_values_changed": true,
+      "all_existing_UUIDs_unchanged": true
+    },
+    {
+      "file": "1.Hardware/RevB-KiCad/Naive/MainBoard/MainBoard.kicad_sch",
+      "before_sha256": "ba9721f91173625fbde87724af5227dc38321b393ed119dc0b00860e52d91eca",
+      "after_sha256": "07fcad3e59d81c5683dbd6467261d4922e33b47e4417812c85a7bde86fed7cd7",
+      "only_existing_material_property_values_changed": true,
+      "all_existing_UUIDs_unchanged": true
+    },
+    {
+      "file": "1.Hardware/RevB-KiCad/Naive/MainBoard/revb_main_manifest.json",
+      "before_sha256": "80308a8828d193ca44315286cd6b4daa7104ac91a058bbdd0a8a836e61825951",
+      "after_sha256": "0cb46734ebe51cdeb4e3f049d712c7dc5aba082cb55c23c5c4bc0da2191de651"
+    }
+  ],
+  "board_invariants": [
+    {
+      "board": "MainBoard",
+      "exact_pad_to_net_map_unchanged": true,
+      "exact_node_groups_unchanged": true,
+      "footprint_identifiers_unchanged": true,
+      "all_nonmaterial_tree_including_geometry_stack_layers_copper_unchanged": true
+    },
+    {
+      "board": "ExtendBoard",
+      "exact_pad_to_net_map_unchanged": true,
+      "exact_node_groups_unchanged": true,
+      "footprint_identifiers_unchanged": true,
+      "all_nonmaterial_tree_including_geometry_stack_layers_copper_unchanged": true
+    }
+  ],
+  "assembly_instances": 69,
+  "unique_mpn_groups": 38,
+  "unchanged_main_C4": {
+    "mpn": "GRM21BR61E226ME44L",
+    "value": "22uF"
+  },
+  "manufacturer_sources": [
+    "https://ds.murata.com/simserve/characteristics?ReqType=TechPDF&partnumber=GRM188R71E105KA12&techpdfname=technical_pdf_Capacitor01&lang=en",
+    "https://www.ti.com/product/TPS22918/part-details/TPS22918DBVT",
+    "https://www.ralec.com/upload/media/product/file/IE-SP-010%20.pdf"
+  ]
+}

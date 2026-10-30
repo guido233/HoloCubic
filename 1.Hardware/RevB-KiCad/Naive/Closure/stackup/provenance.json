@@ -1,0 +1,26 @@
+{
+  "review_date_America_Los_Angeles": "2026-10-29",
+  "retrieved_at_UTC": "2026-10-30T03:09:42.861422+00:00",
+  "response_code": 200,
+  "template_count": 11,
+  "explicit_selected_showName": "JLC06101H-3313",
+  "template_code": "20211110041702",
+  "order_nominal_thickness_mm": 1.0,
+  "published_copper_plus_dielectric_total_mm": 1.04,
+  "api_compressionThickness_mm": 1.04,
+  "CAD_mask_budget_each_mm": 0.01,
+  "proposed_CAD_total_including_masks_mm": 1.06,
+  "order_accepted": false,
+  "manufacturer_final_thickness_definition_confirmed": false,
+  "checked_sources": [
+    "https://jlcpcb.com/impedance",
+    "https://cart.jlcpcb.com/quote",
+    "https://jlcpcb.com/capabilities/pcb-",
+    "https://jlcpcb.com/help/article/pcb-via-covering"
+  ],
+  "files": {
+    "jlc-6layer-1mm-request.json": "04e205ad1ba6b803a9878fac3f5283d921e8be3e8e026159ce04a98e70993269",
+    "jlc-6layer-1mm-response.json": "ec252a237b8eacfad3d20610eb31961b6b6ad6699c015e0823e89aeb77921ce9",
+    "selected-template.json": "5617875a7da2fa76ebb5cd71bcd4c5e2530223621f7b81265e6c39158c1981ab"
+  }
+}

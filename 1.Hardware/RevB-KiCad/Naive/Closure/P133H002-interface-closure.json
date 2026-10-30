@@ -1,0 +1,416 @@
+{
+  "classification": "Axial solder landing allowance mathematically verified; overall FPC fit NOT qualified",
+  "source_pcb": "1.Hardware/RevB-KiCad/Naive/ExtendBoard/ExtendBoard.kicad_pcb",
+  "pcb_sha256": "7ba3a6e58040c57fe67f55df174be974967f560e97ab8b37d000d93db8e1c112",
+  "schematic_sha256": "d08f31f0f42eeb8d321cbc402209157a587137dce6c674d76f533ed3b4f189f7",
+  "datum": "Same nominal screen/PCB XY center(148.5011,105.0036); KiCad globalXY, unitsmm",
+  "manufacturer_source": "https://cdn.shopify.com/s/files/1/0657/1150/5511/files/P133H002.pdf?v=1779866387",
+  "manufacturer_pdf_sha256": "0656c42747e58621afb6cdcd8e28aba7539b7b49afb95bb5bc1533a01c7f5a3f",
+  "drawing_page": 9,
+  "panel_BL_length_mm": [
+    29.22,
+    0.2
+  ],
+  "folded_outer_edge_dimension_mm": [
+    11.1,
+    0.5
+  ],
+  "contact_length_mm": [
+    2.0,
+    0.2
+  ],
+  "contact_length_tolerance_basis": "Page9 NOTE9 unmarked tolerance +/-0.2mm. This is conservative against assuming exactly2.0mm. Supplier-approved final drawing still required.",
+  "panel_tail_root_x_interval_mm": [
+    163.0111,
+    163.2111
+  ],
+  "new_pad_copper_xy_mm": [
+    5.5,
+    0.5
+  ],
+  "pad_pitch_mm": 0.7,
+  "nominal_adjacent_mask_web_mm": 0.15,
+  "engineering_minimum_axial_overlap_mm": 0.75,
+  "engineering_minimum_basis": "Chosen manual-solder assembly acceptance threshold, NOT a POLCD guaranteed requirement.",
+  "bare_fold_all_corner_cases": [
+    {
+      "panel_tail_root_x_mm": 163.0111,
+      "folded_root_to_contact_outer_edge_mm": 10.6,
+      "exposed_contact_length_mm": 1.8,
+      "contact_interval_x_mm": [
+        152.4111,
+        154.2111
+      ],
+      "overlap_with_copper_mm": 1.8,
+      "passes_0p75mm_minimum": true
+    },
+    {
+      "panel_tail_root_x_mm": 163.0111,
+      "folded_root_to_contact_outer_edge_mm": 10.6,
+      "exposed_contact_length_mm": 2.2,
+      "contact_interval_x_mm": [
+        152.4111,
+        154.6111
+      ],
+      "overlap_with_copper_mm": 2.2,
+      "passes_0p75mm_minimum": true
+    },
+    {
+      "panel_tail_root_x_mm": 163.0111,
+      "folded_root_to_contact_outer_edge_mm": 11.6,
+      "exposed_contact_length_mm": 1.8,
+      "contact_interval_x_mm": [
+        151.4111,
+        153.2111
+      ],
+      "overlap_with_copper_mm": 0.9611,
+      "passes_0p75mm_minimum": true
+    },
+    {
+      "panel_tail_root_x_mm": 163.0111,
+      "folded_root_to_contact_outer_edge_mm": 11.6,
+      "exposed_contact_length_mm": 2.2,
+      "contact_interval_x_mm": [
+        151.4111,
+        153.6111
+      ],
+      "overlap_with_copper_mm": 1.3611,
+      "passes_0p75mm_minimum": true
+    },
+    {
+      "panel_tail_root_x_mm": 163.2111,
+      "folded_root_to_contact_outer_edge_mm": 10.6,
+      "exposed_contact_length_mm": 1.8,
+      "contact_interval_x_mm": [
+        152.6111,
+        154.4111
+      ],
+      "overlap_with_copper_mm": 1.8,
+      "passes_0p75mm_minimum": true
+    },
+    {
+      "panel_tail_root_x_mm": 163.2111,
+      "folded_root_to_contact_outer_edge_mm": 10.6,
+      "exposed_contact_length_mm": 2.2,
+      "contact_interval_x_mm": [
+        152.6111,
+        154.8111
+      ],
+      "overlap_with_copper_mm": 2.2,
+      "passes_0p75mm_minimum": true
+    },
+    {
+      "panel_tail_root_x_mm": 163.2111,
+      "folded_root_to_contact_outer_edge_mm": 11.6,
+      "exposed_contact_length_mm": 1.8,
+      "contact_interval_x_mm": [
+        151.6111,
+        153.4111
+      ],
+      "overlap_with_copper_mm": 1.1611,
+      "passes_0p75mm_minimum": true
+    },
+    {
+      "panel_tail_root_x_mm": 163.2111,
+      "folded_root_to_contact_outer_edge_mm": 11.6,
+      "exposed_contact_length_mm": 2.2,
+      "contact_interval_x_mm": [
+        151.6111,
+        153.8111
+      ],
+      "overlap_with_copper_mm": 1.5611,
+      "passes_0p75mm_minimum": true
+    }
+  ],
+  "legacy_location_sensitivity_cases": [
+    {
+      "assumed_center_x_mm": 155.71,
+      "contact_length_mm": 1.8,
+      "overlap_mm": 1.8,
+      "passes_0p75mm_minimum": true
+    },
+    {
+      "assumed_center_x_mm": 155.71,
+      "contact_length_mm": 2.2,
+      "overlap_mm": 2.2,
+      "passes_0p75mm_minimum": true
+    },
+    {
+      "assumed_center_x_mm": 156.71,
+      "contact_length_mm": 1.8,
+      "overlap_mm": 1.8,
+      "passes_0p75mm_minimum": true
+    },
+    {
+      "assumed_center_x_mm": 156.71,
+      "contact_length_mm": 2.2,
+      "overlap_mm": 2.14,
+      "passes_0p75mm_minimum": true
+    }
+  ],
+  "minimum_bare_fold_overlap_mm": 0.9611,
+  "minimum_legacy_location_overlap_mm": 1.8,
+  "all_12_pads": [
+    {
+      "pin": 1,
+      "net": "GND",
+      "center_mm": [
+        155.0,
+        111.7736
+      ],
+      "copper_bbox_mm": [
+        152.25,
+        111.5236,
+        157.75,
+        112.0236
+      ],
+      "mask_margin_mm": 0.025,
+      "paste_aperture": false
+    },
+    {
+      "pin": 2,
+      "net": "LED_K",
+      "center_mm": [
+        155.0,
+        111.0736
+      ],
+      "copper_bbox_mm": [
+        152.25,
+        110.8236,
+        157.75,
+        111.3236
+      ],
+      "mask_margin_mm": 0.025,
+      "paste_aperture": false
+    },
+    {
+      "pin": 3,
+      "net": "VDD_5V",
+      "center_mm": [
+        155.0,
+        110.3736
+      ],
+      "copper_bbox_mm": [
+        152.25,
+        110.1236,
+        157.75,
+        110.6236
+      ],
+      "mask_margin_mm": 0.025,
+      "paste_aperture": false
+    },
+    {
+      "pin": 4,
+      "net": "3V3",
+      "center_mm": [
+        155.0,
+        109.6736
+      ],
+      "copper_bbox_mm": [
+        152.25,
+        109.4236,
+        157.75,
+        109.9236
+      ],
+      "mask_margin_mm": 0.025,
+      "paste_aperture": false
+    },
+    {
+      "pin": 5,
+      "net": "GND",
+      "center_mm": [
+        155.0,
+        108.9736
+      ],
+      "copper_bbox_mm": [
+        152.25,
+        108.7236,
+        157.75,
+        109.2236
+      ],
+      "mask_margin_mm": 0.025,
+      "paste_aperture": false
+    },
+    {
+      "pin": 6,
+      "net": "GND",
+      "center_mm": [
+        155.0,
+        108.2736
+      ],
+      "copper_bbox_mm": [
+        152.25,
+        108.0236,
+        157.75,
+        108.5236
+      ],
+      "mask_margin_mm": 0.025,
+      "paste_aperture": false
+    },
+    {
+      "pin": 7,
+      "net": "DC",
+      "center_mm": [
+        155.0,
+        107.5736
+      ],
+      "copper_bbox_mm": [
+        152.25,
+        107.3236,
+        157.75,
+        107.8236
+      ],
+      "mask_margin_mm": 0.025,
+      "paste_aperture": false
+    },
+    {
+      "pin": 8,
+      "net": "GND",
+      "center_mm": [
+        155.0,
+        106.8736
+      ],
+      "copper_bbox_mm": [
+        152.25,
+        106.6236,
+        157.75,
+        107.1236
+      ],
+      "mask_margin_mm": 0.025,
+      "paste_aperture": false
+    },
+    {
+      "pin": 9,
+      "net": "SCK",
+      "center_mm": [
+        155.0,
+        106.1736
+      ],
+      "copper_bbox_mm": [
+        152.25,
+        105.9236,
+        157.75,
+        106.4236
+      ],
+      "mask_margin_mm": 0.025,
+      "paste_aperture": false
+    },
+    {
+      "pin": 10,
+      "net": "MOSI",
+      "center_mm": [
+        155.0,
+        105.4736
+      ],
+      "copper_bbox_mm": [
+        152.25,
+        105.2236,
+        157.75,
+        105.7236
+      ],
+      "mask_margin_mm": 0.025,
+      "paste_aperture": false
+    },
+    {
+      "pin": 11,
+      "net": "RES",
+      "center_mm": [
+        155.0,
+        104.7736
+      ],
+      "copper_bbox_mm": [
+        152.25,
+        104.5236,
+        157.75,
+        105.0236
+      ],
+      "mask_margin_mm": 0.025,
+      "paste_aperture": false
+    },
+    {
+      "pin": 12,
+      "net": "GND",
+      "center_mm": [
+        155.0,
+        104.0736
+      ],
+      "copper_bbox_mm": [
+        152.25,
+        103.8236,
+        157.75,
+        104.3236
+      ],
+      "mask_margin_mm": 0.025,
+      "paste_aperture": false
+    }
+  ],
+  "check_count": 144,
+  "failed_count": 0,
+  "FPC_soldering_process": "Manual soldering after PCBA reflow, flux and controlled tinning, no solder-paste stencil aperture on longlands. Inspect all12contacts and bridges.",
+  "placements_mm_deg": {
+    "C1": [
+      142.8,
+      107.2
+    ],
+    "CON1": [
+      146.9346,
+      105.0417,
+      90.0
+    ],
+    "Q1": [
+      150.0952,
+      112.9665,
+      -90.0
+    ],
+    "R2": [
+      144.5,
+      115.1,
+      90.0
+    ],
+    "R3": [
+      147.2,
+      115.0
+    ],
+    "C2": [
+      141.5,
+      105.5
+    ],
+    "R1": [
+      147.6822,
+      112.6871,
+      90.0
+    ],
+    "U1": [
+      141.0,
+      112.2
+    ],
+    "C3": [
+      138.5,
+      108.5
+    ],
+    "C4": [
+      138.2,
+      106.5
+    ],
+    "LCD1": [
+      150.9522,
+      104.5591,
+      -90.0
+    ]
+  },
+  "ground_plane_stitch_mm": [
+    135,
+    93,
+    0.6,
+    0.3
+  ],
+  "legacy_complete_display_FPC_3d_model_removed": true,
+  "limits": [
+    "No physical assembly or operation test performed.",
+    "Only the axial contact-overlap range is closed; bending to the contacts is not proved by this range.",
+    "No permitted FPC bend radius or allowable bending segment is supplied in the P133 drawing.",
+    "12pin lateral alignment and contact polarity/face must be confirmed; do not widen pads to hide pitch/registration uncertainty.",
+    "Screen adhesive thickness, component bump placement, full FPC envelope, closedcase assembly and cable actuation need supplier/sample evidence.",
+    "Changing pads adds soldering area but does not validate the unknown FPC route."
+  ]
+}

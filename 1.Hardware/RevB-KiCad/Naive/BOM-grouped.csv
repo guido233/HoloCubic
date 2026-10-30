@@ -19,7 +19,7 @@ GRM188R71C105KA12D,1uF,1,Murata,MainBoard:C24,原理图已选完整MPN,MLCC标�
 GRM21BR61E226ME44L,22uF,4,Murata,"MainBoard:C2, MainBoard:C3, MainBoard:C4, MainBoard:C13",原理图已选完整MPN,22uF/25V0805；3V3典型有效约13–15uF，非保证下限; 22uF/25V0805；5V典型有效约10–11uF，非保证下限,https://ds.murata.com/simserve/characteristics?ReqType=TechPDF&partnumber=GRM21BR61E226ME44&techpdfname=technical_pdf_Capacitor01&lang=en
 MMBT3904-7-F,MMBT3904-7-F,2,Diodes Incorporated,"MainBoard:VT1, MainBoard:VT2",厂家图纸已核,B1/E2/C3；按Diodes受控SOT23焊盘，不任意替换不同引脚8050,https://www.diodes.com/assets/Datasheets/MMBT3904.pdf
 MPU-6050,MPU6050,1,TDK InvenSense,MainBoard:U3,Obsolete（原厂）,仅可追溯旧库存复刻；需来料功能检验；非持续量产供货方案,https://product.tdk.com/en/search/sensor/mortion-inertial/imu/info?part_no=MPU-6050
-P133H002,P133H002,1,POLCD,ExtendBoard:LCD1,电气候选，机械待验收,裸屏12pin/0.7mm/ST7789V；尾排绕板、焊盘注册及整壳装配须样件确认,https://www.polcd-digital.com/products/1-3-inch-tft-lcd-display-240x240-pixels-p133h002
+P133H002,P133H002,1,POLCD,ExtendBoard:LCD1,电气候选，机械待验收,12pin/0.7mm/ST7789V；5.5x0.5mm无F.Paste长焊盘，PCBA后手工焊FPC；仅核纵向落点，折弯/接触面/整壳仍待样件,https://www.polcd-digital.com/products/1-3-inch-tft-lcd-display-240x240-pixels-p133h002
 RC0402FR-07100KL,100k,3,YAGEO,"MainBoard:R18, MainBoard:R19, ExtendBoard:R3",未单独核验生命周期,,https://www.yageogroup.com/component-documentation/download/specsheet/RC0402FR-07100KL
 RC0402FR-0710KL,10K / 10k,8,YAGEO,"MainBoard:R1, MainBoard:R6, MainBoard:R7, MainBoard:R8, MainBoard:R9, MainBoard:R10, MainBoard:R16, MainBoard:R17",未单独核验生命周期,,https://www.yageogroup.com/component-documentation/download/specsheet/RC0402FR-0710KL
 RC0402FR-0712KL,12K,2,YAGEO,"MainBoard:R4, MainBoard:R5",未单独核验生命周期,,https://www.yageogroup.com/component-documentation/download/specsheet/RC0402FR-0712KL

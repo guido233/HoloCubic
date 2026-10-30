@@ -3,7 +3,7 @@
 	(generator "pcbnew")
 	(generator_version "10.0")
 	(general
-		(thickness 1.0192)
+		(thickness 1.06)
 		(legacy_teardrops no)
 	)
 	(paper "A4")
@@ -63,9 +63,8 @@
 			(layer "dielectric 1"
 				(type "prepreg")
 				(thickness 0.0994)
-				(material "EVALUATION ONLY - not a fabricator confirmed stack")
-				(epsilon_r 4.2)
-				(loss_tangent 0.02)
+				(material "JLC06101H-3313: 3313*1; order confirmation pending")
+				(epsilon_r 4.1)
 			)
 			(layer "In1.Cu"
 				(type "copper")
@@ -74,9 +73,8 @@
 			(layer "dielectric 2"
 				(type "core")
 				(thickness 0.25)
-				(material "EVALUATION ONLY - not a fabricator confirmed stack")
-				(epsilon_r 4.2)
-				(loss_tangent 0.02)
+				(material "JLC06101H-3313: 0.25mm core excluding Cu; order confirmation pending")
+				(epsilon_r 4.6)
 			)
 			(layer "In2.Cu"
 				(type "copper")
@@ -84,10 +82,9 @@
 			)
 			(layer "dielectric 3"
 				(type "prepreg")
-				(thickness 0.1696)
-				(material "EVALUATION ONLY - not a fabricator confirmed stack")
-				(epsilon_r 4.2)
-				(loss_tangent 0.02)
+				(thickness 0.2104)
+				(material "JLC06101H-3313: 7628*1; order confirmation pending")
+				(epsilon_r 4.4)
 			)
 			(layer "In3.Cu"
 				(type "copper")
@@ -96,9 +93,8 @@
 			(layer "dielectric 4"
 				(type "core")
 				(thickness 0.25)
-				(material "EVALUATION ONLY - not a fabricator confirmed stack")
-				(epsilon_r 4.2)
-				(loss_tangent 0.02)
+				(material "JLC06101H-3313: 0.25mm core excluding Cu; order confirmation pending")
+				(epsilon_r 4.6)
 			)
 			(layer "In4.Cu"
 				(type "copper")
@@ -107,9 +103,8 @@
 			(layer "dielectric 5"
 				(type "prepreg")
 				(thickness 0.0994)
-				(material "EVALUATION ONLY - not a fabricator confirmed stack")
-				(epsilon_r 4.2)
-				(loss_tangent 0.02)
+				(material "JLC06101H-3313: 3313*1; order confirmation pending")
+				(epsilon_r 4.1)
 			)
 			(layer "B.Cu"
 				(type "copper")

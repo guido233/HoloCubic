@@ -37,6 +37,12 @@ jobs:
         run: python3 tools/hardware/verify_hardware.py --drc --output /tmp/hardware-checks.json
       - name: Fault-injection regressions
         run: python3 -m unittest discover -s tools/hardware -p 'test_*.py' -v
+      - name: Display contact allowance and current measurement coordinates
+        run: |
+          python3 tools/hardware/display_interface_allowance.py --output-dir /tmp/display-interface
+          cmp /tmp/display-interface/P133H002-interface-closure.json 1.Hardware/RevB-KiCad/Naive/Closure/P133H002-interface-closure.json
+          python3 tools/hardware/export_probe_map.py --output /tmp/probe-map
+          cmp /tmp/probe-map/probe-map.json 1.Hardware/RevB-KiCad/Naive/Closure/probe-map.json
       - name: Mechanical interface revisions
         run: |
           python3 tools/hardware/mechanical_baseline.py check Naive_MainBoard '1.Hardware/RevB-KiCad/Naive/MainBoard/MainBoard.kicad_pcb' --revision naive-revb --json > /tmp/main-mechanical.json
@@ -49,4 +55,6 @@ jobs:
             /tmp/hardware-checks.json
             /tmp/main-mechanical.json
             /tmp/display-mechanical.json
+            /tmp/display-interface/
+            /tmp/probe-map/
           if-no-files-found: warn

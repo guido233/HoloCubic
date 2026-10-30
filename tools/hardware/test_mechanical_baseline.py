@@ -123,6 +123,32 @@ class MechanicalRegressionTests(unittest.TestCase):
                 data = (ROOT / board["source"]["path"]).read_bytes()
                 self.assertEqual(hashlib.sha256(data).hexdigest(), board["source"]["sha256"])
 
+    def test_display_long_manual_windows_and_connector_revision(self):
+        expected = mechanical.apply_interface_revision(
+            "Naive_ExtendBoard", self.baseline["boards"]["Naive_ExtendBoard"],
+            self.baseline["interface_revisions"]["naive-revb"],
+            self.baseline["connector_revisions"], self.baseline["component_revisions"])
+        current = mechanical.read_kicad(NAIVE / "ExtendBoard/ExtendBoard.kicad_pcb")
+
+        def old_window(board):
+            for pad in board["components"]["LCD1"]["pads"]:
+                pad["at_mm"] = [156.21, 111.7219 - .7 * (int(pad["number"]) - 1)]
+                pad["size_mm"] = [.4, 2.032]
+                pad["roundrect_ratio"] = .25
+
+        changes = [
+            ("obsolete short LCD window", old_window),
+            ("obsolete FFC origin", lambda b: b["components"]["CON1"].update(at_mm=[149.8346, 105.0417])),
+            ("LCD paste restored", lambda b: b["components"]["LCD1"]["pads"][0]["layers"].append("F.Paste")),
+            ("LCD mask expansion", lambda b: b["components"]["LCD1"]["pads"][0].update(solder_mask_margin_mm=.05)),
+        ]
+        for label, change in changes:
+            with self.subTest(label=label):
+                board = copy.deepcopy(current)
+                change(board)
+                result = mechanical.check_board(expected, board, references={"1": "LCD1"})
+                self.assertFalse(result["passed"], f"unreviewed display change accepted: {label}")
+
     def test_generated_case_artifact_matches_reviewed_parameters(self):
         report = json.loads((NAIVE / "Mechanical/Lower-RevB-verification.json").read_text())
         step = (NAIVE / "Mechanical/Lower-RevB.step").read_bytes()

@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-29",
+  "source_url": "https://media.digikey.com/pdf/Data%20Sheets/Hirose%20PDFs/FH12_Series.pdf",
+  "sha256": "4be8ac44852c95401baf6ad7a2092157efa03c033c555fbe94df84b8840d06fd",
+  "source_type": "Archived manufacturer-authored catalog, distributor-hosted",
+  "pdf_creation_year": 2014,
+  "rendered_page": 11,
+  "visual_reviewed": true,
+  "verified_figure_assignments": {
+    "bottom_contact_exposed_contact_length_min_mm": 3.5,
+    "bottom_contact_stiffener_length_min_mm": 4.5,
+    "stiffener_material_thickness_min_mm": 0.188,
+    "8_contact_span_mm": 3.5,
+    "8_contact_overall_width_mm": 4.5,
+    "FFC_conductor_width_mm": [
+      0.3,
+      0.03
+    ],
+    "FPC_conductor_width_mm": [
+      0.35,
+      0.03
+    ]
+  },
+  "current_official_catalog_url": "https://www.hirose.com/en/product/series/FH12/documents?path=%2Fapi%2Fv1%2Fseries%2FFH12%2Fdocuments%2Fproduct_series_catalog%2Fcontent%3Flang%3DEN",
+  "current_official_catalog_same_dimensions_text_checked_on_page": 10,
+  "limits": [
+    "Archive visual is not described as a visual review of the current PDF.",
+    "Supplier must confirm the final cable construction against the currently controlled manufacturer drawing.",
+    "No physical cable or connector fit test performed."
+  ]
+}

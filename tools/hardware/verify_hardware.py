@@ -223,7 +223,8 @@ def extend_electrical(c,d,main=None):
 # apertures/via barrels inside the die-pad window. Native DRC is still required.
 def to_global(fp,x,y):
     at=get(fp,'at');a=math.radians(float(at[3]) if len(at)>3 else 0)
-    if get(fp,'layer')[1]=='B.Cu':x=-x
+    # Native PCB pad coordinates already contain a footprint's B-side flip.
+    # Apply only its rotation/translation; a second mirror moves real terminals.
     return (float(at[1])+x*math.cos(a)+y*math.sin(a),float(at[2])-x*math.sin(a)+y*math.cos(a))
 def in_poly(p,poly):
     x,y=p;inside=False
@@ -345,8 +346,20 @@ def run_cli(cli,args):
     result=subprocess.run([str(cli),*map(str,args)],text=True,capture_output=True,env={**os.environ,'PYTHONDONTWRITEBYTECODE':'1'})
     return {'returncode':result.returncode,'stdout':result.stdout.strip(),'stderr':result.stderr.strip()}
 
+def manufacturing_rules(c,project,stem):
+    rules=project.get('board',{}).get('design_settings',{}).get('rules',{})
+    try:
+        web=float(rules.get('solder_mask_min_width'))
+        clearance=float(rules.get('solder_mask_to_copper_clearance'))
+        ok=web>=.10 and clearance>=.09
+    except (TypeError,ValueError):
+        ok=False
+    c.add(stem+' manufacturing solder-mask rules',ok,
+          {k:rules.get(k) for k in ['solder_mask_min_width','solder_mask_to_copper_clearance']})
+
 def validate_board(cli,folder,stem,c,temp,drc=False):
     sch=folder/(stem+'.kicad_sch');pcb=folder/(stem+'.kicad_pcb');xml=temp/(stem+'.xml');erc=temp/(stem+'_erc.json')
+    manufacturing_rules(c,json.loads((folder/(stem+'.kicad_pro')).read_text()),stem)
     export=run_cli(cli,['sch','export','netlist','--format','kicadxml','--output',xml,sch]);c.add(stem+' native netlist export',export['returncode']==0,export)
     if export['returncode']!=0:return None,None,None
     report=run_cli(cli,['sch','erc','--format','json','--severity-all','--exit-code-violations','--output',erc,sch]);ercdata=json.loads(erc.read_text()) if erc.exists() else {}

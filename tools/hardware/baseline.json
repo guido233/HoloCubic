@@ -6889,7 +6889,7 @@
               "In4.Cu",
               "B.Cu"
             ],
-            "nominal_total_thickness_mm": 1.0192,
+            "nominal_total_thickness_mm": 1.06,
             "stackup": [
               {
                 "name": "F.Mask",
@@ -6924,7 +6924,7 @@
               {
                 "name": "dielectric 3",
                 "type": "prepreg",
-                "thickness_mm": 0.1696
+                "thickness_mm": 0.2104
               },
               {
                 "name": "In3.Cu",
@@ -7066,7 +7066,7 @@
                 ]
               }
             ],
-            "status": "Approvedsixlayerengineeringlayout withnominal1.0192mm bookkeepingstack; notanorderablefabconfirmedstandardstack orcontrolledRFimpedance. Manufacturerfinishedthickness/materials/RFvalidationstillrequired. HistoricalAltium2layerhashesunchanged.",
+            "status": "Selected JLC06101H-3313 public template: copper/dielectric1.04mm plus two0.01mm assumed mask budgets gives CAD1.06mm. Order nominal1.0mm is a different convention. Fab order acceptance, actual finished range and RF validation remain required; original Altium hashes unchanged.",
             "required_ground_planes": [
               {
                 "layer": "In1.Cu",
@@ -7112,24 +7112,126 @@
                 ],
                 "note": "DedicatedGNDplaneintent: wholeboardGNDzone andno nonGNDtracks/zones. FinalfilledconnectivityrequiresnativeDRC, notonlythisgeometrychecker."
               }
-            ]
+            ],
+            "selected_template_evidence": {
+              "template": "JLC06101H-3313",
+              "impedance_template_code": "20211110041702",
+              "copper_and_dielectric_mm": 1.04,
+              "CAD_mask_budget_each_mm": 0.01,
+              "order_nominal_mm": 1.0,
+              "source": "1.Hardware/RevB-KiCad/Naive/Closure/STACKUP-SPEC.md",
+              "material_data": "Official design Dk3313=4.1,7628=4.4,core=4.6; batch/frequency/Df not certified by this profile."
+            }
           }
         },
         "Naive_ExtendBoard": {
-          "component_offsets_mm": {},
-          "pad_changes": []
+          "component_offsets_mm": {
+            "CON1": [
+              -2.9,
+              0.0
+            ]
+          },
+          "pad_changes": [],
+          "component_replacements": {
+            "1": "polcd-p133h002-manual-long-window"
+          },
+          "placement_constraints": [
+            {
+              "reference": "C1",
+              "at_mm": [
+                8.992800000000017,
+                -10.922699999999992
+              ],
+              "angle_deg": 0.0,
+              "side": "F.Cu"
+            },
+            {
+              "reference": "Q1",
+              "at_mm": [
+                16.28800000000001,
+                -5.156199999999998
+              ],
+              "angle_deg": 90.0,
+              "side": "F.Cu"
+            },
+            {
+              "reference": "R2",
+              "at_mm": [
+                10.692800000000005,
+                -3.0227000000000004
+              ],
+              "angle_deg": -90.0,
+              "side": "F.Cu"
+            },
+            {
+              "reference": "R3",
+              "at_mm": [
+                13.392799999999994,
+                -3.1226999999999947
+              ],
+              "angle_deg": 0.0,
+              "side": "F.Cu"
+            },
+            {
+              "reference": "C2",
+              "at_mm": [
+                7.692800000000005,
+                -12.622699999999995
+              ],
+              "angle_deg": 0.0,
+              "side": "F.Cu"
+            },
+            {
+              "reference": "R1",
+              "at_mm": [
+                13.875,
+                -5.435599999999994
+              ],
+              "angle_deg": -90.0,
+              "side": "F.Cu"
+            },
+            {
+              "reference": "U1",
+              "at_mm": [
+                7.192800000000005,
+                -5.922699999999992
+              ],
+              "angle_deg": 0.0,
+              "side": "F.Cu"
+            },
+            {
+              "reference": "C3",
+              "at_mm": [
+                4.692800000000005,
+                -9.622699999999995
+              ],
+              "angle_deg": 0.0,
+              "side": "F.Cu"
+            },
+            {
+              "reference": "C4",
+              "at_mm": [
+                4.392799999999994,
+                -11.622699999999995
+              ],
+              "angle_deg": 0.0,
+              "side": "F.Cu"
+            }
+          ],
+          "reviewed_source_pcb_sha256": "7ba3a6e58040c57fe67f55df174be974967f560e97ab8b37d000d93db8e1c112",
+          "revision_note": "12 manual F-side solder windows extend X152.25..157.75; F.Mask only and+0.025mm mask, no paste. CON1moves2.9mmleft. RemaininginternalFPposesexplicitlylisted. OriginalAltiumboardandLCDbaselineunchanged."
         }
       },
       "reasons": [
         "CON1 on both Naive boards uses the documented FH12-8S-0.5SH(55) pad geometry instead of the unidentified historical connector.",
         "Main CON1 moves 0.30 mm toward negative KiCad Y; origin (143.9545,104.7163) mm preserves U4 and its RF region while improving closed body/pad clearance.",
         "Replace unidentified original USB1 with documented GCT USB4105-GF-A. Preserve source STEP mating-face X and center Y; target port center is 0.05 mm higher than source model. All lands, shell slots and locating holes follow the target library verified against GCT B4 drawing. This is not a claim that the original connector was GCT, or that the case cutout is certified.",
-        "LCD electrical pads remain the historical geometry. P133H002 is a candidate; its tail routing around the real PCB thickness has not been verified, and the flat-fold drawing is not used as a new PCB target.",
+        "Explicit display long manual solder window revision replaces the historical2.032mm lands with5.5x0.5mm F.Cu/F.Mask lands, X152.25..157.75, rowcenterY107.9236; no F.Paste. ExtendBoard CON1 moves2.9mmleft and internal part poses are explicitly frozen. This is a drawing-based solder accommodation, not proof of real tail radius/Upper registration. OriginalAltiumgeometryretained.",
         "Explicit engineered CA-C03 lands, not the original manufacturer 1.2x2.0 nominal lands. NC toe shortened to global X=140.4200 to clear the actual curved board edge; both inner heels and pad heights expanded to cover specified body/end-metal extremes plus 0.05 mm terminal-position error including rotation projection. Keep support pin2 electrically NC. Preserve the existing seven RF track geometries; matching and assembled RF performance still require measurement.",
         "Replace unidentified historical Micro_SD with active Molex104031-0811, using official SD-104031-001B2 and product-page STEP. Preserve center axisY105.4062. Final native pose(149.53164,105.3112)/270B moves the fully inserted card outer end0.65mm left toX139.83164 and socket mouth1.7875mm left toX143.83164, avoiding actual through-slot/copper-land overlap with USB1. Proper native B flip then270deg is required;90deg reverses insertion direction. Restore full manufacturer pad8. Use complete real projected body plus all lands with>=0.25mm dense assembly margin; do not crop true geometry to clear USB stakes. Move all17 B resistors into reviewed top strip, outside the card sweep; localizeC16 at(159.3,115.1)/180B besideU6, using the approved1.369mmCTconnection. Case insertion/retention remains a sample gate.",
         "Explicit PICO thermal revision: preserve U4 pose and all48 signal lands; replace old4.064mm full-paste EP with4.5mm copper,4.0mm mask opening,0.5mm pin1 chamfer,16 independent0.75mm paste-only windows, and21 locked GND vias0.46/0.25mm. Check these geometries; do not ignore U4 or overwrite the historical baseline. Assembly stencil/via treatment and thermal performance need process validation. Perimeter48 pads have explicit+0.025mm solder-mask margin as the RevB manufacturing choice; EP alone uses-0.25mm.",
         "ExplicitC17F90pose(155.88,111.02) fromRootfrozenfanout integratione5258a002348cc8173c94dd851952fb040240d3f9456bca8671f9a7d7b12ac48; maximum1.05x0.55x0.55mm package plus0.08mm assumedstandoff independentlyscreenedagainstactualUSB/Molex/originalcases. F-sidepartdoesnotchange22B-side/USBstakecasecuts. Finalroutedsourcehashisrecordedafterlayerchoiceandroutingfreeze.",
-        "Explicitselectedsixlayerrevision F/In1/In2/In3/In4/B, nominal1.0192mmincludingmasks, custombookkeepingstackwithdedicatedIn1/In4GNDplanes andallfourinnerRFkeepouts. R16alone movesfromtopbankto(144.3,112.4)/180B tocompleteSD_DAT1; pads1=3V3/2=SD_DAT1 andsame10k0402MPNunchanged. Remaining16BresistorsandlocalizedC16preservetheirreviewedposes. Nativeallnetconnectivityandfinalcasebodychecksareindependentreleasegates; originalAltiumsourcesunchanged."
+        "Explicitselectedsixlayerrevision F/In1/In2/In3/In4/B, nominal1.06mmincludingtwo0.01mmmaskbudgets, selectedJLC06101H-3313publictemplatewithcentralPP0.2104mmwithdedicatedIn1/In4GNDplanes andallfourinnerRFkeepouts. R16alone movesfromtopbankto(144.3,112.4)/180B tocompleteSD_DAT1; pads1=3V3/2=SD_DAT1 andsame10k0402MPNunchanged. Remaining16BresistorsandlocalizedC16preservetheirreviewedposes. Nativeallnetconnectivityandfinalcasebodychecksareindependentreleasegates; originalAltiumsourcesunchanged."
       ],
       "assembly_status": "Naive RevB interface exceptions only; P133H002 FPC, FFC actuation, target USB port clearance, Molex card sweep/retention, antenna matching and housing fit remain unverified. Not released for manufacture."
     }
@@ -8089,6 +8191,370 @@
         }
       ],
       "reason": "Replace unidentified historical Micro_SD with active Molex104031-0811, using official SD-104031-001B2 and product-page STEP. Preserve the fully inserted card outer endX140.48164 and center axisY105.4062; connector mouth intentionally moves left1.1375mm toX144.48164. Proper native B flip then270deg is required;90deg reverses insertion direction. Restore full manufacturer pad8. Remove all resistors from the card sweep because reference card-bottom minimum0.42mm leaves too little margin over0.35mm components; use reviewed top B strip. Case insertion/retention must be validated on samples. Final RevB moves left an additional0.65mm to avoid GCT through-slot/ring overlap: native target(149.53164,105.3112)/270B. Card outer end is X139.83164,0.65mm left of the historical end; center axisY105.4062 remains. Use complete real body/pad+.25 dense courtyard."
+    },
+    "polcd-p133h002-manual-long-window": {
+      "part_number": "P133H002",
+      "manufacturer": "POLCD",
+      "footprint_library_id": "HoloCubic_Ext:LCD_12P_0.7mm",
+      "origin_offset_mm": [
+        0.0,
+        0.0
+      ],
+      "angle_offset_deg": 0.0,
+      "local_pads": [
+        {
+          "number": "1",
+          "at_mm": [
+            7.214500000000001,
+            -4.047799999999995
+          ],
+          "size_mm": [
+            0.5,
+            5.5
+          ],
+          "angle_deg": -180.0,
+          "copper": "F.Cu",
+          "shape": "roundrect",
+          "drill_mm": null,
+          "drill_offset_mm": [
+            0.0,
+            0.0
+          ],
+          "plated": null,
+          "roundrect_ratio": 0.1,
+          "net_hint": "GND",
+          "layers": [
+            "F.Cu",
+            "F.Mask"
+          ],
+          "solder_mask_margin_mm": 0.025,
+          "chamfer_ratio": 0.0,
+          "chamfer_corners": []
+        },
+        {
+          "number": "2",
+          "at_mm": [
+            6.514499999999998,
+            -4.047799999999995
+          ],
+          "size_mm": [
+            0.5,
+            5.5
+          ],
+          "angle_deg": -180.0,
+          "copper": "F.Cu",
+          "shape": "roundrect",
+          "drill_mm": null,
+          "drill_offset_mm": [
+            0.0,
+            0.0
+          ],
+          "plated": null,
+          "roundrect_ratio": 0.1,
+          "net_hint": "LED_K",
+          "layers": [
+            "F.Cu",
+            "F.Mask"
+          ],
+          "solder_mask_margin_mm": 0.025,
+          "chamfer_ratio": 0.0,
+          "chamfer_corners": []
+        },
+        {
+          "number": "3",
+          "at_mm": [
+            5.814499999999995,
+            -4.047799999999995
+          ],
+          "size_mm": [
+            0.5,
+            5.5
+          ],
+          "angle_deg": -180.0,
+          "copper": "F.Cu",
+          "shape": "roundrect",
+          "drill_mm": null,
+          "drill_offset_mm": [
+            0.0,
+            0.0
+          ],
+          "plated": null,
+          "roundrect_ratio": 0.1,
+          "net_hint": "VDD_5V",
+          "layers": [
+            "F.Cu",
+            "F.Mask"
+          ],
+          "solder_mask_margin_mm": 0.025,
+          "chamfer_ratio": 0.0,
+          "chamfer_corners": []
+        },
+        {
+          "number": "4",
+          "at_mm": [
+            5.1144999999999925,
+            -4.047799999999995
+          ],
+          "size_mm": [
+            0.5,
+            5.5
+          ],
+          "angle_deg": -180.0,
+          "copper": "F.Cu",
+          "shape": "roundrect",
+          "drill_mm": null,
+          "drill_offset_mm": [
+            0.0,
+            0.0
+          ],
+          "plated": null,
+          "roundrect_ratio": 0.1,
+          "net_hint": "3V3",
+          "layers": [
+            "F.Cu",
+            "F.Mask"
+          ],
+          "solder_mask_margin_mm": 0.025,
+          "chamfer_ratio": 0.0,
+          "chamfer_corners": []
+        },
+        {
+          "number": "5",
+          "at_mm": [
+            4.414500000000004,
+            -4.047799999999995
+          ],
+          "size_mm": [
+            0.5,
+            5.5
+          ],
+          "angle_deg": -180.0,
+          "copper": "F.Cu",
+          "shape": "roundrect",
+          "drill_mm": null,
+          "drill_offset_mm": [
+            0.0,
+            0.0
+          ],
+          "plated": null,
+          "roundrect_ratio": 0.1,
+          "net_hint": "GND",
+          "layers": [
+            "F.Cu",
+            "F.Mask"
+          ],
+          "solder_mask_margin_mm": 0.025,
+          "chamfer_ratio": 0.0,
+          "chamfer_corners": []
+        },
+        {
+          "number": "6",
+          "at_mm": [
+            3.7145000000000015,
+            -4.047799999999995
+          ],
+          "size_mm": [
+            0.5,
+            5.5
+          ],
+          "angle_deg": -180.0,
+          "copper": "F.Cu",
+          "shape": "roundrect",
+          "drill_mm": null,
+          "drill_offset_mm": [
+            0.0,
+            0.0
+          ],
+          "plated": null,
+          "roundrect_ratio": 0.1,
+          "net_hint": "GND",
+          "layers": [
+            "F.Cu",
+            "F.Mask"
+          ],
+          "solder_mask_margin_mm": 0.025,
+          "chamfer_ratio": 0.0,
+          "chamfer_corners": []
+        },
+        {
+          "number": "7",
+          "at_mm": [
+            3.0144999999999986,
+            -4.047799999999995
+          ],
+          "size_mm": [
+            0.5,
+            5.5
+          ],
+          "angle_deg": -180.0,
+          "copper": "F.Cu",
+          "shape": "roundrect",
+          "drill_mm": null,
+          "drill_offset_mm": [
+            0.0,
+            0.0
+          ],
+          "plated": null,
+          "roundrect_ratio": 0.1,
+          "net_hint": "DC",
+          "layers": [
+            "F.Cu",
+            "F.Mask"
+          ],
+          "solder_mask_margin_mm": 0.025,
+          "chamfer_ratio": 0.0,
+          "chamfer_corners": []
+        },
+        {
+          "number": "8",
+          "at_mm": [
+            2.314499999999996,
+            -4.047799999999995
+          ],
+          "size_mm": [
+            0.5,
+            5.5
+          ],
+          "angle_deg": -180.0,
+          "copper": "F.Cu",
+          "shape": "roundrect",
+          "drill_mm": null,
+          "drill_offset_mm": [
+            0.0,
+            0.0
+          ],
+          "plated": null,
+          "roundrect_ratio": 0.1,
+          "net_hint": "GND",
+          "layers": [
+            "F.Cu",
+            "F.Mask"
+          ],
+          "solder_mask_margin_mm": 0.025,
+          "chamfer_ratio": 0.0,
+          "chamfer_corners": []
+        },
+        {
+          "number": "9",
+          "at_mm": [
+            1.614500000000007,
+            -4.047799999999995
+          ],
+          "size_mm": [
+            0.5,
+            5.5
+          ],
+          "angle_deg": -180.0,
+          "copper": "F.Cu",
+          "shape": "roundrect",
+          "drill_mm": null,
+          "drill_offset_mm": [
+            0.0,
+            0.0
+          ],
+          "plated": null,
+          "roundrect_ratio": 0.1,
+          "net_hint": "SCK",
+          "layers": [
+            "F.Cu",
+            "F.Mask"
+          ],
+          "solder_mask_margin_mm": 0.025,
+          "chamfer_ratio": 0.0,
+          "chamfer_corners": []
+        },
+        {
+          "number": "10",
+          "at_mm": [
+            0.9145000000000041,
+            -4.047799999999995
+          ],
+          "size_mm": [
+            0.5,
+            5.5
+          ],
+          "angle_deg": -180.0,
+          "copper": "F.Cu",
+          "shape": "roundrect",
+          "drill_mm": null,
+          "drill_offset_mm": [
+            0.0,
+            0.0
+          ],
+          "plated": null,
+          "roundrect_ratio": 0.1,
+          "net_hint": "MOSI",
+          "layers": [
+            "F.Cu",
+            "F.Mask"
+          ],
+          "solder_mask_margin_mm": 0.025,
+          "chamfer_ratio": 0.0,
+          "chamfer_corners": []
+        },
+        {
+          "number": "11",
+          "at_mm": [
+            0.21450000000000127,
+            -4.047799999999995
+          ],
+          "size_mm": [
+            0.5,
+            5.5
+          ],
+          "angle_deg": -180.0,
+          "copper": "F.Cu",
+          "shape": "roundrect",
+          "drill_mm": null,
+          "drill_offset_mm": [
+            0.0,
+            0.0
+          ],
+          "plated": null,
+          "roundrect_ratio": 0.1,
+          "net_hint": "RES",
+          "layers": [
+            "F.Cu",
+            "F.Mask"
+          ],
+          "solder_mask_margin_mm": 0.025,
+          "chamfer_ratio": 0.0,
+          "chamfer_corners": []
+        },
+        {
+          "number": "12",
+          "at_mm": [
+            -0.4855000000000016,
+            -4.047799999999995
+          ],
+          "size_mm": [
+            0.5,
+            5.5
+          ],
+          "angle_deg": -180.0,
+          "copper": "F.Cu",
+          "shape": "roundrect",
+          "drill_mm": null,
+          "drill_offset_mm": [
+            0.0,
+            0.0
+          ],
+          "plated": null,
+          "roundrect_ratio": 0.1,
+          "net_hint": "GND",
+          "layers": [
+            "F.Cu",
+            "F.Mask"
+          ],
+          "solder_mask_margin_mm": 0.025,
+          "chamfer_ratio": 0.0,
+          "chamfer_corners": []
+        }
+      ],
+      "locked": true,
+      "revision_basis": "Explicit RevB drawing-only adaptation: 12 F.Cu/F.Mask manual solder lands5.5x0.5mm, centerX155.0, pin1Y111.7736, pitch0.7. No F.Paste. This is not historical geometry or manufacturer recommended land; tail bend radius/assembly registration not certified.",
+      "source_pcb_sha256": "7ba3a6e58040c57fe67f55df174be974967f560e97ab8b37d000d93db8e1c112",
+      "source_document": "1.Hardware/RevB-KiCad/Naive/Closure/DISPLAY-INTERFACE.md"
     }
   },
   "case_revisions": {
@@ -8628,7 +9094,7 @@
           "note": "B-side intrusion of maximum1.10mm stake through minimum0.90mm finished board, plus0.15mm assumed solder-fillet extension. Envelope includes entire copper-ring projection."
         }
       ],
-      "note": "Final16upperbankBresistorsplusrelocatedR16(144.3,112.4)/180B andlocalizedC16(159.3,115.1)/180B. Signal0geometrysourceSHA213d6bca427d9e7ab6e824a57aae7e3bfdddcec9ed6f0a235fac4194d0ecffcc; finalmergedmetadata/copperSHAisrecordedbythegeneratedreport. RebuildfromoriginalLower: do notretainoldtopR16slot, obsolete4x4slotsoroldC16slot. Sixlayer1.0192nominalstackdoesnotchangetheBseatdatum."
+      "note": "Final16upperbankBresistorsplusrelocatedR16(144.3,112.4)/180B andlocalizedC16(159.3,115.1)/180B. Signal0geometrysourceSHA213d6bca427d9e7ab6e824a57aae7e3bfdddcec9ed6f0a235fac4194d0ecffcc; finalmergedmetadata/copperSHAisrecordedbythegeneratedreport. RebuildfromoriginalLower: do notretainoldtopR16slot, obsolete4x4slotsoroldC16slot. SelectedsixlayerCAD1.06mmstackdoesnotchangetheBseatdatum; the0.0408mmincrease movesF-sidebodyenvelopes only.22Bside/USBstakecutparametersunchanged. ReferClosure/STACKUP-SPEC.md for1.0order/1.04compression/1.06CADdefinitions."
     }
   }
 }

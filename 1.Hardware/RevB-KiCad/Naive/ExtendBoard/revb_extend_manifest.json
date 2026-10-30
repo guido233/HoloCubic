@@ -23,7 +23,13 @@
         "11": "RES",
         "12": "GND"
       },
-      "note": "P133H002 electrically compatible candidate only; legacy FPC solder-pad geometry retained. Fold around 1.071mm PCB and enclosure fit unverified; see MECHANICAL-REVIEW.md. External backlight current limiting required."
+      "note": "P133H002 candidate; F-side 5.5x0.5mm solder lands X152.25..157.75, no F.Paste. Controlled manual FPC soldering after PCBA. Axial landing allowance only; bend/contact-face/lateral registration/enclosure remain unqualified. See Closure/DISPLAY-INTERFACE.md.",
+      "placement_mm": [
+        150.9522,
+        104.5591,
+        -90.0
+      ],
+      "placement_layer": "B.Cu"
     },
     {
       "ref": "CON1",
@@ -42,7 +48,13 @@
         "8": "LCD_BL",
         "MP": "GND"
       },
-      "note": "Hirose CL0586-0744-5-55; 0.3mm FFC, bottom contacts, front latch; original origin retained, vendor land pattern replaces unidentified legacy footprint"
+      "note": "Hirose CL0586-0744-5-55, 8P/0.5mm bottom-contact/0.3mm FFC. Relocated without rotation or numbering change to clear the full LCD landing window. Cable must connect Main n to Extend 9-n.",
+      "placement_mm": [
+        146.9346,
+        105.0417,
+        90.0
+      ],
+      "placement_layer": "F.Cu"
     },
     {
       "ref": "Q1",
@@ -55,7 +67,13 @@
         "2": "GND",
         "3": "BL_EN"
       },
-      "note": "Logic-level N-MOS: pin1 G,2 S,3 D. High impedance gate preserves ESP32 GPIO5 default high strap; EN pulled low turns backlight off. Rds(on) specified at 2.5V."
+      "note": "Logic-level N-MOS: pin1 G,2 S,3 D. High impedance gate preserves ESP32 GPIO5 default high strap; EN pulled low turns backlight off. Rds(on) specified at 2.5V.",
+      "placement_mm": [
+        150.0952,
+        112.9665,
+        -90.0
+      ],
+      "placement_layer": "F.Cu"
     },
     {
       "ref": "R1",
@@ -67,7 +85,13 @@
         "1": "LCD_BL",
         "2": "BL_GATE"
       },
-      "note": "Gate series resistor; no DC load on GPIO5 strapping input"
+      "note": "Gate series resistor; no DC load on GPIO5 strapping input",
+      "placement_mm": [
+        147.6822,
+        112.6871,
+        90.0
+      ],
+      "placement_layer": "F.Cu"
     },
     {
       "ref": "U1",
@@ -83,7 +107,13 @@
         "6": "BL_SENSE"
       },
       "note": "Low-side linear current sink; FB5 and REXT6 connected; OUT >=0.8V and BIAS >=4.5V",
-      "uuid": "626ebabc-9ea4-502f-9da1-a9b9b4ce06b7"
+      "uuid": "626ebabc-9ea4-502f-9da1-a9b9b4ce06b7",
+      "placement_mm": [
+        141.0,
+        112.2,
+        0.0
+      ],
+      "placement_layer": "F.Cu"
     },
     {
       "ref": "R2",
@@ -95,7 +125,13 @@
         "2": "GND"
       },
       "note": "Typical backlight current 0.65V/27ohm =24.1mA; measure actual current before changing resistor",
-      "uuid": "f024ec79-baa5-5234-8cd2-677f258904f6"
+      "uuid": "f024ec79-baa5-5234-8cd2-677f258904f6",
+      "placement_mm": [
+        144.5,
+        115.1,
+        90.0
+      ],
+      "placement_layer": "F.Cu"
     },
     {
       "ref": "R3",
@@ -107,7 +143,13 @@
         "2": "BL_GATE"
       },
       "note": "Gate pull-up: default off once 3V3 is present; brief current-limited flash possible while 5V precedes 3V3",
-      "uuid": "5e73899f-baa4-511f-a7da-607a0faef363"
+      "uuid": "5e73899f-baa4-511f-a7da-607a0faef363",
+      "placement_mm": [
+        147.2,
+        115.0,
+        0.0
+      ],
+      "placement_layer": "F.Cu"
     },
     {
       "ref": "C1",
@@ -119,7 +161,13 @@
         "2": "GND"
       },
       "note": "Local panel logic bypass, 16V X7R",
-      "uuid": "1443392c-dfd1-5c04-a45b-e7e01cf73f24"
+      "uuid": "1443392c-dfd1-5c04-a45b-e7e01cf73f24",
+      "placement_mm": [
+        142.8,
+        107.2,
+        0.0
+      ],
+      "placement_layer": "F.Cu"
     },
     {
       "ref": "C2",
@@ -131,7 +179,13 @@
         "2": "GND"
       },
       "note": "Local panel bulk, 10V X5R; nominal capacitance",
-      "uuid": "cfc1f7c7-09bc-5f4e-98bf-1db8aac7cc60"
+      "uuid": "cfc1f7c7-09bc-5f4e-98bf-1db8aac7cc60",
+      "placement_mm": [
+        141.5,
+        105.5,
+        0.0
+      ],
+      "placement_layer": "F.Cu"
     },
     {
       "ref": "C3",
@@ -143,7 +197,13 @@
         "2": "GND"
       },
       "note": "Local AL5802 bias bypass, 16V X7R",
-      "uuid": "20f31e91-4884-52d8-945e-6a61a516092f"
+      "uuid": "20f31e91-4884-52d8-945e-6a61a516092f",
+      "placement_mm": [
+        138.5,
+        108.5,
+        0.0
+      ],
+      "placement_layer": "F.Cu"
     },
     {
       "ref": "C4",
@@ -155,7 +215,14 @@
         "2": "GND"
       },
       "note": "Local 5V bypass, 10V X7R",
-      "uuid": "f5072543-3224-5a25-8409-4d64f2b32ead"
+      "uuid": "f5072543-3224-5a25-8409-4d64f2b32ead",
+      "placement_mm": [
+        138.2,
+        106.5,
+        0.0
+      ],
+      "placement_layer": "F.Cu"
     }
-  ]
+  ],
+  "maintenance_scope": "Current native schematic/PCB are authoritative; placement metadata reflects the closure revision, not an instruction to rerun migration scripts."
 }

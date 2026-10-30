@@ -9,7 +9,7 @@
     "ExtendBoard": 11
   },
   "scope": "69 PCB-mounted instances only. PCB fabrication, FFC, USB cable, SD card, optics/enclosure and tools are separate.",
-  "placement_scope": "Native CAD coordinates, not a machine-specific pick-and-place file. LCD1 body is on B, tail solder pads on F; fold is unqualified.",
+  "placement_scope": "Native CAD coordinates, not a machine-specific pick-and-place file. LCD1 body is on B; 5.5x0.5mm F-side tail lands have no F.Paste and require controlled manual FPC soldering after PCBA. Fold/contact-face/enclosure remain unqualified.",
   "source_schematics": [
     {
       "schematic": "1.Hardware/RevB-KiCad/Naive/MainBoard/MainBoard.kicad_sch",
@@ -17,17 +17,17 @@
     },
     {
       "schematic": "1.Hardware/RevB-KiCad/Naive/ExtendBoard/ExtendBoard.kicad_sch",
-      "sha256": "39d4f003f0dabb8bb6c76697fec7b85b22cb5fad41692d653c4dc153018b5eab"
+      "sha256": "d08f31f0f42eeb8d321cbc402209157a587137dce6c674d76f533ed3b4f189f7"
     }
   ],
   "source_pcbs": [
     {
       "pcb": "1.Hardware/RevB-KiCad/Naive/MainBoard/MainBoard.kicad_pcb",
-      "sha256": "9027e617313d7e87af202d14787fecd7b6d484bee7a0b72a699a266f329cab9c"
+      "sha256": "a05fb4db8785f69a0e96533620440d110ff2dc13d2e4b28887b48de03e031c39"
     },
     {
       "pcb": "1.Hardware/RevB-KiCad/Naive/ExtendBoard/ExtendBoard.kicad_pcb",
-      "sha256": "b86d3b57e9d1ea0eee3e62e688c22a6c4507c0328ddc385a6607309e95d6514f"
+      "sha256": "7ba3a6e58040c57fe67f55df174be974967f560e97ab8b37d000d93db8e1c112"
     }
   ],
   "parts": [
@@ -968,8 +968,8 @@
       "manufacturer": "Murata",
       "footprint": "HoloCubic_Ext:C_0402",
       "side": "F.Cu",
-      "x_mm": 144.0,
-      "y_mm": 105.5,
+      "x_mm": 142.8,
+      "y_mm": 107.2,
       "rotation_deg": 0,
       "supply_status": "原理图已选完整MPN",
       "acceptance_note": "MLCC标称值不代表工作偏压下有效值",
@@ -1032,7 +1032,7 @@
       "manufacturer": "Hirose",
       "footprint": "HoloCubic_Ext:FFC_8P_0.5mm",
       "side": "F.Cu",
-      "x_mm": 149.8346,
+      "x_mm": 146.9346,
       "y_mm": 105.0417,
       "rotation_deg": 90.0,
       "supply_status": "厂家图纸已核",
@@ -1052,7 +1052,7 @@
       "y_mm": 104.5591,
       "rotation_deg": -90.0,
       "supply_status": "电气候选，机械待验收",
-      "acceptance_note": "裸屏12pin/0.7mm/ST7789V；尾排绕板、焊盘注册及整壳装配须样件确认",
+      "acceptance_note": "12pin/0.7mm/ST7789V；5.5x0.5mm无F.Paste长焊盘，PCBA后手工焊FPC；仅核纵向落点，折弯/接触面/整壳仍待样件",
       "source_url": "https://www.polcd-digital.com/products/1-3-inch-tft-lcd-display-240x240-pixels-p133h002"
     },
     {
@@ -1064,7 +1064,7 @@
       "manufacturer": "Alpha & Omega Semiconductor",
       "footprint": "HoloCubic_Ext:SOT23_NMOS",
       "side": "F.Cu",
-      "x_mm": 152.0952,
+      "x_mm": 150.0952,
       "y_mm": 112.9665,
       "rotation_deg": -90.0,
       "supply_status": "未单独核验生命周期",
@@ -1080,7 +1080,7 @@
       "manufacturer": "YAGEO",
       "footprint": "HoloCubic_Ext:R_0402",
       "side": "F.Cu",
-      "x_mm": 149.6822,
+      "x_mm": 147.6822,
       "y_mm": 112.6871,
       "rotation_deg": 90.0,
       "supply_status": "未单独核验生命周期",
@@ -1096,8 +1096,8 @@
       "manufacturer": "YAGEO",
       "footprint": "HoloCubic_Ext:R_0603",
       "side": "F.Cu",
-      "x_mm": 144.3,
-      "y_mm": 111.2,
+      "x_mm": 144.5,
+      "y_mm": 115.1,
       "rotation_deg": 90.0,
       "supply_status": "未单独核验生命周期",
       "acceptance_note": "",
@@ -1112,7 +1112,7 @@
       "manufacturer": "YAGEO",
       "footprint": "HoloCubic_Ext:R_0402",
       "side": "F.Cu",
-      "x_mm": 148.0,
+      "x_mm": 147.2,
       "y_mm": 115.0,
       "rotation_deg": 0,
       "supply_status": "未单独核验生命周期",

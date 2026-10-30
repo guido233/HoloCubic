@@ -5,11 +5,11 @@ A wiring fault is injected into the exported design in memory. Each regression
 requires the corresponding independent safety assertion to reject that fault.
 No design file is modified and these tests do not simulate physical hardware.
 """
-import copy, os, subprocess, tempfile, unittest
+import copy, json, os, subprocess, tempfile, unittest
 from pathlib import Path
 from verify_hardware import (ROOT, DEFAULT_CLI, Checks, schematic_netlist,
                              main_electrical, extend_electrical, pcb_circuit, mpu_geometry,
-                             pico_geometry, stack_geometry)
+                             pico_geometry, stack_geometry, manufacturing_rules, to_global, get)
 
 class SafetyMutationTests(unittest.TestCase):
     @classmethod
@@ -39,6 +39,26 @@ class SafetyMutationTests(unittest.TestCase):
     def test_baseline_satisfies_electrical_invariants(self):
         c=Checks();main_electrical(c,self.d)
         self.assertEqual([], [r for r in c.rows if not r['passed']])
+    def test_relaxed_solder_mask_manufacturing_rules_are_rejected(self):
+        for name in ['MainBoard','ExtendBoard']:
+            project=json.loads((ROOT/'1.Hardware/RevB-KiCad/Naive'/name/(name+'.kicad_pro')).read_text())
+            c=Checks();manufacturing_rules(c,project,name)
+            self.assertTrue(c.rows[0]['passed'])
+            for key,bad in [('solder_mask_min_width',.075),('solder_mask_to_copper_clearance',.0)]:
+                with self.subTest(board=name,rule=key):
+                    mutated=copy.deepcopy(project);mutated['board']['design_settings']['rules'][key]=bad
+                    c=Checks();manufacturing_rules(c,mutated,name)
+                    self.assertFalse(c.rows[0]['passed'])
+    def test_native_backside_footprint_pad_coordinates_are_not_mirrored_twice(self):
+        _,_,footprints=pcb_circuit(ROOT/'1.Hardware/RevB-KiCad/Naive/ExtendBoard/ExtendBoard.kicad_pcb')
+        footprint=footprints['LCD1']
+        self.assertEqual('B.Cu',get(footprint,'layer')[1])
+        # Independently read from KiCad 10 pcbnew PAD.GetPosition on this source.
+        expected={'1':(155.0,111.7736),'12':(155.0,104.0736)}
+        for pad in footprint:
+            if not isinstance(pad,list) or not pad or pad[0]!='pad' or pad[1] not in expected:continue
+            actual=to_global(footprint,*map(float,get(pad,'at')[1:3]))
+            for want,observed in zip(expected[pad[1]],actual):self.assertAlmostEqual(want,observed,places=6)
     def test_cc_short_is_rejected(self):
         self.bridge(('USB1','A5'),('USB1','B5'))
         self.rejected('CC1/CC2/raw VBUS independent')

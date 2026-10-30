@@ -33,7 +33,7 @@ EXACT = {
     'ESP32-PICO-D4': ('Espressif', 'NRND（原厂）', 'PICO系列v1.5均NRND；保持D4，替代需重新设计；EP/paste/via按RevB受控封装', 'https://documentation.espressif.com/esp32-pico_series_datasheet_en.html'),
     'BH1750FVI-TR': ('ROHM', 'NRND（渠道，待原厂确认）', 'WSOF6I；向原厂/授权渠道确认供货与追溯，不以模块代替裸IC', 'https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/6165/bh1750fvi-e.pdf'),
     'WS2812B-V5/W': ('Worldsemi', '厂家资料已核', '完整V5/W版本；1VDD/2DOUT/3GND/4DIN；5V供电及AHCT缓冲', 'https://datasheet.lcsc.com/lcsc/2206131216_Worldsemi-WS2812B-V5-W_C2874885.pdf'),
-    'P133H002': ('POLCD', '电气候选，机械待验收', '裸屏12pin/0.7mm/ST7789V；尾排绕板、焊盘注册及整壳装配须样件确认', 'https://www.polcd-digital.com/products/1-3-inch-tft-lcd-display-240x240-pixels-p133h002'),
+    'P133H002': ('POLCD', '电气候选，机械待验收', '12pin/0.7mm/ST7789V；5.5x0.5mm无F.Paste长焊盘，PCBA后手工焊FPC；仅核纵向落点，折弯/接触面/整壳仍待样件', 'https://www.polcd-digital.com/products/1-3-inch-tft-lcd-display-240x240-pixels-p133h002'),
     'AO3400A': ('Alpha & Omega Semiconductor', '未单独核验生命周期', 'G1/S2/D3逻辑NMOS；不可用NPN替代，以免加载GPIO5启动strap', 'https://www.aosmd.com/sites/default/files/res/datasheets/AO3400A.pdf'),
     'AL5802-7': ('Diodes Incorporated', '未单独核验生命周期', 'SOT26恒流驱动；27ohm设约24mA典型值，须测实物背光电流', 'https://www.diodes.com/assets/Datasheets/AL5802.pdf'),
     'MMBT3904-7-F': ('Diodes Incorporated', '厂家图纸已核', 'B1/E2/C3；按Diodes受控SOT23焊盘，不任意替换不同引脚8050', 'https://www.diodes.com/assets/Datasheets/MMBT3904.pdf'),
@@ -94,7 +94,7 @@ def export(cli, output):
     result={'revision':'Naive RevB','date':date.today().isoformat(),'unit_quantity':1,'total_instances':len(parts),
             'unique_mpn_count':len({p['mpn']for p in parts}),'board_counts':{'MainBoard':58,'ExtendBoard':11},
             'scope':'69 PCB-mounted instances only. PCB fabrication, FFC, USB cable, SD card, optics/enclosure and tools are separate.',
-            'placement_scope':'Native CAD coordinates, not a machine-specific pick-and-place file. LCD1 body is on B, tail solder pads on F; fold is unqualified.',
+            'placement_scope':'Native CAD coordinates, not a machine-specific pick-and-place file. LCD1 body is on B; 5.5x0.5mm F-side tail lands have no F.Paste and require controlled manual FPC soldering after PCBA. Fold/contact-face/enclosure remain unqualified.',
             'source_schematics':sources,'source_pcbs':pcbs,'parts':parts}
     output.parent.mkdir(parents=True,exist_ok=True);output.write_text(json.dumps(result,indent=2,ensure_ascii=False)+'\n')
     # Text sidecars remain usable without a workbook runtime. Placement fields

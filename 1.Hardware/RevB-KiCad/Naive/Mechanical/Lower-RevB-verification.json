@@ -11,13 +11,13 @@
     }
   ],
   "input_pcb": "1.Hardware/RevB-KiCad/Naive/MainBoard/MainBoard.kicad_pcb",
-  "input_pcb_sha256": "9027e617313d7e87af202d14787fecd7b6d484bee7a0b72a699a266f329cab9c",
+  "input_pcb_sha256": "a05fb4db8785f69a0e96533620440d110ff2dc13d2e4b28887b48de03e031c39",
   "cad_runtime": {
     "package": "cadquery-ocp",
     "version": "8.0.1.1.0"
   },
   "script_sha256": "81a568de7a9347c04d8ae680384c22f96c4875f1a44a224ca909ef67553301e2",
-  "case_parameters_sha256": "6f68b881276e33fa96a49a94f016a84ec429dbf6994c3d9d13652afef41a02d1",
+  "case_parameters_sha256": "35a508aa565e1afaa7a378c9016a411523e7902f95c0171e7eddb487a8e53c02",
   "board_to_case_transform_3x4": [
     0,
     1,
@@ -633,7 +633,7 @@
   "STEP_round_trip_verified": true,
   "STEP_round_trip_volume_delta_mm3": 0.0002797199822452967,
   "STEP_round_trip_relative_volume_tolerance": 1e-06,
-  "output_step_sha256": "2e4671494ad86096d7cf8cf2a0427132ff27e7977f10e508b7ac0c25015747ae",
+  "output_step_sha256": "cfbf73b8e6aacda83d20e6e41b012c7b738c71492427c744900032768476ff11",
   "limits": [
     "Original shell seat inference is a nominal construction datum; PCB warp, mould/print allowance and actual board retention require sample validation.",
     "Keep main board at original seat, avoiding USB/FFC height changes.",
@@ -643,5 +643,65 @@
     "Ext board pose, P133 FPC folding, FFC operation and assembled RF remain separate open validation gates.",
     "Each cut uses the union of maximum body and actual solder-land envelope before XY clearance; solder fillets must stay within the reviewed land/height budgets.",
     "Four USB SH through-board reliefs cover0.20mm worst stake intrusion plus0.15mm assumed solder-fillet extension; assembler must accept the solder budget. Their slots retain0.25mm XY and0.15mm Z clearance. This does not certify every manufacturer GD&T or USB plug overmould."
-  ]
+  ],
+  "main_stack_revision": {
+    "previous_pcb_sha256": "9027e617313d7e87af202d14787fecd7b6d484bee7a0b72a699a266f329cab9c",
+    "current_pcb_sha256": "a05fb4db8785f69a0e96533620440d110ff2dc13d2e4b28887b48de03e031c39",
+    "previous_nominal_thickness_mm": 1.0192,
+    "current_nominal_thickness_mm": 1.06,
+    "F_side_rigid_shift_from_B_seat_mm": 0.0408,
+    "B_seat_unchanged": true,
+    "AST_equality": {
+      "footprint": {
+        "count": 58,
+        "unchanged": true,
+        "canonical_sha256": "18a46a8f905e47d3f08f0e579fe6572e913efab7e5d89114c00bd8cd524a7084"
+      },
+      "segment": {
+        "count": 1033,
+        "unchanged": true,
+        "canonical_sha256": "640f837485bfef7913d2196eb5b29190423d9fcb13edd2c4ef3de26e9749a1e7"
+      },
+      "arc": {
+        "count": 4,
+        "unchanged": true,
+        "canonical_sha256": "3219a661ab8cb6e3a660215e502a0fbdf85bb7b658ea7c954ec4a8a4bff13dec"
+      },
+      "via": {
+        "count": 145,
+        "unchanged": true,
+        "canonical_sha256": "c0ab7182073e8e2bf3df31c5298a185e41430caea785478a23b5c251a4960772"
+      },
+      "zone": {
+        "count": 32,
+        "unchanged": true,
+        "canonical_sha256": "c6d9ab29532e7baed769feaa9fd6129486f67cc4425dc7e9baec49da9a63546f"
+      },
+      "gr_line": {
+        "count": 52,
+        "unchanged": true,
+        "canonical_sha256": "6c10961ce5e42fa1b05ba800c741346e2b03d5d4ba3bea6c49371db8fe06033d"
+      },
+      "gr_arc": {
+        "count": 8,
+        "unchanged": true,
+        "canonical_sha256": "46da1db13102b2513b3abefff5870bbc4465a87a53af2d548d2cb38a931c9f44"
+      },
+      "gr_poly": {
+        "count": 0,
+        "unchanged": true,
+        "canonical_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "gr_rect": {
+        "count": 0,
+        "unchanged": true,
+        "canonical_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "B_side_22_case_envelopes_unchanged": true,
+    "regenerated_Lower_STEP_DATA_identical": true,
+    "STEP_geometry_DATA_sha256": "bfb0165039421efb79f29bf36ed59518ac9d148fe3552150f588751fe176d304"
+  },
+  "current_CAD_nominal_board_mm": 1.06,
+  "thickness_basis": "JLC06101H-3313 public template1.04mm Cu/dielectric +two0.01mm assumed mask budgets; order nominal1.0mm is not the same definition. B-seat retained; no physical seating certification."
 }

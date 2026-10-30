@@ -1,0 +1,14 @@
+id,board,reference,pad,net,side,x_mm,y_mm,kind
+M1,MainBoard,C15,1,USB_VBUS,F,158.33,110.55,existing component terminal; tip access must be checked
+M2,MainBoard,C20,1,VDD_5V,F,154.6,101.88,existing component terminal; tip access must be checked
+M3,MainBoard,C18,1,CP_VDD,F,152.97,99.85,existing component terminal; tip access must be checked
+M4,MainBoard,C13,1,3V3,F,155.75,94.5,existing component terminal; tip access must be checked
+M5,MainBoard,C4,2,3V3A,F,158.45,115.65,existing component terminal; tip access must be checked
+M6,MainBoard,C7,1,EN,F,141.52,110.0,existing component terminal; tip access must be checked
+M7,MainBoard,C20,2,GND,F,154.6,100.92,existing component terminal; tip access must be checked
+M8,MainBoard,R12,1,USB_CC1,B,145.19,94.8,existing component terminal; tip access must be checked
+M9,MainBoard,R13,1,USB_CC2,B,143.19,97.2,existing component terminal; tip access must be checked
+E1,ExtendBoard,C3,1,VDD_5V,F,138.02,108.5,existing component terminal; tip access must be checked
+E2,ExtendBoard,C1,1,3V3,F,142.32,107.2,existing component terminal; tip access must be checked
+E3,ExtendBoard,R2,1,BL_SENSE,F,144.5,115.925,existing component terminal; tip access must be checked
+E4,ExtendBoard,R2,2,GND,F,144.5,114.275,existing component terminal; tip access must be checked

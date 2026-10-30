@@ -1,15 +1,15 @@
 {
-  "classification": "24 USB parameter scenarios, transferred from earlier direct CAD calculation by disjoint changed-material proof; three direct finalSTEP checks. Not a full GD&T or physical fit certification.",
+  "classification": "24 historical USB parameter scenarios with explicit changed-material transfer proof;3 earlier directSTEPchecks plus6 new direct1.06mm scenarios. Not a fullGD&T/physicalfitcertification.",
   "input_pcb": "1.Hardware/RevB-KiCad/Naive/MainBoard/MainBoard.kicad_pcb",
-  "input_pcb_sha256": "9027e617313d7e87af202d14787fecd7b6d484bee7a0b72a699a266f329cab9c",
-  "target_step_sha256": "2e4671494ad86096d7cf8cf2a0427132ff27e7977f10e508b7ac0c25015747ae",
+  "input_pcb_sha256": "a05fb4db8785f69a0e96533620440d110ff2dc13d2e4b28887b48de03e031c39",
+  "target_step_sha256": "cfbf73b8e6aacda83d20e6e41b012c7b738c71492427c744900032768476ff11",
   "scenario_count": 24,
   "shell_comparison_count": 48,
   "molex_comparison_count": 24,
   "source_models": {
     "revised_lower": {
       "path": "1.Hardware/RevB-KiCad/Naive/Mechanical/Lower-RevB.step",
-      "sha256": "2e4671494ad86096d7cf8cf2a0427132ff27e7977f10e508b7ac0c25015747ae"
+      "sha256": "cfbf73b8e6aacda83d20e6e41b012c7b738c71492427c744900032768476ff11"
     },
     "original_upper": {
       "path": "4.3D Model/Naive Version/Upper.step",
@@ -536,5 +536,184 @@
     "WholemodelZshift is conservative screening, not independent manufacturer tolerances.",
     "Solderstandoff0.08mm andsolderfillet extension0.15mm are assemblybudgets requiringconfirmation.",
     "Mainnominalseat, finalactualfinishedthickness, warp/printshrinkage andUSBplugovermould require samples."
-  ]
+  ],
+  "current_CAD_nominal_board_mm": 1.06,
+  "current_nominal_direct_scenario_count": 6,
+  "current_nominal_direct_shell_comparison_count": 12,
+  "current_nominal_direct_Molex_comparison_count": 6,
+  "current_nominal_direct_checks": [
+    {
+      "finished_board_mm": 1.06,
+      "solder_standoff_budget_mm": 0,
+      "whole_model_z_shift_mm": -0.15,
+      "checks": {
+        "lower": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 0.36856726051385147
+        },
+        "upper": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 0.7091589586671301
+        },
+        "molex": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 1.2297618333669398
+        }
+      }
+    },
+    {
+      "finished_board_mm": 1.06,
+      "solder_standoff_budget_mm": 0,
+      "whole_model_z_shift_mm": 0,
+      "checks": {
+        "lower": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 0.5049018513766548
+        },
+        "upper": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 0.5591589586671297
+        },
+        "molex": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 1.3534452950917586
+        }
+      }
+    },
+    {
+      "finished_board_mm": 1.06,
+      "solder_standoff_budget_mm": 0,
+      "whole_model_z_shift_mm": 0.15,
+      "checks": {
+        "lower": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 0.5049018513766548
+        },
+        "upper": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 0.40915895866713026
+        },
+        "molex": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 1.4819966824544573
+        }
+      }
+    },
+    {
+      "finished_board_mm": 1.06,
+      "solder_standoff_budget_mm": 0.08,
+      "whole_model_z_shift_mm": -0.15,
+      "checks": {
+        "lower": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 0.44856726051385154
+        },
+        "upper": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 0.62915895866713
+        },
+        "molex": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 1.2950344268806204
+        }
+      }
+    },
+    {
+      "finished_board_mm": 1.06,
+      "solder_standoff_budget_mm": 0.08,
+      "whole_model_z_shift_mm": 0,
+      "checks": {
+        "lower": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 0.5049018513766548
+        },
+        "upper": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 0.47915895866712965
+        },
+        "molex": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 1.4214830870629511
+        }
+      }
+    },
+    {
+      "finished_board_mm": 1.06,
+      "solder_standoff_budget_mm": 0.08,
+      "whole_model_z_shift_mm": 0.15,
+      "checks": {
+        "lower": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 0.5049018513766548
+        },
+        "upper": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 0.3291589586671302
+        },
+        "molex": {
+          "common_volume_mm3": 0.0,
+          "min_distance_mm": 1.523134063204161
+        }
+      }
+    }
+  ],
+  "main_stack_revision_transfer": {
+    "previous_pcb_sha256": "9027e617313d7e87af202d14787fecd7b6d484bee7a0b72a699a266f329cab9c",
+    "current_pcb_sha256": "a05fb4db8785f69a0e96533620440d110ff2dc13d2e4b28887b48de03e031c39",
+    "previous_nominal_thickness_mm": 1.0192,
+    "current_nominal_thickness_mm": 1.06,
+    "F_side_rigid_shift_from_B_seat_mm": 0.0408,
+    "B_seat_unchanged": true,
+    "AST_equality": {
+      "footprint": {
+        "count": 58,
+        "unchanged": true,
+        "canonical_sha256": "18a46a8f905e47d3f08f0e579fe6572e913efab7e5d89114c00bd8cd524a7084"
+      },
+      "segment": {
+        "count": 1033,
+        "unchanged": true,
+        "canonical_sha256": "640f837485bfef7913d2196eb5b29190423d9fcb13edd2c4ef3de26e9749a1e7"
+      },
+      "arc": {
+        "count": 4,
+        "unchanged": true,
+        "canonical_sha256": "3219a661ab8cb6e3a660215e502a0fbdf85bb7b658ea7c954ec4a8a4bff13dec"
+      },
+      "via": {
+        "count": 145,
+        "unchanged": true,
+        "canonical_sha256": "c0ab7182073e8e2bf3df31c5298a185e41430caea785478a23b5c251a4960772"
+      },
+      "zone": {
+        "count": 32,
+        "unchanged": true,
+        "canonical_sha256": "c6d9ab29532e7baed769feaa9fd6129486f67cc4425dc7e9baec49da9a63546f"
+      },
+      "gr_line": {
+        "count": 52,
+        "unchanged": true,
+        "canonical_sha256": "6c10961ce5e42fa1b05ba800c741346e2b03d5d4ba3bea6c49371db8fe06033d"
+      },
+      "gr_arc": {
+        "count": 8,
+        "unchanged": true,
+        "canonical_sha256": "46da1db13102b2513b3abefff5870bbc4465a87a53af2d548d2cb38a931c9f44"
+      },
+      "gr_poly": {
+        "count": 0,
+        "unchanged": true,
+        "canonical_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "gr_rect": {
+        "count": 0,
+        "unchanged": true,
+        "canonical_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "B_side_22_case_envelopes_unchanged": true,
+    "regenerated_Lower_STEP_DATA_identical": true,
+    "STEP_geometry_DATA_sha256": "bfb0165039421efb79f29bf36ed59518ac9d148fe3552150f588751fe176d304"
+  },
+  "historical_scenario_note": "The24 scenario thicknesses and earlier direct1.0192mm case remain exact original parameters.1.0192is the previous CADnominal, not the newlyselected1.06. The regenerated Lower has byte-identical STEP DATA, so all earlier shell checks transfer unchanged. This doesnotasserteveryintermediatecontinuous thickness orindependentGD&T."
 }

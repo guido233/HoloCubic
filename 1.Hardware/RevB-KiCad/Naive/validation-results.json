@@ -5,7 +5,7 @@
   "sources": [
     {
       "path": "1.Hardware/RevB-KiCad/Naive/MainBoard/MainBoard.kicad_pcb",
-      "sha256": "9027e617313d7e87af202d14787fecd7b6d484bee7a0b72a699a266f329cab9c"
+      "sha256": "a05fb4db8785f69a0e96533620440d110ff2dc13d2e4b28887b48de03e031c39"
     },
     {
       "path": "1.Hardware/RevB-KiCad/Naive/MainBoard/MainBoard.kicad_sch",
@@ -13,24 +13,28 @@
     },
     {
       "path": "1.Hardware/RevB-KiCad/Naive/MainBoard/MainBoard.kicad_pro",
-      "sha256": "8f38109f18800d4dfb72b95d3f4875ed4879ecfec4c18d2f8477491ac637ac01"
+      "sha256": "5e65bf5055027a23da7b734917d891b49d8b6827f2630542633ac9ce85d7fe52"
     },
     {
       "path": "1.Hardware/RevB-KiCad/Naive/ExtendBoard/ExtendBoard.kicad_pcb",
-      "sha256": "b86d3b57e9d1ea0eee3e62e688c22a6c4507c0328ddc385a6607309e95d6514f"
+      "sha256": "7ba3a6e58040c57fe67f55df174be974967f560e97ab8b37d000d93db8e1c112"
     },
     {
       "path": "1.Hardware/RevB-KiCad/Naive/ExtendBoard/ExtendBoard.kicad_sch",
-      "sha256": "39d4f003f0dabb8bb6c76697fec7b85b22cb5fad41692d653c4dc153018b5eab"
+      "sha256": "d08f31f0f42eeb8d321cbc402209157a587137dce6c674d76f533ed3b4f189f7"
     },
     {
       "path": "1.Hardware/RevB-KiCad/Naive/ExtendBoard/ExtendBoard.kicad_pro",
-      "sha256": "e922ea039deef4d6627b3bd50fb4a7980da44dd09b05865e587a9c5866a87880"
+      "sha256": "bfda48ae139da75240f715e23c8f2f7226d1b6b6ad8c5976865c066a95e35ed1"
     }
   ],
-  "check_count": 200,
+  "check_count": 202,
   "failed_check_count": 0,
   "checks": [
+    {
+      "check": "MainBoard manufacturing solder-mask rules",
+      "passed": true
+    },
     {
       "check": "MainBoard native netlist export",
       "passed": true
@@ -608,6 +612,10 @@
       "passed": true
     },
     {
+      "check": "ExtendBoard manufacturing solder-mask rules",
+      "passed": true
+    },
+    {
       "check": "ExtendBoard native netlist export",
       "passed": true
     },
@@ -918,13 +926,15 @@
   "visual_review": [
     "Native schematic editor opens and renders final main schematic without errors.",
     "Native top and bottom 3D renders; six copper SVG plots inspected.",
-    "Added models explicitly represent maximum body bounding envelopes, not exact manufacturer models."
+    "Added models explicitly represent maximum body bounding envelopes, not exact manufacturer models.",
+    "New ExtendBoard F.Cu/F.Mask/F.Paste plots inspected; no LCD stencil apertures.",
+    "Measurement diagram front/back coordinates cross-checked; LCD1 pad1/pad12 independently read with native pcbnew PAD.GetPosition."
   ],
   "physical_qualification_pending": [
-    "Manufacturer actual six-layer stack and tolerances",
-    "P133H002 tail registration/fold and final display assembly",
-    "FFC length, contact orientation and assembly",
-    "Power startup, CP_VDD rise, USB enumeration/hotplug/load and thermal measurements",
+    "Manufacturer order acceptance, actual finished-stack accounting/tolerances and hole treatment",
+    "P133H002 permitted bend segment/radius, contact-face and lateral registration",
+    "Unique screen/ExtendBoard-to-Upper assembly registration and final cable route/length",
+    "Power/CP_VDD startup, USB enumeration/hotplug/load and thermal measurements",
     "RF matching and wireless performance in final enclosure"
   ],
   "bom": {
@@ -934,10 +944,10 @@
     "workbook_formulas": 40,
     "workbook_formula_errors": 0,
     "files": {
-      "BOM.json": "9716338dc54dee21ace13a4ac22c7a412ac91d5d829c7a3e7f936ad527636776",
-      "BOM.csv": "0da7a66c26dfd6845d0ad04d9aacb3b12e34c3a2bba532250f3e71cec27493b1",
-      "BOM-grouped.csv": "6a18a90237a5dbfb06dd4f481c31b8702dcb068b4c2df0395f7320bf68dfcd08",
-      "BOM.xlsx": "abe0907b2555533e2d252f7613ff35a382e6a467686219a87d245be8c7d295c6"
+      "BOM.json": "eb76de98403a7dfe93275152c85d4eb0b7e18c662c45c1fca3a74f78df2c0eea",
+      "BOM.csv": "f5b15561461406903f8239dc177c82d0e11aa40315850ac8bdb8225c0d2981d3",
+      "BOM-grouped.csv": "320e66748972417bd42d2e37e5371a0023a04a8c2116389a11162085edd1f52d",
+      "BOM.xlsx": "c5e706ad6a9f5da1c8c0ae78496202aa4d2d3ca2c52660059cf038834171385c"
     }
   },
   "mechanical": {
@@ -946,14 +956,41 @@
       "Naive_ExtendBoard": true
     },
     "reference_report": "Mechanical/Lower-RevB-verification.json",
-    "original_altium_and_step_files_unchanged": 40
+    "original_altium_and_step_files_unchanged": 40,
+    "nominal_main_CAD_including_mask_budget_mm": 1.06,
+    "selected_published_stack": "JLC06101H-3313, nominal order1.0mm, copper+dielectric1.04mm; order confirmation pending",
+    "final_case_step_sha256": "cfbf73b8e6aacda83d20e6e41b012c7b738c71492427c744900032768476ff11"
   },
   "regression_tests": {
-    "count": 32,
+    "count": 35,
     "failures": 0,
     "errors": 0,
     "skipped": 0,
-    "duration_seconds": 63.909,
-    "command": "python3 -m unittest discover -s tools/hardware -p 'test_*.py' -v"
-  }
+    "command": "python3 -m unittest discover -s tools/hardware -p 'test_*.py' -v",
+    "duration_seconds": 63.661
+  },
+  "display_axial_allowance": {
+    "report": "Closure/P133H002-interface-closure.json",
+    "checks": 144,
+    "failures": 0,
+    "minimum_overlap_mm": 0.9611,
+    "scope": "Axial solder contact allowance only; no permitted-bend, lateral, contact-face or full-assembly qualification"
+  },
+  "bringup_firmware": {
+    "environment": "naive-bringup",
+    "compiled": true,
+    "executed_on_hardware": false,
+    "RAM_bytes": 50100,
+    "flash_bytes": 1229107,
+    "image_sha256": "6057bf8593855b7bf7078d32cb3bacd6c9f2361a5ce07e2ff9e27843e89da32d",
+    "image_header_and_validation_hash_verified": true
+  },
+  "formal_naive_firmware": {
+    "compiled": true,
+    "RAM_bytes": 98060,
+    "flash_bytes": 2247967,
+    "image_sha256": "b2303e96d0b8b2c3103e8afad82af752f38de5679fb38f5b538c8f158142585b",
+    "executed_on_new_PCB": false
+  },
+  "closure_status_document": "Closure/README.md"
 }

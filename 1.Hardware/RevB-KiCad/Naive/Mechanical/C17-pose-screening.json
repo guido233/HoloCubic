@@ -1,7 +1,7 @@
 {
   "classification": "FinalC17F90pose check, nominalMainseat; not fullassembly approval.",
   "source_pcb": "1.Hardware/RevB-KiCad/Naive/MainBoard/MainBoard.kicad_pcb",
-  "source_pcb_sha256": "9027e617313d7e87af202d14787fecd7b6d484bee7a0b72a699a266f329cab9c",
+  "source_pcb_sha256": "a05fb4db8785f69a0e96533620440d110ff2dc13d2e4b28887b48de03e031c39",
   "pose_mm_deg": [
     155.88,
     111.02,
@@ -19,7 +19,7 @@
     1.05,
     0.63
   ],
-  "nominal_finished_thickness_mm": 1.0192,
+  "nominal_finished_thickness_mm": 1.06,
   "checks": {
     "GCT_USB_nominal": {
       "intersection_mm3": 0.0,
@@ -27,15 +27,15 @@
     },
     "Molex_B_side": {
       "intersection_mm3": 0.0,
-      "minimum_distance_mm": 1.2048422420682303
+      "minimum_distance_mm": 1.2421771968088933
     },
     "originalLower": {
       "intersection_mm3": 0.0,
-      "minimum_distance_mm": 1.5164388548747263
+      "minimum_distance_mm": 1.5441561321879886
     },
     "Upper": {
       "intersection_mm3": 0.0,
-      "minimum_distance_mm": 3.2799589586671303
+      "minimum_distance_mm": 3.2391589586671294
     }
   },
   "limits": [
@@ -44,6 +44,62 @@
     "0.08solderstand-off isanengineeringbudgetrequiringprocessconfirmation; USBmodelisnominalclosedSTEP.",
     "InferrednominalMainseatstillrequiresphysicalvalidation."
   ],
+  "main_stack_revision": {
+    "previous_pcb_sha256": "9027e617313d7e87af202d14787fecd7b6d484bee7a0b72a699a266f329cab9c",
+    "current_pcb_sha256": "a05fb4db8785f69a0e96533620440d110ff2dc13d2e4b28887b48de03e031c39",
+    "previous_nominal_thickness_mm": 1.0192,
+    "current_nominal_thickness_mm": 1.06,
+    "F_side_rigid_shift_from_B_seat_mm": 0.0408,
+    "B_seat_unchanged": true,
+    "AST_equality": {
+      "footprint": {
+        "count": 58,
+        "unchanged": true,
+        "canonical_sha256": "18a46a8f905e47d3f08f0e579fe6572e913efab7e5d89114c00bd8cd524a7084"
+      },
+      "segment": {
+        "count": 1033,
+        "unchanged": true,
+        "canonical_sha256": "640f837485bfef7913d2196eb5b29190423d9fcb13edd2c4ef3de26e9749a1e7"
+      },
+      "arc": {
+        "count": 4,
+        "unchanged": true,
+        "canonical_sha256": "3219a661ab8cb6e3a660215e502a0fbdf85bb7b658ea7c954ec4a8a4bff13dec"
+      },
+      "via": {
+        "count": 145,
+        "unchanged": true,
+        "canonical_sha256": "c0ab7182073e8e2bf3df31c5298a185e41430caea785478a23b5c251a4960772"
+      },
+      "zone": {
+        "count": 32,
+        "unchanged": true,
+        "canonical_sha256": "c6d9ab29532e7baed769feaa9fd6129486f67cc4425dc7e9baec49da9a63546f"
+      },
+      "gr_line": {
+        "count": 52,
+        "unchanged": true,
+        "canonical_sha256": "6c10961ce5e42fa1b05ba800c741346e2b03d5d4ba3bea6c49371db8fe06033d"
+      },
+      "gr_arc": {
+        "count": 8,
+        "unchanged": true,
+        "canonical_sha256": "46da1db13102b2513b3abefff5870bbc4465a87a53af2d548d2cb38a931c9f44"
+      },
+      "gr_poly": {
+        "count": 0,
+        "unchanged": true,
+        "canonical_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "gr_rect": {
+        "count": 0,
+        "unchanged": true,
+        "canonical_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    }
+  },
+  "CAD_thickness_definition": "Selected JLC06101H-3313 public template Cu/dielectric1.04mm plus two0.01mm assumed masks = CAD1.06mm; manufacturer finished thickness and B-seat remain physical confirmation gates.",
   "reviewed_profile_constraint": {
     "reference": "C17",
     "at_mm": [

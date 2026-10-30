@@ -10,11 +10,15 @@ python3 -m unittest discover -s tools/hardware -p 'test_*.py' -v
 python3 tools/hardware/mechanical_baseline.py check Naive_MainBoard '1.Hardware/RevB-KiCad/Naive/MainBoard/MainBoard.kicad_pcb' --revision naive-revb --json
 python3 tools/hardware/mechanical_baseline.py check Naive_ExtendBoard '1.Hardware/RevB-KiCad/Naive/ExtendBoard/ExtendBoard.kicad_pcb' --revision naive-revb --map-ref 1=LCD1 --json
 python3 tools/hardware/export_bom.py
+python3 tools/hardware/display_interface_allowance.py --output-dir /tmp/display-interface
+python3 tools/hardware/export_probe_map.py --output /tmp/probe-map
 ```
 
 前四项需要 KiCad 10 CLI，验证器可自动查找 PATH 和标准 macOS 安装位置；也可用 `--cli`。机械基线与故障回归除调用 CLI 外只使用 Python 标准库。`export_bom.py` 从当前原生网表和 PCB 导出 JSON、逐位号 CSV 与合并采购 CSV，完整 MPN 缺失会失败；坐标不是机台贴片文件。
 
 可选的 `build_bom_workbook.mjs` 把该 JSON 排成 Excel，使用 Codex 随附的 Node 和 `@oai/artifact-tool`；由 `ARTIFACT_NODE_MODULES` 指定包目录，三个位置参数依次为输入 JSON、输出目录、预览目录。CSV/JSON 和电气检查不依赖这个运行时。
+
+`display_interface_allowance.py` 核对当前 12 个长焊盘、无锡膏开口、引脚/间距及 144 个纵向搭接情景，写新目录的 JSON 和 1:1 SVG；它不验证未知折弯路径或横向注册。`export_probe_map.py` 从当前两板提取 13 个现有元件测量端子、源 SHA、CSV 和正反面示意；没有在板上新增测试点，也不测量电压。两者的确定性结果由 CI 与仓库记录比较，防止工程变更后继续引用旧源证据。
 
 ## 下壳复现
 
@@ -24,7 +28,7 @@ python3 tools/hardware/export_bom.py
 
 `revise_mainboard.py`、`revise_extendboard.py` 和对应原理图工具用于从原 Altium 导入结果迁移电路与初始布局。`main_four_layer_variant.py`、`finalize_main_assembly.py`、`rearrange_main_bank.py` 等记录本轮明确的叠层、焊盘和布局修订。它们需要各自的冻结输入，**可能丢弃现有布线**；不是日常维护入口。原始 Altium 文件和历史 SHA 不得用最终工程覆盖。
 
-主板最终采用六层方向。`main_six_layer_variant.py` 是从 **1.0192mm 的四层 RevB 中间副本**增加两层的单独迁移步骤；它不会重建最终布线，也不接受已是六层的 PCB。使用匹配 KiCad 10 的 Python，例如：
+主板当前采用六层，已选公开 JLC06101H-3313 模板（CAD 含阻焊预算 1.06mm），见 [叠层约定](../../1.Hardware/RevB-KiCad/Naive/Closure/STACKUP-SPEC.md)。下述 `main_six_layer_variant.py` 保留为**历史迁移工具**：从 1.0192mm 四层中间副本增加两层，输出仍为旧厚度预算，不会重建当前模板或最终布线，也不接受已是六层的 PCB。只有复查历史中间步骤时才运行，例如：
 
 ```sh
 "$KICAD_PYTHON" -B tools/hardware/main_six_layer_variant.py \

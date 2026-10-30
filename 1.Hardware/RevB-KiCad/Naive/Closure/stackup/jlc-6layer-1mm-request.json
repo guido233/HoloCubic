@@ -1,0 +1,14 @@
+{
+  "method": "POST",
+  "url": "https://cart.jlcpcb.com/api/overseas-shop-cart/v1/shoppingCart/getImpedanceTemplateSettings",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "stencilLayer": 6,
+    "stencilPly": 1.0,
+    "cuprumThickness": 1,
+    "insideCuprumThickness": 0.5
+  },
+  "authentication": "None; public template query"
+}

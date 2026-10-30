@@ -1022,7 +1022,7 @@
 				)
 			)
 		)
-		(property "DesignNote" "P133H002 electrically compatible candidate only; legacy FPC solder-pad geometry retained. Fold around 1.071mm PCB and enclosure fit unverified; see MECHANICAL-REVIEW.md. External backlight current limiting required."
+		(property "DesignNote" "P133H002 electrically compatible candidate; 5.5x0.5mm F-side solder landing strips at0.7mm pitch provide axial contact-location allowance. FPC is manually soldered AFTER PCBA reflow; no F.Paste apertures. Align all12pins laterally. Permitted bend radius, contact-face orientation and case assembly still require supplier/sample approval; see interface drawing."
 			(at 205.74 87.63 0)
 			(hide yes)
 			(effects

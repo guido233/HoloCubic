@@ -25,6 +25,8 @@ pio device monitor --port /dev/cu.SLAB_USBtoUART --baud 115200
 
 固件使用 4MB Flash 的 `huge_app.csv` 分区，应用槽为 3MiB，不提供双槽 OTA。首次从旧固件迁移时请使用 PlatformIO 的完整上传流程，同时更新 bootloader、分区表和应用；仅替换旧分区中的 application.bin 无法容纳此版本。
 
+另有手动选择的 `-e naive-bringup` 首板诊断环境，使用独立入口，默认背光关闭，不自动挂卡或联网。串口可逐项检查 I²C、色条、背光 PWM、RGB、新文件 SD 写读及局部 WiFi/SD/显示并发；见 [测量位置、命令和结果边界](../../1.Hardware/RevB-KiCad/Naive/Closure/BRINGUP.md)。它不替代正式 `naive` 应用，也不把软件 PASS 当作供电、装配或天线验收通过。
+
 ## 依赖版本
 
 | 依赖 | 固定版本 |

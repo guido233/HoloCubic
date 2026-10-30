@@ -1,0 +1,68 @@
+{
+  "templateName": "JLC06101H-3313",
+  "showName": "JLC06101H-3313",
+  "stencilLayer": 6,
+  "stencilPly": 1.0,
+  "cuprumThickness": 1.0,
+  "insideCuprumThickness": 0.5,
+  "defaultFlag": false,
+  "expeditedFlag": true,
+  "enableFlag": true,
+  "sort": 2,
+  "fixedFee": 0.0,
+  "coefficient": 0.0,
+  "iaminationList": [
+    {
+      "iaminationType": 1,
+      "content": "{\"LineThickness\":\"0.035mm\",\"LineLayer\":\"Top Layer\",\"lineMaterialType\":\"Copper\"}",
+      "contentKey": "impedanceContent_244eb07fbe74418180e56b463da990e1",
+      "sort": 1
+    },
+    {
+      "iaminationType": 2,
+      "content": "{\"preMaterialType\":\"3313*1\",\"preThickness\":\"0.09940mm\",\"preLayer\":\"Prepreg\"}",
+      "contentKey": "impedanceContent_0fe35af1a2cc44eeb56270a5530276c1",
+      "sort": 2
+    },
+    {
+      "iaminationType": 3,
+      "content": "{\"coreBoardThickness3\":\"0.0152mm\",\"coreBoardThickness2\":\"0.25mm\",\"coreBoardLayer1\":\"Inner Layer L2\",\"coreBoardThickness1\":\"0.0152mm\",\"coreBoardRemark\":\"0.25mm H/HOZ without copper\",\"coreBoardMaterialType1\":\"Copper\",\"coreBoardMaterialType2\":\"Core\",\"coreBoardMaterialType3\":\"Copper\",\"coreBoardLayer2\":\"Core\",\"coreBoardLayer3\":\"Inner Layer L3\"}",
+      "contentKey": "impedanceContent_8c9a672018b9465788ffed093ad6655b",
+      "sort": 3
+    },
+    {
+      "iaminationType": 2,
+      "content": "{\"preMaterialType\":\"7628*1\",\"preThickness\":\"0.21040mm\",\"preLayer\":\"Prepreg\"}",
+      "contentKey": "impedanceContent_22ab30812bdc4297aa315352ca9f7803",
+      "sort": 4
+    },
+    {
+      "iaminationType": 3,
+      "content": "{\"coreBoardThickness3\":\"0.0152mm\",\"coreBoardThickness2\":\"0.25mm\",\"coreBoardLayer1\":\"Inner Layer L4\",\"coreBoardThickness1\":\"0.0152mm\",\"coreBoardRemark\":\"0.25mm H/HOZ without copper\",\"coreBoardMaterialType1\":\"Copper\",\"coreBoardMaterialType2\":\"Core\",\"coreBoardMaterialType3\":\"Copper\",\"coreBoardLayer2\":\"Core\",\"coreBoardLayer3\":\"Inner Layer L5\"}",
+      "contentKey": "impedanceContent_96f3052ec7f54424b8355e4d38838dc7",
+      "sort": 5
+    },
+    {
+      "iaminationType": 2,
+      "content": "{\"preMaterialType\":\"3313*1\",\"preThickness\":\"0.09940mm\",\"preLayer\":\"Prepreg\"}",
+      "contentKey": "impedanceContent_aef808d849d04214a00fb6785cf1b319",
+      "sort": 6
+    },
+    {
+      "iaminationType": 1,
+      "content": "{\"LineThickness\":\"0.035mm\",\"LineLayer\":\"Bottom Layer\",\"lineMaterialType\":\"Copper\"}",
+      "contentKey": "impedanceContent_8e5ea7570a19444bab2645087432ad4e",
+      "sort": 7
+    }
+  ],
+  "impedanceTemplateCode": "20211110041702",
+  "laminationType": 1,
+  "compressionThickness": 1.04,
+  "plateType": 1,
+  "delamination": false,
+  "innerLayerCoverlay": false,
+  "pricePanelFixedFeeVO": {
+    "fixedFeeFlag": null,
+    "fixedFeeFlagBatch": null
+  }
+}

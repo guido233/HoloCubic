@@ -1,0 +1,834 @@
+{
+  "classification": "Native temporary-copy validation; no order acceptance or physical test",
+  "main_source_sha256": "9027e617313d7e87af202d14787fecd7b6d484bee7a0b72a699a266f329cab9c",
+  "main_candidate_pcb_sha256": "a05fb4db8785f69a0e96533620440d110ff2dc13d2e4b28887b48de03e031c39",
+  "main_candidate_project_sha256": "5e65bf5055027a23da7b734917d891b49d8b6827f2630542633ac9ce85d7fe52",
+  "main_changes": [
+    "general total 1.0192 to 1.06mm",
+    "center dielectric .1696 to .2104mm",
+    "five dielectric material labels + official nominal Dk; remove unverified Df",
+    "project solder_mask_min_width .10mm and solder_mask_to_copper_clearance .09mm"
+  ],
+  "main_protected_native_geometry_strict_AST_equal": true,
+  "mask_only_extend_trial_source_sha256": "b86d3b57e9d1ea0eee3e62e688c22a6c4507c0328ddc385a6607309e95d6514f",
+  "mask_only_extend_trial_pcb_sha256": "8f40e2295f84af8c0ba7a6f4a275686c8a92aa56c558227bcc4d337fc8a8a35b",
+  "extend_changes": [
+    "45pad mask margins .05 to .025mm and global .0762 to .025mm; local library matching",
+    "project solder_mask_min_width .10mm and solder_mask_to_copper_clearance .09mm"
+  ],
+  "extend_protected_native_geometry_strict_AST_equal": true,
+  "note": "The extend trial precedes separate LCD geometry/routing closure; final combined source requires fresh native DRC.",
+  "native": {
+    "main": {
+      "kicad_version": "10.0.7",
+      "violations": [],
+      "unconnected_items": [],
+      "schematic_parity": [],
+      "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+      ],
+      "ignored_checks": [
+        {
+          "description": "Tuning profile track geometries",
+          "key": "tuning_profile_track_geometries"
+        }
+      ]
+    },
+    "extend_mask_old": {
+      "kicad_version": "10.0.7",
+      "violations": [
+        {
+          "description": "Front solder mask aperture bridges items with different nets",
+          "items": [
+            {
+              "description": "Track [GND] on F.Cu, length 2.9276 mm",
+              "pos": {
+                "x": 148.7936,
+                "y": 101.3917
+              },
+              "uuid": "97ae08e1-ec70-4e2e-ab62-4f1ed42300d4"
+            },
+            {
+              "description": "Pad 8 [LCD_BL] of CON1 on F.Cu",
+              "pos": {
+                "x": 147.9846,
+                "y": 103.2917
+              },
+              "uuid": "bc4a1aef-fa9a-427c-a3de-3e3915794ea2"
+            }
+          ],
+          "severity": "error",
+          "type": "solder_mask_bridge"
+        },
+        {
+          "description": "Front solder mask aperture bridges items with different nets",
+          "items": [
+            {
+              "description": "Via [3V3] on F.Cu - B.Cu",
+              "pos": {
+                "x": 148.7291,
+                "y": 114.2465
+              },
+              "uuid": "d7017415-fdf2-4fbd-9cac-3b94862b9baa"
+            },
+            {
+              "description": "Pad 2 [BL_GATE] of R3 on F.Cu",
+              "pos": {
+                "x": 148.51,
+                "y": 115.0
+              },
+              "uuid": "7e98ca04-5314-41d8-bf5c-6252ea12ad78"
+            }
+          ],
+          "severity": "error",
+          "type": "solder_mask_bridge"
+        },
+        {
+          "description": "Front solder mask aperture bridges items with different nets",
+          "items": [
+            {
+              "description": "Track [3V3] on F.Cu, length 0.5193 mm",
+              "pos": {
+                "x": 150.2421,
+                "y": 109.9872
+              },
+              "uuid": "09a929f3-e389-479c-8ab2-40a45ce43dd1"
+            },
+            {
+              "description": "Pad MP [GND] of CON1 on F.Cu",
+              "pos": {
+                "x": 151.2346,
+                "y": 108.6917
+              },
+              "uuid": "f2080db6-08fd-4900-b906-b43fae774de7"
+            }
+          ],
+          "severity": "error",
+          "type": "solder_mask_bridge"
+        },
+        {
+          "description": "Front solder mask aperture bridges items with different nets",
+          "items": [
+            {
+              "description": "Pad 1 [VDD_5V] of CON1 on F.Cu",
+              "pos": {
+                "x": 147.9846,
+                "y": 106.7917
+              },
+              "uuid": "418c0b81-46c2-40b1-8d4d-7e1107a29425"
+            },
+            {
+              "description": "Zone [GND] on F.Cu, priority 0",
+              "pos": {
+                "x": 134.1,
+                "y": 92.18
+              },
+              "uuid": "b8b43c75-c5ca-4639-aeba-b90ab2a33a97"
+            }
+          ],
+          "severity": "error",
+          "type": "solder_mask_bridge"
+        },
+        {
+          "description": "Front solder mask aperture bridges items with different nets",
+          "items": [
+            {
+              "description": "Pad 1 [3V3] of C1 on F.Cu",
+              "pos": {
+                "x": 143.52,
+                "y": 105.5
+              },
+              "uuid": "ee4e1537-9e32-4472-af40-0cc36be47680"
+            },
+            {
+              "description": "Zone [GND] on F.Cu, priority 0",
+              "pos": {
+                "x": 134.1,
+                "y": 92.18
+              },
+              "uuid": "b8b43c75-c5ca-4639-aeba-b90ab2a33a97"
+            }
+          ],
+          "severity": "error",
+          "type": "solder_mask_bridge"
+        },
+        {
+          "description": "Front solder mask aperture bridges items with different nets",
+          "items": [
+            {
+              "description": "Pad 2 [LED_K] of LCD1 on F.Cu",
+              "pos": {
+                "x": 156.21,
+                "y": 111.0219
+              },
+              "uuid": "37f478ee-5b3f-4668-bcaf-1ce1d2951f1a"
+            },
+            {
+              "description": "Zone [GND] on F.Cu, priority 0",
+              "pos": {
+                "x": 134.1,
+                "y": 92.18
+              },
+              "uuid": "b8b43c75-c5ca-4639-aeba-b90ab2a33a97"
+            }
+          ],
+          "severity": "error",
+          "type": "solder_mask_bridge"
+        },
+        {
+          "description": "Front solder mask aperture bridges items with different nets",
+          "items": [
+            {
+              "description": "Pad 1 [BL_GATE] of Q1 on F.Cu",
+              "pos": {
+                "x": 153.0452,
+                "y": 111.7665
+              },
+              "uuid": "6b16aad1-a828-4b6c-9a58-93c9d259e101"
+            },
+            {
+              "description": "Zone [GND] on F.Cu, priority 0",
+              "pos": {
+                "x": 134.1,
+                "y": 92.18
+              },
+              "uuid": "b8b43c75-c5ca-4639-aeba-b90ab2a33a97"
+            }
+          ],
+          "severity": "error",
+          "type": "solder_mask_bridge"
+        },
+        {
+          "description": "Front solder mask aperture bridges items with different nets",
+          "items": [
+            {
+              "description": "Pad 1 [LED_K] of U1 on F.Cu",
+              "pos": {
+                "x": 139.8625,
+                "y": 111.25
+              },
+              "uuid": "ac90eecb-d75a-4637-9266-f5a349882a95"
+            },
+            {
+              "description": "Zone [GND] on F.Cu, priority 0",
+              "pos": {
+                "x": 134.1,
+                "y": 92.18
+              },
+              "uuid": "b8b43c75-c5ca-4639-aeba-b90ab2a33a97"
+            }
+          ],
+          "severity": "error",
+          "type": "solder_mask_bridge"
+        },
+        {
+          "description": "Front solder mask aperture bridges items with different nets",
+          "items": [
+            {
+              "description": "Pad 2 [3V3] of CON1 on F.Cu",
+              "pos": {
+                "x": 147.9846,
+                "y": 106.2917
+              },
+              "uuid": "ebbe65e0-086b-47e4-8363-bf60ef3984bb"
+            },
+            {
+              "description": "Zone [GND] on F.Cu, priority 0",
+              "pos": {
+                "x": 134.1,
+                "y": 92.18
+              },
+              "uuid": "b8b43c75-c5ca-4639-aeba-b90ab2a33a97"
+            }
+          ],
+          "severity": "error",
+          "type": "solder_mask_bridge"
+        },
+        {
+          "description": "Front solder mask aperture bridges items with different nets",
+          "items": [
+            {
+              "description": "Pad 3 [VDD_5V] of LCD1 on F.Cu",
+              "pos": {
+                "x": 156.21,
+                "y": 110.3219
+              },
+              "uuid": "a1e08307-ebbf-431d-b654-3a44212efa2b"
+            },
+            {
+              "description": "Zone [GND] on F.Cu, priority 0",
+              "pos": {
+                "x": 134.1,
+                "y": 92.18
+              },
+              "uuid": "b8b43c75-c5ca-4639-aeba-b90ab2a33a97"
+            }
+          ],
+          "severity": "error",
+          "type": "solder_mask_bridge"
+        },
+        {
+          "description": "Front solder mask aperture bridges items with different nets",
+          "items": [
+            {
+              "description": "Pad 3 [BL_EN] of Q1 on F.Cu",
+              "pos": {
+                "x": 152.0952,
+                "y": 114.1665
+              },
+              "uuid": "fc969d3d-24a2-4357-ac73-d8dcf8f597f9"
+            },
+            {
+              "description": "Zone [GND] on F.Cu, priority 0",
+              "pos": {
+                "x": 134.1,
+                "y": 92.18
+              },
+              "uuid": "b8b43c75-c5ca-4639-aeba-b90ab2a33a97"
+            }
+          ],
+          "severity": "error",
+          "type": "solder_mask_bridge"
+        },
+        {
+          "description": "Front solder mask aperture bridges items with different nets",
+          "items": [
+            {
+              "description": "Pad 4 [DC] of CON1 on F.Cu",
+              "pos": {
+                "x": 147.9846,
+                "y": 105.2917
+              },
+              "uuid": "929b76c9-1c40-42a4-8a29-f85c8b02f21b"
+            },
+            {
+              "description": "Zone [GND] on F.Cu, priority 0",
+              "pos": {
+                "x": 134.1,
+                "y": 92.18
+              },
+              "uuid": "b8b43c75-c5ca-4639-aeba-b90ab2a33a97"
+            }
+          ],
+          "severity": "error",
+          "type": "solder_mask_bridge"
+        },
+        {
+          "description": "Front solder mask aperture bridges items with different nets",
+          "items": [
+            {
+              "description": "Pad 5 [SCK] of CON1 on F.Cu",
+              "pos": {
+                "x": 147.9846,
+                "y": 104.7917
+              },
+              "uuid": "672df82c-32ba-492a-a383-d09954f10346"
+            },
+            {
+              "description": "Zone [GND] on F.Cu, priority 0",
+              "pos": {
+                "x": 134.1,
+                "y": 92.18
+              },
+              "uuid": "b8b43c75-c5ca-4639-aeba-b90ab2a33a97"
+            }
+          ],
+          "severity": "error",
+          "type": "solder_mask_bridge"
+        },
+        {
+          "description": "Front solder mask aperture bridges items with different nets",
+          "items": [
+            {
+              "description": "Pad 6 [MOSI] of CON1 on F.Cu",
+              "pos": {
+                "x": 147.9846,
+                "y": 104.2917
+              },
+              "uuid": "3cb72344-2a6c-417c-92df-c916ae16b7e4"
+            },
+            {
+              "description": "Zone [GND] on F.Cu, priority 0",
+              "pos": {
+                "x": 134.1,
+                "y": 92.18
+              },
+              "uuid": "b8b43c75-c5ca-4639-aeba-b90ab2a33a97"
+            }
+          ],
+          "severity": "error",
+          "type": "solder_mask_bridge"
+        },
+        {
+          "description": "Front solder mask aperture bridges items with different nets",
+          "items": [
+            {
+              "description": "Pad 2 [VDD_5V] of U1 on F.Cu",
+              "pos": {
+                "x": 139.8625,
+                "y": 112.2
+              },
+              "uuid": "3b9306ba-2684-4f01-9113-6cc12781fb4e"
+            },
+            {
+              "description": "Zone [GND] on F.Cu, priority 0",
+              "pos": {
+                "x": 134.1,
+                "y": 92.18
+              },
+              "uuid": "b8b43c75-c5ca-4639-aeba-b90ab2a33a97"
+            }
+          ],
+          "severity": "error",
+          "type": "solder_mask_bridge"
+        },
+        {
+          "description": "Front solder mask aperture bridges items with different nets",
+          "items": [
+            {
+              "description": "Pad 7 [RES] of CON1 on F.Cu",
+              "pos": {
+                "x": 147.9846,
+                "y": 103.7917
+              },
+              "uuid": "e5175284-2694-4c02-b709-4345f6e492cf"
+            },
+            {
+              "description": "Zone [GND] on F.Cu, priority 0",
+              "pos": {
+                "x": 134.1,
+                "y": 92.18
+              },
+              "uuid": "b8b43c75-c5ca-4639-aeba-b90ab2a33a97"
+            }
+          ],
+          "severity": "error",
+          "type": "solder_mask_bridge"
+        },
+        {
+          "description": "Front solder mask aperture bridges items with different nets",
+          "items": [
+            {
+              "description": "Pad 1 [BL_SENSE] of R2 on F.Cu",
+              "pos": {
+                "x": 144.3,
+                "y": 112.025
+              },
+              "uuid": "e1dea190-317d-4014-9680-ee8d49e4993b"
+            },
+            {
+              "description": "Zone [GND] on F.Cu, priority 0",
+              "pos": {
+                "x": 134.1,
+                "y": 92.18
+              },
+              "uuid": "b8b43c75-c5ca-4639-aeba-b90ab2a33a97"
+            }
+          ],
+          "severity": "error",
+          "type": "solder_mask_bridge"
+        },
+        {
+          "description": "Front solder mask aperture bridges items with different nets",
+          "items": [
+            {
+              "description": "Pad 4 [3V3] of LCD1 on F.Cu",
+              "pos": {
+                "x": 156.21,
+                "y": 109.6219
+              },
+              "uuid": "cb0c2ebf-e6e7-495a-bbef-ff17b99a562b"
+            },
+            {
+              "description": "Zone [GND] on F.Cu, priority 0",
+              "pos": {
+                "x": 134.1,
+                "y": 92.18
+              },
+              "uuid": "b8b43c75-c5ca-4639-aeba-b90ab2a33a97"
+            }
+          ],
+          "severity": "error",
+          "type": "solder_mask_bridge"
+        },
+        {
+          "description": "Front solder mask aperture bridges items with different nets",
+          "items": [
+            {
+              "description": "Pad 8 [LCD_BL] of CON1 on F.Cu",
+              "pos": {
+                "x": 147.9846,
+                "y": 103.2917
+              },
+              "uuid": "bc4a1aef-fa9a-427c-a3de-3e3915794ea2"
+            },
+            {
+              "description": "Zone [GND] on F.Cu, priority 0",
+              "pos": {
+                "x": 134.1,
+                "y": 92.18
+              },
+              "uuid": "b8b43c75-c5ca-4639-aeba-b90ab2a33a97"
+            }
+          ],
+          "severity": "error",
+          "type": "solder_mask_bridge"
+        },
+        {
+          "description": "Front solder mask aperture bridges items with different nets",
+          "items": [
+            {
+              "description": "Pad 1 [3V3] of R3 on F.Cu",
+              "pos": {
+                "x": 147.49,
+                "y": 115.0
+              },
+              "uuid": "c776fc1b-99e4-4190-abf2-5a9f216107f7"
+            },
+            {
+              "description": "Zone [GND] on F.Cu, priority 0",
+              "pos": {
+                "x": 134.1,
+                "y": 92.18
+              },
+              "uuid": "b8b43c75-c5ca-4639-aeba-b90ab2a33a97"
+            }
+          ],
+          "severity": "error",
+          "type": "solder_mask_bridge"
+        },
+        {
+          "description": "Front solder mask aperture bridges items with different nets",
+          "items": [
+            {
+              "description": "Pad 3 [BL_EN] of U1 on F.Cu",
+              "pos": {
+                "x": 139.8625,
+                "y": 113.15
+              },
+              "uuid": "a91acb31-79b1-4bcb-a5d4-50d4eef7357e"
+            },
+            {
+              "description": "Zone [GND] on F.Cu, priority 0",
+              "pos": {
+                "x": 134.1,
+                "y": 92.18
+              },
+              "uuid": "b8b43c75-c5ca-4639-aeba-b90ab2a33a97"
+            }
+          ],
+          "severity": "error",
+          "type": "solder_mask_bridge"
+        },
+        {
+          "description": "Front solder mask aperture bridges items with different nets",
+          "items": [
+            {
+              "description": "Pad 7 [DC] of LCD1 on F.Cu",
+              "pos": {
+                "x": 156.21,
+                "y": 107.5219
+              },
+              "uuid": "eeee9ce8-3825-4b91-a85a-ac4dea079ee9"
+            },
+            {
+              "description": "Zone [GND] on F.Cu, priority 0",
+              "pos": {
+                "x": 134.1,
+                "y": 92.18
+              },
+              "uuid": "b8b43c75-c5ca-4639-aeba-b90ab2a33a97"
+            }
+          ],
+          "severity": "error",
+          "type": "solder_mask_bridge"
+        },
+        {
+          "description": "Front solder mask aperture bridges items with different nets",
+          "items": [
+            {
+              "description": "Pad 2 [BL_GATE] of R3 on F.Cu",
+              "pos": {
+                "x": 148.51,
+                "y": 115.0
+              },
+              "uuid": "7e98ca04-5314-41d8-bf5c-6252ea12ad78"
+            },
+            {
+              "description": "Zone [GND] on F.Cu, priority 0",
+              "pos": {
+                "x": 134.1,
+                "y": 92.18
+              },
+              "uuid": "b8b43c75-c5ca-4639-aeba-b90ab2a33a97"
+            }
+          ],
+          "severity": "error",
+          "type": "solder_mask_bridge"
+        },
+        {
+          "description": "Front solder mask aperture bridges items with different nets",
+          "items": [
+            {
+              "description": "Pad 9 [SCK] of LCD1 on F.Cu",
+              "pos": {
+                "x": 156.21,
+                "y": 106.1219
+              },
+              "uuid": "a6c9cf8d-b5eb-497b-9aef-64b7603e2c39"
+            },
+            {
+              "description": "Zone [GND] on F.Cu, priority 0",
+              "pos": {
+                "x": 134.1,
+                "y": 92.18
+              },
+              "uuid": "b8b43c75-c5ca-4639-aeba-b90ab2a33a97"
+            }
+          ],
+          "severity": "error",
+          "type": "solder_mask_bridge"
+        },
+        {
+          "description": "Front solder mask aperture bridges items with different nets",
+          "items": [
+            {
+              "description": "Pad 5 [BL_SENSE] of U1 on F.Cu",
+              "pos": {
+                "x": 142.1375,
+                "y": 112.2
+              },
+              "uuid": "14a4a491-8145-400e-b464-1d6dfc040f84"
+            },
+            {
+              "description": "Zone [GND] on F.Cu, priority 0",
+              "pos": {
+                "x": 134.1,
+                "y": 92.18
+              },
+              "uuid": "b8b43c75-c5ca-4639-aeba-b90ab2a33a97"
+            }
+          ],
+          "severity": "error",
+          "type": "solder_mask_bridge"
+        },
+        {
+          "description": "Front solder mask aperture bridges items with different nets",
+          "items": [
+            {
+              "description": "Pad 1 [3V3] of C2 on F.Cu",
+              "pos": {
+                "x": 140.725,
+                "y": 105.5
+              },
+              "uuid": "e6323c7d-e018-49ce-80d0-1dd27d0b2d02"
+            },
+            {
+              "description": "Zone [GND] on F.Cu, priority 0",
+              "pos": {
+                "x": 134.1,
+                "y": 92.18
+              },
+              "uuid": "b8b43c75-c5ca-4639-aeba-b90ab2a33a97"
+            }
+          ],
+          "severity": "error",
+          "type": "solder_mask_bridge"
+        },
+        {
+          "description": "Front solder mask aperture bridges items with different nets",
+          "items": [
+            {
+              "description": "Pad 10 [MOSI] of LCD1 on F.Cu",
+              "pos": {
+                "x": 156.21,
+                "y": 105.4219
+              },
+              "uuid": "df69878a-3443-4daf-a496-e4392c2468e6"
+            },
+            {
+              "description": "Zone [GND] on F.Cu, priority 0",
+              "pos": {
+                "x": 134.1,
+                "y": 92.18
+              },
+              "uuid": "b8b43c75-c5ca-4639-aeba-b90ab2a33a97"
+            }
+          ],
+          "severity": "error",
+          "type": "solder_mask_bridge"
+        },
+        {
+          "description": "Front solder mask aperture bridges items with different nets",
+          "items": [
+            {
+              "description": "Pad 11 [RES] of LCD1 on F.Cu",
+              "pos": {
+                "x": 156.21,
+                "y": 104.7219
+              },
+              "uuid": "7c9bddbb-78f7-43a5-8e03-931a3276bbda"
+            },
+            {
+              "description": "Zone [GND] on F.Cu, priority 0",
+              "pos": {
+                "x": 134.1,
+                "y": 92.18
+              },
+              "uuid": "b8b43c75-c5ca-4639-aeba-b90ab2a33a97"
+            }
+          ],
+          "severity": "error",
+          "type": "solder_mask_bridge"
+        },
+        {
+          "description": "Front solder mask aperture bridges items with different nets",
+          "items": [
+            {
+              "description": "Pad 1 [LCD_BL] of R1 on F.Cu",
+              "pos": {
+                "x": 149.6822,
+                "y": 113.1971
+              },
+              "uuid": "2305742a-ea0a-40f4-bf14-789d2551efe2"
+            },
+            {
+              "description": "Zone [GND] on F.Cu, priority 0",
+              "pos": {
+                "x": 134.1,
+                "y": 92.18
+              },
+              "uuid": "b8b43c75-c5ca-4639-aeba-b90ab2a33a97"
+            }
+          ],
+          "severity": "error",
+          "type": "solder_mask_bridge"
+        },
+        {
+          "description": "Front solder mask aperture bridges items with different nets",
+          "items": [
+            {
+              "description": "Pad 6 [BL_SENSE] of U1 on F.Cu",
+              "pos": {
+                "x": 142.1375,
+                "y": 111.25
+              },
+              "uuid": "963b7857-8188-4931-a6bc-2cc6ef097a33"
+            },
+            {
+              "description": "Zone [GND] on F.Cu, priority 0",
+              "pos": {
+                "x": 134.1,
+                "y": 92.18
+              },
+              "uuid": "b8b43c75-c5ca-4639-aeba-b90ab2a33a97"
+            }
+          ],
+          "severity": "error",
+          "type": "solder_mask_bridge"
+        },
+        {
+          "description": "Front solder mask aperture bridges items with different nets",
+          "items": [
+            {
+              "description": "Pad 2 [BL_GATE] of R1 on F.Cu",
+              "pos": {
+                "x": 149.6822,
+                "y": 112.1771
+              },
+              "uuid": "7fe14629-07a6-4878-91d5-1ee0a305c626"
+            },
+            {
+              "description": "Zone [GND] on F.Cu, priority 0",
+              "pos": {
+                "x": 134.1,
+                "y": 92.18
+              },
+              "uuid": "b8b43c75-c5ca-4639-aeba-b90ab2a33a97"
+            }
+          ],
+          "severity": "error",
+          "type": "solder_mask_bridge"
+        },
+        {
+          "description": "Front solder mask aperture bridges items with different nets",
+          "items": [
+            {
+              "description": "Pad 1 [VDD_5V] of C3 on F.Cu",
+              "pos": {
+                "x": 138.02,
+                "y": 108.5
+              },
+              "uuid": "6c585fee-fdcb-432b-b81d-57406fa1b461"
+            },
+            {
+              "description": "Zone [GND] on F.Cu, priority 0",
+              "pos": {
+                "x": 134.1,
+                "y": 92.18
+              },
+              "uuid": "b8b43c75-c5ca-4639-aeba-b90ab2a33a97"
+            }
+          ],
+          "severity": "error",
+          "type": "solder_mask_bridge"
+        },
+        {
+          "description": "Front solder mask aperture bridges items with different nets",
+          "items": [
+            {
+              "description": "Pad 1 [VDD_5V] of C4 on F.Cu",
+              "pos": {
+                "x": 137.425,
+                "y": 106.5
+              },
+              "uuid": "dcc96486-6b7c-4876-ba7f-ee0b112b0aa6"
+            },
+            {
+              "description": "Zone [GND] on F.Cu, priority 0",
+              "pos": {
+                "x": 134.1,
+                "y": 92.18
+              },
+              "uuid": "b8b43c75-c5ca-4639-aeba-b90ab2a33a97"
+            }
+          ],
+          "severity": "error",
+          "type": "solder_mask_bridge"
+        }
+      ],
+      "unconnected_items": [],
+      "schematic_parity": [],
+      "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+      ],
+      "ignored_checks": [
+        {
+          "description": "Tuning profile track geometries",
+          "key": "tuning_profile_track_geometries"
+        }
+      ]
+    },
+    "extend_mask_fixed": {
+      "kicad_version": "10.0.7",
+      "violations": [],
+      "unconnected_items": [],
+      "schematic_parity": [],
+      "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+      ],
+      "ignored_checks": [
+        {
+          "description": "Tuning profile track geometries",
+          "key": "tuning_profile_track_geometries"
+        }
+      ]
+    }
+  }
+}

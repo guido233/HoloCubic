@@ -1,0 +1,230 @@
+{
+  "revision": "B",
+  "root_uuid": "1e907dc7-a4c5-4678-8231-beef2e9bd385",
+  "status": "engineering; electrical ERC/DRC and netlist checks passed; mechanical/prototype validation pending",
+  "parts": [
+    {
+      "ref": "LCD1",
+      "value": "P133H002",
+      "mpn": "P133H002",
+      "uuid": "4fa1a8b4-61d7-4c9d-bf21-9b4133f6cef0",
+      "footprint": "HoloCubic_Ext:LCD_12P_0.7mm",
+      "pins": {
+        "1": "GND",
+        "2": "LED_K",
+        "3": "VDD_5V",
+        "4": "3V3",
+        "5": "GND",
+        "6": "GND",
+        "7": "DC",
+        "8": "GND",
+        "9": "SCK",
+        "10": "MOSI",
+        "11": "RES",
+        "12": "GND"
+      },
+      "note": "P133H002 candidate; F-side 5.5x0.5mm solder lands X152.25..157.75, no F.Paste. Controlled manual FPC soldering after PCBA. Axial landing allowance only; bend/contact-face/lateral registration/enclosure remain unqualified. See Closure/DISPLAY-INTERFACE.md.",
+      "placement_mm": [
+        150.9522,
+        104.5591,
+        -90.0
+      ],
+      "placement_layer": "B.Cu"
+    },
+    {
+      "ref": "CON1",
+      "value": "FH12-8S-0.5SH(55)",
+      "mpn": "FH12-8S-0.5SH(55)",
+      "uuid": "7a108c84-7ae0-4b51-abbf-c42181435ccb",
+      "footprint": "HoloCubic_Ext:FFC_8P_0.5mm",
+      "pins": {
+        "1": "VDD_5V",
+        "2": "3V3",
+        "3": "GND",
+        "4": "DC",
+        "5": "SCK",
+        "6": "MOSI",
+        "7": "RES",
+        "8": "LCD_BL",
+        "MP": "GND"
+      },
+      "note": "Hirose CL0586-0744-5-55, 8P/0.5mm bottom-contact/0.3mm FFC. Relocated without rotation or numbering change to clear the full LCD landing window. Cable must connect Main n to Extend 9-n.",
+      "placement_mm": [
+        146.9346,
+        105.0417,
+        90.0
+      ],
+      "placement_layer": "F.Cu"
+    },
+    {
+      "ref": "Q1",
+      "value": "AO3400A",
+      "mpn": "AO3400A",
+      "uuid": "61f89822-e7f6-43f3-9b45-3ac9ef992863",
+      "footprint": "HoloCubic_Ext:SOT23_NMOS",
+      "pins": {
+        "1": "BL_GATE",
+        "2": "GND",
+        "3": "BL_EN"
+      },
+      "note": "Logic-level N-MOS: pin1 G,2 S,3 D. High impedance gate preserves ESP32 GPIO5 default high strap; EN pulled low turns backlight off. Rds(on) specified at 2.5V.",
+      "placement_mm": [
+        150.0952,
+        112.9665,
+        -90.0
+      ],
+      "placement_layer": "F.Cu"
+    },
+    {
+      "ref": "R1",
+      "value": "1k",
+      "mpn": "RC0402FR-071KL",
+      "uuid": "c069f35a-b565-4fe7-9f60-c50d9dbe7f5a",
+      "footprint": "HoloCubic_Ext:R_0402",
+      "pins": {
+        "1": "LCD_BL",
+        "2": "BL_GATE"
+      },
+      "note": "Gate series resistor; no DC load on GPIO5 strapping input",
+      "placement_mm": [
+        147.6822,
+        112.6871,
+        90.0
+      ],
+      "placement_layer": "F.Cu"
+    },
+    {
+      "ref": "U1",
+      "value": "AL5802",
+      "mpn": "AL5802-7",
+      "footprint": "HoloCubic_Ext:SOT26_AL5802",
+      "pins": {
+        "1": "LED_K",
+        "2": "VDD_5V",
+        "3": "BL_EN",
+        "4": "GND",
+        "5": "BL_SENSE",
+        "6": "BL_SENSE"
+      },
+      "note": "Low-side linear current sink; FB5 and REXT6 connected; OUT >=0.8V and BIAS >=4.5V",
+      "uuid": "626ebabc-9ea4-502f-9da1-a9b9b4ce06b7",
+      "placement_mm": [
+        141.0,
+        112.2,
+        0.0
+      ],
+      "placement_layer": "F.Cu"
+    },
+    {
+      "ref": "R2",
+      "value": "27",
+      "mpn": "RC0603FR-0727RL",
+      "footprint": "HoloCubic_Ext:R_0603",
+      "pins": {
+        "1": "BL_SENSE",
+        "2": "GND"
+      },
+      "note": "Typical backlight current 0.65V/27ohm =24.1mA; measure actual current before changing resistor",
+      "uuid": "f024ec79-baa5-5234-8cd2-677f258904f6",
+      "placement_mm": [
+        144.5,
+        115.1,
+        90.0
+      ],
+      "placement_layer": "F.Cu"
+    },
+    {
+      "ref": "R3",
+      "value": "100k",
+      "mpn": "RC0402FR-07100KL",
+      "footprint": "HoloCubic_Ext:R_0402",
+      "pins": {
+        "1": "3V3",
+        "2": "BL_GATE"
+      },
+      "note": "Gate pull-up: default off once 3V3 is present; brief current-limited flash possible while 5V precedes 3V3",
+      "uuid": "5e73899f-baa4-511f-a7da-607a0faef363",
+      "placement_mm": [
+        147.2,
+        115.0,
+        0.0
+      ],
+      "placement_layer": "F.Cu"
+    },
+    {
+      "ref": "C1",
+      "value": "100nF",
+      "mpn": "GRM155R71C104KA88D",
+      "footprint": "HoloCubic_Ext:C_0402",
+      "pins": {
+        "1": "3V3",
+        "2": "GND"
+      },
+      "note": "Local panel logic bypass, 16V X7R",
+      "uuid": "1443392c-dfd1-5c04-a45b-e7e01cf73f24",
+      "placement_mm": [
+        142.8,
+        107.2,
+        0.0
+      ],
+      "placement_layer": "F.Cu"
+    },
+    {
+      "ref": "C2",
+      "value": "4.7uF",
+      "mpn": "GRM188R61A475KE15D",
+      "footprint": "HoloCubic_Ext:C_0603",
+      "pins": {
+        "1": "3V3",
+        "2": "GND"
+      },
+      "note": "Local panel bulk, 10V X5R; nominal capacitance",
+      "uuid": "cfc1f7c7-09bc-5f4e-98bf-1db8aac7cc60",
+      "placement_mm": [
+        141.5,
+        105.5,
+        0.0
+      ],
+      "placement_layer": "F.Cu"
+    },
+    {
+      "ref": "C3",
+      "value": "100nF",
+      "mpn": "GRM155R71C104KA88D",
+      "footprint": "HoloCubic_Ext:C_0402",
+      "pins": {
+        "1": "VDD_5V",
+        "2": "GND"
+      },
+      "note": "Local AL5802 bias bypass, 16V X7R",
+      "uuid": "20f31e91-4884-52d8-945e-6a61a516092f",
+      "placement_mm": [
+        138.5,
+        108.5,
+        0.0
+      ],
+      "placement_layer": "F.Cu"
+    },
+    {
+      "ref": "C4",
+      "value": "1uF",
+      "mpn": "GRM188R71E105KA12D",
+      "footprint": "HoloCubic_Ext:C_0603",
+      "pins": {
+        "1": "VDD_5V",
+        "2": "GND"
+      },
+      "note": "Local 5V bypass; 1uF +/-10%, 25V X7R, 0603. Shared MPN with MainBoard C24.",
+      "uuid": "f5072543-3224-5a25-8409-4d64f2b32ead",
+      "placement_mm": [
+        138.2,
+        106.5,
+        0.0
+      ],
+      "placement_layer": "F.Cu",
+      "datasheet": "https://ds.murata.com/simserve/characteristics?ReqType=TechPDF&partnumber=GRM188R71E105KA12&techpdfname=technical_pdf_Capacitor01&lang=en",
+      "manufacturer": "Murata"
+    }
+  ],
+  "maintenance_scope": "Current native schematic/PCB are authoritative; placement metadata reflects the closure revision, not an instruction to rerun migration scripts."
+}

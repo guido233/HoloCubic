@@ -1,0 +1,881 @@
+{
+  "revision": "Naive RevB six-layer engineering prototype; native routing validated",
+  "parts": [
+    {
+      "ref": "U2",
+      "value": "TPS62162DSGR",
+      "mpn": "TPS62162DSGR",
+      "footprint": "HoloCubic_RevB:RevB_U2",
+      "pins": {
+        "1": "GND",
+        "2": "VDD_5V",
+        "3": "VDD_5V",
+        "4": "GND",
+        "5": "GND",
+        "6": "3V3",
+        "7": "BUCK_SW",
+        "8": null,
+        "9": "GND"
+      },
+      "note": "Fixed3.3V; FB5 toAGND; VOS6 Kelvin at output; PG8 NC.",
+      "placement_mm": [
+        142.8,
+        97.0,
+        0.0
+      ],
+      "source_footprint": "Package_SON:Texas_DSG0008A_WSON-8-1EP_2x2mm_P0.5mm_EP0.9x1.6mm",
+      "placement_layer": "F.Cu"
+    },
+    {
+      "ref": "L1",
+      "value": "2.2uH",
+      "mpn": "VLS3012HBX-2R2M-N",
+      "footprint": "HoloCubic_RevB:RevB_L1",
+      "pins": {
+        "1": "BUCK_SW",
+        "2": "3V3"
+      },
+      "note": "",
+      "placement_mm": [
+        146.25,
+        95.95,
+        -90.0
+      ],
+      "source_footprint": "HoloCubic_RevB:L_TDK_VLS3012HBX",
+      "placement_layer": "F.Cu"
+    },
+    {
+      "ref": "U6",
+      "value": "TPS22918DBVT",
+      "mpn": "TPS22918DBVT",
+      "footprint": "HoloCubic_RevB:RevB_U6",
+      "pins": {
+        "1": "USB_VBUS",
+        "2": "GND",
+        "3": "LOAD_ON",
+        "4": "LOAD_CT",
+        "5": null,
+        "6": "VDD_5V"
+      },
+      "note": "TPS22918 DBV6, 250-piece T&R packaging. QOD unused; ON RC100k/100nF. Quoted slew characterized with VIN stable before ON; validate hot-plug.",
+      "placement_mm": [
+        158.45,
+        112.9,
+        0.0
+      ],
+      "source_footprint": "Package_TO_SOT_SMD:SOT-23-6",
+      "placement_layer": "F.Cu",
+      "datasheet": "https://www.ti.com/lit/ds/symlink/tps22918.pdf",
+      "manufacturer": "Texas Instruments"
+    },
+    {
+      "ref": "U7",
+      "value": "TPD4E05U06DQAR",
+      "mpn": "TPD4E05U06DQAR",
+      "footprint": "HoloCubic_RevB:RevB_U7",
+      "pins": {
+        "1": "USB-PWR-DP",
+        "2": "USB-PWR-DM",
+        "3": "GND",
+        "4": "USB_CC1",
+        "5": "USB_CC2",
+        "6": null,
+        "7": null,
+        "8": "GND",
+        "9": null,
+        "10": null
+      },
+      "note": "NC pads not internally pass-through; route protected nets externally.",
+      "placement_mm": [
+        152.4,
+        101.16,
+        90.0
+      ],
+      "source_footprint": "Package_SON:USON-10_2.5x1.0mm_P0.5mm",
+      "placement_layer": "F.Cu"
+    },
+    {
+      "ref": "U8",
+      "value": "SN74AHCT1G125DCKR",
+      "mpn": "SN74AHCT1G125DCKR",
+      "footprint": "HoloCubic_RevB:RevB_U8",
+      "pins": {
+        "1": "GND",
+        "2": "GPIO27",
+        "3": "GND",
+        "4": "RGB_BUF",
+        "5": "VDD_5V"
+      },
+      "note": "",
+      "placement_mm": [
+        158.9,
+        96.95,
+        90.0
+      ],
+      "source_footprint": "Package_TO_SOT_SMD:SOT-353_SC-70-5",
+      "placement_layer": "F.Cu"
+    },
+    {
+      "ref": "D2",
+      "value": "TPD1E10B06DPYR",
+      "mpn": "TPD1E10B06DPYR",
+      "footprint": "HoloCubic_RevB:RevB_D2",
+      "pins": {
+        "1": "USB_VBUS",
+        "2": "GND"
+      },
+      "note": "Bidirectional ESD TVS; no sustainedOVP guarantee.",
+      "placement_mm": [
+        154.9,
+        103.02,
+        90.0
+      ],
+      "source_footprint": "HoloCubic_RevB:TI_DPY0002A",
+      "placement_layer": "F.Cu"
+    },
+    {
+      "ref": "R12",
+      "value": "5.1k",
+      "mpn": "RC0402FR-075K1L",
+      "footprint": "HoloCubic_RevB:RevB_R12",
+      "pins": {
+        "1": "USB_CC1",
+        "2": "GND"
+      },
+      "note": "",
+      "placement_mm": [
+        145.7,
+        94.8,
+        0.0
+      ],
+      "source_footprint": "Resistor_SMD:R_0402_1005Metric",
+      "placement_layer": "B.Cu"
+    },
+    {
+      "ref": "R13",
+      "value": "5.1k",
+      "mpn": "RC0402FR-075K1L",
+      "footprint": "HoloCubic_RevB:RevB_R13",
+      "pins": {
+        "1": "USB_CC2",
+        "2": "GND"
+      },
+      "note": "",
+      "placement_mm": [
+        143.7,
+        97.2,
+        0.0
+      ],
+      "source_footprint": "Resistor_SMD:R_0402_1005Metric",
+      "placement_layer": "B.Cu"
+    },
+    {
+      "ref": "R14",
+      "value": "4.7k",
+      "mpn": "RC0402FR-074K7L",
+      "footprint": "HoloCubic_RevB:RevB_R14",
+      "pins": {
+        "1": "3V3",
+        "2": "BH_SDA"
+      },
+      "note": "",
+      "placement_mm": [
+        151.7,
+        97.2,
+        0.0
+      ],
+      "source_footprint": "Resistor_SMD:R_0402_1005Metric",
+      "placement_layer": "B.Cu"
+    },
+    {
+      "ref": "R15",
+      "value": "4.7k",
+      "mpn": "RC0402FR-074K7L",
+      "footprint": "HoloCubic_RevB:RevB_R15",
+      "pins": {
+        "1": "3V3",
+        "2": "BH_SCL"
+      },
+      "note": "",
+      "placement_mm": [
+        153.7,
+        97.2,
+        0.0
+      ],
+      "source_footprint": "Resistor_SMD:R_0402_1005Metric",
+      "placement_layer": "B.Cu"
+    },
+    {
+      "ref": "R16",
+      "value": "10k",
+      "mpn": "RC0402FR-0710KL",
+      "footprint": "HoloCubic_RevB:RevB_R16",
+      "pins": {
+        "1": "3V3",
+        "2": "SD_DAT1"
+      },
+      "note": "",
+      "placement_mm": [
+        144.3,
+        112.4,
+        180.0
+      ],
+      "source_footprint": "Resistor_SMD:R_0402_1005Metric",
+      "placement_layer": "B.Cu"
+    },
+    {
+      "ref": "R17",
+      "value": "10k",
+      "mpn": "RC0402FR-0710KL",
+      "footprint": "HoloCubic_RevB:RevB_R17",
+      "pins": {
+        "1": "3V3",
+        "2": "SD_DAT2"
+      },
+      "note": "",
+      "placement_mm": [
+        149.7,
+        97.2,
+        0.0
+      ],
+      "source_footprint": "Resistor_SMD:R_0402_1005Metric",
+      "placement_layer": "B.Cu"
+    },
+    {
+      "ref": "R18",
+      "value": "100k",
+      "mpn": "RC0402FR-07100KL",
+      "footprint": "HoloCubic_RevB:RevB_R18",
+      "pins": {
+        "1": "USB_VBUS",
+        "2": "LOAD_ON"
+      },
+      "note": "",
+      "placement_mm": [
+        145.7,
+        97.2,
+        0.0
+      ],
+      "source_footprint": "Resistor_SMD:R_0402_1005Metric",
+      "placement_layer": "B.Cu"
+    },
+    {
+      "ref": "R19",
+      "value": "100k",
+      "mpn": "RC0402FR-07100KL",
+      "footprint": "HoloCubic_RevB:RevB_R19",
+      "pins": {
+        "1": "GPIO27",
+        "2": "GND"
+      },
+      "note": "",
+      "placement_mm": [
+        155.7,
+        94.8,
+        0.0
+      ],
+      "source_footprint": "Resistor_SMD:R_0402_1005Metric",
+      "placement_layer": "B.Cu"
+    },
+    {
+      "ref": "R20",
+      "value": "33",
+      "mpn": "RC0402FR-0733RL",
+      "footprint": "HoloCubic_RevB:RevB_R20",
+      "pins": {
+        "1": "RGB_BUF",
+        "2": "RGB_DIN"
+      },
+      "note": "",
+      "placement_mm": [
+        157.7,
+        94.8,
+        0.0
+      ],
+      "source_footprint": "Resistor_SMD:R_0402_1005Metric",
+      "placement_layer": "B.Cu"
+    },
+    {
+      "ref": "R2",
+      "value": "0",
+      "mpn": "RC0402JR-070RL",
+      "footprint": "HoloCubic_RevB:RevB_R2",
+      "pins": {
+        "1": "3V3",
+        "2": "3V3A"
+      },
+      "note": "Specified1A jumper forESP-only branch;500mA allocation;50mOhm max.",
+      "placement_mm": [
+        155.8,
+        113.75,
+        90.0
+      ],
+      "source_footprint": "Resistor_SMD:R_0402_1005Metric",
+      "placement_layer": "F.Cu"
+    },
+    {
+      "ref": "C2",
+      "value": "22uF",
+      "mpn": "GRM21BR61E226ME44L",
+      "footprint": "HoloCubic_RevB:RevB_C2",
+      "pins": {
+        "1": "GND",
+        "2": "3V3"
+      },
+      "note": "25V X5R; DCbias typical13–15uF at3.3V,not22uF effective.",
+      "placement_mm": [
+        146.4,
+        98.92,
+        0.0
+      ],
+      "source_footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "placement_layer": "F.Cu"
+    },
+    {
+      "ref": "C3",
+      "value": "22uF",
+      "mpn": "GRM21BR61E226ME44L",
+      "footprint": "HoloCubic_RevB:RevB_C3",
+      "pins": {
+        "1": "GND",
+        "2": "VDD_5V"
+      },
+      "note": "25V X5R inputbulk; at5V officialtypicaleffectiveabout10–11uF beforeotherderating.",
+      "placement_mm": [
+        142.5,
+        94.6,
+        180.0
+      ],
+      "source_footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "placement_layer": "F.Cu"
+    },
+    {
+      "ref": "C4",
+      "value": "22uF",
+      "mpn": "GRM21BR61E226ME44L",
+      "footprint": "HoloCubic_RevB:RevB_C4",
+      "pins": {
+        "1": "GND",
+        "2": "3V3A"
+      },
+      "note": "25V X5R; DCbias typical13–15uF at3.3V,not22uF effective.",
+      "placement_mm": [
+        157.5,
+        115.65,
+        0.0
+      ],
+      "source_footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "placement_layer": "F.Cu"
+    },
+    {
+      "ref": "C13",
+      "value": "22uF",
+      "mpn": "GRM21BR61E226ME44L",
+      "footprint": "HoloCubic_RevB:RevB_C13",
+      "pins": {
+        "1": "3V3",
+        "2": "GND"
+      },
+      "note": "25V X5R; distributed bulk.",
+      "placement_mm": [
+        156.7,
+        94.5,
+        0.0
+      ],
+      "source_footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "placement_layer": "F.Cu"
+    },
+    {
+      "ref": "C1",
+      "value": "100nF",
+      "mpn": "GRM155R71C104KA88D",
+      "footprint": "HoloCubic_RevB:RevB_C1",
+      "pins": {
+        "1": "GND",
+        "2": "VDD_5V"
+      },
+      "note": "",
+      "placement_mm": [
+        140.7,
+        96.5,
+        -90.0
+      ],
+      "source_footprint": "Capacitor_SMD:C_0402_1005Metric",
+      "placement_layer": "F.Cu"
+    },
+    {
+      "ref": "C7",
+      "value": "1uF",
+      "mpn": "GRM155R61C105KA12D",
+      "footprint": "HoloCubic_RevB:RevB_C7",
+      "pins": {
+        "1": "EN",
+        "2": "GND"
+      },
+      "note": "16V1uF0402EN RC; realDCbias affectsdelay; validatecoldstart.",
+      "placement_mm": [
+        142.0,
+        110.0,
+        0.0
+      ],
+      "source_footprint": "Capacitor_SMD:C_0402_1005Metric",
+      "placement_layer": "F.Cu"
+    },
+    {
+      "ref": "C15",
+      "value": "1uF",
+      "mpn": "GRM155R61C105KA12D",
+      "footprint": "HoloCubic_RevB:RevB_C15",
+      "pins": {
+        "1": "USB_VBUS",
+        "2": "GND"
+      },
+      "note": "USBentrance1uF nominal16VX5R0402; effectiveDCbiasedvaluebelow1uF, validateinputhotplugwithC22localbypass.",
+      "placement_mm": [
+        158.81,
+        110.55,
+        0.0
+      ],
+      "source_footprint": "Capacitor_SMD:C_0402_1005Metric",
+      "placement_layer": "F.Cu"
+    },
+    {
+      "ref": "C16",
+      "value": "100pF",
+      "mpn": "GRM1555C1H101JA01D",
+      "footprint": "HoloCubic_RevB:RevB_C16",
+      "pins": {
+        "1": "LOAD_CT",
+        "2": "GND"
+      },
+      "note": "50V C0G +/-5%, 0402. TPS22918 Eq.3 estimates tR=0.425ms at 5V (not guaranteed). Measure CP_VDD rise to 2.7V <=1ms and inrush during hot-plug.",
+      "placement_mm": [
+        159.3,
+        115.1,
+        180.0
+      ],
+      "source_footprint": "Capacitor_SMD:C_0402_1005Metric",
+      "placement_layer": "B.Cu"
+    },
+    {
+      "ref": "C17",
+      "value": "100nF",
+      "mpn": "GRM155R71C104KA88D",
+      "footprint": "HoloCubic_RevB:RevB_C17",
+      "pins": {
+        "1": "LOAD_ON",
+        "2": "GND"
+      },
+      "note": "",
+      "placement_mm": [
+        155.88,
+        111.02,
+        90.0
+      ],
+      "source_footprint": "Capacitor_SMD:C_0402_1005Metric",
+      "placement_layer": "F.Cu"
+    },
+    {
+      "ref": "C18",
+      "value": "100nF",
+      "mpn": "GRM155R71C104KA88D",
+      "footprint": "HoloCubic_RevB:RevB_C18",
+      "pins": {
+        "1": "CP_VDD",
+        "2": "GND"
+      },
+      "note": "",
+      "placement_mm": [
+        153.37,
+        99.85,
+        0.0
+      ],
+      "source_footprint": "Capacitor_SMD:C_0402_1005Metric",
+      "placement_layer": "F.Cu"
+    },
+    {
+      "ref": "C20",
+      "value": "4.7uF",
+      "mpn": "GRM155R61A475MEAAD",
+      "footprint": "HoloCubic_RevB:RevB_C20",
+      "pins": {
+        "1": "VDD_5V",
+        "2": "GND"
+      },
+      "note": "CP2102 REGIN local capacitor: 4.7uF nominal,10V X5R0402; Murata Oct2026 EC at5V typical~1.88uF,at5.5V~1.7uF; typical curves do not guarantee minimum; sample effective capacitance before production.",
+      "placement_mm": [
+        154.6,
+        101.4,
+        90.0
+      ],
+      "source_footprint": "Capacitor_SMD:C_0402_1005Metric",
+      "placement_layer": "F.Cu"
+    },
+    {
+      "ref": "C21",
+      "value": "100nF",
+      "mpn": "GRM155R71C104KA88D",
+      "footprint": "HoloCubic_RevB:RevB_C21",
+      "pins": {
+        "1": "VDD_5V",
+        "2": "GND"
+      },
+      "note": "",
+      "placement_mm": [
+        159.3,
+        94.8,
+        0.0
+      ],
+      "source_footprint": "Capacitor_SMD:C_0402_1005Metric",
+      "placement_layer": "F.Cu"
+    },
+    {
+      "ref": "C22",
+      "value": "100nF",
+      "mpn": "GRM155R71C104KA88D",
+      "footprint": "HoloCubic_RevB:RevB_C22",
+      "pins": {
+        "1": "USB_VBUS",
+        "2": "GND"
+      },
+      "note": "",
+      "placement_mm": [
+        154.8,
+        107.59,
+        90.0
+      ],
+      "source_footprint": "Capacitor_SMD:C_0402_1005Metric",
+      "placement_layer": "F.Cu"
+    },
+    {
+      "ref": "C23",
+      "value": "100nF",
+      "mpn": "GRM155R71C104KA88D",
+      "footprint": "HoloCubic_RevB:RevB_C23",
+      "pins": {
+        "1": "VDD_5V",
+        "2": "GND"
+      },
+      "note": "CP2102 REGIN local100nF pairedC20=4.7uF, notLED bypass.",
+      "placement_mm": [
+        149.75,
+        100.27,
+        -90.0
+      ],
+      "source_footprint": "Capacitor_SMD:C_0402_1005Metric",
+      "placement_layer": "F.Cu"
+    },
+    {
+      "ref": "R11",
+      "value": "1k",
+      "mpn": "RC0402FR-071KL",
+      "footprint": "HoloCubic_RevB:RevB_R11",
+      "pins": {
+        "1": "NetR11_1",
+        "2": "3V3"
+      },
+      "note": "BH1750 DVI RC sequencing.",
+      "placement_mm": [
+        155.7,
+        97.2,
+        0.0
+      ],
+      "source_footprint": "Resistor_SMD:R_0402_1005Metric",
+      "placement_layer": "B.Cu"
+    },
+    {
+      "ref": "C24",
+      "value": "1uF",
+      "mpn": "GRM188R71E105KA12D",
+      "footprint": "HoloCubic_RevB:RevB_C24",
+      "pins": {
+        "1": "NetR11_1",
+        "2": "GND"
+      },
+      "note": "BH1750 DVI RC sequencing; 1uF +/-10%, 25V X7R, 0603. Shared MPN with ExtendBoard C4; manufacturer EC curves are typical.",
+      "placement_mm": [
+        158.92,
+        99.18,
+        0.0
+      ],
+      "source_footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "placement_layer": "F.Cu",
+      "datasheet": "https://ds.murata.com/simserve/characteristics?ReqType=TechPDF&partnumber=GRM188R71E105KA12&techpdfname=technical_pdf_Capacitor01&lang=en",
+      "manufacturer": "Murata"
+    },
+    {
+      "ref": "VT1",
+      "value": "MMBT3904-7-F",
+      "mpn": "MMBT3904-7-F",
+      "footprint": "HoloCubic_RevB:RevB_VT1",
+      "pins": {
+        "1": "NetR4_2",
+        "2": "RTS",
+        "3": "EN"
+      },
+      "note": "B1/E2/C3; standarddatasheetSOT23 lands; auto-downloadNPN.",
+      "placement_mm": [
+        142.1,
+        112.2,
+        90.0
+      ],
+      "source_footprint": "HoloCubic_RevB:SOT23_Diodes_Recommended",
+      "placement_layer": "F.Cu"
+    },
+    {
+      "ref": "VT2",
+      "value": "MMBT3904-7-F",
+      "mpn": "MMBT3904-7-F",
+      "footprint": "HoloCubic_RevB:RevB_VT2",
+      "pins": {
+        "1": "NetR5_2",
+        "2": "DTR",
+        "3": "GPIO0"
+      },
+      "note": "B1/E2/C3; standarddatasheetSOT23 lands; auto-downloadNPN.",
+      "placement_mm": [
+        145.7,
+        112.2,
+        90.0
+      ],
+      "source_footprint": "HoloCubic_RevB:SOT23_Diodes_Recommended",
+      "placement_layer": "F.Cu"
+    },
+    {
+      "ref": "CON1",
+      "value": "FH12-8S-0.5SH(55)",
+      "mpn": "FH12-8S-0.5SH(55)",
+      "footprint": "HoloCubic_RevB:RevB_CON1",
+      "pins": {
+        "1": "GPIO5",
+        "2": "GPIO4",
+        "3": "GPIO23",
+        "4": "GPIO18",
+        "5": "DC",
+        "6": "GND",
+        "7": "3V3",
+        "8": "VDD_5V",
+        "MP": "GND"
+      },
+      "note": "Origin/orientation retained; authorizedcorrect8Pfootprint shiftsrow+0.4106mmglobalX; MPground.",
+      "placement_mm": [
+        143.9545,
+        104.7163,
+        90.0
+      ],
+      "source_footprint": "Connector_FFC-FPC:Hirose_FH12-8S-0.5SH_1x08-1MP_P0.50mm_Horizontal",
+      "placement_layer": "F.Cu"
+    },
+    {
+      "ref": "USB1",
+      "value": "USB4105-GF-A",
+      "mpn": "USB4105-GF-A",
+      "footprint": "HoloCubic_RevB:RevB_USB1",
+      "pins": {
+        "A1": "GND",
+        "A4": "USB_VBUS",
+        "A5": "USB_CC1",
+        "A6": "USB-PWR-DP",
+        "A7": "USB-PWR-DM",
+        "A8": null,
+        "A9": "USB_VBUS",
+        "A12": "GND",
+        "B1": "GND",
+        "B4": "USB_VBUS",
+        "B5": "USB_CC2",
+        "B6": "USB-PWR-DP",
+        "B7": "USB-PWR-DM",
+        "B8": null,
+        "B9": "USB_VBUS",
+        "B12": "GND",
+        "SH": "GND"
+      },
+      "note": "VendorB4GCT:officialpad/slot/NPTH geometry;matingfaceXYretained,modelZ+0.05mm requireshousingtest;4SHpads commonGND.",
+      "source_footprint": "Connector_USB:USB_C_Receptacle_GCT_USB4105-xx-A_16P_TopMnt_Horizontal",
+      "placement_mm": [
+        160.06617,
+        104.9909,
+        90.0
+      ],
+      "placement_layer": "F.Cu"
+    },
+    {
+      "ref": "A1",
+      "value": "CA-C03",
+      "mpn": "CA-C03",
+      "source_footprint": "HoloCubic_RevB:CA_C03_RevB_Engineering_Lands",
+      "footprint": "HoloCubic_RevB:RevB_A1",
+      "pins": {
+        "1": "NetA1_1",
+        "2": null
+      },
+      "note": "CrossAir/GuangzhouHanwujiCA-C03;engineeringRECTlands(notvendor1.2x2.0):NC1.1027x2.2,feed1.35x2.2;NCtoeclip0.020mm;endpointsincludingrotationwithin+/-0.05mm;RF/VNAmatchingandenclosuretestsrequired.",
+      "placement_mm": [
+        143.5227,
+        115.3541,
+        180.0
+      ],
+      "placement_layer": "F.Cu"
+    },
+    {
+      "ref": "J1",
+      "value": "104031-0811",
+      "mpn": "104031-0811",
+      "source_footprint": "Connector_Card:microSD_HC_Molex_104031-0811",
+      "footprint": "HoloCubic_RevB:RevB_J1",
+      "pins": {
+        "1": "SD_DAT2",
+        "2": "GPIO15",
+        "3": "GPIO13",
+        "4": "3V3",
+        "5": "GPIO14",
+        "6": "GND",
+        "7": "GPIO26",
+        "8": "SD_DAT1",
+        "9": "GND",
+        "10": "GND",
+        "SH": "GND"
+      },
+      "note": "Molex104031-0811 officialRevB2lands;pad8 full0.85x1.10 atlocalX4.595 (restorevendorland,stocklibraryoutertoeiscropped0.10);NOdetect9/10bothGNDunused;insertedcardtailXYpreserved;propernativeFliptoBthen270deg.",
+      "placement_mm": [
+        149.53164,
+        105.3112,
+        -90.0
+      ],
+      "placement_layer": "B.Cu"
+    }
+  ],
+  "existing_pin_changes": {
+    "USB1": {
+      "A4": "USB_VBUS",
+      "A9": "USB_VBUS",
+      "B4": "USB_VBUS",
+      "B9": "USB_VBUS",
+      "A5": "USB_CC1",
+      "B5": "USB_CC2"
+    },
+    "U1": {
+      "6": "CP_VDD"
+    },
+    "J1": {
+      "1": "SD_DAT2",
+      "8": "SD_DAT1"
+    },
+    "D1": {
+      "4": "RGB_DIN"
+    }
+  },
+  "remove_pads": {
+    "U3": [
+      "unnumbered_center_EP"
+    ]
+  },
+  "remove_nets": [
+    "NetC3_2"
+  ],
+  "notes": [
+    "R2/C1/C2/C3/C4/C7 replace existing parts; other refs new.",
+    "TPD4E uses TI DQA0010A (verify exact manufacturer drawing),TI_DPY0002A custom footprint from datasheet required.",
+    "PCB not production-approved untilDRC/connectivity/parity and physicalpower/EMI/USBtests.",
+    "SourceboardoutlineandMCUpose/RFroutepreserved;RevBnewknownUSB/TF/FFCconnectorlandandexplicitposedeltasapply;seeMECHANICAL-REVIEW."
+  ],
+  "existing_footprints": {
+    "VT1": "HoloCubic_RevB:Original_VT1",
+    "R4": "HoloCubic_RevB:Original_R4",
+    "C5": "HoloCubic_RevB:Original_C5",
+    "R11": "HoloCubic_RevB:Original_R11",
+    "CON1": "HoloCubic_RevB:Original_CON1",
+    "USB1": "HoloCubic_RevB:Original_USB1",
+    "A1": "HoloCubic_RevB:Original_A1",
+    "C6": "HoloCubic_RevB:Original_C6",
+    "U1": "HoloCubic_RevB:Original_U1",
+    "R1": "HoloCubic_RevB:Original_R1",
+    "D1": "HoloCubic_RevB:Original_D1",
+    "R6": "HoloCubic_RevB:Original_R6",
+    "U3": "HoloCubic_RevB:Original_U3",
+    "U5": "HoloCubic_RevB:Original_U5",
+    "C10": "HoloCubic_RevB:Original_C10",
+    "VT2": "HoloCubic_RevB:Original_VT2",
+    "C8": "HoloCubic_RevB:Original_C8",
+    "R5": "HoloCubic_RevB:Original_R5",
+    "C11": "HoloCubic_RevB:Original_C11",
+    "R3": "HoloCubic_RevB:Original_R3",
+    "C9": "HoloCubic_RevB:Original_C9",
+    "U4": "HoloCubic_RevB:RevB_U4",
+    "R8": "HoloCubic_RevB:Original_R8",
+    "J1": "HoloCubic_RevB:Original_J1",
+    "R7": "HoloCubic_RevB:Original_R7",
+    "R9": "HoloCubic_RevB:Original_R9",
+    "R10": "HoloCubic_RevB:Original_R10"
+  },
+  "removed_mpu_center_vias": 6,
+  "remove_refs": [
+    "C12",
+    "C14",
+    "C19"
+  ],
+  "existing_mpn": {
+    "R1": "RC0402FR-0710KL",
+    "R6": "RC0402FR-0710KL",
+    "R7": "RC0402FR-0710KL",
+    "R8": "RC0402FR-0710KL",
+    "R9": "RC0402FR-0710KL",
+    "R10": "RC0402FR-0710KL",
+    "R4": "RC0402FR-0712KL",
+    "R5": "RC0402FR-0712KL",
+    "R3": "RTT022000FTH",
+    "C5": "GRM155R71C104KA88D",
+    "C8": "GRM155R71C104KA88D",
+    "C10": "GRM155R71C104KA88D",
+    "C11": "GRM155R71C104KA88D",
+    "C6": "GRM155R71H103KA88D",
+    "C9": "GRM1555C1H222JA01D",
+    "U1": "CP2102-GMR",
+    "U3": "MPU-6050",
+    "U5": "BH1750FVI-TR"
+  },
+  "esp32_ep": {
+    "reference": "ESP32-PICOseriesv1.5Fig16/17pp59/60;originalPCBpad0mapsmanufacturer49GND",
+    "copper_mm": [
+      4.5,
+      4.5
+    ],
+    "mask_mm": [
+      4.0,
+      4.0
+    ],
+    "chamfer_mm": 0.5,
+    "paste_windows_mm": [
+      0.75,
+      0.75
+    ],
+    "paste_centers_offsets_mm": [
+      -1.575,
+      -0.525,
+      0.525,
+      1.575
+    ],
+    "thermal_via_grid_offsets_mm": [
+      -2,
+      -1.05,
+      0,
+      1.05,
+      2
+    ],
+    "omit_grid_corners": true,
+    "via_mm": [
+      0.46,
+      0.25
+    ],
+    "tent_front_back": true,
+    "stencil_um": 80
+  },
+  "maintenance_scope": "Part metadata and placement record; native PCB/schematic are authoritative. Native DRC/connectivity/parity passed; physical prototype validation remains required.",
+  "existing_part_metadata": {
+    "R3": {
+      "manufacturer": "RALEC",
+      "datasheet": "https://www.ralec.com/upload/media/product/file/IE-SP-010%20.pdf",
+      "note": "200ohm +/-1%, 1/16W at70C, +/-100ppm/C. UART TXD-to-U0RXD series resistor; retain controlled dense 0402 land."
+    }
+  }
+}

@@ -1,0 +1,1039 @@
+{
+  "date": "2026-10-30",
+  "tool": "KiCad 10.0.7",
+  "scope": "Native schematic and PCB constraints, not physical prototype qualification.",
+  "sources": [
+    {
+      "path": "1.Hardware/RevB-KiCad/Naive/MainBoard/MainBoard.kicad_pcb",
+      "sha256": "a8bbae787964286f9783e2d74fa752ae82efbc7d5350371debf734503f4a98a8"
+    },
+    {
+      "path": "1.Hardware/RevB-KiCad/Naive/MainBoard/MainBoard.kicad_sch",
+      "sha256": "07fcad3e59d81c5683dbd6467261d4922e33b47e4417812c85a7bde86fed7cd7"
+    },
+    {
+      "path": "1.Hardware/RevB-KiCad/Naive/MainBoard/MainBoard.kicad_pro",
+      "sha256": "5e65bf5055027a23da7b734917d891b49d8b6827f2630542633ac9ce85d7fe52"
+    },
+    {
+      "path": "1.Hardware/RevB-KiCad/Naive/ExtendBoard/ExtendBoard.kicad_pcb",
+      "sha256": "d05a3b40bbc770fbf0523e38680e2212bac2e3d39f5fec9066f50eba5e90c40c"
+    },
+    {
+      "path": "1.Hardware/RevB-KiCad/Naive/ExtendBoard/ExtendBoard.kicad_sch",
+      "sha256": "46c006975feda9a5cf08b7bd5408a0e6c8a48d2d0f90f37210f2771b28a2aab6"
+    },
+    {
+      "path": "1.Hardware/RevB-KiCad/Naive/ExtendBoard/ExtendBoard.kicad_pro",
+      "sha256": "bfda48ae139da75240f715e23c8f2f7226d1b6b6ad8c5976865c066a95e35ed1"
+    }
+  ],
+  "check_count": 206,
+  "failed_check_count": 0,
+  "checks": [
+    {
+      "check": "MainBoard manufacturing solder-mask rules",
+      "passed": true
+    },
+    {
+      "check": "MainBoard native netlist export",
+      "passed": true
+    },
+    {
+      "check": "MainBoard native ERC all severities",
+      "passed": true
+    },
+    {
+      "check": "Schematic and PCB component references",
+      "passed": true
+    },
+    {
+      "check": "Schematic/PCB electrical node partitions",
+      "passed": true
+    },
+    {
+      "check": "Schematic/PCB functional net names exactly match",
+      "passed": true
+    },
+    {
+      "check": "Schematic/PCB values",
+      "passed": true
+    },
+    {
+      "check": "Schematic/PCB footprint links",
+      "passed": true
+    },
+    {
+      "check": "Schematic/PCB exact MPN fields",
+      "passed": true
+    },
+    {
+      "check": "PCB paths match schematic root/symbol UUIDs",
+      "passed": true
+    },
+    {
+      "check": "MainBoard native DRC all errors/parity",
+      "passed": true
+    },
+    {
+      "check": "CC1 independent Rd",
+      "passed": true
+    },
+    {
+      "check": "CC2 independent Rd",
+      "passed": true
+    },
+    {
+      "check": "CC1/CC2/raw VBUS independent",
+      "passed": true
+    },
+    {
+      "check": "CC Rd to GND",
+      "passed": true
+    },
+    {
+      "check": "R12 value",
+      "passed": true
+    },
+    {
+      "check": "R13 value",
+      "passed": true
+    },
+    {
+      "check": "All four USB VBUS contacts raw",
+      "passed": true
+    },
+    {
+      "check": "USB ground contacts and shell grounded",
+      "passed": true
+    },
+    {
+      "check": "Both TPD4E05U06 ground terminals connected",
+      "passed": true
+    },
+    {
+      "check": "Raw 5V / switched 5V / 3V3 / MCU 3V3 isolated by parts",
+      "passed": true
+    },
+    {
+      "check": "USB DP protection and UART bridge",
+      "passed": true
+    },
+    {
+      "check": "USB DM protection and UART bridge",
+      "passed": true
+    },
+    {
+      "check": "USB DP / DM / CC1 / CC2 / raw VBUS / GND separate",
+      "passed": true
+    },
+    {
+      "check": "CP2102 internal VDD local bypass",
+      "passed": true
+    },
+    {
+      "check": "CP internal VDD / external 3V3 / system 5V distinct",
+      "passed": true
+    },
+    {
+      "check": "CP VDD only feeds local decoupling",
+      "passed": true
+    },
+    {
+      "check": "C18 value",
+      "passed": true
+    },
+    {
+      "check": "CP2102 REGIN local bypass rail",
+      "passed": true
+    },
+    {
+      "check": "CP2102 REGIN bypass ground",
+      "passed": true
+    },
+    {
+      "check": "C20 value",
+      "passed": true
+    },
+    {
+      "check": "C23 value",
+      "passed": true
+    },
+    {
+      "check": "Buck supply and enable from switched 5V",
+      "passed": true
+    },
+    {
+      "check": "Buck SW only into inductor",
+      "passed": true
+    },
+    {
+      "check": "Buck switch net exactly two nodes",
+      "passed": true
+    },
+    {
+      "check": "Buck VOS senses output after L1",
+      "passed": true
+    },
+    {
+      "check": "Fixed buck FB / AGND / PGND / EP grounded",
+      "passed": true
+    },
+    {
+      "check": "L1 value",
+      "passed": true
+    },
+    {
+      "check": "R2 value",
+      "passed": true
+    },
+    {
+      "check": "All seven MCU supply terminals on 3V3A",
+      "passed": true
+    },
+    {
+      "check": "Load switch ON delay",
+      "passed": true
+    },
+    {
+      "check": "Load switch timing capacitor",
+      "passed": true
+    },
+    {
+      "check": "R18 value",
+      "passed": true
+    },
+    {
+      "check": "C17 value",
+      "passed": true
+    },
+    {
+      "check": "C16 value",
+      "passed": true
+    },
+    {
+      "check": "Load switch CT exact C0G MPN",
+      "passed": true
+    },
+    {
+      "check": "Load switch selected DBVT MPN",
+      "passed": true
+    },
+    {
+      "check": "C3 bulk capacitor rail",
+      "passed": true
+    },
+    {
+      "check": "C3 bulk capacitor return",
+      "passed": true
+    },
+    {
+      "check": "C3 value",
+      "passed": true
+    },
+    {
+      "check": "C2 bulk capacitor rail",
+      "passed": true
+    },
+    {
+      "check": "C2 bulk capacitor return",
+      "passed": true
+    },
+    {
+      "check": "C2 value",
+      "passed": true
+    },
+    {
+      "check": "C13 bulk capacitor rail",
+      "passed": true
+    },
+    {
+      "check": "C13 bulk capacitor return",
+      "passed": true
+    },
+    {
+      "check": "C13 value",
+      "passed": true
+    },
+    {
+      "check": "C4 bulk capacitor rail",
+      "passed": true
+    },
+    {
+      "check": "C4 bulk capacitor return",
+      "passed": true
+    },
+    {
+      "check": "C4 value",
+      "passed": true
+    },
+    {
+      "check": "RGB MCU input / reset pull-down",
+      "passed": true
+    },
+    {
+      "check": "RGB buffer output to series resistor",
+      "passed": true
+    },
+    {
+      "check": "RGB DIN after resistor",
+      "passed": true
+    },
+    {
+      "check": "RGB GPIO / buffer output / lamp DIN separate",
+      "passed": true
+    },
+    {
+      "check": "AHCT/WS2812 powered by switched 5V",
+      "passed": true
+    },
+    {
+      "check": "AHCT enabled and RGB pull-down grounded",
+      "passed": true
+    },
+    {
+      "check": "R19 value",
+      "passed": true
+    },
+    {
+      "check": "R20 value",
+      "passed": true
+    },
+    {
+      "check": "SD pin 7 pull-up",
+      "passed": true
+    },
+    {
+      "check": "R7 to card VCC",
+      "passed": true
+    },
+    {
+      "check": "R7 value",
+      "passed": true
+    },
+    {
+      "check": "SD pin 3 pull-up",
+      "passed": true
+    },
+    {
+      "check": "R8 to card VCC",
+      "passed": true
+    },
+    {
+      "check": "R8 value",
+      "passed": true
+    },
+    {
+      "check": "SD pin 2 pull-up",
+      "passed": true
+    },
+    {
+      "check": "R10 to card VCC",
+      "passed": true
+    },
+    {
+      "check": "R10 value",
+      "passed": true
+    },
+    {
+      "check": "SD pin 8 pull-up",
+      "passed": true
+    },
+    {
+      "check": "R16 to card VCC",
+      "passed": true
+    },
+    {
+      "check": "R16 value",
+      "passed": true
+    },
+    {
+      "check": "SD pin 1 pull-up",
+      "passed": true
+    },
+    {
+      "check": "R17 to card VCC",
+      "passed": true
+    },
+    {
+      "check": "R17 value",
+      "passed": true
+    },
+    {
+      "check": "All eight SD contacts are distinct nets",
+      "passed": true
+    },
+    {
+      "check": "SD firmware mapping SCK GPIO14",
+      "passed": true
+    },
+    {
+      "check": "SD firmware mapping MOSI GPIO13",
+      "passed": true
+    },
+    {
+      "check": "SD firmware mapping MISO GPIO26",
+      "passed": true
+    },
+    {
+      "check": "SD firmware mapping CS GPIO15",
+      "passed": true
+    },
+    {
+      "check": "GPIO12 flash-voltage strap remains unused",
+      "passed": true
+    },
+    {
+      "check": "Molex shell and unused card-detect terminals grounded",
+      "passed": true
+    },
+    {
+      "check": "CA-C03 mechanical terminal is a single unused node",
+      "passed": true
+    },
+    {
+      "check": "CA-C03 feed preserves MCU RF connection",
+      "passed": true
+    },
+    {
+      "check": "Antenna feed / mechanical terminal / ground separate",
+      "passed": true
+    },
+    {
+      "check": "I2C SDA: MCU32 / MPU / ALS / pull-up",
+      "passed": true
+    },
+    {
+      "check": "I2C SCL: MCU33 / MPU / ALS / pull-up",
+      "passed": true
+    },
+    {
+      "check": "I2C pulls to 3V3",
+      "passed": true
+    },
+    {
+      "check": "R14 value",
+      "passed": true
+    },
+    {
+      "check": "R15 value",
+      "passed": true
+    },
+    {
+      "check": "I2C SDA / SCL / VCC / GND separate",
+      "passed": true
+    },
+    {
+      "check": "MPU VDD and VLOGIC on 3V3",
+      "passed": true
+    },
+    {
+      "check": "MPU address, FSYNC and ground grounded",
+      "passed": true
+    },
+    {
+      "check": "BH1750 supply and ground",
+      "passed": true
+    },
+    {
+      "check": "BH1750 low address / ground",
+      "passed": true
+    },
+    {
+      "check": "BH DVI isolated from VCC by R11",
+      "passed": true
+    },
+    {
+      "check": "BH DVI resistor from VCC",
+      "passed": true
+    },
+    {
+      "check": "BH1750 DVI RC delay",
+      "passed": true
+    },
+    {
+      "check": "BH DVI capacitor grounded",
+      "passed": true
+    },
+    {
+      "check": "R11 value",
+      "passed": true
+    },
+    {
+      "check": "C24 value",
+      "passed": true
+    },
+    {
+      "check": "BH1750 DVI selected 25V MPN",
+      "passed": true
+    },
+    {
+      "check": "EN capacitance on MCU enable",
+      "passed": true
+    },
+    {
+      "check": "C7 value",
+      "passed": true
+    },
+    {
+      "check": "EN RC supply / ground",
+      "passed": true
+    },
+    {
+      "check": "EN capacitor return",
+      "passed": true
+    },
+    {
+      "check": "EN / GPIO0 / MCU supply / GND distinct",
+      "passed": true
+    },
+    {
+      "check": "Auto download GPIO0 collector",
+      "passed": true
+    },
+    {
+      "check": "DTR to transistor E2/base1 resistor",
+      "passed": true
+    },
+    {
+      "check": "RTS to transistor E1/base2 resistor",
+      "passed": true
+    },
+    {
+      "check": "UART CP TX through series resistor",
+      "passed": true
+    },
+    {
+      "check": "UART series resistor to MCU RX",
+      "passed": true
+    },
+    {
+      "check": "R3 value",
+      "passed": true
+    },
+    {
+      "check": "UART series resistor selected RALEC MPN",
+      "passed": true
+    },
+    {
+      "check": "UART MCU TX to CP RX",
+      "passed": true
+    },
+    {
+      "check": "UART directions / ground separate",
+      "passed": true
+    },
+    {
+      "check": "TFT connector pin 1 mapping",
+      "passed": true
+    },
+    {
+      "check": "TFT connector pin 2 mapping",
+      "passed": true
+    },
+    {
+      "check": "TFT connector pin 3 mapping",
+      "passed": true
+    },
+    {
+      "check": "TFT connector pin 4 mapping",
+      "passed": true
+    },
+    {
+      "check": "TFT connector pin 5 mapping",
+      "passed": true
+    },
+    {
+      "check": "FFC ground",
+      "passed": true
+    },
+    {
+      "check": "FFC 3V3",
+      "passed": true
+    },
+    {
+      "check": "FFC switched 5V",
+      "passed": true
+    },
+    {
+      "check": "MPU footprint present",
+      "passed": true
+    },
+    {
+      "check": "MPU only pins 1–24; no unnamed/25 center pad",
+      "passed": true
+    },
+    {
+      "check": "No MPU paste aperture overlaps forbidden die window",
+      "passed": true
+    },
+    {
+      "check": "MPU die window covered by copper/track/via/pad keepout",
+      "passed": true
+    },
+    {
+      "check": "No through-via barrels in MPU die window",
+      "passed": true
+    },
+    {
+      "check": "PICO footprint present",
+      "passed": true
+    },
+    {
+      "check": "PICO logical pad0 / physical49 thermal ground present",
+      "passed": true
+    },
+    {
+      "check": "PICO thermal copper 4.5mm square grounded",
+      "passed": true
+    },
+    {
+      "check": "PICO solder-mask-defined 4.0mm opening",
+      "passed": true
+    },
+    {
+      "check": "PICO EP has no full-area paste aperture",
+      "passed": true
+    },
+    {
+      "check": "PICO sixteen 0.75mm stencil windows / 0.30mm gaps",
+      "passed": true
+    },
+    {
+      "check": "PICO twenty-one 0.25mm ground thermal vias / >=0.10mm annulus",
+      "passed": true
+    },
+    {
+      "check": "Multilayer revision has reviewed copper layer order",
+      "passed": true
+    },
+    {
+      "check": "Dedicated L2 ground plane has no foreign tracks or pours",
+      "passed": true
+    },
+    {
+      "check": "Dedicated L5 ground plane has no foreign tracks or pours",
+      "passed": true
+    },
+    {
+      "check": "Nominal stack thickness agrees with all copper/dielectric/mask layers",
+      "passed": true
+    },
+    {
+      "check": "Extension board native sources available",
+      "passed": true
+    },
+    {
+      "check": "ExtendBoard manufacturing solder-mask rules",
+      "passed": true
+    },
+    {
+      "check": "ExtendBoard native netlist export",
+      "passed": true
+    },
+    {
+      "check": "ExtendBoard native ERC all severities",
+      "passed": true
+    },
+    {
+      "check": "Schematic and PCB component references",
+      "passed": true
+    },
+    {
+      "check": "Schematic/PCB electrical node partitions",
+      "passed": true
+    },
+    {
+      "check": "Schematic/PCB functional net names exactly match",
+      "passed": true
+    },
+    {
+      "check": "Schematic/PCB values",
+      "passed": true
+    },
+    {
+      "check": "Schematic/PCB footprint links",
+      "passed": true
+    },
+    {
+      "check": "Schematic/PCB exact MPN fields",
+      "passed": true
+    },
+    {
+      "check": "PCB paths match schematic root/symbol UUIDs",
+      "passed": true
+    },
+    {
+      "check": "ExtendBoard native DRC all errors/parity",
+      "passed": true
+    },
+    {
+      "check": "Display FFC 5V / panel LED anode / driver BIAS",
+      "passed": true
+    },
+    {
+      "check": "Display FFC 3V3 / panel logic",
+      "passed": true
+    },
+    {
+      "check": "Display FFC ground / mounting pads",
+      "passed": true
+    },
+    {
+      "check": "Display 5V / 3V3 / GND separated",
+      "passed": true
+    },
+    {
+      "check": "Panel cathode only through AL5802 OUT",
+      "passed": true
+    },
+    {
+      "check": "Panel cathode has only panel and current-sink nodes",
+      "passed": true
+    },
+    {
+      "check": "Panel cathode / anode / GND separate",
+      "passed": true
+    },
+    {
+      "check": "AL5802 FB / REXT / current-sense resistor",
+      "passed": true
+    },
+    {
+      "check": "AL5802 sense resistor grounded",
+      "passed": true
+    },
+    {
+      "check": "R2 value",
+      "passed": true
+    },
+    {
+      "check": "Backlight sense / cathode / GND / BIAS separate",
+      "passed": true
+    },
+    {
+      "check": "AL5802 EN shunted by NMOS drain",
+      "passed": true
+    },
+    {
+      "check": "AL5802 EN has only driver and NMOS drain nodes",
+      "passed": true
+    },
+    {
+      "check": "Backlight NMOS source grounded",
+      "passed": true
+    },
+    {
+      "check": "Backlight NMOS gate / series resistor / default-off pull-up",
+      "passed": true
+    },
+    {
+      "check": "Backlight GPIO through gate resistor",
+      "passed": true
+    },
+    {
+      "check": "Backlight default-off pull-up to 3V3",
+      "passed": true
+    },
+    {
+      "check": "GPIO / NMOS gate / EN / GND / 3V3 separate",
+      "passed": true
+    },
+    {
+      "check": "R1 value",
+      "passed": true
+    },
+    {
+      "check": "R3 value",
+      "passed": true
+    },
+    {
+      "check": "Q1 value",
+      "passed": true
+    },
+    {
+      "check": "Display C1 supply",
+      "passed": true
+    },
+    {
+      "check": "Display C1 ground",
+      "passed": true
+    },
+    {
+      "check": "C1 value",
+      "passed": true
+    },
+    {
+      "check": "Display C2 supply",
+      "passed": true
+    },
+    {
+      "check": "Display C2 ground",
+      "passed": true
+    },
+    {
+      "check": "C2 value",
+      "passed": true
+    },
+    {
+      "check": "Display C3 supply",
+      "passed": true
+    },
+    {
+      "check": "Display C3 ground",
+      "passed": true
+    },
+    {
+      "check": "C3 value",
+      "passed": true
+    },
+    {
+      "check": "Display C4 supply",
+      "passed": true
+    },
+    {
+      "check": "Display C4 ground",
+      "passed": true
+    },
+    {
+      "check": "C4 value",
+      "passed": true
+    },
+    {
+      "check": "Display 5V bypass selected 25V MPN",
+      "passed": true
+    },
+    {
+      "check": "Display SPI LCD pin 7",
+      "passed": true
+    },
+    {
+      "check": "Display SPI LCD pin 9",
+      "passed": true
+    },
+    {
+      "check": "Display SPI LCD pin 10",
+      "passed": true
+    },
+    {
+      "check": "Display SPI LCD pin 11",
+      "passed": true
+    },
+    {
+      "check": "Panel CS permanently selected",
+      "passed": true
+    },
+    {
+      "check": "FFC reverse mapping GPIO5 / active-low backlight",
+      "passed": true
+    },
+    {
+      "check": "FFC reverse mapping GPIO4 / panel reset",
+      "passed": true
+    },
+    {
+      "check": "FFC reverse mapping GPIO23 / MOSI",
+      "passed": true
+    },
+    {
+      "check": "FFC reverse mapping GPIO18 / SCK",
+      "passed": true
+    },
+    {
+      "check": "FFC reverse mapping GPIO2 / DC",
+      "passed": true
+    },
+    {
+      "check": "FFC reverse mapping GND",
+      "passed": true
+    },
+    {
+      "check": "FFC reverse mapping 3V3",
+      "passed": true
+    },
+    {
+      "check": "FFC reverse mapping switched 5V",
+      "passed": true
+    }
+  ],
+  "native_reports": [
+    {
+      "check": "MainBoard native ERC all severities",
+      "passed": true,
+      "returncode": 0,
+      "violations": [],
+      "unconnected_items": null,
+      "schematic_parity": null,
+      "ignored_checks": [
+        {
+          "description": "Global label only appears once in the schematic",
+          "key": "single_global_label"
+        },
+        {
+          "description": "Four connection points are joined together",
+          "key": "four_way_junction"
+        },
+        {
+          "description": "SPICE model issue",
+          "key": "simulation_model_issue"
+        },
+        {
+          "description": "Assigned footprint doesn't match footprint filters",
+          "key": "footprint_filter"
+        }
+      ]
+    },
+    {
+      "check": "MainBoard native DRC all errors/parity",
+      "passed": true,
+      "returncode": 0,
+      "violations": [],
+      "unconnected_items": [],
+      "schematic_parity": [],
+      "ignored_checks": [
+        {
+          "description": "Tuning profile track geometries",
+          "key": "tuning_profile_track_geometries"
+        }
+      ]
+    },
+    {
+      "check": "ExtendBoard native ERC all severities",
+      "passed": true,
+      "returncode": 0,
+      "violations": [],
+      "unconnected_items": null,
+      "schematic_parity": null,
+      "ignored_checks": [
+        {
+          "description": "Global label only appears once in the schematic",
+          "key": "single_global_label"
+        },
+        {
+          "description": "Four connection points are joined together",
+          "key": "four_way_junction"
+        },
+        {
+          "description": "SPICE model issue",
+          "key": "simulation_model_issue"
+        },
+        {
+          "description": "Assigned footprint doesn't match footprint filters",
+          "key": "footprint_filter"
+        }
+      ]
+    },
+    {
+      "check": "ExtendBoard native DRC all errors/parity",
+      "passed": true,
+      "returncode": 0,
+      "violations": [],
+      "unconnected_items": [],
+      "schematic_parity": [],
+      "ignored_checks": [
+        {
+          "description": "Tuning profile track geometries",
+          "key": "tuning_profile_track_geometries"
+        }
+      ]
+    }
+  ],
+  "via_drill_vs_smd_paste_overlap_count": 0,
+  "visual_review": [
+    "2026-10-29: Native schematic editor opens and renders final main schematic without errors.",
+    "2026-10-29: Native top and bottom 3D renders; six copper SVG plots inspected.",
+    "2026-10-29: Added models explicitly represent maximum body bounding envelopes, not exact manufacturer models.",
+    "2026-10-29: New ExtendBoard F.Cu/F.Mask/F.Paste plots inspected; no LCD stencil apertures.",
+    "2026-10-29: Measurement diagram front/back coordinates cross-checked; LCD1 pad1/pad12 independently read with native pcbnew PAD.GetPosition.",
+    "2026-10-30: Updated BOM workbook rendered and inspected. Current source changes are material metadata only; no new native3D render is claimed."
+  ],
+  "physical_qualification_pending": [
+    "Manufacturer order acceptance, actual finished-stack accounting/tolerances and hole treatment",
+    "P133H002 permitted bend segment/radius, contact-face and lateral registration",
+    "Unique screen/ExtendBoard-to-Upper assembly registration and final cable route/length",
+    "Power/CP_VDD startup, USB enumeration/hotplug/load and thermal measurements",
+    "RF matching and wireless performance in final enclosure",
+    "BH1750 VCC/DVI cold-start, slow-ramp, brownout and rapid-replug reset waveforms"
+  ],
+  "bom": {
+    "total_instances": 69,
+    "unique_mpn_count": 38,
+    "grouped_procurement_rows": 38,
+    "workbook_formulas": 39,
+    "workbook_formula_errors": 0,
+    "files": {
+      "BOM.json": "7ce04575fe5c1e8aa56406495954efa32a6d3ceeb11fb45b09b18ed04e3396bb",
+      "BOM.csv": "31d8bd8954221c7ca51d747b997f092e5e251e5ce9ccb1d45ec88af35c0379b3",
+      "BOM-grouped.csv": "1a36f148d2b501f056beb630e35eadb5ec3d8c68d9ca4d8efe469d75fb9c8792",
+      "BOM.xlsx": "280001eafbc00a17af6d08f8de75c8266185906a7cc266533f327657cf814f36"
+    }
+  },
+  "mechanical": {
+    "interface_profiles": {
+      "Naive_MainBoard": true,
+      "Naive_ExtendBoard": true
+    },
+    "reference_report": "Mechanical/Lower-RevB-verification.json",
+    "original_altium_and_step_files_unchanged": 40,
+    "nominal_main_CAD_including_mask_budget_mm": 1.06,
+    "selected_published_stack": "JLC06101H-3313, nominal order1.0mm, copper+dielectric1.04mm; order confirmation pending",
+    "final_case_step_sha256": "cfbf73b8e6aacda83d20e6e41b012c7b738c71492427c744900032768476ff11",
+    "component_substitution_proof": "component-substitutions.json"
+  },
+  "regression_tests": {
+    "count": 51,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "command": "python3 -m unittest discover -s tools/hardware -p 'test_*.py' -v",
+    "duration_seconds": 64.138
+  },
+  "display_axial_allowance": {
+    "report": "Closure/P133H002-interface-closure.json",
+    "checks": 144,
+    "failures": 0,
+    "minimum_overlap_mm": 0.9611,
+    "scope": "Axial solder contact allowance only; no permitted-bend, lateral, contact-face or full-assembly qualification"
+  },
+  "bringup_firmware": {
+    "environment": "naive-bringup",
+    "compiled": true,
+    "executed_on_hardware": false,
+    "RAM_bytes": 50100,
+    "flash_bytes": 1229107,
+    "image_sha256": "6057bf8593855b7bf7078d32cb3bacd6c9f2361a5ce07e2ff9e27843e89da32d",
+    "image_header_and_validation_hash_verified": true,
+    "last_compilation_record_date": "2026-10-29",
+    "recompiled_for_component_substitution": false
+  },
+  "formal_naive_firmware": {
+    "compiled": true,
+    "RAM_bytes": 98060,
+    "flash_bytes": 2247967,
+    "image_sha256": "b2303e96d0b8b2c3103e8afad82af752f38de5679fb38f5b538c8f158142585b",
+    "executed_on_new_PCB": false,
+    "last_compilation_record_date": "2026-10-29",
+    "recompiled_for_component_substitution": false
+  },
+  "closure_status_document": "Closure/README.md",
+  "component_substitutions": {
+    "record": "component-substitutions.json",
+    "positions_applied": 4,
+    "firmware_change_required": false,
+    "physical_qualification_completed": false
+  },
+  "probe_map": {
+    "terminals": 15,
+    "record": "Closure/probe-map.json",
+    "BH1750_VCC": "M10/C11.1",
+    "BH1750_DVI": "M11/C24.1"
+  },
+  "measurement_record": {
+    "rows": 15,
+    "all_results": "NOT_TESTED",
+    "record": "Closure/measurement-record.csv"
+  },
+  "firmware_functional_limits": [
+    "Default application does not enable BH1750 ambient automatic brightness. The unused Ambient helper requires a separate correction/integration before enabling it."
+  ]
+}

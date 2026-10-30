@@ -1,0 +1,239 @@
+{
+  "schema_version": 1,
+  "description": "Reviewed four-layer Power/MCU fanout candidate. One explicitly authorized C17 pose move. Source42air includes2GND; target40air are signals. Requires final signal routing, native DRC and schematic parity after all merges.",
+  "source_sha256": "35f014713bc5f172adb3d2e74d8414e1076c93b27f7479f8e85b76c92d006932",
+  "target_reference_sha256": "4aa6fb9083b508af03ae0d50de949c78cb3a778c15d3fbd1a3debc685bb503f5",
+  "source_id": "Final local CT35f014 four-layer source",
+  "target_id": "Power9 plus6 reviewed MCU fanouts",
+  "validation": {
+    "native_geometry_errors": 0,
+    "native_schematic_parity": 0,
+    "power_unconnected": 0,
+    "remaining_signal_airwires": 40,
+    "via_paste_intersections": 0,
+    "warnings": "4 source signal dangling vias +6 new signal fanout vias +1 retained one-layer3V3A via153.05,109.55. No exclusion hides geometry or net errors.",
+    "protected": {
+      "source_sha256": "35f014713bc5f172adb3d2e74d8414e1076c93b27f7479f8e85b76c92d006932",
+      "candidate_sha256": "4aa6fb9083b508af03ae0d50de949c78cb3a778c15d3fbd1a3debc685bb503f5",
+      "only_changed_footprint": "C17",
+      "C17_old": [
+        "155.9",
+        "111.6",
+        "90"
+      ],
+      "C17_new": [
+        "155.88",
+        "111.02",
+        "90"
+      ],
+      "RF7_preserved": true,
+      "thermal21_preserved": true,
+      "all_keepouts_preserved": true,
+      "L2_no_foreign_tracks": true,
+      "minimum_new_via_annulus_mm": 0.1,
+      "new_via_sizes_mm": [
+        [
+          0.45,
+          0.25
+        ],
+        [
+          0.46,
+          0.25
+        ]
+      ],
+      "removed_tracks": 11,
+      "changed_tracks": 1,
+      "added_tracks_vias": 36
+    },
+    "fanouts": [
+      {
+        "pin": "24",
+        "net": "GPIO4",
+        "via": [
+          153.85,
+          109.6
+        ],
+        "uuid": "ae7d692c-e175-4d18-a313-7456246ed675",
+        "F_width": 0.1016,
+        "via_diameter": 0.46
+      },
+      {
+        "pin": "23",
+        "net": "GPIO0",
+        "via": [
+          154.08,
+          110.31
+        ],
+        "uuid": "1458342f-b5d5-4e17-b8e5-3ef1aefdecc5",
+        "F_width": 0.1016,
+        "via_diameter": 0.45
+      },
+      {
+        "pin": "22",
+        "net": "DC",
+        "via": [
+          154.08,
+          110.89
+        ],
+        "uuid": "37373608-79bb-4e09-94c0-9ba914883103",
+        "F_width": 0.1016,
+        "via_diameter": 0.45
+      },
+      {
+        "pin": "21",
+        "net": "GPIO15",
+        "via": [
+          154.08,
+          111.47
+        ],
+        "uuid": "17a18935-0c0e-4264-89c6-1c5901ef7146",
+        "F_width": 0.1016,
+        "via_diameter": 0.45
+      },
+      {
+        "pin": "20",
+        "net": "GPIO13",
+        "via": [
+          155.6,
+          112.15
+        ],
+        "uuid": "72cf77cb-8195-4bd2-adac-fc9f0b549ff3",
+        "F_width": 0.1016,
+        "via_diameter": 0.46
+      },
+      {
+        "pin": "40",
+        "net": "CP_Tx",
+        "via": [
+          148.8,
+          110.9545
+        ],
+        "uuid": "e0510961-1965-4dd4-b239-494652ec15bf",
+        "F_width": 0.125,
+        "via_diameter": 0.46
+      }
+    ],
+    "mechanical": "C17move authorized byRoot; maximum body/standoff checked independently bymechanics. Final case fit remains prototype qualification.",
+    "c17": {
+      "before_mm_deg": [
+        155.9,
+        111.6,
+        90
+      ],
+      "after_mm_deg": [
+        155.88,
+        111.02,
+        90
+      ]
+    },
+    "RF": "Seven source RF segments and all RF keepouts preserved. New southern B3V3A bridge stays outside the copied inner RF fringe outline; approximate closest copper gap53um. VNA/enclosure qualification remains required."
+  },
+  "changes": [
+    {
+      "uuid": "00768704-edb8-4100-9a0f-08aacc7f13b2",
+      "before": "(segment\n\t(start 155.9 112.08)\n\t(end 156 112.2)\n\t(width 0.15)\n\t(locked yes)\n\t(layer \"F.Cu\")\n\t(net \"LOAD_ON\")\n\t(uuid \"00768704-edb8-4100-9a0f-08aacc7f13b2\")\n)",
+      "after": null
+    },
+    {
+      "uuid": "1cd49ff2-cf80-49c7-8717-9f868cb7039e",
+      "before": "(segment\n\t(start 154.13 109.88)\n\t(end 154.13 111.9545)\n\t(width 0.4)\n\t(locked yes)\n\t(layer \"F.Cu\")\n\t(net \"3V3A\")\n\t(uuid \"1cd49ff2-cf80-49c7-8717-9f868cb7039e\")\n)",
+      "after": null
+    },
+    {
+      "uuid": "24b93c60-274c-418b-99ad-d8b11da6d164",
+      "before": "(via\n\t(at 153.8 109.55)\n\t(size 0.46)\n\t(drill 0.25)\n\t(layers \"F.Cu\" \"B.Cu\")\n\t(locked yes)\n\t(net \"3V3A\")\n\t(uuid \"24b93c60-274c-418b-99ad-d8b11da6d164\")\n)",
+      "after": null
+    },
+    {
+      "uuid": "3cedddbb-91ee-44db-aae4-a674447f3647",
+      "before": "(via\n\t(at 154.13 111.9545)\n\t(size 0.6)\n\t(drill 0.3)\n\t(layers \"F.Cu\" \"B.Cu\")\n\t(locked yes)\n\t(net \"3V3A\")\n\t(uuid \"3cedddbb-91ee-44db-aae4-a674447f3647\")\n)",
+      "after": "(via\n\t(at 154.08 112.3)\n\t(size 0.46)\n\t(drill 0.25)\n\t(layers \"F.Cu\" \"B.Cu\")\n\t(locked yes)\n\t(tenting\n\t\t(front yes)\n\t\t(back yes)\n\t)\n\t(net \"3V3A\")\n\t(uuid \"3cedddbb-91ee-44db-aae4-a674447f3647\")\n)"
+    },
+    {
+      "uuid": "4677d6ef-cf7f-4bff-8984-14711a9a77d8",
+      "before": "(segment\n\t(start 153.8 109.55)\n\t(end 154.13 109.88)\n\t(width 0.4)\n\t(locked yes)\n\t(layer \"F.Cu\")\n\t(net \"3V3A\")\n\t(uuid \"4677d6ef-cf7f-4bff-8984-14711a9a77d8\")\n)",
+      "after": null
+    },
+    {
+      "uuid": "6681667f-b702-4850-9589-8835aa614c6c",
+      "before": "(segment\n\t(start 153.05 109.55)\n\t(end 153.8 109.55)\n\t(width 0.4)\n\t(locked yes)\n\t(layer \"B.Cu\")\n\t(net \"3V3A\")\n\t(uuid \"6681667f-b702-4850-9589-8835aa614c6c\")\n)",
+      "after": null
+    },
+    {
+      "uuid": "70a6e221-6538-43a9-97f8-e7843aa2ddd2",
+      "before": "(segment\n\t(start 154.13 111.9545)\n\t(end 154.81 111.9545)\n\t(width 0.25)\n\t(locked yes)\n\t(layer \"F.Cu\")\n\t(net \"3V3A\")\n\t(uuid \"70a6e221-6538-43a9-97f8-e7843aa2ddd2\")\n)",
+      "after": null
+    },
+    {
+      "uuid": "72f13d22-7b03-424f-9c74-a835d7277eb2",
+      "before": "(segment\n\t(start 155.8 112.75)\n\t(end 154.9045 111.9545)\n\t(width 0.4)\n\t(locked yes)\n\t(layer \"B.Cu\")\n\t(net \"3V3A\")\n\t(uuid \"72f13d22-7b03-424f-9c74-a835d7277eb2\")\n)",
+      "after": null
+    },
+    {
+      "uuid": "8eee6832-3f6c-4d68-94aa-14371665c4ee",
+      "before": "(segment\n\t(start 156 112.2)\n\t(end 156.35 112.35)\n\t(width 0.15)\n\t(locked yes)\n\t(layer \"F.Cu\")\n\t(net \"LOAD_ON\")\n\t(uuid \"8eee6832-3f6c-4d68-94aa-14371665c4ee\")\n)",
+      "after": null
+    },
+    {
+      "uuid": "bd0407f2-8bd7-4d6f-8c47-420fa6579f0a",
+      "before": "(segment\n\t(start 148.7 109.6)\n\t(end 148.7 113.9545)\n\t(width 0.4)\n\t(locked yes)\n\t(layer \"B.Cu\")\n\t(net \"3V3A\")\n\t(uuid \"bd0407f2-8bd7-4d6f-8c47-420fa6579f0a\")\n)",
+      "after": null
+    },
+    {
+      "uuid": "dd842baa-cf30-49a9-8110-e0bb4f6a38e8",
+      "before": "(segment\n\t(start 154.9045 111.9545)\n\t(end 154.13 111.9545)\n\t(width 0.4)\n\t(locked yes)\n\t(layer \"B.Cu\")\n\t(net \"3V3A\")\n\t(uuid \"dd842baa-cf30-49a9-8110-e0bb4f6a38e8\")\n)",
+      "after": null
+    },
+    {
+      "uuid": "f3314fe7-7681-4966-8918-c6dce5345109",
+      "before": "(segment\n\t(start 153.05 109.55)\n\t(end 153.8 109.55)\n\t(width 0.4)\n\t(locked yes)\n\t(layer \"F.Cu\")\n\t(net \"3V3A\")\n\t(uuid \"f3314fe7-7681-4966-8918-c6dce5345109\")\n)",
+      "after": null
+    }
+  ],
+  "footprint_changes": [
+    {
+      "uuid": "fc7e5be8-5995-4a87-acb0-cd5172ab18a6",
+      "reference": "C17",
+      "before": "(footprint \"HoloCubic_RevB:RevB_C17\"\n\t(layer \"F.Cu\")\n\t(uuid \"fc7e5be8-5995-4a87-acb0-cd5172ab18a6\")\n\t(at 155.9 111.6 90)\n\t(descr \"Capacitor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)\")\n\t(tags \"capacitor\")\n\t(property \"Reference\" \"C17\"\n\t\t(at 0 0 90)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"a33118b6-26f0-446d-a403-ba699f1bfb16\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 0.6 0.6)\n\t\t\t\t(thickness 0.1)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Value\" \"100nF\"\n\t\t(at 0 1.16 90)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"7dc55a33-9890-4a77-aeb9-0064ef0c8703\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Datasheet\" \"\"\n\t\t(at 0 0 90)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"eb2db420-c3bb-4444-ad4d-f66ae21d868e\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Description\" \"\"\n\t\t(at 0 0 90)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"14908438-0e06-4c8a-b32d-ced6e3683ce3\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"KiLib_Generator\" \"SMD_2terminal_chip_molded\"\n\t\t(at 0 0 90)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"dc34a53f-63c6-485b-9dff-955be3403a5b\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"MPN\" \"GRM155R71C104KA88D\"\n\t\t(at 0 0 90)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"aa550b25-7ae9-4cae-8845-defe4d91655e\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"DesignNote\" \"\"\n\t\t(at 0 0 0)\n\t\t(layer \"F.SilkS\")\n\t\t(hide yes)\n\t\t(uuid \"4bb4589a-d6ce-487f-bd3f-2d41d643704d\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(path \"/1eb24f81-ec48-41e3-9ef9-a41f2d96ce37/a4558b01-7b39-515b-997e-084f99bb837b\")\n\t(sheetname \"MainBoard\")\n\t(sheetfile \"MainBoard.kicad_sch\")\n\t(attr smd)\n\t(duplicate_pad_numbers_are_jumpers no)\n\t(fp_line\n\t\t(start 0.86 -0.41)\n\t\t(end 0.86 0.41)\n\t\t(stroke\n\t\t\t(width 0.05)\n\t\t\t(type default)\n\t\t)\n\t\t(layer \"F.CrtYd\")\n\t\t(uuid \"591051c1-cfef-4f19-b655-99ae90b8a953\")\n\t)\n\t(fp_line\n\t\t(start -0.86 -0.41)\n\t\t(end 0.86 -0.41)\n\t\t(stroke\n\t\t\t(width 0.05)\n\t\t\t(type default)\n\t\t)\n\t\t(layer \"F.CrtYd\")\n\t\t(uuid \"72cbb5dd-0309-4532-b432-cdba7e4305a3\")\n\t)\n\t(fp_line\n\t\t(start 0.86 0.41)\n\t\t(end -0.86 0.41)\n\t\t(stroke\n\t\t\t(width 0.05)\n\t\t\t(type default)\n\t\t)\n\t\t(layer \"F.CrtYd\")\n\t\t(uuid \"0af0fc19-9514-4862-993b-66770562fd22\")\n\t)\n\t(fp_line\n\t\t(start -0.86 0.41)\n\t\t(end -0.86 -0.41)\n\t\t(stroke\n\t\t\t(width 0.05)\n\t\t\t(type default)\n\t\t)\n\t\t(layer \"F.CrtYd\")\n\t\t(uuid \"bf5b1790-5742-46ce-b0b0-8980a2cb5cb5\")\n\t)\n\t(fp_line\n\t\t(start -0.107836 -0.36)\n\t\t(end 0.107836 -0.36)\n\t\t(stroke\n\t\t\t(width 0.12)\n\t\t\t(type solid)\n\t\t)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"4299f9b3-2f0a-4582-a01c-73f213cb0c3a\")\n\t)\n\t(fp_line\n\t\t(start -0.107836 0.36)\n\t\t(end 0.107836 0.36)\n\t\t(stroke\n\t\t\t(width 0.12)\n\t\t\t(type solid)\n\t\t)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"adfd5ae3-2ba7-476a-90c1-e2bfffdccc5d\")\n\t)\n\t(fp_rect\n\t\t(start -0.5 -0.25)\n\t\t(end 0.5 0.25)\n\t\t(stroke\n\t\t\t(width 0.1)\n\t\t\t(type solid)\n\t\t)\n\t\t(fill no)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"d3ca67eb-9800-4be4-81c0-a71600ccb63c\")\n\t)\n\t(fp_text user \"${REFERENCE}\"\n\t\t(at 0 0 90)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"0958d742-e1e7-49a5-a81e-54d03fcdd65b\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 0.25 0.25)\n\t\t\t\t(thickness 0.04)\n\t\t\t)\n\t\t)\n\t)\n\t(pad \"1\" smd roundrect\n\t\t(at -0.48 0 90)\n\t\t(size 0.56 0.62)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(roundrect_rratio 0.25)\n\t\t(net \"LOAD_ON\")\n\t\t(solder_mask_margin 0.025)\n\t\t(uuid \"83bb5e14-a285-4c1c-9819-5d790398ec3f\")\n\t)\n\t(pad \"2\" smd roundrect\n\t\t(at 0.48 0 90)\n\t\t(size 0.56 0.62)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(roundrect_rratio 0.25)\n\t\t(net \"GND\")\n\t\t(solder_mask_margin 0.025)\n\t\t(uuid \"93e36123-3cb3-4036-9edd-9f734b4f5e83\")\n\t)\n\t(embedded_fonts no)\n\t(model \"${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step\"\n\t\t(offset\n\t\t\t(xyz 0 0 0)\n\t\t)\n\t\t(scale\n\t\t\t(xyz 1 1 1)\n\t\t)\n\t\t(rotate\n\t\t\t(xyz 0 0 0)\n\t\t)\n\t)\n)",
+      "after": "(footprint \"HoloCubic_RevB:RevB_C17\"\n\t(layer \"F.Cu\")\n\t(uuid \"fc7e5be8-5995-4a87-acb0-cd5172ab18a6\")\n\t(at 155.88 111.02 90)\n\t(descr \"Capacitor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)\")\n\t(tags \"capacitor\")\n\t(property \"Reference\" \"C17\"\n\t\t(at 0 0 90)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"a33118b6-26f0-446d-a403-ba699f1bfb16\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 0.6 0.6)\n\t\t\t\t(thickness 0.1)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Value\" \"100nF\"\n\t\t(at 0 1.16 90)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"7dc55a33-9890-4a77-aeb9-0064ef0c8703\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Datasheet\" \"\"\n\t\t(at 0 0 90)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"eb2db420-c3bb-4444-ad4d-f66ae21d868e\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"Description\" \"\"\n\t\t(at 0 0 90)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"14908438-0e06-4c8a-b32d-ced6e3683ce3\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"KiLib_Generator\" \"SMD_2terminal_chip_molded\"\n\t\t(at 0 0 90)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"dc34a53f-63c6-485b-9dff-955be3403a5b\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1 1)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"MPN\" \"GRM155R71C104KA88D\"\n\t\t(at 0 0 90)\n\t\t(layer \"F.Fab\")\n\t\t(hide yes)\n\t\t(uuid \"aa550b25-7ae9-4cae-8845-defe4d91655e\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(property \"DesignNote\" \"\"\n\t\t(at 0 0 0)\n\t\t(layer \"F.SilkS\")\n\t\t(hide yes)\n\t\t(uuid \"4bb4589a-d6ce-487f-bd3f-2d41d643704d\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 1.27 1.27)\n\t\t\t\t(thickness 0.15)\n\t\t\t)\n\t\t)\n\t)\n\t(path \"/1eb24f81-ec48-41e3-9ef9-a41f2d96ce37/a4558b01-7b39-515b-997e-084f99bb837b\")\n\t(sheetname \"MainBoard\")\n\t(sheetfile \"MainBoard.kicad_sch\")\n\t(attr smd)\n\t(duplicate_pad_numbers_are_jumpers no)\n\t(fp_line\n\t\t(start 0.86 -0.41)\n\t\t(end 0.86 0.41)\n\t\t(stroke\n\t\t\t(width 0.05)\n\t\t\t(type default)\n\t\t)\n\t\t(layer \"F.CrtYd\")\n\t\t(uuid \"591051c1-cfef-4f19-b655-99ae90b8a953\")\n\t)\n\t(fp_line\n\t\t(start -0.86 -0.41)\n\t\t(end 0.86 -0.41)\n\t\t(stroke\n\t\t\t(width 0.05)\n\t\t\t(type default)\n\t\t)\n\t\t(layer \"F.CrtYd\")\n\t\t(uuid \"72cbb5dd-0309-4532-b432-cdba7e4305a3\")\n\t)\n\t(fp_line\n\t\t(start 0.86 0.41)\n\t\t(end -0.86 0.41)\n\t\t(stroke\n\t\t\t(width 0.05)\n\t\t\t(type default)\n\t\t)\n\t\t(layer \"F.CrtYd\")\n\t\t(uuid \"0af0fc19-9514-4862-993b-66770562fd22\")\n\t)\n\t(fp_line\n\t\t(start -0.86 0.41)\n\t\t(end -0.86 -0.41)\n\t\t(stroke\n\t\t\t(width 0.05)\n\t\t\t(type default)\n\t\t)\n\t\t(layer \"F.CrtYd\")\n\t\t(uuid \"bf5b1790-5742-46ce-b0b0-8980a2cb5cb5\")\n\t)\n\t(fp_line\n\t\t(start -0.107836 -0.36)\n\t\t(end 0.107836 -0.36)\n\t\t(stroke\n\t\t\t(width 0.12)\n\t\t\t(type solid)\n\t\t)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"4299f9b3-2f0a-4582-a01c-73f213cb0c3a\")\n\t)\n\t(fp_line\n\t\t(start -0.107836 0.36)\n\t\t(end 0.107836 0.36)\n\t\t(stroke\n\t\t\t(width 0.12)\n\t\t\t(type solid)\n\t\t)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"adfd5ae3-2ba7-476a-90c1-e2bfffdccc5d\")\n\t)\n\t(fp_rect\n\t\t(start -0.5 -0.25)\n\t\t(end 0.5 0.25)\n\t\t(stroke\n\t\t\t(width 0.1)\n\t\t\t(type solid)\n\t\t)\n\t\t(fill no)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"d3ca67eb-9800-4be4-81c0-a71600ccb63c\")\n\t)\n\t(fp_text user \"${REFERENCE}\"\n\t\t(at 0 0 90)\n\t\t(layer \"F.Fab\")\n\t\t(uuid \"0958d742-e1e7-49a5-a81e-54d03fcdd65b\")\n\t\t(effects\n\t\t\t(font\n\t\t\t\t(size 0.25 0.25)\n\t\t\t\t(thickness 0.04)\n\t\t\t)\n\t\t)\n\t)\n\t(pad \"1\" smd roundrect\n\t\t(at -0.48 0 90)\n\t\t(size 0.56 0.62)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(roundrect_rratio 0.25)\n\t\t(net \"LOAD_ON\")\n\t\t(solder_mask_margin 0.025)\n\t\t(uuid \"83bb5e14-a285-4c1c-9819-5d790398ec3f\")\n\t)\n\t(pad \"2\" smd roundrect\n\t\t(at 0.48 0 90)\n\t\t(size 0.56 0.62)\n\t\t(layers \"F.Cu\" \"F.Mask\" \"F.Paste\")\n\t\t(roundrect_rratio 0.25)\n\t\t(net \"GND\")\n\t\t(solder_mask_margin 0.025)\n\t\t(uuid \"93e36123-3cb3-4036-9edd-9f734b4f5e83\")\n\t)\n\t(embedded_fonts no)\n\t(model \"${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step\"\n\t\t(offset\n\t\t\t(xyz 0 0 0)\n\t\t)\n\t\t(scale\n\t\t\t(xyz 1 1 1)\n\t\t)\n\t\t(rotate\n\t\t\t(xyz 0 0 0)\n\t\t)\n\t)\n)"
+    }
+  ],
+  "add": [
+    "(segment\n\t(start 148 113.9545)\n\t(end 148.7 113.9545)\n\t(width 0.4)\n\t(locked yes)\n\t(layer \"B.Cu\")\n\t(net \"3V3A\")\n\t(uuid \"03cbd047-9fcf-4154-bfed-a3fad0356d21\")\n)",
+    "(segment\n\t(start 149.65 114.4)\n\t(end 148.7 113.9545)\n\t(width 0.4)\n\t(locked yes)\n\t(layer \"B.Cu\")\n\t(net \"3V3A\")\n\t(uuid \"04ad81b7-6046-41cd-83a1-993be44a0dbb\")\n)",
+    "(segment\n\t(start 154.35 109.4545)\n\t(end 153.85 109.6)\n\t(width 0.1016)\n\t(locked yes)\n\t(layer \"F.Cu\")\n\t(net \"GPIO4\")\n\t(uuid \"0cc4b952-cd17-46c1-8d32-dc3f2e6bb241\")\n)",
+    "(segment\n\t(start 155.8 112.75)\n\t(end 155.8 112.8)\n\t(width 0.4)\n\t(locked yes)\n\t(layer \"B.Cu\")\n\t(net \"3V3A\")\n\t(uuid \"116596f0-6892-40bf-a05b-15c11f8dad45\")\n)",
+    "(via\n\t(at 154.08 110.31)\n\t(size 0.45)\n\t(drill 0.25)\n\t(layers \"F.Cu\" \"B.Cu\")\n\t(locked yes)\n\t(tenting\n\t\t(front yes)\n\t\t(back yes)\n\t)\n\t(net \"GPIO0\")\n\t(uuid \"1458342f-b5d5-4e17-b8e5-3ef1aefdecc5\")\n)",
+    "(via\n\t(at 154.08 111.47)\n\t(size 0.45)\n\t(drill 0.25)\n\t(layers \"F.Cu\" \"B.Cu\")\n\t(locked yes)\n\t(tenting\n\t\t(front yes)\n\t\t(back yes)\n\t)\n\t(net \"GPIO15\")\n\t(uuid \"17a18935-0c0e-4264-89c6-1c5901ef7146\")\n)",
+    "(segment\n\t(start 148 109.6)\n\t(end 148 113.9545)\n\t(width 0.4)\n\t(locked yes)\n\t(layer \"B.Cu\")\n\t(net \"3V3A\")\n\t(uuid \"17a56c37-e5fb-4e26-8aca-48b3939af6fd\")\n)",
+    "(segment\n\t(start 154.586 110.9545)\n\t(end 154.08 111.47)\n\t(width 0.1016)\n\t(locked yes)\n\t(layer \"F.Cu\")\n\t(net \"GPIO15\")\n\t(uuid \"25cb7b87-2c0a-4b81-b85a-56e06cbfec93\")\n)",
+    "(segment\n\t(start 154.9 115.4)\n\t(end 150.5 115.4)\n\t(width 0.4)\n\t(locked yes)\n\t(layer \"B.Cu\")\n\t(net \"3V3A\")\n\t(uuid \"29cc159b-6789-4b96-8ea6-c50fbecac676\")\n)",
+    "(segment\n\t(start 148 112.4545)\n\t(end 148.7 112.4545)\n\t(width 0.4)\n\t(locked yes)\n\t(layer \"B.Cu\")\n\t(net \"3V3A\")\n\t(uuid \"2b7f177c-bd7e-4e88-a98e-94b3b44c04a6\")\n)",
+    "(segment\n\t(start 155.88 111.5)\n\t(end 156.35 112.35)\n\t(width 0.15)\n\t(locked yes)\n\t(layer \"F.Cu\")\n\t(net \"LOAD_ON\")\n\t(uuid \"33ed8891-b197-438a-9827-67dbbf572cb2\")\n)",
+    "(via\n\t(at 154.08 110.89)\n\t(size 0.45)\n\t(drill 0.25)\n\t(layers \"F.Cu\" \"B.Cu\")\n\t(locked yes)\n\t(tenting\n\t\t(front yes)\n\t\t(back yes)\n\t)\n\t(net \"DC\")\n\t(uuid \"37373608-79bb-4e09-94c0-9ba914883103\")\n)",
+    "(via\n\t(at 149.8 107.15)\n\t(size 0.46)\n\t(drill 0.25)\n\t(layers \"F.Cu\" \"B.Cu\")\n\t(locked yes)\n\t(tenting\n\t\t(front yes)\n\t\t(back yes)\n\t)\n\t(net \"GND\")\n\t(uuid \"42cf5cf0-46a7-4fe1-b375-6bc17fe6e76b\")\n)",
+    "(segment\n\t(start 154.81 110.9545)\n\t(end 154.586 110.9545)\n\t(width 0.1016)\n\t(locked yes)\n\t(layer \"F.Cu\")\n\t(net \"GPIO15\")\n\t(uuid \"47fbaec8-bb6e-4a29-909e-e4b4597e9a0f\")\n)",
+    "(segment\n\t(start 155.37 111.95)\n\t(end 155.6 112.15)\n\t(width 0.1016)\n\t(locked yes)\n\t(layer \"F.Cu\")\n\t(net \"GPIO13\")\n\t(uuid \"5313a633-e3a7-49ed-b08c-23ed56ed1d41\")\n)",
+    "(segment\n\t(start 154.81 110.4545)\n\t(end 154.54 110.4545)\n\t(width 0.1016)\n\t(locked yes)\n\t(layer \"F.Cu\")\n\t(net \"DC\")\n\t(uuid \"5bbba7a3-668f-4214-b193-af6eb458c236\")\n)",
+    "(segment\n\t(start 155.8 112.75)\n\t(end 154.9 113.65)\n\t(width 0.4)\n\t(locked yes)\n\t(layer \"B.Cu\")\n\t(net \"3V3A\")\n\t(uuid \"6488e647-926a-4d36-911e-023ae5c71cfd\")\n)",
+    "(segment\n\t(start 154.08 112.8)\n\t(end 154.08 112.3)\n\t(width 0.4)\n\t(locked yes)\n\t(layer \"B.Cu\")\n\t(net \"3V3A\")\n\t(uuid \"67a3d935-8318-4659-959a-5d0e89820a27\")\n)",
+    "(segment\n\t(start 154.9 113.65)\n\t(end 154.9 115.4)\n\t(width 0.4)\n\t(locked yes)\n\t(layer \"B.Cu\")\n\t(net \"3V3A\")\n\t(uuid \"6d5b1af5-5a05-491f-952b-6c345e503539\")\n)",
+    "(via\n\t(at 146.34 110.46)\n\t(size 0.46)\n\t(drill 0.25)\n\t(layers \"F.Cu\" \"B.Cu\")\n\t(locked yes)\n\t(tenting\n\t\t(front yes)\n\t\t(back yes)\n\t)\n\t(net \"GND\")\n\t(uuid \"6fdd4061-d63f-466d-8703-6dd1d153f118\")\n)",
+    "(segment\n\t(start 155.88 110.54)\n\t(end 155.88 109.3109)\n\t(width 0.25)\n\t(locked yes)\n\t(layer \"F.Cu\")\n\t(net \"GND\")\n\t(uuid \"72b88791-65aa-4051-86e0-c9c92768ff4b\")\n)",
+    "(via\n\t(at 155.6 112.15)\n\t(size 0.46)\n\t(drill 0.25)\n\t(layers \"F.Cu\" \"B.Cu\")\n\t(locked yes)\n\t(tenting\n\t\t(front yes)\n\t\t(back yes)\n\t)\n\t(net \"GPIO13\")\n\t(uuid \"72cf77cb-8195-4bd2-adac-fc9f0b549ff3\")\n)",
+    "(segment\n\t(start 154.54 110.4545)\n\t(end 154.08 110.89)\n\t(width 0.1016)\n\t(locked yes)\n\t(layer \"F.Cu\")\n\t(net \"DC\")\n\t(uuid \"74c6c0c1-c91b-4ac6-866b-2199651b989a\")\n)",
+    "(segment\n\t(start 154.81 109.4545)\n\t(end 154.35 109.4545)\n\t(width 0.1016)\n\t(locked yes)\n\t(layer \"F.Cu\")\n\t(net \"GPIO4\")\n\t(uuid \"814c6585-ad0a-4761-973d-f427b8df35cf\")\n)",
+    "(segment\n\t(start 148.085 110.9545)\n\t(end 148.8 110.9545)\n\t(width 0.125)\n\t(locked yes)\n\t(layer \"F.Cu\")\n\t(net \"CP_Tx\")\n\t(uuid \"8f8c1283-898c-4eda-847a-8f2d0dbb3fd9\")\n)",
+    "(segment\n\t(start 154.81 109.9545)\n\t(end 154.4 109.9545)\n\t(width 0.1016)\n\t(locked yes)\n\t(layer \"F.Cu\")\n\t(net \"GPIO0\")\n\t(uuid \"92d84c31-7e27-4440-8bec-ca95e16f1067\")\n)",
+    "(segment\n\t(start 148.7 109.6)\n\t(end 148 109.6)\n\t(width 0.4)\n\t(locked yes)\n\t(layer \"B.Cu\")\n\t(net \"3V3A\")\n\t(uuid \"948f50af-16f3-4ea6-aa6e-835ba3b8824c\")\n)",
+    "(segment\n\t(start 150.5 115.4)\n\t(end 149.65 114.4)\n\t(width 0.4)\n\t(locked yes)\n\t(layer \"B.Cu\")\n\t(net \"3V3A\")\n\t(uuid \"99a527de-9b7d-49d4-b248-e25a6eee2443\")\n)",
+    "(segment\n\t(start 154.4 109.9545)\n\t(end 154.08 110.31)\n\t(width 0.1016)\n\t(locked yes)\n\t(layer \"F.Cu\")\n\t(net \"GPIO0\")\n\t(uuid \"a1e96b7a-4f62-4a97-8b92-36c0413da38e\")\n)",
+    "(segment\n\t(start 154.81 111.4545)\n\t(end 155.37 111.4545)\n\t(width 0.1016)\n\t(locked yes)\n\t(layer \"F.Cu\")\n\t(net \"GPIO13\")\n\t(uuid \"a77f4f99-44b7-46f8-abb5-35b79dc1508c\")\n)",
+    "(via\n\t(at 153.85 109.6)\n\t(size 0.46)\n\t(drill 0.25)\n\t(layers \"F.Cu\" \"B.Cu\")\n\t(locked yes)\n\t(tenting\n\t\t(front yes)\n\t\t(back yes)\n\t)\n\t(net \"GPIO4\")\n\t(uuid \"ae7d692c-e175-4d18-a313-7456246ed675\")\n)",
+    "(segment\n\t(start 155.8 112.8)\n\t(end 154.08 112.8)\n\t(width 0.4)\n\t(locked yes)\n\t(layer \"B.Cu\")\n\t(net \"3V3A\")\n\t(uuid \"b4d46c0b-940e-420a-aa34-ff3ea2fa1f44\")\n)",
+    "(segment\n\t(start 154.81 111.9545)\n\t(end 154.45 111.9545)\n\t(width 0.25)\n\t(locked yes)\n\t(layer \"F.Cu\")\n\t(net \"3V3A\")\n\t(uuid \"c58b13d7-2736-4ba2-9b59-53081e3fcce4\")\n)",
+    "(segment\n\t(start 155.37 111.4545)\n\t(end 155.37 111.95)\n\t(width 0.1016)\n\t(locked yes)\n\t(layer \"F.Cu\")\n\t(net \"GPIO13\")\n\t(uuid \"d64ecc86-7ed1-499d-a023-141599c5ce0d\")\n)",
+    "(via\n\t(at 148.8 110.9545)\n\t(size 0.46)\n\t(drill 0.25)\n\t(layers \"F.Cu\" \"B.Cu\")\n\t(locked yes)\n\t(tenting\n\t\t(front yes)\n\t\t(back yes)\n\t)\n\t(net \"CP_Tx\")\n\t(uuid \"e0510961-1965-4dd4-b239-494652ec15bf\")\n)",
+    "(segment\n\t(start 154.45 111.9545)\n\t(end 154.08 112.3)\n\t(width 0.25)\n\t(locked yes)\n\t(layer \"F.Cu\")\n\t(net \"3V3A\")\n\t(uuid \"f6a4bd8b-0fa6-43a8-bbba-6b68c066faec\")\n)"
+  ]
+}

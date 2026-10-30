@@ -1,0 +1,166 @@
+{
+  "classification": "FinalR16 internalpose revision; nativeelectricalchecks separate. NominalMainBseat andmaxenvelopes, not physicalassembly/RF certification.",
+  "input_pcb": "1.Hardware/RevB-KiCad/Naive/MainBoard/MainBoard.kicad_pcb",
+  "input_pcb_sha256": "a05fb4db8785f69a0e96533620440d110ff2dc13d2e4b28887b48de03e031c39",
+  "R16_pose": [
+    144.3,
+    112.4,
+    180,
+    "B.Cu"
+  ],
+  "same_MPN_and_nets": true,
+  "package_max_mm": [
+    1.05,
+    0.55,
+    0.4
+  ],
+  "assumed_solder_standoff_mm": 0.08,
+  "body_envelope_mm": [
+    1.05,
+    0.55,
+    0.48
+  ],
+  "case_checks": {
+    "Molex_closed": {
+      "intersection_mm3": 0.0,
+      "minimum_distance_mm": 0.8238000000000056
+    },
+    "card_inserted": {
+      "intersection_mm3": 0.0,
+      "minimum_distance_mm": 1.2188000000000017
+    },
+    "card_extraction_sweep": {
+      "intersection_mm3": 0.0,
+      "minimum_distance_mm": 1.2188000000000017
+    },
+    "USB_effective_board0.85_longstake": {
+      "intersection_mm3": 0.0,
+      "minimum_distance_mm": 11.768356090758806
+    },
+    "originalLower": {
+      "intersection_mm3": 0.003597756333698061,
+      "minimum_distance_mm": 0.0
+    },
+    "Upper": {
+      "intersection_mm3": 0.0,
+      "minimum_distance_mm": 4.92915895866713
+    },
+    "revisedLower": {
+      "intersection_mm3": 0.0,
+      "minimum_distance_mm": 0.14999999999987024
+    }
+  },
+  "RF_projection_checks": {
+    "R16_pads": {
+      "RF_projection_intersection_mm2": 0.0,
+      "RF_projection_distance_mm": 0.34810000000000235,
+      "antenna_max_body_projection_distance_mm": 1.5841000000000067,
+      "antenna_terminal_Cu_projection_distance_mm": 1.631250625217835,
+      "unchanged_RF7_Cu_projection_distance_mm": 2.724185433242454
+    },
+    "R16_max_body": {
+      "RF_projection_intersection_mm2": 0.0,
+      "RF_projection_distance_mm": 0.3930999999999898,
+      "antenna_max_body_projection_distance_mm": 1.6290999999999944,
+      "antenna_terminal_Cu_projection_distance_mm": 1.7263667339241529,
+      "unchanged_RF7_Cu_projection_distance_mm": 2.824182534762448
+    },
+    "new_SD_DAT1_Cu": {
+      "RF_projection_intersection_mm2": 0.0,
+      "RF_projection_distance_mm": 0.6160999999999889,
+      "antenna_max_body_projection_distance_mm": 1.8520999999999932,
+      "antenna_terminal_Cu_projection_distance_mm": 2.478889695473408,
+      "unchanged_RF7_Cu_projection_distance_mm": 3.5421007171956305
+    },
+    "new_3V3_Cu": {
+      "RF_projection_intersection_mm2": 0.0,
+      "RF_projection_distance_mm": 0.0910999999999973,
+      "antenna_max_body_projection_distance_mm": 1.3271000000000017,
+      "antenna_terminal_Cu_projection_distance_mm": 1.9114941099987932,
+      "unchanged_RF7_Cu_projection_distance_mm": 2.967539993280226
+    }
+  },
+  "RF_region_basis": "Union of originaltop/bottomantenna pourclearance projections plusoriginalRFfeedcorridor, made strictonallfourinnerlayers. TreatthisprojectionasforbiddenfornewR16Cu despiteouterpour-onlyrule.",
+  "RF7_count": 7,
+  "RF7_source_geometry_unchanged": true,
+  "cad_runtime": {
+    "package": "cadquery-ocp",
+    "version": "8.0.1.1.0"
+  },
+  "limits": [
+    "TheminimumsupplystubdistancetotheoriginalRFprojectionisreportedexplicitly; itisnotanRFgain/returnlosscriterion.",
+    "OnlynominalMolex/USBclosedmodelsandconservativemicroSDheightenvelopeswerechecked.",
+    "OriginalLowerseatisinferredfromasymmetricpocket; physicalseating/warp/retentionstillneedsamples.",
+    "Finalmatchedcase/VNAmustincludeactualantenna/components/metal/cable/display/case.",
+    "OldtopbankR16recessisremovedwhenrebuildingfromoriginalLower."
+  ],
+  "case_step_sha256": "cfbf73b8e6aacda83d20e6e41b012c7b738c71492427c744900032768476ff11",
+  "checked_STEP_geometry_DATA_sha256": "bfb0165039421efb79f29bf36ed59518ac9d148fe3552150f588751fe176d304",
+  "main_stack_revision_transfer": {
+    "previous_pcb_sha256": "9027e617313d7e87af202d14787fecd7b6d484bee7a0b72a699a266f329cab9c",
+    "current_pcb_sha256": "a05fb4db8785f69a0e96533620440d110ff2dc13d2e4b28887b48de03e031c39",
+    "previous_nominal_thickness_mm": 1.0192,
+    "current_nominal_thickness_mm": 1.06,
+    "F_side_rigid_shift_from_B_seat_mm": 0.0408,
+    "B_seat_unchanged": true,
+    "AST_equality": {
+      "footprint": {
+        "count": 58,
+        "unchanged": true,
+        "canonical_sha256": "18a46a8f905e47d3f08f0e579fe6572e913efab7e5d89114c00bd8cd524a7084"
+      },
+      "segment": {
+        "count": 1033,
+        "unchanged": true,
+        "canonical_sha256": "640f837485bfef7913d2196eb5b29190423d9fcb13edd2c4ef3de26e9749a1e7"
+      },
+      "arc": {
+        "count": 4,
+        "unchanged": true,
+        "canonical_sha256": "3219a661ab8cb6e3a660215e502a0fbdf85bb7b658ea7c954ec4a8a4bff13dec"
+      },
+      "via": {
+        "count": 145,
+        "unchanged": true,
+        "canonical_sha256": "c0ab7182073e8e2bf3df31c5298a185e41430caea785478a23b5c251a4960772"
+      },
+      "zone": {
+        "count": 32,
+        "unchanged": true,
+        "canonical_sha256": "c6d9ab29532e7baed769feaa9fd6129486f67cc4425dc7e9baec49da9a63546f"
+      },
+      "gr_line": {
+        "count": 52,
+        "unchanged": true,
+        "canonical_sha256": "6c10961ce5e42fa1b05ba800c741346e2b03d5d4ba3bea6c49371db8fe06033d"
+      },
+      "gr_arc": {
+        "count": 8,
+        "unchanged": true,
+        "canonical_sha256": "46da1db13102b2513b3abefff5870bbc4465a87a53af2d548d2cb38a931c9f44"
+      },
+      "gr_poly": {
+        "count": 0,
+        "unchanged": true,
+        "canonical_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "gr_rect": {
+        "count": 0,
+        "unchanged": true,
+        "canonical_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "B_side_22_case_envelopes_unchanged": true,
+    "regenerated_Lower_STEP_DATA_identical": true,
+    "STEP_geometry_DATA_sha256": "bfb0165039421efb79f29bf36ed59518ac9d148fe3552150f588751fe176d304"
+  },
+  "transfer_basis": "All R16 checks use B-relative unchanged components/card or fixed Upper/Lower. USB_effective_board0.85 is an explicit unchanged conservative parameter, not current CAD nominal. RF checks are XY projections; all copper/FP/zone/outline ASTs unchanged. NewLower STEP DATA is identical after rebuild fromoriginal. Hence distances/intersections transfer exactly; no newphysical/RFclaim.",
+  "component_substitution_transfer": {
+    "date": "2026-10-30",
+    "original_review_input_sha256": "a05fb4db8785f69a0e96533620440d110ff2dc13d2e4b28887b48de03e031c39",
+    "current_pcb_sha256": "a8bbae787964286f9783e2d74fa752ae82efbc7d5350371debf734503f4a98a8",
+    "proof": "1.Hardware/RevB-KiCad/Naive/component-substitutions.json",
+    "all_nonmaterial_native_geometry_and_models_unchanged": true,
+    "scope": "Retains the original numerical geometry review and its original source hashes. Applies unchanged geometry conclusions to the current material-field update; no new STEP Boolean or physical fit test was performed. Candidate body/land compatibility was separately reviewed; R3 is not among the lower-case relief cuts."
+  }
+}

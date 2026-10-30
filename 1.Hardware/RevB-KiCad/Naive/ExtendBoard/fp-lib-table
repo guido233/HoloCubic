@@ -1,0 +1,4 @@
+(fp_lib_table
+ (version 7)
+ (lib (name "HoloCubic_Ext")(type "KiCad")(uri "${KIPRJMOD}/HoloCubic_Ext.pretty")(options "")(descr "Verified and preserved RevB display footprints"))
+)

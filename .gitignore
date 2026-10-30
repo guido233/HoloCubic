@@ -33,3 +33,11 @@ _private
 2.Firmware/HoloCubic-fw/.vscode/
 2.Firmware/HoloCubic-fw/CMakeListsPrivate.txt
 **/wifi.txt
+
+# Native EDA session state and recoverable autosaves
+**/*.kicad_prl
+**/~*.lck
+**/~*.kicad_sch
+**/~*.kicad_pcb
+**/*-backups/
+1.Hardware/RevB-KiCad/**/.history/

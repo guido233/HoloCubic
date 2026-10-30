@@ -1,0 +1,3511 @@
+(kicad_sch
+	(version 20260306)
+	(generator eeschema)
+	(generator_version "10.0")
+	(uuid "1e907dc7-a4c5-4678-8231-beef2e9bd385")
+	(paper "A3")
+	(title_block
+		(title "HoloCubic Naive RevB — Display board")
+		(date "2026-10-29")
+		(rev "B")
+		(company "HoloCubic / original design: peng-zhihui")
+		(comment 1 "P133H002 bare ST7789V panel / 24mA nominal constant-current backlight")
+		(comment 2 "Engineering revision; panel/FFC fit, power-up and current measurements pending.")
+	)
+	(lib_symbols
+		(symbol "HoloCubicExt:LCD1"
+			(pin_names
+				(offset 0.635)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "L"
+				(at 0 5 0)
+				(effects
+					(font
+						(size 1 1)
+					)
+				)
+			)
+			(property "Value" "LCD1"
+				(at 0 -5 0)
+				(effects
+					(font
+						(size 1 1)
+					)
+				)
+			)
+			(symbol "LCD1_0_1"
+				(rectangle
+					(start -16.51 8.89)
+					(end 16.51 -8.89)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "LCD1_1_1"
+				(pin power_in line
+					(at -21.59 6.35 0)
+					(length 5.08)
+					(name "GND"
+						(effects
+							(font
+								(size 0.85 0.85)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 0.85 0.85)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -21.59 3.81 0)
+					(length 5.08)
+					(name "LED_K"
+						(effects
+							(font
+								(size 0.85 0.85)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 0.85 0.85)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -21.59 1.27 0)
+					(length 5.08)
+					(name "LED_A"
+						(effects
+							(font
+								(size 0.85 0.85)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 0.85 0.85)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -21.59 -1.27 0)
+					(length 5.08)
+					(name "VDD"
+						(effects
+							(font
+								(size 0.85 0.85)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 0.85 0.85)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -21.59 -3.81 0)
+					(length 5.08)
+					(name "GND"
+						(effects
+							(font
+								(size 0.85 0.85)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 0.85 0.85)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -21.59 -6.35 0)
+					(length 5.08)
+					(name "GND"
+						(effects
+							(font
+								(size 0.85 0.85)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 0.85 0.85)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 21.59 6.35 180)
+					(length 5.08)
+					(name "DC"
+						(effects
+							(font
+								(size 0.85 0.85)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 0.85 0.85)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 21.59 3.81 180)
+					(length 5.08)
+					(name "~{CS}"
+						(effects
+							(font
+								(size 0.85 0.85)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 0.85 0.85)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 21.59 1.27 180)
+					(length 5.08)
+					(name "SCL"
+						(effects
+							(font
+								(size 0.85 0.85)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 0.85 0.85)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 21.59 -1.27 180)
+					(length 5.08)
+					(name "SDA"
+						(effects
+							(font
+								(size 0.85 0.85)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 0.85 0.85)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 21.59 -3.81 180)
+					(length 5.08)
+					(name "~{RESET}"
+						(effects
+							(font
+								(size 0.85 0.85)
+							)
+						)
+					)
+					(number "11"
+						(effects
+							(font
+								(size 0.85 0.85)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 21.59 -6.35 180)
+					(length 5.08)
+					(name "GND"
+						(effects
+							(font
+								(size 0.85 0.85)
+							)
+						)
+					)
+					(number "12"
+						(effects
+							(font
+								(size 0.85 0.85)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "HoloCubicExt:CON1"
+			(pin_names
+				(offset 0.635)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "C"
+				(at 0 5 0)
+				(effects
+					(font
+						(size 1 1)
+					)
+				)
+			)
+			(property "Value" "CON1"
+				(at 0 -5 0)
+				(effects
+					(font
+						(size 1 1)
+					)
+				)
+			)
+			(symbol "CON1_0_1"
+				(rectangle
+					(start -12.7 7.62)
+					(end 12.7 -7.62)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "CON1_1_1"
+				(pin passive line
+					(at -17.78 5.08 0)
+					(length 5.08)
+					(name "1"
+						(effects
+							(font
+								(size 0.85 0.85)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 0.85 0.85)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -17.78 2.54 0)
+					(length 5.08)
+					(name "2"
+						(effects
+							(font
+								(size 0.85 0.85)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 0.85 0.85)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -17.78 0 0)
+					(length 5.08)
+					(name "3"
+						(effects
+							(font
+								(size 0.85 0.85)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 0.85 0.85)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -17.78 -2.54 0)
+					(length 5.08)
+					(name "4"
+						(effects
+							(font
+								(size 0.85 0.85)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 0.85 0.85)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -17.78 -5.08 0)
+					(length 5.08)
+					(name "5"
+						(effects
+							(font
+								(size 0.85 0.85)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 0.85 0.85)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 17.78 5.08 180)
+					(length 5.08)
+					(name "6"
+						(effects
+							(font
+								(size 0.85 0.85)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 0.85 0.85)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 17.78 2.54 180)
+					(length 5.08)
+					(name "7"
+						(effects
+							(font
+								(size 0.85 0.85)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 0.85 0.85)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 17.78 0 180)
+					(length 5.08)
+					(name "8"
+						(effects
+							(font
+								(size 0.85 0.85)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 0.85 0.85)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 17.78 -2.54 180)
+					(length 5.08)
+					(name "SHIELD"
+						(effects
+							(font
+								(size 0.85 0.85)
+							)
+						)
+					)
+					(number "MP"
+						(effects
+							(font
+								(size 0.85 0.85)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "HoloCubicExt:Q_NMOS"
+			(pin_names
+				(offset 0.635)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "Q"
+				(at 0 5 0)
+				(effects
+					(font
+						(size 1 1)
+					)
+				)
+			)
+			(property "Value" "Q_NMOS"
+				(at 0 -5 0)
+				(effects
+					(font
+						(size 1 1)
+					)
+				)
+			)
+			(symbol "Q_NMOS_0_1"
+				(rectangle
+					(start -16.51 3.81)
+					(end 16.51 -3.81)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "Q_NMOS_1_1"
+				(pin input line
+					(at -21.59 1.27 0)
+					(length 5.08)
+					(name "G"
+						(effects
+							(font
+								(size 0.85 0.85)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 0.85 0.85)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -21.59 -1.27 0)
+					(length 5.08)
+					(name "S"
+						(effects
+							(font
+								(size 0.85 0.85)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 0.85 0.85)
+							)
+						)
+					)
+				)
+				(pin open_collector line
+					(at 21.59 1.27 180)
+					(length 5.08)
+					(name "D"
+						(effects
+							(font
+								(size 0.85 0.85)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 0.85 0.85)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "HoloCubicExt:R"
+			(pin_names
+				(offset 0.635)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "R"
+				(at 0 5 0)
+				(effects
+					(font
+						(size 1 1)
+					)
+				)
+			)
+			(property "Value" "R"
+				(at 0 -5 0)
+				(effects
+					(font
+						(size 1 1)
+					)
+				)
+			)
+			(symbol "R_0_1"
+				(rectangle
+					(start -2.54 1.016)
+					(end 2.54 -1.016)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "R_1_1"
+				(pin passive line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 0.85 0.85)
+							)
+							(hide yes)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 0.85 0.85)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 0 180)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 0.85 0.85)
+							)
+							(hide yes)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 0.85 0.85)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "HoloCubicExt:U1"
+			(pin_names
+				(offset 0.635)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at 0 5 0)
+				(effects
+					(font
+						(size 1 1)
+					)
+				)
+			)
+			(property "Value" "U1"
+				(at 0 -5 0)
+				(effects
+					(font
+						(size 1 1)
+					)
+				)
+			)
+			(symbol "U1_0_1"
+				(rectangle
+					(start -21.59 5.08)
+					(end 21.59 -5.08)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "U1_1_1"
+				(pin open_collector line
+					(at -26.67 2.54 0)
+					(length 5.08)
+					(name "OUT"
+						(effects
+							(font
+								(size 0.85 0.85)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 0.85 0.85)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -26.67 0 0)
+					(length 5.08)
+					(name "BIAS"
+						(effects
+							(font
+								(size 0.85 0.85)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 0.85 0.85)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -26.67 -2.54 0)
+					(length 5.08)
+					(name "EN/SHUNT"
+						(effects
+							(font
+								(size 0.85 0.85)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 0.85 0.85)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 26.67 2.54 180)
+					(length 5.08)
+					(name "GND"
+						(effects
+							(font
+								(size 0.85 0.85)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 0.85 0.85)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 26.67 0 180)
+					(length 5.08)
+					(name "FB"
+						(effects
+							(font
+								(size 0.85 0.85)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 0.85 0.85)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 26.67 -2.54 180)
+					(length 5.08)
+					(name "REXT"
+						(effects
+							(font
+								(size 0.85 0.85)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 0.85 0.85)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "HoloCubicExt:C"
+			(pin_names
+				(offset 0.635)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "C"
+				(at 0 5 0)
+				(effects
+					(font
+						(size 1 1)
+					)
+				)
+			)
+			(property "Value" "C"
+				(at 0 -5 0)
+				(effects
+					(font
+						(size 1 1)
+					)
+				)
+			)
+			(symbol "C_0_1"
+				(polyline
+					(pts
+						(xy -0.762 -2.032)
+						(xy -0.762 2.032)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 -2.032)
+						(xy 0.762 2.032)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.54 0)
+						(xy -0.762 0)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 0)
+						(xy 2.54 0)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "C_1_1"
+				(pin passive line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 0.85 0.85)
+							)
+							(hide yes)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 0.85 0.85)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 0 180)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 0.85 0.85)
+							)
+							(hide yes)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 0.85 0.85)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "HoloCubicExt:PWR_FLAG"
+			(power)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom no)
+			(on_board no)
+			(property "Reference" "#FLG"
+				(at 0 4 0)
+				(hide yes)
+				(effects
+					(font
+						(size 1 1)
+					)
+				)
+			)
+			(property "Value" "PWR_FLAG"
+				(at 0 3 0)
+				(effects
+					(font
+						(size 1 1)
+					)
+				)
+			)
+			(symbol "PWR_FLAG_0_1"
+				(polyline
+					(pts
+						(xy 0 0)
+						(xy 0 1.27)
+						(xy -1.27 2.54)
+						(xy 0 3.81)
+						(xy 1.27 2.54)
+						(xy 0 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "PWR_FLAG_1_1"
+				(pin power_out line
+					(at 0 0 90)
+					(length 0)
+					(name "pwr"
+						(effects
+							(font
+								(size 0.85 0.85)
+							)
+							(hide yes)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 0.85 0.85)
+							)
+						)
+					)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "HoloCubicExt:LCD1")
+		(at 205.74 87.63 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "4fa1a8b4-61d7-4c9d-bf21-9b4133f6cef0")
+		(property "Reference" "LCD1"
+			(at 205.74 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "P133H002"
+			(at 205.74 76.2 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Footprint" "HoloCubic_Ext:LCD_12P_0.7mm"
+			(at 205.74 87.63 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 205.74 87.63 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "MPN" "P133H002"
+			(at 205.74 87.63 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "DesignNote" "P133H002 electrically compatible candidate; 5.5x0.5mm F-side solder landing strips at0.7mm pitch provide axial contact-location allowance. FPC is manually soldered AFTER PCBA reflow; no F.Paste apertures. Align all12pins laterally. Permitted bend radius, contact-face orientation and case assembly still require supplier/sample approval; see interface drawing."
+			(at 205.74 87.63 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "ee9db008-31bb-5df7-a66c-0d1fcd0b02d0")
+		)
+		(pin "2"
+			(uuid "f248dcd9-231a-5a98-b4b3-82e59cee93e4")
+		)
+		(pin "3"
+			(uuid "a5f26a8b-3024-572d-89d9-d769bcdf1d8a")
+		)
+		(pin "4"
+			(uuid "c052b76d-27a1-5bed-b76e-60ceaaa077be")
+		)
+		(pin "5"
+			(uuid "ff0993ed-b625-5c1b-a648-d6389cf0ec51")
+		)
+		(pin "6"
+			(uuid "2594e809-2c1c-5a7c-b87d-636c36c1af49")
+		)
+		(pin "7"
+			(uuid "8506765c-769c-5364-af6d-a35a4d71b52e")
+		)
+		(pin "8"
+			(uuid "a1a772b7-bb37-5446-8fee-2b9aa3100473")
+		)
+		(pin "9"
+			(uuid "47185753-d386-5e45-8f2b-817e9914ff10")
+		)
+		(pin "10"
+			(uuid "357087d1-d8b5-53c2-9240-8cd87013220c")
+		)
+		(pin "11"
+			(uuid "092e3e4f-b729-58e7-91a4-2ca4ed9da8c6")
+		)
+		(pin "12"
+			(uuid "ec13dbf6-b91f-5946-a964-ba6f770c870d")
+		)
+		(instances
+			(project "ExtendBoard"
+				(path "/1e907dc7-a4c5-4678-8231-beef2e9bd385"
+					(reference "LCD1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 184.15 81.28)
+			(xy 176.53 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "49d2bc33-6d69-55f9-8842-cd3f7083cc53")
+	)
+	(global_label "GND"
+		(shape input)
+		(at 176.53 81.28 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify right bottom)
+		)
+		(uuid "ce57e265-2049-56bd-b44d-86b6fb2ef0bd")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 176.53 81.28 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 184.15 83.82)
+			(xy 176.53 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5c1a9d64-6178-5160-9231-7313c61a1c74")
+	)
+	(global_label "LED_K"
+		(shape input)
+		(at 176.53 83.82 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify right bottom)
+		)
+		(uuid "f9237c08-7442-5d74-9da8-53af1400fda1")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 176.53 83.82 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 184.15 86.36)
+			(xy 176.53 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "253ebaa6-7ad8-59a0-b5a7-319637d886cf")
+	)
+	(global_label "VDD_5V"
+		(shape input)
+		(at 176.53 86.36 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify right bottom)
+		)
+		(uuid "fe999974-5965-5e58-a8a4-54e9a1774984")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 176.53 86.36 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 184.15 88.9)
+			(xy 176.53 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0ed4c78b-334d-5553-a4f2-1037ef949ce1")
+	)
+	(global_label "3V3"
+		(shape input)
+		(at 176.53 88.9 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify right bottom)
+		)
+		(uuid "7dc89b6e-f44f-5b2f-bd91-e6e6a6810c8a")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 176.53 88.9 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 184.15 91.44)
+			(xy 176.53 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b694106f-4cff-5838-aafd-19a993a43d56")
+	)
+	(global_label "GND"
+		(shape input)
+		(at 176.53 91.44 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify right bottom)
+		)
+		(uuid "9175b989-a9ad-54b9-8951-a3b877910f52")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 176.53 91.44 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 184.15 93.98)
+			(xy 176.53 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7d5221af-7164-5604-91de-fa6a76ba58d7")
+	)
+	(global_label "GND"
+		(shape input)
+		(at 176.53 93.98 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify right bottom)
+		)
+		(uuid "1e90274a-b97a-5e12-b1d2-42984098188a")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 176.53 93.98 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 227.33 81.28)
+			(xy 234.95 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "969ecfad-59be-5ae5-a0df-425fd96ac3b5")
+	)
+	(global_label "DC"
+		(shape input)
+		(at 234.95 81.28 180)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "2d1843d6-ad35-5c1a-ba1c-daf9ffb29e8e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 234.95 81.28 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 227.33 83.82)
+			(xy 234.95 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fbfef259-a9ed-5dbc-ae54-2fda7437e1e3")
+	)
+	(global_label "GND"
+		(shape input)
+		(at 234.95 83.82 180)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "c4eeb7c1-eb31-5d36-8f29-347a76b4fa7e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 234.95 83.82 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 227.33 86.36)
+			(xy 234.95 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b2aefe25-8d85-59ce-8dc4-b92730641cd2")
+	)
+	(global_label "SCK"
+		(shape input)
+		(at 234.95 86.36 180)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "aa683a01-848d-5228-a392-87bfa2392114")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 234.95 86.36 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 227.33 88.9)
+			(xy 234.95 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5f4c22b1-5c78-570b-b4b3-161cb299893a")
+	)
+	(global_label "MOSI"
+		(shape input)
+		(at 234.95 88.9 180)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "be7b5585-4bd9-5317-b6db-bb80ddcdc32c")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 234.95 88.9 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 227.33 91.44)
+			(xy 234.95 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5f30cfec-8ad8-5f98-b8c0-4d3f1365f518")
+	)
+	(global_label "RES"
+		(shape input)
+		(at 234.95 91.44 180)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "69994d23-b5ea-505b-a1b9-099cccdf728f")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 234.95 91.44 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 227.33 93.98)
+			(xy 234.95 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "98c7f1b9-0075-5f46-aa72-b3c750d7c137")
+	)
+	(global_label "GND"
+		(shape input)
+		(at 234.95 93.98 180)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "2d940ef5-30dc-516c-8cc7-449441f5da09")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 234.95 93.98 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "HoloCubicExt:CON1")
+		(at 64.77 67.31 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "7a108c84-7ae0-4b51-abbf-c42181435ccb")
+		(property "Reference" "CON1"
+			(at 64.77 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "FH12-8S-0.5SH(55)"
+			(at 64.77 57.15 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Footprint" "HoloCubic_Ext:FFC_8P_0.5mm"
+			(at 64.77 67.31 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 64.77 67.31 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "MPN" "FH12-8S-0.5SH(55)"
+			(at 64.77 67.31 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "DesignNote" "Hirose CL0586-0744-5-55; 0.3mm FFC, bottom contacts, front latch; original origin retained, vendor land pattern replaces unidentified legacy footprint"
+			(at 64.77 67.31 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "db87135c-12c0-5841-82b2-d222456dc1e1")
+		)
+		(pin "2"
+			(uuid "a7481f19-3143-53f7-b472-3956c8342567")
+		)
+		(pin "3"
+			(uuid "9125b3d5-ef12-514b-b116-396bf3598ff8")
+		)
+		(pin "4"
+			(uuid "e31b18fa-56a3-5377-9d38-8b69336df60d")
+		)
+		(pin "5"
+			(uuid "fb5de9aa-dbca-5ee3-b794-42608c749751")
+		)
+		(pin "6"
+			(uuid "7c57ca2f-c21b-5595-9ed0-56596595e553")
+		)
+		(pin "7"
+			(uuid "e08bb76c-94e7-5541-9587-23072d59ed06")
+		)
+		(pin "8"
+			(uuid "552d6900-3254-508e-838d-2cbbd7435efa")
+		)
+		(pin "MP"
+			(uuid "b1691108-7bcd-5d6c-987d-50dc323ff5c0")
+		)
+		(instances
+			(project "ExtendBoard"
+				(path "/1e907dc7-a4c5-4678-8231-beef2e9bd385"
+					(reference "CON1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 46.99 62.23)
+			(xy 39.37 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d9e34a8c-db55-5aa5-9dc7-eeb6cb1b98de")
+	)
+	(global_label "VDD_5V"
+		(shape input)
+		(at 39.37 62.23 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify right bottom)
+		)
+		(uuid "7719895b-9e5e-5858-b716-351d8a1347cc")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 39.37 62.23 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 46.99 64.77)
+			(xy 39.37 64.77)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4eaece6f-7ad0-5bb6-9667-a74857aede0a")
+	)
+	(global_label "3V3"
+		(shape input)
+		(at 39.37 64.77 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify right bottom)
+		)
+		(uuid "5c80a035-b06b-5d0a-930d-3b47d22894a2")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 39.37 64.77 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 46.99 67.31)
+			(xy 39.37 67.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "642f9e75-b3c4-55c2-bfda-7879bebe18b6")
+	)
+	(global_label "GND"
+		(shape input)
+		(at 39.37 67.31 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify right bottom)
+		)
+		(uuid "979f2390-b3d8-5b7e-847d-707ad95585cd")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 39.37 67.31 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 46.99 69.85)
+			(xy 39.37 69.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "46ea90d7-064c-58bc-b5f6-29fd12018b1f")
+	)
+	(global_label "DC"
+		(shape input)
+		(at 39.37 69.85 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify right bottom)
+		)
+		(uuid "8f4fe891-41b5-5d24-8262-7885643af4da")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 39.37 69.85 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 46.99 72.39)
+			(xy 39.37 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d2463b6e-3766-5a95-b4df-dd929300597a")
+	)
+	(global_label "SCK"
+		(shape input)
+		(at 39.37 72.39 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify right bottom)
+		)
+		(uuid "bb364e7e-01bf-5ce4-8fc6-4bc4be25d71e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 39.37 72.39 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 82.55 62.23)
+			(xy 90.17 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "840709d6-ccbc-528d-988a-f7fbd5f03bff")
+	)
+	(global_label "MOSI"
+		(shape input)
+		(at 90.17 62.23 180)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "31b40354-0859-5c79-b9b8-adc3a47c5764")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 90.17 62.23 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 82.55 64.77)
+			(xy 90.17 64.77)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5979ae6b-3aa9-5c04-93b6-ad8fe06ca6ed")
+	)
+	(global_label "RES"
+		(shape input)
+		(at 90.17 64.77 180)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "ffc9321e-448b-50d7-b583-b89460804b8a")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 90.17 64.77 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 82.55 67.31)
+			(xy 90.17 67.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "118e8264-8011-567c-8f1f-ab1de7b584e9")
+	)
+	(global_label "LCD_BL"
+		(shape input)
+		(at 90.17 67.31 180)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "ae5c02e5-213a-5070-8fe8-71c08cedb16b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 90.17 67.31 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 82.55 69.85)
+			(xy 90.17 69.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9cc2236d-9951-51ff-abcd-c26206191daa")
+	)
+	(global_label "GND"
+		(shape input)
+		(at 90.17 69.85 180)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "fdbba7cb-48fb-575d-9404-a64db2b20c8f")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 90.17 69.85 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "HoloCubicExt:Q_NMOS")
+		(at 344.17 133.35 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "61f89822-e7f6-43f3-9b45-3ac9ef992863")
+		(property "Reference" "Q1"
+			(at 344.17 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "AO3400A"
+			(at 344.17 127 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Footprint" "HoloCubic_Ext:SOT23_NMOS"
+			(at 344.17 133.35 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 344.17 133.35 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "MPN" "AO3400A"
+			(at 344.17 133.35 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "DesignNote" "Logic-level N-MOS: pin1 G,2 S,3 D. High impedance gate preserves ESP32 GPIO5 default high strap; EN pulled low turns backlight off. Rds(on) specified at 2.5V."
+			(at 344.17 133.35 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f2f0745e-64a0-59e3-9523-d6c4cc310033")
+		)
+		(pin "2"
+			(uuid "73d4525e-ce90-56b2-992b-d2207263c5df")
+		)
+		(pin "3"
+			(uuid "1628821d-91ba-5dfc-99c1-6715d8366a7b")
+		)
+		(instances
+			(project "ExtendBoard"
+				(path "/1e907dc7-a4c5-4678-8231-beef2e9bd385"
+					(reference "Q1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 322.58 132.08)
+			(xy 314.96 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "98fd45c6-eee6-5012-81ac-55c1b840d284")
+	)
+	(global_label "BL_GATE"
+		(shape input)
+		(at 314.96 132.08 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify right bottom)
+		)
+		(uuid "86ff496d-01eb-5dca-aa9f-01034e28ed5f")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 314.96 132.08 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 322.58 134.62)
+			(xy 314.96 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "527b8960-f7ca-5bd5-961c-0f4bf7ceec92")
+	)
+	(global_label "GND"
+		(shape input)
+		(at 314.96 134.62 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify right bottom)
+		)
+		(uuid "fa0b1aba-e716-57ba-8e4f-e739bf36ce72")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 314.96 134.62 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 365.76 132.08)
+			(xy 373.38 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "576b6ff1-f179-53f6-8088-fd45a4bdfb12")
+	)
+	(global_label "BL_EN"
+		(shape input)
+		(at 373.38 132.08 180)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "e47ebfd4-692f-58ed-8c29-bf2c4ec05327")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 373.38 132.08 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "HoloCubicExt:R")
+		(at 302.26 158.75 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "c069f35a-b565-4fe7-9f60-c50d9dbe7f5a")
+		(property "Reference" "R1"
+			(at 302.26 152.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1k"
+			(at 302.26 154.71 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Footprint" "HoloCubic_Ext:R_0402"
+			(at 302.26 158.75 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 302.26 158.75 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "MPN" "RC0402FR-071KL"
+			(at 302.26 158.75 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "DesignNote" "Gate series resistor; no DC load on GPIO5 strapping input"
+			(at 302.26 158.75 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f370185a-a785-5388-a497-0c8ecb8eb128")
+		)
+		(pin "2"
+			(uuid "ec11f023-e680-5f2b-8d12-9aca9a73239d")
+		)
+		(instances
+			(project "ExtendBoard"
+				(path "/1e907dc7-a4c5-4678-8231-beef2e9bd385"
+					(reference "R1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 297.18 158.75)
+			(xy 289.56 158.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "12014445-df46-5b77-aa0a-acbee6c822ed")
+	)
+	(global_label "LCD_BL"
+		(shape input)
+		(at 289.56 158.75 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify right bottom)
+		)
+		(uuid "ec6f0de5-c803-58ca-a5f0-0bf18702a904")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 289.56 158.75 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 307.34 158.75)
+			(xy 314.96 158.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b3637bc4-e7c2-534d-9f5a-5debb2124bbc")
+	)
+	(global_label "BL_GATE"
+		(shape input)
+		(at 314.96 158.75 180)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "babd2bc5-8a1e-584a-8041-3376449fe2f6")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 314.96 158.75 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "HoloCubicExt:U1")
+		(at 344.17 72.39 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "626ebabc-9ea4-502f-9da1-a9b9b4ce06b7")
+		(property "Reference" "U1"
+			(at 344.17 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "AL5802"
+			(at 344.17 64.77 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Footprint" "HoloCubic_Ext:SOT26_AL5802"
+			(at 344.17 72.39 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 344.17 72.39 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "MPN" "AL5802-7"
+			(at 344.17 72.39 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "DesignNote" "Low-side linear current sink; FB5 and REXT6 connected; OUT >=0.8V and BIAS >=4.5V"
+			(at 344.17 72.39 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "76d7db11-7a0a-51e4-8cfd-255852d0187c")
+		)
+		(pin "2"
+			(uuid "c99b6d18-fdbf-5e75-a73d-489ba64dc23c")
+		)
+		(pin "3"
+			(uuid "05e8d18c-fae0-5db0-9000-bd797ba0fa96")
+		)
+		(pin "4"
+			(uuid "5ab67109-cac1-5fb4-ac2c-0b2b15d93655")
+		)
+		(pin "5"
+			(uuid "0d795b35-0dca-5a9a-a788-1efe934b69d6")
+		)
+		(pin "6"
+			(uuid "d9722dbb-66dd-5b9b-835a-dd5ca8f63cff")
+		)
+		(instances
+			(project "ExtendBoard"
+				(path "/1e907dc7-a4c5-4678-8231-beef2e9bd385"
+					(reference "U1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 317.5 69.85)
+			(xy 309.88 69.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b59ef520-1895-5624-af7e-6ebae03587f8")
+	)
+	(global_label "LED_K"
+		(shape input)
+		(at 309.88 69.85 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify right bottom)
+		)
+		(uuid "f4cca674-f892-56c4-8fd6-d5ae81d46433")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 309.88 69.85 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 317.5 72.39)
+			(xy 309.88 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "df2e00fe-2483-5b6f-9c28-401f27404324")
+	)
+	(global_label "VDD_5V"
+		(shape input)
+		(at 309.88 72.39 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify right bottom)
+		)
+		(uuid "65473f28-fd8f-54fc-8909-45abebb7bc38")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 309.88 72.39 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 317.5 74.93)
+			(xy 309.88 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "abb345d5-8a36-5ba7-b237-17c0ae4e7aa0")
+	)
+	(global_label "BL_EN"
+		(shape input)
+		(at 309.88 74.93 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify right bottom)
+		)
+		(uuid "ebce3198-95c1-54cc-90cd-0f4d048be455")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 309.88 74.93 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 370.84 69.85)
+			(xy 378.46 69.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9e22260b-6343-5281-a1d6-df4f64f80d4d")
+	)
+	(global_label "GND"
+		(shape input)
+		(at 378.46 69.85 180)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "4304308f-ec5e-5cdc-837e-5ebaf2b82588")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 378.46 69.85 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 370.84 72.39)
+			(xy 378.46 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "156c5e91-acb6-557a-9f2a-a8abe159ceba")
+	)
+	(global_label "BL_SENSE"
+		(shape input)
+		(at 378.46 72.39 180)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "1f6c1414-dd82-59a9-a0c6-9cb90cacff79")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 378.46 72.39 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 370.84 74.93)
+			(xy 378.46 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9a769130-c191-5fde-a4b4-3768017b394f")
+	)
+	(global_label "BL_SENSE"
+		(shape input)
+		(at 378.46 74.93 180)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "7b8b5a83-a358-51bd-aa22-d0a44f22ede2")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 378.46 74.93 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "HoloCubicExt:R")
+		(at 344.17 105.41 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "f024ec79-baa5-5234-8cd2-677f258904f6")
+		(property "Reference" "R2"
+			(at 344.17 98.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "27"
+			(at 344.17 101.37 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Footprint" "HoloCubic_Ext:R_0603"
+			(at 344.17 105.41 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 344.17 105.41 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "MPN" "RC0603FR-0727RL"
+			(at 344.17 105.41 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "DesignNote" "Typical backlight current 0.65V/27ohm =24.1mA; measure actual current before changing resistor"
+			(at 344.17 105.41 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "d4e29ea8-1f6a-561d-a4d7-1693a0d92855")
+		)
+		(pin "2"
+			(uuid "1a9cbeab-a2fc-5ffd-b91e-0a0633bcabfe")
+		)
+		(instances
+			(project "ExtendBoard"
+				(path "/1e907dc7-a4c5-4678-8231-beef2e9bd385"
+					(reference "R2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 339.09 105.41)
+			(xy 331.47 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5d753137-7f8f-5c73-9de0-dfa5ed3ebc84")
+	)
+	(global_label "BL_SENSE"
+		(shape input)
+		(at 331.47 105.41 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify right bottom)
+		)
+		(uuid "ee787f99-f3bb-509c-b697-33c9d0509464")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 331.47 105.41 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 349.25 105.41)
+			(xy 356.87 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d8194b6c-989a-50e4-9fac-f10df79f89dc")
+	)
+	(global_label "GND"
+		(shape input)
+		(at 356.87 105.41 180)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "d1b123b5-1ad3-557b-8e3d-8ad9f0b18a07")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 356.87 105.41 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "HoloCubicExt:R")
+		(at 377.19 158.75 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "5e73899f-baa4-511f-a7da-607a0faef363")
+		(property "Reference" "R3"
+			(at 377.19 152.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100k"
+			(at 377.19 154.71 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Footprint" "HoloCubic_Ext:R_0402"
+			(at 377.19 158.75 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 377.19 158.75 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "MPN" "RC0402FR-07100KL"
+			(at 377.19 158.75 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "DesignNote" "Gate pull-up: default off once 3V3 is present; brief current-limited flash possible while 5V precedes 3V3"
+			(at 377.19 158.75 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b1b6c099-7cf8-5e01-964f-7de4532ff8e1")
+		)
+		(pin "2"
+			(uuid "f2535258-3325-5124-bfeb-087adf8c0d55")
+		)
+		(instances
+			(project "ExtendBoard"
+				(path "/1e907dc7-a4c5-4678-8231-beef2e9bd385"
+					(reference "R3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 372.11 158.75)
+			(xy 364.49 158.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "29b6936d-6f54-5f9a-be28-e9ef29b665b1")
+	)
+	(global_label "3V3"
+		(shape input)
+		(at 364.49 158.75 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify right bottom)
+		)
+		(uuid "873a34ed-4b21-55c2-96d7-601d09159c89")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 364.49 158.75 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 382.27 158.75)
+			(xy 389.89 158.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c1e7fa1e-1dcc-5239-8aae-ce1bb3bff472")
+	)
+	(global_label "BL_GATE"
+		(shape input)
+		(at 389.89 158.75 180)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "bab2f73d-3ef3-5318-a2cb-aa6b323f77b8")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 389.89 158.75 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "HoloCubicExt:C")
+		(at 64.77 125.73 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "1443392c-dfd1-5c04-a45b-e7e01cf73f24")
+		(property "Reference" "C1"
+			(at 64.77 119.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100nF"
+			(at 64.77 121.69 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Footprint" "HoloCubic_Ext:C_0402"
+			(at 64.77 125.73 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 64.77 125.73 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "MPN" "GRM155R71C104KA88D"
+			(at 64.77 125.73 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "DesignNote" "Local panel logic bypass, 16V X7R"
+			(at 64.77 125.73 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "faa61cd5-ae05-5174-a83c-72a27ee7d9df")
+		)
+		(pin "2"
+			(uuid "32511b14-85c2-57f6-a4a9-3100559aa117")
+		)
+		(instances
+			(project "ExtendBoard"
+				(path "/1e907dc7-a4c5-4678-8231-beef2e9bd385"
+					(reference "C1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 59.69 125.73)
+			(xy 52.07 125.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "204fa73a-56a4-5bf1-8496-f0f2fa7f04c0")
+	)
+	(global_label "3V3"
+		(shape input)
+		(at 52.07 125.73 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify right bottom)
+		)
+		(uuid "b5b97425-d55f-5025-b0cd-b180f4cc479c")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 52.07 125.73 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 69.85 125.73)
+			(xy 77.47 125.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "de19b4f3-d56c-5e21-915c-9f39ddf300a7")
+	)
+	(global_label "GND"
+		(shape input)
+		(at 77.47 125.73 180)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "d2be89d1-9aba-5fd1-8d11-87d314c68fb2")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 77.47 125.73 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "HoloCubicExt:C")
+		(at 64.77 146.05 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "cfc1f7c7-09bc-5f4e-98bf-1db8aac7cc60")
+		(property "Reference" "C2"
+			(at 64.77 139.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "4.7uF"
+			(at 64.77 142.01 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Footprint" "HoloCubic_Ext:C_0603"
+			(at 64.77 146.05 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 64.77 146.05 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "MPN" "GRM188R61A475KE15D"
+			(at 64.77 146.05 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "DesignNote" "Local panel bulk, 10V X5R; nominal capacitance"
+			(at 64.77 146.05 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "532e4a1d-396a-5135-97f9-20e747b98940")
+		)
+		(pin "2"
+			(uuid "a43fa3b8-a21e-57cc-9112-5f557f2d3865")
+		)
+		(instances
+			(project "ExtendBoard"
+				(path "/1e907dc7-a4c5-4678-8231-beef2e9bd385"
+					(reference "C2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 59.69 146.05)
+			(xy 52.07 146.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a16ddb98-d38b-5242-a487-b4b6aaf54b5c")
+	)
+	(global_label "3V3"
+		(shape input)
+		(at 52.07 146.05 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify right bottom)
+		)
+		(uuid "5fd90863-7702-5866-8f13-0891ec6ec60f")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 52.07 146.05 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 69.85 146.05)
+			(xy 77.47 146.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "14fe5733-5c90-5209-88ae-c121e21f9761")
+	)
+	(global_label "GND"
+		(shape input)
+		(at 77.47 146.05 180)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "f9abcbcd-9e8e-560f-a745-80fbaf3b5539")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 77.47 146.05 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "HoloCubicExt:C")
+		(at 318.77 190.5 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "20f31e91-4884-52d8-945e-6a61a516092f")
+		(property "Reference" "C3"
+			(at 318.77 183.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100nF"
+			(at 318.77 186.46 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Footprint" "HoloCubic_Ext:C_0402"
+			(at 318.77 190.5 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 318.77 190.5 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "MPN" "GRM155R71C104KA88D"
+			(at 318.77 190.5 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "DesignNote" "Local AL5802 bias bypass, 16V X7R"
+			(at 318.77 190.5 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c570fbd1-fb78-5311-9a8c-0b0d58362f22")
+		)
+		(pin "2"
+			(uuid "2599023a-9186-5be7-9db7-f53f81158c0b")
+		)
+		(instances
+			(project "ExtendBoard"
+				(path "/1e907dc7-a4c5-4678-8231-beef2e9bd385"
+					(reference "C3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 313.69 190.5)
+			(xy 306.07 190.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "62896845-1fa4-5647-b98e-61ecc0bda503")
+	)
+	(global_label "VDD_5V"
+		(shape input)
+		(at 306.07 190.5 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify right bottom)
+		)
+		(uuid "c85a42e3-89f2-5647-b522-12571a4ce752")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 306.07 190.5 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 323.85 190.5)
+			(xy 331.47 190.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "33ff8922-9f11-5ca9-90ad-d722a07ceef2")
+	)
+	(global_label "GND"
+		(shape input)
+		(at 331.47 190.5 180)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "b5805137-478a-5a3f-b395-0e7ee9ff75f6")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 331.47 190.5 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "HoloCubicExt:C")
+		(at 377.19 190.5 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "f5072543-3224-5a25-8409-4d64f2b32ead")
+		(property "Reference" "C4"
+			(at 377.19 183.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1uF"
+			(at 377.19 186.46 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Footprint" "HoloCubic_Ext:C_0603"
+			(at 377.19 190.5 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" "https://ds.murata.com/simserve/characteristics?ReqType=TechPDF&partnumber=GRM188R71E105KA12&techpdfname=technical_pdf_Capacitor01&lang=en"
+			(at 377.19 190.5 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "MPN" "GRM188R71E105KA12D"
+			(at 377.19 190.5 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "DesignNote" "Local 5V bypass; 1uF +/-10%, 25V X7R, 0603. Shared MPN with MainBoard C24."
+			(at 377.19 190.5 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "4425fc4c-3a3e-5d11-9ac4-067d4820868a")
+		)
+		(pin "2"
+			(uuid "43e22dd2-c020-5ece-adf3-69fe55f830fc")
+		)
+		(instances
+			(project "ExtendBoard"
+				(path "/1e907dc7-a4c5-4678-8231-beef2e9bd385"
+					(reference "C4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 372.11 190.5)
+			(xy 364.49 190.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3f70a1f5-b86a-5139-8778-46773ae18cb8")
+	)
+	(global_label "VDD_5V"
+		(shape input)
+		(at 364.49 190.5 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify right bottom)
+		)
+		(uuid "a9cd0af4-b8fc-5823-b3ef-34b625e9ec9b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 364.49 190.5 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 382.27 190.5)
+			(xy 389.89 190.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "88e1f697-72b5-5a01-aa84-e35d37cbc939")
+	)
+	(global_label "GND"
+		(shape input)
+		(at 389.89 190.5 180)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "692dea1c-0bf8-5c3a-83ec-004fb001d4ff")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 389.89 190.5 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(polyline
+		(pts
+			(xy 10 20)
+			(xy 130 20)
+			(xy 130 245)
+			(xy 10 245)
+			(xy 10 20)
+		)
+		(stroke
+			(width 0.254)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "c168f17f-3139-5b55-8bdb-dfbb547b15fe")
+	)
+	(text "1  Eight-way FFC / panel logic power"
+		(at 12.54 26.35 0)
+		(effects
+			(font
+				(size 1.5 1.5)
+			)
+			(justify left bottom)
+		)
+		(uuid "ff7c8623-9257-55a5-8fbc-12010d9ee070")
+	)
+	(polyline
+		(pts
+			(xy 140 20)
+			(xy 270 20)
+			(xy 270 245)
+			(xy 140 245)
+			(xy 140 20)
+		)
+		(stroke
+			(width 0.254)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "47bad1c3-045a-51cf-9ada-3fc99b5be48b")
+	)
+	(text "2  1.3 inch 240 x 240 TFT panel"
+		(at 142.54 26.35 0)
+		(effects
+			(font
+				(size 1.5 1.5)
+			)
+			(justify left bottom)
+		)
+		(uuid "bcd065c3-bc88-50a9-a302-9a9d7b4cc692")
+	)
+	(polyline
+		(pts
+			(xy 280 20)
+			(xy 410 20)
+			(xy 410 245)
+			(xy 280 245)
+			(xy 280 20)
+		)
+		(stroke
+			(width 0.254)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "40da47c9-be52-5f24-97ca-4c729ee0429c")
+	)
+	(text "3  Current-controlled backlight / active-low PWM"
+		(at 282.54 26.35 0)
+		(effects
+			(font
+				(size 1.5 1.5)
+			)
+			(justify left bottom)
+		)
+		(uuid "8e84a53b-4a5d-517c-8909-0ef7e3148f47")
+	)
+	(text "Hirose FH12-8S-0.5SH(55), 0.5 mm pitch.\nFFC must reverse pin numbering between boards.\nDisplay pin 1 mates with main-board pin 8.\nMounting pads MP are grounded."
+		(at 14 231 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "44f64477-1c56-572f-912a-8490521c35e6")
+	)
+	(text "Panel FPC: 12 contacts, 0.7 mm pitch.\nST7789V CS is permanently low; write-only SPI.\nPanel logic is 3.3V. Backlight anode is switched 5V.\nPin 2 LED_K goes to AL5802; never tie it to GND.\nBare-panel FPC/outline must be checked against the\nselected P133H002 manufacturer drawing."
+		(at 144 231 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "bebc63da-b356-5c19-bb2e-17ca10a2ea15")
+	)
+	(text "GPIO5 / LCD_BL low: Q1 off, AL5802 enabled.\nGPIO5 high: Q1 on, EN low, backlight off.\nAL5802 nominal I = 0.65V / 27 ohm = 24.1mA.\nRequire BIAS >= 4.5V and OUT >= 0.8V.\nMeasure LED current, sink voltage and temperature.\nBrief current-limited flash is possible before 3.3V rises."
+		(at 284 237 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "e5d46e98-be11-5ed4-be8d-409f62385ebd")
+	)
+	(symbol
+		(lib_id "HoloCubicExt:PWR_FLAG")
+		(at 35.56 185.42 0)
+		(unit 1)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "dceda36f-bcea-5461-83c5-44cc24be328c")
+		(property "Reference" "#FLG001"
+			(at 35.56 180.42 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 35.56 180.42 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "40383279-0809-5ab6-9b7f-be248e729810")
+		)
+		(instances
+			(project "ExtendBoard"
+				(path "/1e907dc7-a4c5-4678-8231-beef2e9bd385"
+					(reference "#FLG001")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(global_label "3V3"
+		(shape input)
+		(at 35.56 185.42 180)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "fd801e7a-68e4-5ab8-8320-8f6f52570ce6")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 35.56 185.42 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "HoloCubicExt:PWR_FLAG")
+		(at 66.04 185.42 0)
+		(unit 1)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "c89c22f7-a71e-56ff-b1ea-56a6eff75b87")
+		(property "Reference" "#FLG002"
+			(at 66.04 180.42 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 66.04 180.42 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "9a32cd10-602d-5b80-83e0-7827a6c6dc19")
+		)
+		(instances
+			(project "ExtendBoard"
+				(path "/1e907dc7-a4c5-4678-8231-beef2e9bd385"
+					(reference "#FLG002")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(global_label "VDD_5V"
+		(shape input)
+		(at 66.04 185.42 180)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "3ffca39b-e781-5d25-9fd5-b0faa8c8f3f2")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 66.04 185.42 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "HoloCubicExt:PWR_FLAG")
+		(at 96.52 185.42 0)
+		(unit 1)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "27cc5ecd-fdcf-5836-ba52-7cffab7ee647")
+		(property "Reference" "#FLG003"
+			(at 96.52 180.42 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 96.52 180.42 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c8d2aef6-a144-5674-a30a-eb607a41a855")
+		)
+		(instances
+			(project "ExtendBoard"
+				(path "/1e907dc7-a4c5-4678-8231-beef2e9bd385"
+					(reference "#FLG003")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(global_label "GND"
+		(shape input)
+		(at 96.52 185.42 180)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "aea1ca0f-0039-5fa3-98d3-6d5c85749bee")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 96.52 185.42 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+)

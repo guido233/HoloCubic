@@ -1,0 +1,60 @@
+name: Hardware
+
+on:
+  pull_request:
+    paths:
+      - '1.Hardware/RevB-KiCad/**'
+      - 'tools/hardware/**'
+      - '.github/workflows/hardware.yml'
+  push:
+    branches: [main]
+    paths:
+      - '1.Hardware/RevB-KiCad/**'
+      - 'tools/hardware/**'
+      - '.github/workflows/hardware.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: hardware-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  native-checks:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - name: Install KiCad 10 from the official Ubuntu PPA
+        run: |
+          sudo add-apt-repository --yes ppa:kicad/kicad-10.0-releases
+          sudo apt-get update
+          sudo apt-get install --yes --no-install-recommends kicad
+          kicad-cli version
+      - name: Native ERC, DRC, schematic parity and electrical invariants
+        run: python3 tools/hardware/verify_hardware.py --drc --output /tmp/hardware-checks.json
+      - name: Fault-injection regressions
+        run: python3 -m unittest discover -s tools/hardware -p 'test_*.py' -v
+      - name: Display contact allowance and current measurement coordinates
+        run: |
+          python3 tools/hardware/display_interface_allowance.py --output-dir /tmp/display-interface
+          cmp /tmp/display-interface/P133H002-interface-closure.json 1.Hardware/RevB-KiCad/Naive/Closure/P133H002-interface-closure.json
+          python3 tools/hardware/export_probe_map.py --output /tmp/probe-map
+          cmp /tmp/probe-map/probe-map.json 1.Hardware/RevB-KiCad/Naive/Closure/probe-map.json
+      - name: Mechanical interface revisions
+        run: |
+          python3 tools/hardware/mechanical_baseline.py check Naive_MainBoard '1.Hardware/RevB-KiCad/Naive/MainBoard/MainBoard.kicad_pcb' --revision naive-revb --json > /tmp/main-mechanical.json
+          python3 tools/hardware/mechanical_baseline.py check Naive_ExtendBoard '1.Hardware/RevB-KiCad/Naive/ExtendBoard/ExtendBoard.kicad_pcb' --revision naive-revb --map-ref 1=LCD1 --json > /tmp/display-mechanical.json
+      - uses: actions/upload-artifact@v7.0.2
+        if: always()
+        with:
+          name: hardware-static-reports
+          path: |
+            /tmp/hardware-checks.json
+            /tmp/main-mechanical.json
+            /tmp/display-mechanical.json
+            /tmp/display-interface/
+            /tmp/probe-map/
+          if-no-files-found: warn

@@ -25,6 +25,8 @@ pio device monitor --port /dev/cu.SLAB_USBtoUART --baud 115200
 
 固件使用 4MB Flash 的 `huge_app.csv` 分区，应用槽为 3MiB，不提供双槽 OTA。首次从旧固件迁移时请使用 PlatformIO 的完整上传流程，同时更新 bootloader、分区表和应用；仅替换旧分区中的 application.bin 无法容纳此版本。
 
+另有手动选择的 `-e naive-bringup` 首板诊断环境，使用独立入口，默认背光关闭，不自动挂卡或联网。串口可逐项检查 I²C、色条、背光 PWM、RGB、新文件 SD 写读及局部 WiFi/SD/显示并发；见 [测量位置、命令和结果边界](../../1.Hardware/RevB-KiCad/Naive/Closure/BRINGUP.md)。它不替代正式 `naive` 应用，也不把软件 PASS 当作供电、装配或天线验收通过。
+
 ## 依赖版本
 
 | 依赖 | 固定版本 |
@@ -40,6 +42,8 @@ pio device monitor --port /dev/cu.SLAB_USBtoUART --baud 115200
 `platformio.ini` 使用托管依赖。`lib/` 与上一级 `Libraries/` 内的旧快照保留作原项目参考，不参与维护版构建。旧 Visual Studio 模拟器和 Windows 可执行程序也属于原版工具，不适用于新版资源格式。
 
 屏幕配置在 `include/tft_setup.h`，LVGL 配置在 `include/lv_conf.h`。LVGL 使用 32KiB 内存池、RGB565 局部刷新缓冲，索引图片按行解码，以适配无外部 PSRAM 的原板。
+
+Naive 与 Ironman 共用的 ST7789 **写时钟为 10MHz**。Naive RevB 候选 P133H002 指定 ST7789V；现有 [Sitronix v1.3 数据手册](https://newhavendisplay.com/content/datasheets/ST7789V.pdf) 第 44 页 Table 6 给出写时钟周期至少 66ns、高低脉宽各至少 15ns。先前 40MHz 的周期为 25ns，不能由这份时序表保证。10MHz 将纯数据带宽降为先前的四分之一，240×240 RGB565 全帧传输理论上约 92ms，尚未计命令及绘图开销；局部刷新按实际区域传输。调高时钟前须取得实际屏幕 / 控制器修订的有效时序依据，在最终 PCB、FFC 与外壳中测接收端的时钟、数据建立保持时间及振铃，并通过温度、电源和并发读卡压力验证。旧版归档固件未修改。
 
 ## SD 卡与联网
 

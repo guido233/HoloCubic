@@ -1,0 +1,393 @@
+{
+  "revision": "NaiveRevB FFC interface definition R1",
+  "date": "2026-10-30",
+  "classification": "Controlled endpoint and electrical mapping specification; cable length and physical assembly not released.",
+  "source_pcbs": [
+    {
+      "pcb": "1.Hardware/RevB-KiCad/Naive/MainBoard/MainBoard.kicad_pcb",
+      "sha256": "a8bbae787964286f9783e2d74fa752ae82efbc7d5350371debf734503f4a98a8",
+      "connector_reference": "CON1",
+      "connector_pose": [
+        "143.9545",
+        "104.7163",
+        "90"
+      ],
+      "connector_layer": "F.Cu"
+    },
+    {
+      "pcb": "1.Hardware/RevB-KiCad/Naive/ExtendBoard/ExtendBoard.kicad_pcb",
+      "sha256": "d05a3b40bbc770fbf0523e38680e2212bac2e3d39f5fec9066f50eba5e90c40c",
+      "connector_reference": "CON1",
+      "connector_pose": [
+        "146.9346",
+        "105.0417",
+        "90"
+      ],
+      "connector_layer": "F.Cu"
+    }
+  ],
+  "connector": {
+    "manufacturer": "Hirose",
+    "mpn": "FH12-8S-0.5SH(55)",
+    "hrs_code": "CL0586-0744-5-55",
+    "contact_position": "bottom",
+    "positions": 8,
+    "pitch_mm": 0.5,
+    "end_thickness_mm": {
+      "nominal": 0.3,
+      "tolerance": 0.05
+    },
+    "exposed_contacts_face": "toward the PCB at EACH mated end",
+    "contact_current_rating_A": 0.5,
+    "all_contacts_loaded_derating": 0.7,
+    "mating_current_design_note": "Use actual load and temperature budget; 0.5A connector rating does not certify cable or whole system."
+  },
+  "electrical_mapping": [
+    {
+      "main_pin": 1,
+      "extend_pin": 8,
+      "main_net": "GPIO5",
+      "extend_net": "LCD_BL",
+      "function": "LCD_BL / GPIO5"
+    },
+    {
+      "main_pin": 2,
+      "extend_pin": 7,
+      "main_net": "GPIO4",
+      "extend_net": "RES",
+      "function": "RES / GPIO4"
+    },
+    {
+      "main_pin": 3,
+      "extend_pin": 6,
+      "main_net": "GPIO23",
+      "extend_net": "MOSI",
+      "function": "MOSI / GPIO23"
+    },
+    {
+      "main_pin": 4,
+      "extend_pin": 5,
+      "main_net": "GPIO18",
+      "extend_net": "SCK",
+      "function": "SCK / GPIO18"
+    },
+    {
+      "main_pin": 5,
+      "extend_pin": 4,
+      "main_net": "DC",
+      "extend_net": "DC",
+      "function": "DC / GPIO2"
+    },
+    {
+      "main_pin": 6,
+      "extend_pin": 3,
+      "main_net": "GND",
+      "extend_net": "GND",
+      "function": "GND"
+    },
+    {
+      "main_pin": 7,
+      "extend_pin": 2,
+      "main_net": "3V3",
+      "extend_net": "3V3",
+      "function": "3V3"
+    },
+    {
+      "main_pin": 8,
+      "extend_pin": 1,
+      "main_net": "VDD_5V",
+      "extend_net": "VDD_5V",
+      "function": "VDD_5V (switched5V)"
+    }
+  ],
+  "contact_layout": {
+    "exposure_when_laid_flat": "both ends on the same material side",
+    "molex_term": "Type A",
+    "marketing_label_alone_is_acceptance": false,
+    "assumptions": [
+      "same handed Hirose contact numbering at both ends",
+      "eight parallel un-crossed conductors",
+      "no crossover adapter",
+      "both ends inserted with exposed copper facing their respective PCB"
+    ],
+    "same_side_result": "Main pin n to Extend pin 9-n",
+    "opposite_side_result": "Main pin n to Extend pin n; REJECT for this design",
+    "proof": "At each port let d be cable outward direction, w point from pin1 to pin8, and n be outward PCB normal. For both identical bottom-contact connectors d cross w = -n. A continuous cable runs outward at endA but inward at endB. Keeping the same material copper side at both ends forces the conductor-index axis to align with w at A and -w at B, reversing connector numbering. A same-side cable therefore gives n to 9-n independent of rigid PCB placement; final path must still realize this orientation without damage."
+  },
+  "custom_cable": {
+    "internal_drawing_id": "HC-N-FFC-08P05-SS-LVAR-R1",
+    "not_a_supplier_order_code": true,
+    "length_mm": null,
+    "length_release_status": "TBD until actual display mounting, route, insertion depths and service loop are fixed",
+    "endpoint_requirements_mm": {
+      "positions": 8,
+      "pitch": {
+        "nominal": 0.5,
+        "tolerance": 0.05
+      },
+      "first_to_last_span": {
+        "nominal": 3.5,
+        "tolerance": 0.05
+      },
+      "total_width": {
+        "nominal": 4.5,
+        "tolerance": 0.07
+      },
+      "conductor_width": {
+        "nominal": 0.3,
+        "tolerance": 0.03
+      },
+      "edge_margin": {
+        "nominal": 0.5,
+        "tolerance": 0.1
+      },
+      "end_total_thickness": {
+        "nominal": 0.3,
+        "tolerance": 0.05
+      },
+      "exposed_length": {
+        "nominal": 4.0,
+        "tolerance": 0.25,
+        "minimum": 3.75,
+        "engineering_tightening_over_hirose_3_5_min": true
+      },
+      "reinforcement_length": {
+        "nominal": 6.0,
+        "tolerance": 0.5,
+        "minimum": 5.5,
+        "engineering_tightening_over_hirose_4_5_min": true
+      }
+    },
+    "contact_finish": "Gold-plated contact area, Hirose-compatible construction; supplier to confirm laminate and reinforcement construction against FH12 catalog, not total thickness alone",
+    "length_equation": "L_tip_to_tip = insertion_A + insertion_B + sum(straight_lengths) + sum(neutral_radius_i*abs(turn_angle_i_radians)) + service_slack",
+    "minimum_inputs": [
+      "unique Main/Extend rigid assembly transforms and finished board thickness",
+      "exact socket insertion stops and exit directions",
+      "LCD/FPC and case clearance volumes including open actuator sweep",
+      "supplier-qualified static bend radii and no-bend reinforced lengths",
+      "assembly order and service-loop clearance",
+      "length tolerance and final gauge definition"
+    ]
+  },
+  "conditional_sample_candidates": [
+    {
+      "manufacturer": "Molex",
+      "mpn": "15020-0075",
+      "official_part": "150200075",
+      "tip_to_tip_length_mm": 51,
+      "length_tolerance_mm": 2,
+      "contacts": "same side / Type A",
+      "positions": 8,
+      "pitch_mm": 0.5,
+      "plating": "Gold",
+      "between_stiffeners_length_bound_mm": [
+        35,
+        43
+      ],
+      "status": "sample candidate only; endpoint tolerances and assembly route require acceptance"
+    },
+    {
+      "manufacturer": "Molex",
+      "mpn": "15020-0077",
+      "official_part": "150200077",
+      "tip_to_tip_length_mm": 76,
+      "length_tolerance_mm": 3,
+      "contacts": "same side / Type A",
+      "positions": 8,
+      "pitch_mm": 0.5,
+      "plating": "Gold",
+      "between_stiffeners_length_bound_mm": [
+        59,
+        69
+      ],
+      "status": "sample candidate only; endpoint tolerances and assembly route require acceptance"
+    }
+  ],
+  "catalog_tolerance_gaps": {
+    "Molex_PS15020_RevF": {
+      "span_tolerance_mm": 0.1,
+      "width_tolerance_mm": 0.1,
+      "strip_length_mm": [
+        3.2,
+        4.8
+      ],
+      "reinforcement_length_mm": [
+        5,
+        7
+      ],
+      "end_thickness_mm": [
+        0.25,
+        0.35
+      ]
+    },
+    "Hirose_FH12_bottom_contact_recommendation": {
+      "span_tolerance_mm": 0.05,
+      "width_tolerance_mm": 0.07,
+      "strip_length_min_mm": 3.5,
+      "reinforcement_length_min_mm": 4.5,
+      "end_thickness_mm": [
+        0.25,
+        0.35
+      ]
+    },
+    "conclusion": "Molex generic limits do not guarantee every piece meets Hirose recommended width/span/minimum exposure. Obtain written supplier compatibility/controlled dimensions or inspect/qualify exact sample lot. Do not mark interchangeable or released based only on pitch and nominal thickness."
+  },
+  "physical_acceptance": {
+    "status": "not performed",
+    "fixture": "two unpowered passive FH12 breakout fixtures, no connected ICs or power supplies",
+    "required_continuity_pairs": [
+      [
+        1,
+        8
+      ],
+      [
+        2,
+        7
+      ],
+      [
+        3,
+        6
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        5,
+        4
+      ],
+      [
+        6,
+        3
+      ],
+      [
+        7,
+        2
+      ],
+      [
+        8,
+        1
+      ]
+    ],
+    "forbidden_continuity": "every other pair in the 8x8 matrix; unintended low-ohm path is a failure",
+    "continuity_screen_limit_ohm_excluding_leads": 1,
+    "continuity_limit_origin": "engineering gross-fault screen, not Hirose contact-resistance certification",
+    "verify": [
+      "actual exposed side at both inserted ends",
+      "8x8 continuity with cable fully seated and latches closed",
+      "full insertion without diagonal skew or visible damaged contacts",
+      "open/close access and no force on socket during assembly",
+      "route without tension, sharp crease, component/rib contact or preload at full case closure",
+      "SPI receiver waveform and stable display at 10MHz on final cable"
+    ],
+    "caution": "Populated boards contain intentional resistor/semiconductor paths; do not apply the passive cable-only isolation expectation to a powered or populated board."
+  },
+  "sources": [
+    {
+      "id": "hirose_product",
+      "url": "https://www.hirose.com/en/product/p/CL0586-0744-5-55",
+      "checked_fields": [
+        "part identity",
+        "bottom contact",
+        "8 positions",
+        "0.5mm pitch",
+        "0.3mm FFC",
+        "0.5A"
+      ]
+    },
+    {
+      "id": "hirose_catalog",
+      "url": "https://www.hirose.com/en/product/series/FH12/documents?path=%2Fapi%2Fv1%2Fseries%2FFH12%2Fdocuments%2Fproduct_series_catalog%2Fcontent%3Flang%3DEN",
+      "revision_mark": "Oct.1.2026",
+      "pages_1_based": [
+        2,
+        10,
+        15,
+        16
+      ],
+      "checked_fields": [
+        "gold0.30+/-0.05mm",
+        "0.5A/allcontacts70%",
+        "recommended terminal dimensions",
+        "bottomcontact insertion copper down"
+      ]
+    },
+    {
+      "id": "molex_product_51A",
+      "url": "https://www.molex.com/en-us/products/part-detail/150200075"
+    },
+    {
+      "id": "molex_product_76A",
+      "url": "https://www.molex.com/en-us/products/part-detail/150200077"
+    },
+    {
+      "id": "molex_product_51D_rejected",
+      "url": "https://www.molex.com/en-us/products/part-detail/150200076"
+    },
+    {
+      "id": "molex_product_76D_rejected",
+      "url": "https://www.molex.com/en-us/products/part-detail/150200078"
+    },
+    {
+      "id": "molex_spec",
+      "url": "https://www.molex.com/content/dam/molex/molex-dot-com/products/automated/en-us/productspecificationpdf/150/15020/PS-15020-001-001.pdf",
+      "revision": "F",
+      "date": "2023-12-06",
+      "pages_1_based": [
+        2,
+        3,
+        4
+      ],
+      "checked_fields": [
+        "0.30+/-0.05mm matingend",
+        "strip4+/-0.8",
+        "width/span tolerances",
+        "reinforcement6+/-1",
+        "conductor0.730ohm/m max",
+        "fold/flex test conditions not a design minimumradius"
+      ]
+    }
+  ],
+  "closed_on_paper": [
+    "actual eight signal/power mapping",
+    "required same-side exposed contact layout under stated connector assumptions",
+    "endpoint dimension and tighter custom drawing specification"
+  ],
+  "not_closed": [
+    "cable final length and complete supplier MPN for production",
+    "supplier confirmation/inspection of exact end construction and tolerances",
+    "unique display assembly datum and full cable path",
+    "physical insertion/access, continuity and system timing qualification"
+  ],
+  "endpoint_visual_review": "ffc-endpoint-visual-review.json",
+  "stiffener_thickness_min_mm": 0.188,
+  "component_substitution_source_refresh": {
+    "date": "2026-10-30",
+    "previous_source_pcbs": [
+      {
+        "pcb": "1.Hardware/RevB-KiCad/Naive/MainBoard/MainBoard.kicad_pcb",
+        "sha256": "a8bbae787964286f9783e2d74fa752ae82efbc7d5350371debf734503f4a98a8",
+        "connector_reference": "CON1",
+        "connector_pose": [
+          "143.9545",
+          "104.7163",
+          "90"
+        ],
+        "connector_layer": "F.Cu"
+      },
+      {
+        "pcb": "1.Hardware/RevB-KiCad/Naive/ExtendBoard/ExtendBoard.kicad_pcb",
+        "sha256": "d05a3b40bbc770fbf0523e38680e2212bac2e3d39f5fec9066f50eba5e90c40c",
+        "connector_reference": "CON1",
+        "connector_pose": [
+          "146.9346",
+          "105.0417",
+          "90"
+        ],
+        "connector_layer": "F.Cu"
+      }
+    ],
+    "proof": "1.Hardware/RevB-KiCad/Naive/component-substitutions.json",
+    "scope": "Connector poses, complete native geometry, contact assignments and electrical nodes unchanged. No physical cable test."
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "LCD1": "HoloCubic_Ext:LCD_12P_0.7mm",
+  "CON1": "HoloCubic_Ext:FFC_8P_0.5mm",
+  "Q1": "HoloCubic_Ext:SOT23_NMOS",
+  "R1": "HoloCubic_Ext:R_0402",
+  "U1": "HoloCubic_Ext:SOT26_AL5802",
+  "R2": "HoloCubic_Ext:R_0603",
+  "R3": "HoloCubic_Ext:R_0402",
+  "C1": "HoloCubic_Ext:C_0402",
+  "C2": "HoloCubic_Ext:C_0603",
+  "C3": "HoloCubic_Ext:C_0402",
+  "C4": "HoloCubic_Ext:C_0603"
+}

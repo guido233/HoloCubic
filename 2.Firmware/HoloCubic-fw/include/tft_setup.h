@@ -12,7 +12,10 @@
 #define TFT_CS -1
 #define TFT_DC 2
 #define TFT_RST 4
-#define SPI_FREQUENCY 40000000
+// ST7789V v1.3 Table 6: write cycle >=66ns, clock high/low >=15ns.
+// Use 10MHz for the shared ST7789 configuration until the exact panel,
+// interconnect and receiver waveforms qualify a higher write clock.
+#define SPI_FREQUENCY 10000000
 #define LOAD_GLCD
 #define LOAD_FONT2
 #define LOAD_FONT4

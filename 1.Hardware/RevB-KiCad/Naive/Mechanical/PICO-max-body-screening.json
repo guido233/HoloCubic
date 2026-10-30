@@ -1,0 +1,268 @@
+{
+  "classification": "Read-only correction of PICO package maximum1.04mm; originalLowernominalseat only, not fullassembly certification.",
+  "source_pcb": "1.Hardware/RevB-KiCad/Naive/MainBoard/MainBoard.kicad_pcb",
+  "source_pcb_sha256": "a05fb4db8785f69a0e96533620440d110ff2dc13d2e4b28887b48de03e031c39",
+  "nominal_finished_thickness_mm": 1.06,
+  "PICO_source": "EspressifESP32-PICOSeriesDatasheetv1.5 p55 Figure13: Amax1.040,D/Emax7.100; nominal7.000x7.000x0.940.",
+  "PICO_source_url": "https://www.espressif.com/sites/default/files/documentation/esp32-pico_series_datasheet_en.pdf",
+  "board_to_case_transform_3x4": [
+    0,
+    1,
+    0,
+    -105.00359974709134,
+    1,
+    0,
+    0,
+    -146.3196576298435,
+    0,
+    0,
+    -1,
+    3.07084104133287
+  ],
+  "cad_runtime": {
+    "package": "cadquery-ocp",
+    "version": "8.0.1.1.0"
+  },
+  "PICO_checks": [
+    {
+      "connector_pose": [
+        143.9545,
+        105.0163,
+        90
+      ],
+      "label": "historical_connector_originalY",
+      "PICO_max_body_mm": [
+        7.1,
+        7.1,
+        1.0
+      ],
+      "additional_assumed_standoff_mm": 0,
+      "PICO_to_closed_FFC_intersection_mm3": 0.0,
+      "PICO_to_closed_FFC_minimum_distance_mm": 0.4531999999999954,
+      "PICO_to_originalLower_intersection_mm3": 0.0,
+      "PICO_to_Upper_intersection_mm3": 0.0,
+      "PICO_to_Upper_minimum_distance_mm": 2.86915895866713
+    },
+    {
+      "connector_pose": [
+        143.9545,
+        105.0163,
+        90
+      ],
+      "label": "historical_connector_originalY",
+      "PICO_max_body_mm": [
+        7.1,
+        7.1,
+        1.04
+      ],
+      "additional_assumed_standoff_mm": 0,
+      "PICO_to_closed_FFC_intersection_mm3": 0.0,
+      "PICO_to_closed_FFC_minimum_distance_mm": 0.4531999999999954,
+      "PICO_to_originalLower_intersection_mm3": 0.0,
+      "PICO_to_Upper_intersection_mm3": 0.0,
+      "PICO_to_Upper_minimum_distance_mm": 2.8291589586671293
+    },
+    {
+      "connector_pose": [
+        143.9545,
+        105.0163,
+        90
+      ],
+      "label": "historical_connector_originalY",
+      "PICO_max_body_mm": [
+        7.1,
+        7.1,
+        1.04
+      ],
+      "additional_assumed_standoff_mm": 0.08,
+      "PICO_to_closed_FFC_intersection_mm3": 0.0,
+      "PICO_to_closed_FFC_minimum_distance_mm": 0.4531999999999954,
+      "PICO_to_originalLower_intersection_mm3": 0.0,
+      "PICO_to_Upper_intersection_mm3": 0.0,
+      "PICO_to_Upper_minimum_distance_mm": 2.7491589586671292
+    },
+    {
+      "connector_pose": [
+        143.9545,
+        104.7163,
+        90
+      ],
+      "label": "final_connector_Yminus0.30",
+      "PICO_max_body_mm": [
+        7.1,
+        7.1,
+        1.0
+      ],
+      "additional_assumed_standoff_mm": 0,
+      "PICO_to_closed_FFC_intersection_mm3": 0.0,
+      "PICO_to_closed_FFC_minimum_distance_mm": 0.6674939999730142,
+      "PICO_to_originalLower_intersection_mm3": 0.0,
+      "PICO_to_Upper_intersection_mm3": 0.0,
+      "PICO_to_Upper_minimum_distance_mm": 2.86915895866713
+    },
+    {
+      "connector_pose": [
+        143.9545,
+        104.7163,
+        90
+      ],
+      "label": "final_connector_Yminus0.30",
+      "PICO_max_body_mm": [
+        7.1,
+        7.1,
+        1.04
+      ],
+      "additional_assumed_standoff_mm": 0,
+      "PICO_to_closed_FFC_intersection_mm3": 0.0,
+      "PICO_to_closed_FFC_minimum_distance_mm": 0.6674939999730142,
+      "PICO_to_originalLower_intersection_mm3": 0.0,
+      "PICO_to_Upper_intersection_mm3": 0.0,
+      "PICO_to_Upper_minimum_distance_mm": 2.8291589586671293
+    },
+    {
+      "connector_pose": [
+        143.9545,
+        104.7163,
+        90
+      ],
+      "label": "final_connector_Yminus0.30",
+      "PICO_max_body_mm": [
+        7.1,
+        7.1,
+        1.04
+      ],
+      "additional_assumed_standoff_mm": 0.08,
+      "PICO_to_closed_FFC_intersection_mm3": 0.0,
+      "PICO_to_closed_FFC_minimum_distance_mm": 0.6674939999730142,
+      "PICO_to_originalLower_intersection_mm3": 0.0,
+      "PICO_to_Upper_intersection_mm3": 0.0,
+      "PICO_to_Upper_minimum_distance_mm": 2.7491589586671292
+    }
+  ],
+  "L1_checks": [
+    {
+      "classification": "manufacturer_max_package",
+      "envelope_mm": [
+        3.1,
+        3.1,
+        1.2
+      ],
+      "pose_xy_mm": [
+        146.25,
+        95.95
+      ],
+      "originalLower_intersection_mm3": 0.0,
+      "Upper_intersection_mm3": 0.0,
+      "Upper_minimum_distance_mm": 2.66915895866713
+    },
+    {
+      "classification": "earlier_conservative_envelope_plus_standoff",
+      "envelope_mm": [
+        3.4,
+        3.1,
+        1.28
+      ],
+      "pose_xy_mm": [
+        146.25,
+        95.95
+      ],
+      "originalLower_intersection_mm3": 0.0,
+      "Upper_intersection_mm3": 0.0,
+      "Upper_minimum_distance_mm": 2.58915895866713
+    }
+  ],
+  "limits": [
+    "Package max dimensions do not include arbitraryassembly standoff;0.08mm addedscenario is anengineeringbudget requiring process confirmation.",
+    "HiroseSTEP is nominal closed model, not manufacturer tolerance/open actuator/cable envelope.",
+    "OriginalLower seat is inferred nominaldatum; Ext/FPC/FFCassembly has separate unverifiedgates.",
+    "These F-sidebodychecks do not modifythe22B-side/USBstakecasecut report."
+  ],
+  "main_stack_revision": {
+    "previous_pcb_sha256": "9027e617313d7e87af202d14787fecd7b6d484bee7a0b72a699a266f329cab9c",
+    "current_pcb_sha256": "a05fb4db8785f69a0e96533620440d110ff2dc13d2e4b28887b48de03e031c39",
+    "previous_nominal_thickness_mm": 1.0192,
+    "current_nominal_thickness_mm": 1.06,
+    "F_side_rigid_shift_from_B_seat_mm": 0.0408,
+    "B_seat_unchanged": true,
+    "AST_equality": {
+      "footprint": {
+        "count": 58,
+        "unchanged": true,
+        "canonical_sha256": "18a46a8f905e47d3f08f0e579fe6572e913efab7e5d89114c00bd8cd524a7084"
+      },
+      "segment": {
+        "count": 1033,
+        "unchanged": true,
+        "canonical_sha256": "640f837485bfef7913d2196eb5b29190423d9fcb13edd2c4ef3de26e9749a1e7"
+      },
+      "arc": {
+        "count": 4,
+        "unchanged": true,
+        "canonical_sha256": "3219a661ab8cb6e3a660215e502a0fbdf85bb7b658ea7c954ec4a8a4bff13dec"
+      },
+      "via": {
+        "count": 145,
+        "unchanged": true,
+        "canonical_sha256": "c0ab7182073e8e2bf3df31c5298a185e41430caea785478a23b5c251a4960772"
+      },
+      "zone": {
+        "count": 32,
+        "unchanged": true,
+        "canonical_sha256": "c6d9ab29532e7baed769feaa9fd6129486f67cc4425dc7e9baec49da9a63546f"
+      },
+      "gr_line": {
+        "count": 52,
+        "unchanged": true,
+        "canonical_sha256": "6c10961ce5e42fa1b05ba800c741346e2b03d5d4ba3bea6c49371db8fe06033d"
+      },
+      "gr_arc": {
+        "count": 8,
+        "unchanged": true,
+        "canonical_sha256": "46da1db13102b2513b3abefff5870bbc4465a87a53af2d548d2cb38a931c9f44"
+      },
+      "gr_poly": {
+        "count": 0,
+        "unchanged": true,
+        "canonical_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "gr_rect": {
+        "count": 0,
+        "unchanged": true,
+        "canonical_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    }
+  },
+  "CAD_thickness_definition": "Selected JLC06101H-3313 public template Cu/dielectric1.04mm plus two0.01mm assumed masks = CAD1.06mm; manufacturer finished thickness and B-seat remain physical confirmation gates.",
+  "source_documents": [
+    {
+      "filename": "esp32-pico_series_datasheet_en.pdf",
+      "url": "https://www.espressif.com/sites/default/files/documentation/esp32-pico_series_datasheet_en.pdf",
+      "sha256": "177eb1517274eea5056ce725951091ebe8e2bce1d8635f064081fdad1cec0918"
+    }
+  ],
+  "source_models": [
+    {
+      "path": "Connector_FFC-FPC.3dshapes/Hirose_FH12-8S-0.5SH_1x08-1MP_P0.50mm_Horizontal.step",
+      "source_kind": "KiCad 10.0.7 standard 3D model library",
+      "sha256": "62b59cae72f358e67ff8d3e9d5a5ef5af1310c7c8175014bf32737e6fd885e77"
+    },
+    {
+      "path": "4.3D Model/Naive Version/Lower.step",
+      "source_kind": "repository CAD",
+      "sha256": "23b730990a614816d785743643510fa44fa6864c99214521034c588333707fc2"
+    },
+    {
+      "path": "4.3D Model/Naive Version/Upper.step",
+      "source_kind": "repository CAD",
+      "sha256": "0683b6ae669f78372b4ce7b52fc40f5f5f5db6c11480c1f19d6fef2889e2ee16"
+    }
+  ],
+  "component_substitution_transfer": {
+    "date": "2026-10-30",
+    "original_review_input_sha256": "a05fb4db8785f69a0e96533620440d110ff2dc13d2e4b28887b48de03e031c39",
+    "current_pcb_sha256": "a8bbae787964286f9783e2d74fa752ae82efbc7d5350371debf734503f4a98a8",
+    "proof": "1.Hardware/RevB-KiCad/Naive/component-substitutions.json",
+    "all_nonmaterial_native_geometry_and_models_unchanged": true,
+    "scope": "Retains the original numerical geometry review and its original source hashes. Applies unchanged geometry conclusions to the current material-field update; no new STEP Boolean or physical fit test was performed. Candidate body/land compatibility was separately reviewed; R3 is not among the lower-case relief cuts."
+  }
+}

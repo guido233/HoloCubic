@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="148mm" height="105mm" viewBox="0 0 148 105">
+<rect width="148" height="105" fill="white"/>
+<style>text{font-family:Arial,sans-serif;fill:#17243b} .small{font-size:2.15px}.tiny{font-size:1.6px}</style>
+<text x="8" y="8" font-size="3.5">P133H002 / Naive ExtendBoard - axial solder interface</text>
+<text x="8" y="12" class="small">1:1 in mm. Print at 100%; verify calibration. No bend/case-fit qualification.</text>
+<polyline points="10.000000,20.000000 10.000000,46.238200" fill="none" stroke="#1f2937" stroke-width=".12"/>
+<polyline points="10.000000,46.238200 39.387800,46.238200" fill="none" stroke="#1f2937" stroke-width=".12"/>
+<polyline points="39.387800,20.000000 10.000000,20.000000" fill="none" stroke="#1f2937" stroke-width=".12"/>
+<polyline points="39.387800,46.238200 39.387800,20.000000" fill="none" stroke="#1f2937" stroke-width=".12"/>
+<rect x="28.442800000000005" y="39.6391" width="5.5" height="0.5" rx=".05" fill="#bf7f26"/>
+<text x="34.34280000000001" y="40.0891" font-size=".85">1</text>
+<rect x="28.442800000000005" y="38.939099999999996" width="5.5" height="0.5" rx=".05" fill="#bf7f26"/>
+<text x="34.34280000000001" y="39.3891" font-size=".85">2</text>
+<rect x="28.442800000000005" y="38.23909999999999" width="5.5" height="0.5" rx=".05" fill="#bf7f26"/>
+<text x="34.34280000000001" y="38.689099999999996" font-size=".85">3</text>
+<rect x="28.442800000000005" y="37.53909999999999" width="5.5" height="0.5" rx=".05" fill="#bf7f26"/>
+<text x="34.34280000000001" y="37.98909999999999" font-size=".85">4</text>
+<rect x="28.442800000000005" y="36.8391" width="5.5" height="0.5" rx=".05" fill="#bf7f26"/>
+<text x="34.34280000000001" y="37.289100000000005" font-size=".85">5</text>
+<rect x="28.442800000000005" y="36.1391" width="5.5" height="0.5" rx=".05" fill="#bf7f26"/>
+<text x="34.34280000000001" y="36.5891" font-size=".85">6</text>
+<rect x="28.442800000000005" y="35.439099999999996" width="5.5" height="0.5" rx=".05" fill="#bf7f26"/>
+<text x="34.34280000000001" y="35.8891" font-size=".85">7</text>
+<rect x="28.442800000000005" y="34.73909999999999" width="5.5" height="0.5" rx=".05" fill="#bf7f26"/>
+<text x="34.34280000000001" y="35.189099999999996" font-size=".85">8</text>
+<rect x="28.442800000000005" y="34.03909999999999" width="5.5" height="0.5" rx=".05" fill="#bf7f26"/>
+<text x="34.34280000000001" y="34.48909999999999" font-size=".85">9</text>
+<rect x="28.442800000000005" y="33.3391" width="5.5" height="0.5" rx=".05" fill="#bf7f26"/>
+<text x="34.34280000000001" y="33.789100000000005" font-size=".85">10</text>
+<rect x="28.442800000000005" y="32.6391" width="5.5" height="0.5" rx=".05" fill="#bf7f26"/>
+<text x="34.34280000000001" y="33.0891" font-size=".85">11</text>
+<rect x="28.442800000000005" y="31.939099999999996" width="5.5" height="0.5" rx=".05" fill="#bf7f26"/>
+<text x="34.34280000000001" y="32.3891" font-size=".85">12</text>
+<path d="M29.203900000000004,31.415499999999994 L29.203900000000004,40.71549999999999" stroke="#2563eb" stroke-width=".1" stroke-dasharray=".5 .35"/>
+<path d="M32.40280000000001,31.415499999999994 L32.40280000000001,40.71549999999999" stroke="#bd2835" stroke-width=".1" stroke-dasharray=".5 .35"/>
+<circle cx="23.127399999999994" cy="33.1572" r=".22" fill="#446"/><text x="23.527399999999993" y="33.357200000000006" font-size="1.1">CON1</text>
+<circle cx="26.28800000000001" cy="41.081999999999994" r=".22" fill="#446"/><text x="26.68800000000001" y="41.282" font-size="1.1">Q1</text>
+<circle cx="23.875" cy="40.8026" r=".22" fill="#446"/><text x="24.275" y="41.0026" font-size="1.1">R1</text>
+<circle cx="18.992800000000017" cy="35.3155" r=".22" fill="#446"/><text x="19.392800000000015" y="35.5155" font-size="1.1">C1</text>
+<circle cx="20.692800000000005" cy="43.21549999999999" r=".22" fill="#446"/><text x="21.092800000000004" y="43.415499999999994" font-size="1.1">R2</text>
+<circle cx="23.392799999999994" cy="43.1155" r=".22" fill="#446"/><text x="23.792799999999993" y="43.3155" font-size="1.1">R3</text>
+<text x="51" y="22.0" class="small">Interface copper: 5.5 x 0.50 mm, pitch 0.70 mm</text>
+<text x="51" y="26.4" class="small">Copper X interval: 152.25 ... 157.75 mm</text>
+<text x="51" y="30.8" class="small">Pad1 / Pad12 Y: 111.7736 / 104.0736 mm</text>
+<text x="51" y="35.2" class="small">Blue dashed line: bare folded drawing nominal contact center</text>
+<text x="51" y="39.6" class="small">Red dashed line: previous legacy nominal contact center</text>
+<text x="51" y="44.0" class="small">Worst axial overlap: 0.9611 mm with +/-0.5, +/-0.2 and panel tolerance</text>
+<text x="51" y="48.400000000000006" class="small">Assembly process: manual FPC solder AFTER PCBA reflow</text>
+<text x="51" y="52.800000000000004" class="small">Stencil: NO F.Paste aperture on these12lands</text>
+<path d="M10,60 L30,60 M10,58 L10,62 M30,58 L30,62" stroke="black" stroke-width=".2"/>
+<text x="10" y="65" class="small">20.00 mm calibration</text>
+<text x="8" y="73" class="small">UNRESOLVED: FPC permitted bend radius/segment, contact face, lateral registration,</text>
+<text x="8" y="77" class="small">solder/adhesive thickness, enclosure datum and full cable path. No physical test performed.</text>
+<text x="8" y="84" class="tiny">Datum: KiCadXY; nominal screen/PCB center(148.5011,105.0036). Dimensions are construction references.</text>
+<text x="8" y="89" class="tiny">PCB SHA256: d05a3b40bbc770fbf0523e38680e2212bac2e3d39f5fec9066f50eba5e90c40c</text>
+<text x="8" y="94" class="tiny">Source: POLCD P133H002 RevA mechanical drawing page9, issued2021.10.7; full source hash in JSON.</text>
+</svg>

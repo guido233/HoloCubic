@@ -1,0 +1,124 @@
+{
+  "units": "mm",
+  "frame": "KiCad footprint local XY before footprint rotation",
+  "part": "GCT USB4105-GF-A",
+  "margin_mm": 0.25,
+  "polygon_local_xy_mm": [
+    [
+      -3.75,
+      -4.505
+    ],
+    [
+      3.75,
+      -4.505
+    ],
+    [
+      3.75,
+      -4.405
+    ],
+    [
+      5.07,
+      -4.405
+    ],
+    [
+      5.07,
+      -1.805
+    ],
+    [
+      4.72,
+      -1.805
+    ],
+    [
+      4.72,
+      -0.075
+    ],
+    [
+      5.07,
+      -0.075
+    ],
+    [
+      5.07,
+      2.225
+    ],
+    [
+      4.72,
+      2.225
+    ],
+    [
+      4.72,
+      3.925
+    ],
+    [
+      -4.72,
+      3.925
+    ],
+    [
+      -4.72,
+      2.225
+    ],
+    [
+      -5.07,
+      2.225
+    ],
+    [
+      -5.07,
+      -0.075
+    ],
+    [
+      -4.72,
+      -0.075
+    ],
+    [
+      -4.72,
+      -1.805
+    ],
+    [
+      -5.07,
+      -1.805
+    ],
+    [
+      -5.07,
+      -4.405
+    ],
+    [
+      -3.75,
+      -4.405
+    ]
+  ],
+  "source_step_model_bbox_xyz_mm": [
+    -4.47,
+    -3.675,
+    -0.95,
+    4.47,
+    4.105,
+    3.31
+  ],
+  "projected_step_bbox_kicad_xy_mm": [
+    -4.47,
+    -4.105,
+    4.47,
+    3.675
+  ],
+  "pad_union_bbox_local_xy_mm": [
+    -4.82,
+    -4.255,
+    4.82,
+    1.975
+  ],
+  "method": "Union of complete closed STEP projected bounding rectangle, all SMD land envelopes, and all SH/NPTH pad envelopes, each expanded by 0.25 mm. Conservative; no actual geometry omitted.",
+  "target_pose_kicad_mm_deg": [
+    160.06617,
+    104.9909,
+    90
+  ],
+  "global_courtyard_bbox_mm": [
+    155.56117,
+    99.9209,
+    163.99117,
+    110.0609
+  ],
+  "limits": [
+    "Dense assembly margin 0.25 mm is an explicit engineering choice, not the official KiCad standard-library 0.5 mm courtyard.",
+    "Still requires other-component DRC, case registration, plug overmold entry and assembled height validation."
+  ]
+}

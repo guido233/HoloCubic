@@ -1,0 +1,3 @@
+# Preserve the exact generated CAD bytes and Excel-compatible CSV line endings.
+1.Hardware/RevB-KiCad/**/*.step -text whitespace=-blank-at-eol
+1.Hardware/RevB-KiCad/**/*.csv -text whitespace=cr-at-eol

@@ -1,6 +1,7 @@
 > 本 Fork 的固件已迁移到 Arduino-ESP32 3.3.12 和 LVGL 9.6，保留原版硬件接口。
 > 编译、烧录、板型选择和资源迁移请阅读 [固件维护说明](2.Firmware/HoloCubic-fw/README.md)。
 > 下文硬件设计与价格描述保留原作者历史记录；MPU6050 已停产，ESP32-PICO-D4 已标记为 NRND。
+> Naive 硬件修订源文件在 [RevB KiCad 工程](1.Hardware/RevB-KiCad/Naive/README.md)。这是待样机验证的工程修订，采购、装配限制及检查命令均写在该目录。
 
 ![](/5.Docs/Images/Holo1.jpg)
 
@@ -18,11 +19,11 @@
 
 ## 1. 硬件打样说明
 
-**PCB打样的话暂时没发现有啥需要特别注意的。** PCB文件可以直接拿去工厂打样，两层板很便宜，器件BOM的话也都是比较常用的，整板成本在50元以内。
+原 Altium 文件保留作为历史基线。复刻前请先阅读 [Naive RevB 说明](1.Hardware/RevB-KiCad/Naive/README.md)：原板的 USB-C CC、电源、MPU6050 焊盘、上拉与背光驱动存在需要修正或验证的项目。原文的价格是历史估算，不能作为当前采购预算。
 
 `Hardware`文件内目前包含两个版本的PCB电路：
 
-* **Naive Version** ：即视频中出现的版本，板载ESP32、IMU、环境光传感器、SD卡槽、下载电路、以及两个RGB灯
+* **Naive Version** ：即视频中出现的版本，板载ESP32、IMU、环境光传感器、SD卡槽、下载电路、以及一颗RGB灯
 * **Ironman Version** ：基于上面的版本轻微修改，删去了环境光传感器，修改了PCB形状以适配新的外壳
 
 > 因为新款的外壳计划是使用CNC进行金属加工，因此环境光容易被遮挡，而且该功能使用场景不多所以在新版删去了。

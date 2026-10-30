@@ -1,0 +1,19 @@
+HoloCubic Naive RevB 采购入口
+
+核对日期：2026-10-30
+
+本地维护说明：1.Hardware/RevB-KiCad/Naive/README.md
+整机材料与采购条件：1.Hardware/RevB-KiCad/Naive/PURCHASING.md
+实际板上物料：1.Hardware/RevB-KiCad/Naive/BOM.csv
+合并采购表：1.Hardware/RevB-KiCad/Naive/BOM-grouped.csv
+可追溯原始数据：1.Hardware/RevB-KiCad/Naive/BOM.json
+采购Excel：1.Hardware/RevB-KiCad/Naive/BOM.xlsx
+
+当前为待样机验证的工程修订。不要继续按旧 LP2992、未识别TF座或通用天线的历史清单采购。
+主板58个、显示板11个装机位号，共69件、38个完整订货型号。
+已应用：主板C24及显示板C4共用GRM188R71E105KA12D/C86020，合计2颗/台；U6用TPS22918DBVT；主板R3用RTT022000FTH/C102869。
+主板C4仍为22uF。C86020按同一采购行计算，两处不必各买一包；具体商城起订量与交期在下单前重核。
+MPU-6050已停产，ESP32-PICO-D4为NRND；先确认可追溯来源。
+裸屏P133H002尾排折弯及整壳装配尚未验收，先取样确认。
+使用RevB下壳，TF卡需拆下壳更换。
+PCB静态检查已通过；板厂制造条件、显示装配及首次上电验收仍按工程说明执行。

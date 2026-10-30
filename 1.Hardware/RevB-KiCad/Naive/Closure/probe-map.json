@@ -1,0 +1,187 @@
+{
+  "scope": "Engineering coordinate guide, not a bed-of-nails fixture or measured result.",
+  "sources": [
+    {
+      "path": "1.Hardware/RevB-KiCad/Naive/MainBoard/MainBoard.kicad_pcb",
+      "sha256": "a8bbae787964286f9783e2d74fa752ae82efbc7d5350371debf734503f4a98a8"
+    },
+    {
+      "path": "1.Hardware/RevB-KiCad/Naive/ExtendBoard/ExtendBoard.kicad_pcb",
+      "sha256": "d05a3b40bbc770fbf0523e38680e2212bac2e3d39f5fec9066f50eba5e90c40c"
+    }
+  ],
+  "terminals": [
+    {
+      "id": "M1",
+      "board": "MainBoard",
+      "reference": "C15",
+      "pad": "1",
+      "net": "USB_VBUS",
+      "side": "F",
+      "x_mm": 158.33,
+      "y_mm": 110.55,
+      "kind": "existing component terminal; tip access must be checked"
+    },
+    {
+      "id": "M2",
+      "board": "MainBoard",
+      "reference": "C20",
+      "pad": "1",
+      "net": "VDD_5V",
+      "side": "F",
+      "x_mm": 154.6,
+      "y_mm": 101.88,
+      "kind": "existing component terminal; tip access must be checked"
+    },
+    {
+      "id": "M3",
+      "board": "MainBoard",
+      "reference": "C18",
+      "pad": "1",
+      "net": "CP_VDD",
+      "side": "F",
+      "x_mm": 152.97,
+      "y_mm": 99.85,
+      "kind": "existing component terminal; tip access must be checked"
+    },
+    {
+      "id": "M4",
+      "board": "MainBoard",
+      "reference": "C13",
+      "pad": "1",
+      "net": "3V3",
+      "side": "F",
+      "x_mm": 155.75,
+      "y_mm": 94.5,
+      "kind": "existing component terminal; tip access must be checked"
+    },
+    {
+      "id": "M5",
+      "board": "MainBoard",
+      "reference": "C4",
+      "pad": "2",
+      "net": "3V3A",
+      "side": "F",
+      "x_mm": 158.45,
+      "y_mm": 115.65,
+      "kind": "existing component terminal; tip access must be checked"
+    },
+    {
+      "id": "M6",
+      "board": "MainBoard",
+      "reference": "C7",
+      "pad": "1",
+      "net": "EN",
+      "side": "F",
+      "x_mm": 141.52,
+      "y_mm": 110.0,
+      "kind": "existing component terminal; tip access must be checked"
+    },
+    {
+      "id": "M7",
+      "board": "MainBoard",
+      "reference": "C20",
+      "pad": "2",
+      "net": "GND",
+      "side": "F",
+      "x_mm": 154.6,
+      "y_mm": 100.92,
+      "kind": "existing component terminal; tip access must be checked"
+    },
+    {
+      "id": "M8",
+      "board": "MainBoard",
+      "reference": "R12",
+      "pad": "1",
+      "net": "USB_CC1",
+      "side": "B",
+      "x_mm": 145.19,
+      "y_mm": 94.8,
+      "kind": "existing component terminal; tip access must be checked"
+    },
+    {
+      "id": "M9",
+      "board": "MainBoard",
+      "reference": "R13",
+      "pad": "1",
+      "net": "USB_CC2",
+      "side": "B",
+      "x_mm": 143.19,
+      "y_mm": 97.2,
+      "kind": "existing component terminal; tip access must be checked"
+    },
+    {
+      "id": "M10",
+      "board": "MainBoard",
+      "reference": "C11",
+      "pad": "1",
+      "net": "3V3",
+      "side": "F",
+      "x_mm": 155.2,
+      "y_mm": 98.208,
+      "kind": "existing component terminal; tip access must be checked"
+    },
+    {
+      "id": "M11",
+      "board": "MainBoard",
+      "reference": "C24",
+      "pad": "1",
+      "net": "NetR11_1",
+      "side": "F",
+      "x_mm": 158.145,
+      "y_mm": 99.18,
+      "kind": "existing component terminal; tip access must be checked"
+    },
+    {
+      "id": "E1",
+      "board": "ExtendBoard",
+      "reference": "C3",
+      "pad": "1",
+      "net": "VDD_5V",
+      "side": "F",
+      "x_mm": 138.02,
+      "y_mm": 108.5,
+      "kind": "existing component terminal; tip access must be checked"
+    },
+    {
+      "id": "E2",
+      "board": "ExtendBoard",
+      "reference": "C1",
+      "pad": "1",
+      "net": "3V3",
+      "side": "F",
+      "x_mm": 142.32,
+      "y_mm": 107.2,
+      "kind": "existing component terminal; tip access must be checked"
+    },
+    {
+      "id": "E3",
+      "board": "ExtendBoard",
+      "reference": "R2",
+      "pad": "1",
+      "net": "BL_SENSE",
+      "side": "F",
+      "x_mm": 144.5,
+      "y_mm": 115.925,
+      "kind": "existing component terminal; tip access must be checked"
+    },
+    {
+      "id": "E4",
+      "board": "ExtendBoard",
+      "reference": "R2",
+      "pad": "2",
+      "net": "GND",
+      "side": "F",
+      "x_mm": 144.5,
+      "y_mm": 114.275,
+      "kind": "existing component terminal; tip access must be checked"
+    }
+  ],
+  "notes": [
+    "Use a ground spring or short ground connection; check tip clearance before powering.",
+    "Do not substitute the 100pF LOAD_CT node for a supply test point; probe capacitance changes timing.",
+    "Measure backlight current from voltage across the actual 27ohm R2; PWM duty is not a current reading.",
+    "For BH1750 reset capture M10/VCC and M11/DVI together; confirm DVI <=0.4V for >=1us after VCC reaches 2.4V.",
+    "B-side drawings mirror X. CSV and JSON always retain native CAD coordinates."
+  ]
+}
